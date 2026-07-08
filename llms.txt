@@ -1,0 +1,26 @@
+# Mentio
+
+> Mentio is a Generative Engine Optimization (GEO) agency. We audit and optimize websites so AI assistants — ChatGPT, Perplexity, Gemini, Google AI Overviews, Bing Copilot — can find, understand, trust and recommend a business in their answers.
+
+Mentio serves businesses worldwide. Contact: team@mentio.agency
+
+Key facts:
+- GEO (Generative Engine Optimization) extends classic SEO for AI-driven search: it optimizes a site to be cited inside AI answers, not just ranked on a results page.
+- Mentio's audit scores a website across 8 AI platforms and delivers three reports: a problems analysis, a developer-ready action plan with copy-paste code (JSON-LD, llms.txt), and a plain-language owner summary.
+- Mentio implements structured data (Schema.org JSON-LD), llms.txt files, AI-crawler access configuration and citable content restructuring, then verifies every fix.
+- Mentio offers monthly monitoring: re-audits with progress deltas showing how AI platforms see the business over time.
+
+## Pages
+
+- [Home (English)](https://mentio.agency/): What GEO is, why AI search visibility matters now, services and process
+- [Home (Ukrainian)](https://mentio.agency/ua/): Українська версія — що таке GEO, послуги та процес
+
+## Services
+
+- GEO Audit: full AI-visibility audit across 8 platforms with prioritized problems, impact and effort ratings
+- GEO Implementation: hands-on fixes — structured data, llms.txt, crawler access, content restructuring — with a verification checklist
+- GEO Monitoring: monthly re-audits, citation tracking and progress reporting
+
+## Contact
+
+- Email: team@mentio.agency
