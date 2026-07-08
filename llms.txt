@@ -18,7 +18,6 @@ Key facts:
 - [Home (French)](https://mentio.agency/fr/): Version française — le GEO, services et méthode
 - [Home (Polish)](https://mentio.agency/pl/): Wersja polska — czym jest GEO, usługi i proces
 - [Home (Spanish)](https://mentio.agency/es/): Versión en español — qué es GEO, servicios y proceso
-- [Home (Italian)](https://mentio.agency/it/): Versione italiana — cos'è la GEO, servizi e processo
 
 ## Services
 
