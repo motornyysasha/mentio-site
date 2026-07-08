@@ -14,6 +14,11 @@ Key facts:
 
 - [Home (English)](https://mentio.agency/): What GEO is, why AI search visibility matters now, services and process
 - [Home (Ukrainian)](https://mentio.agency/ua/): Українська версія — що таке GEO, послуги та процес
+- [Home (German)](https://mentio.agency/de/): Deutsche Version — was GEO ist, Leistungen und Ablauf
+- [Home (French)](https://mentio.agency/fr/): Version française — le GEO, services et méthode
+- [Home (Polish)](https://mentio.agency/pl/): Wersja polska — czym jest GEO, usługi i proces
+- [Home (Spanish)](https://mentio.agency/es/): Versión en español — qué es GEO, servicios y proceso
+- [Home (Italian)](https://mentio.agency/it/): Versione italiana — cos'è la GEO, servizi e processo
 
 ## Services
 
