@@ -123,12 +123,33 @@
     var input = f.querySelector("input");
     var btn = f.querySelector("button");
     var status = f.parentElement.querySelector(".scan-status");
+    var DRE = /^[a-z0-9Ѐ-ӿ.-]+\.[a-zЀ-ӿ]{2,}$/i;
+    function domainOf() {
+      return input.value.trim().toLowerCase().replace(/^https?:\/\//, "").replace(/\/.*$/, "");
+    }
+    function rejectEmpty() {
+      status.classList.remove("ok");
+      status.textContent = cfg.invalid;
+      f.classList.add("invalid");
+      input.focus();
+    }
+    input.addEventListener("input", function () { f.classList.remove("invalid"); });
+    var bigCta = f.parentElement.querySelector("a.btn-primary");
+    if (bigCta) {
+      bigCta.addEventListener("click", function (e) {
+        e.preventDefault();
+        var d = domainOf();
+        if (!DRE.test(d)) { rejectEmpty(); return; }
+        window.location.href = "mailto:team@mentio.agency?subject=" +
+          encodeURIComponent(cfg.subject + " " + d) + "&body=" +
+          encodeURIComponent(cfg.body + " " + d);
+      });
+    }
     f.addEventListener("submit", function (e) {
       e.preventDefault();
-      var d = input.value.trim().toLowerCase().replace(/^https?:\/\//, "").replace(/\/.*$/, "");
-      if (!/^[a-z0-9Ѐ-ӿ.-]+\.[a-zЀ-ӿ]{2,}$/i.test(d)) {
-        status.classList.remove("ok");
-        status.textContent = cfg.invalid;
+      var d = domainOf();
+      if (!DRE.test(d)) {
+        rejectEmpty();
         return;
       }
       btn.disabled = true;

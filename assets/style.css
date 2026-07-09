@@ -153,6 +153,7 @@ header.hero::after{content:"";position:absolute;inset:0;background:radial-gradie
 .scan-form input::placeholder{color:var(--dim)}
 .scan-form button{background:var(--grad);color:#fff;border:none;border-radius:10px;padding:.6rem 1.2rem;font-weight:600;font-size:.95rem;cursor:pointer;font-family:inherit;white-space:nowrap}
 .scan-form button:disabled{opacity:.6;cursor:wait}
+.scan-form.invalid{border-color:var(--red)}
 .scan-status{font-size:.88rem;color:var(--muted);min-height:1.5em;margin-bottom:1.5rem}
 .scan-status.ok{color:var(--orange)}
 
