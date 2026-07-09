@@ -170,13 +170,37 @@
     var scanIn = document.querySelector(".scan-form input");
     site.placeholder = scanIn ? scanIn.placeholder : "yoursite.com";
     result.insertBefore(site, cta);
+    var hint = document.createElement("p");
+    hint.className = "quiz-hint";
+    try { hint.textContent = JSON.parse(document.querySelector(".scan-form").getAttribute("data-cfg")).invalid; }
+    catch (e) { hint.textContent = "example.com"; }
+    hint.hidden = true;
+    result.insertBefore(hint, cta);
+    function getDomain() {
+      return site.value.trim().toLowerCase().replace(/^https?:\/\//, "").replace(/\/.*$/, "");
+    }
+    function isValid(d) { return /^[a-z0-9\u0400-\u04ff.-]+\.[a-z\u0400-\u04ff]{2,}$/i.test(d); }
     function buildHref() {
-      var d = site.value.trim().toLowerCase().replace(/^https?:\/\//, "").replace(/\/.*$/, "");
-      cta.href = "mailto:team@mentio.agency?subject=" +
-        encodeURIComponent(cfg.subj.replace("{s}", lastScore) + (d ? " \u2014 " + d : "")) + "&body=" +
-        encodeURIComponent(cfg.body.replace("{s}", lastScore) + d);
+      var d = getDomain();
+      var ok = isValid(d);
+      cta.classList.toggle("disabled", !ok);
+      if (ok) {
+        site.classList.remove("invalid");
+        hint.hidden = true;
+        cta.href = "mailto:team@mentio.agency?subject=" +
+          encodeURIComponent(cfg.subj.replace("{s}", lastScore) + " \u2014 " + d) + "&body=" +
+          encodeURIComponent(cfg.body.replace("{s}", lastScore) + d);
+      }
     }
     site.addEventListener("input", buildHref);
+    cta.addEventListener("click", function (e) {
+      if (!isValid(getDomain())) {
+        e.preventDefault();
+        site.classList.add("invalid");
+        hint.hidden = false;
+        site.focus();
+      }
+    });
 
     function show() {
       countEl.textContent = (i + 1) + " / " + n;

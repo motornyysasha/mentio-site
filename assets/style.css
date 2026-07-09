@@ -207,6 +207,10 @@ article.post{padding:10px 0 70px}
 .quiz-site{display:block;margin:0 auto 1.1rem;max-width:340px;width:100%;background:var(--card2);border:1px solid var(--border2);border-radius:10px;color:var(--text);padding:.65rem .9rem;font-size:.95rem;font-family:inherit;text-align:center;outline:none}
 .quiz-site::placeholder{color:var(--dim)}
 .quiz-site:focus{border-color:var(--orange)}
+.quiz-site.invalid{border-color:var(--red)}
+.quiz-hint{color:#E5686B;font-size:.85rem;margin:-.3rem 0 .9rem}
+.quiz-cta.disabled{opacity:.5;cursor:not-allowed}
+.quiz-cta.disabled:hover{transform:none;box-shadow:none}
 
 /* ===== loss calculator ===== */
 .calc{max-width:640px;margin:0 auto;padding:2rem}
