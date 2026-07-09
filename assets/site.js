@@ -148,3 +148,82 @@
     });
   });
 })();
+
+/* ---------- AI visibility quiz ---------- */
+(function () {
+  "use strict";
+  document.querySelectorAll(".quiz").forEach(function (qz) {
+    var cfg;
+    try { cfg = JSON.parse(qz.getAttribute("data-cfg")); } catch (e) { return; }
+    var qEl = qz.querySelector(".quiz-q");
+    var countEl = qz.querySelector(".quiz-count");
+    var bar = qz.querySelector(".quiz-progress span");
+    var opts = qz.querySelector(".quiz-opts");
+    var result = qz.querySelector(".quiz-result");
+    var ring = qz.querySelector(".score-ring");
+    var num = qz.querySelector(".score-num");
+    var verdict = qz.querySelector(".quiz-verdict");
+    var cta = qz.querySelector(".quiz-cta");
+    var i = 0, sum = 0, n = cfg.qs.length;
+
+    function show() {
+      countEl.textContent = (i + 1) + " / " + n;
+      qEl.textContent = cfg.qs[i];
+      bar.style.width = (i / n * 100) + "%";
+    }
+    function finish() {
+      var score = Math.round(sum / (2 * n) * 100);
+      bar.style.width = "100%";
+      qEl.hidden = true; opts.hidden = true; countEl.hidden = true;
+      result.hidden = false;
+      var tier = score < 40 ? "low" : score < 75 ? "mid" : "high";
+      verdict.textContent = cfg.tiers[tier];
+      ring.style.background = "conic-gradient(#F0512F " + score + "%, #2A2A36 0)";
+      var cur = 0;
+      var t = setInterval(function () {
+        cur += Math.max(1, Math.round(score / 30));
+        if (cur >= score) { cur = score; clearInterval(t); }
+        num.innerHTML = cur + "<small>/100</small>";
+      }, 30);
+      cta.href = "mailto:team@mentio.agency?subject=" +
+        encodeURIComponent(cfg.subj.replace("{s}", score)) + "&body=" +
+        encodeURIComponent(cfg.body.replace("{s}", score));
+    }
+    opts.addEventListener("click", function (e) {
+      var b = e.target.closest("button"); if (!b) return;
+      sum += Number(b.getAttribute("data-v"));
+      i++;
+      if (i < n) show(); else finish();
+    });
+    qz.querySelector(".quiz-restart").addEventListener("click", function () {
+      i = 0; sum = 0;
+      qEl.hidden = false; opts.hidden = false; countEl.hidden = false;
+      result.hidden = true;
+      show();
+    });
+    show();
+  });
+
+  /* ---------- loss calculator ---------- */
+  document.querySelectorAll(".calc").forEach(function (c) {
+    var cfg;
+    try { cfg = JSON.parse(c.getAttribute("data-cfg")); } catch (e) { return; }
+    var clients = c.querySelector('[data-in="clients"]');
+    var check = c.querySelector('[data-in="check"]');
+    var share = c.querySelector('[data-in="share"]');
+    var money = new Intl.NumberFormat(cfg.locale, { style: "currency", currency: cfg.currency, maximumFractionDigits: 0 });
+    var ints = new Intl.NumberFormat(cfg.locale, { maximumFractionDigits: 0 });
+    function upd() {
+      var cl = +clients.value, ch = +check.value, p = +share.value;
+      c.querySelector('[data-val="clients"]').textContent = ints.format(cl);
+      c.querySelector('[data-val="check"]').textContent = money.format(ch);
+      c.querySelector('[data-val="share"]').textContent = p + "%";
+      var missed = cl * (p / 100) / (1 - p / 100);
+      var perMonth = missed * ch;
+      c.querySelector(".calc-big").textContent = "≈ " + money.format(perMonth) + " " + cfg.mo;
+      c.querySelector(".calc-sub").textContent = money.format(perMonth * 12) + " " + cfg.yr + " · " + cfg.cust.replace("{n}", ints.format(Math.round(missed)));
+    }
+    [clients, check, share].forEach(function (inp) { inp.addEventListener("input", upd); });
+    upd();
+  });
+})();

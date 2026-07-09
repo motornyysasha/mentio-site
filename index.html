@@ -282,6 +282,57 @@
   </div>
 </section>
 
+<section id="score" class="alt">
+  <div class="wrap">
+    <p class="kicker">AI Visibility Score</p>
+    <h2>How visible is your business to AI? Find out in 60 seconds</h2>
+    <p class="lead">Seven yes/no questions — instant score, no email required.</p>
+    <div class="quiz card" data-cfg="{&quot;qs&quot;: [&quot;Do you know what ChatGPT says about your business today?&quot;, &quot;Does your website have an llms.txt file?&quot;, &quot;Have you checked that robots.txt doesn't block AI crawlers (GPTBot, PerplexityBot)?&quot;, &quot;Does your site use Schema.org structured data (JSON-LD)?&quot;, &quot;Does your content directly answer customer questions — prices, timelines, specifics?&quot;, &quot;Is your business listed in directories, maps and review platforms with identical data everywhere?&quot;, &quot;Has the key business info on your site been updated in the last 6 months?&quot;], &quot;tiers&quot;: {&quot;low&quot;: &quot;Serious gaps. AI assistants most likely can't see or can't trust your business — and are recommending competitors right now.&quot;, &quot;mid&quot;: &quot;A foundation exists, but several critical layers are missing. A focused fix would move you into the visible zone.&quot;, &quot;high&quot;: &quot;Solid! The basics are in place — the next step is verifying how AI actually answers and defending the position.&quot;}, &quot;subj&quot;: &quot;GEO audit request (my score: {s}/100)&quot;, &quot;body&quot;: &quot;Hi Mentio, my AI Visibility Score is {s}/100. Please check my website: &quot;}">
+      <div class="quiz-progress"><span></span></div>
+      <p class="quiz-count"></p>
+      <p class="quiz-q"></p>
+      <div class="quiz-opts">
+        <button type="button" data-v="2">Yes</button>
+        <button type="button" data-v="1">Not sure</button>
+        <button type="button" data-v="0">No</button>
+      </div>
+      <div class="quiz-result" hidden>
+        <div class="score-ring"><span class="score-num">0</span></div>
+        <p class="quiz-verdict"></p>
+        <a class="btn btn-primary quiz-cta" href="mailto:team@mentio.agency">Send me the full audit</a>
+        <button type="button" class="quiz-restart">Retake the test</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="calc">
+  <div class="wrap">
+    <p class="kicker">The cost of invisibility</p>
+    <h2>How much is AI invisibility costing you?</h2>
+    <p class="lead">A rough estimate: if a share of buyers now starts with AI and you're not in its answers, those customers never reach you.</p>
+    <div class="calc card" data-cfg="{&quot;locale&quot;: &quot;en-US&quot;, &quot;currency&quot;: &quot;USD&quot;, &quot;mo&quot;: &quot;/ month in missed revenue&quot;, &quot;yr&quot;: &quot;/ year&quot;, &quot;cust&quot;: &quot;{n} customers you never see&quot;}">
+      <div class="calc-row">
+        <label>New customers per month <b data-val="clients"></b></label>
+        <input type="range" data-in="clients" min="5" max="500" step="5" value="50">
+      </div>
+      <div class="calc-row">
+        <label>Average order value <b data-val="check"></b></label>
+        <input type="range" data-in="check" min="10" max="2000" step="10" value="200">
+      </div>
+      <div class="calc-row">
+        <label>Share of buyers who start with AI <b data-val="share"></b></label>
+        <input type="range" data-in="share" min="5" max="60" step="1" value="25">
+      </div>
+      <div class="calc-out">
+        <div class="calc-big"></div>
+        <p class="calc-sub"></p>
+        <p class="calc-disc">Estimate based on your inputs; the free check shows the real picture.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="faq" class="alt">
   <div class="wrap">
     <p class="kicker">FAQ</p>

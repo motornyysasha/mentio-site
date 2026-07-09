@@ -245,6 +245,57 @@
   </div>
 </section>
 
+<section id="score" class="alt">
+  <div class="wrap">
+    <p class="kicker">AI Visibility Score</p>
+    <h2>Jak widoczna jest Twoja firma dla AI? Sprawdź w 60 sekund</h2>
+    <p class="lead">Siedem pytań tak/nie — natychmiastowy wynik, bez e-maila.</p>
+    <div class="quiz card" data-cfg="{&quot;qs&quot;: [&quot;Czy wiesz, co ChatGPT mówi dziś o Twojej firmie?&quot;, &quot;Czy Twoja strona ma plik llms.txt?&quot;, &quot;Czy sprawdzałeś, że robots.txt nie blokuje botów AI (GPTBot, PerplexityBot)?&quot;, &quot;Czy strona używa danych strukturalnych Schema.org (JSON-LD)?&quot;, &quot;Czy treści odpowiadają wprost na pytania klientów — ceny, terminy, konkrety?&quot;, &quot;Czy firma jest w katalogach, mapach i portalach z opiniami z identycznymi danymi wszędzie?&quot;, &quot;Czy kluczowe informacje na stronie były aktualizowane w ostatnich 6 miesiącach?&quot;], &quot;tiers&quot;: {&quot;low&quot;: &quot;Poważne braki. Asystenci AI najpewniej nie widzą Twojej firmy albo jej nie ufają — i właśnie teraz polecają konkurencję.&quot;, &quot;mid&quot;: &quot;Podstawa jest, ale brakuje kilku krytycznych warstw. Punktowe poprawki przeniosą Cię do strefy widoczności.&quot;, &quot;high&quot;: &quot;Solidnie! Fundamenty są — następny krok: sprawdzić, jak AI naprawdę odpowiada, i bronić pozycji.&quot;}, &quot;subj&quot;: &quot;Zapytanie o audyt GEO (mój wynik: {s}/100)&quot;, &quot;body&quot;: &quot;Dzień dobry, Mentio! Mój AI Visibility Score to {s}/100. Proszę sprawdzić moją stronę: &quot;}">
+      <div class="quiz-progress"><span></span></div>
+      <p class="quiz-count"></p>
+      <p class="quiz-q"></p>
+      <div class="quiz-opts">
+        <button type="button" data-v="2">Tak</button>
+        <button type="button" data-v="1">Nie wiem</button>
+        <button type="button" data-v="0">Nie</button>
+      </div>
+      <div class="quiz-result" hidden>
+        <div class="score-ring"><span class="score-num">0</span></div>
+        <p class="quiz-verdict"></p>
+        <a class="btn btn-primary quiz-cta" href="mailto:team@mentio.agency">Wyślijcie mi pełny audyt</a>
+        <button type="button" class="quiz-restart">Powtórz test</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="calc">
+  <div class="wrap">
+    <p class="kicker">Cena niewidzialności</p>
+    <h2>Ile kosztuje Cię niewidzialność w AI?</h2>
+    <p class="lead">Przybliżony szacunek: jeśli część kupujących zaczyna od AI, a Ciebie nie ma w odpowiedziach — ci klienci nigdy do Ciebie nie trafiają.</p>
+    <div class="calc card" data-cfg="{&quot;locale&quot;: &quot;pl-PL&quot;, &quot;currency&quot;: &quot;PLN&quot;, &quot;mo&quot;: &quot;/ mies. utraconych przychodów&quot;, &quot;yr&quot;: &quot;/ rok&quot;, &quot;cust&quot;: &quot;{n} klientów, których nie widzisz&quot;}">
+      <div class="calc-row">
+        <label>Nowych klientów miesięcznie <b data-val="clients"></b></label>
+        <input type="range" data-in="clients" min="5" max="500" step="5" value="50">
+      </div>
+      <div class="calc-row">
+        <label>Średnia wartość zamówienia <b data-val="check"></b></label>
+        <input type="range" data-in="check" min="50" max="8000" step="50" value="800">
+      </div>
+      <div class="calc-row">
+        <label>Odsetek kupujących zaczynających od AI <b data-val="share"></b></label>
+        <input type="range" data-in="share" min="5" max="60" step="1" value="25">
+      </div>
+      <div class="calc-out">
+        <div class="calc-big"></div>
+        <p class="calc-sub"></p>
+        <p class="calc-disc">Szacunek na podstawie Twoich danych; bezpłatna analiza pokaże realny obraz.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="faq" class="alt">
   <div class="wrap">
     <p class="kicker">FAQ</p>

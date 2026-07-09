@@ -245,6 +245,57 @@
   </div>
 </section>
 
+<section id="score" class="alt">
+  <div class="wrap">
+    <p class="kicker">AI Visibility Score</p>
+    <h2>Wie sichtbar ist Ihr Unternehmen für KI? Finden Sie es in 60 Sekunden heraus</h2>
+    <p class="lead">Sieben Ja/Nein-Fragen — sofortiger Score, ohne E-Mail.</p>
+    <div class="quiz card" data-cfg="{&quot;qs&quot;: [&quot;Wissen Sie, was ChatGPT heute über Ihr Unternehmen sagt?&quot;, &quot;Hat Ihre Website eine llms.txt-Datei?&quot;, &quot;Haben Sie geprüft, dass robots.txt keine KI-Crawler blockiert (GPTBot, PerplexityBot)?&quot;, &quot;Nutzt Ihre Website strukturierte Daten nach Schema.org (JSON-LD)?&quot;, &quot;Beantwortet Ihr Content Kundenfragen direkt — Preise, Fristen, Fakten?&quot;, &quot;Ist Ihr Unternehmen in Verzeichnissen, Karten und Bewertungsportalen mit überall identischen Daten gelistet?&quot;, &quot;Wurden die Kerninfos auf Ihrer Website in den letzten 6 Monaten aktualisiert?&quot;], &quot;tiers&quot;: {&quot;low&quot;: &quot;Ernste Lücken. KI-Assistenten sehen Ihr Unternehmen höchstwahrscheinlich nicht oder vertrauen ihm nicht — und empfehlen gerade jetzt Ihre Wettbewerber.&quot;, &quot;mid&quot;: &quot;Eine Basis ist da, aber mehrere kritische Ebenen fehlen. Gezielte Fixes bringen Sie in die sichtbare Zone.&quot;, &quot;high&quot;: &quot;Stark! Die Grundlagen stehen — der nächste Schritt: prüfen, wie KI tatsächlich antwortet, und die Position verteidigen.&quot;}, &quot;subj&quot;: &quot;GEO-Audit-Anfrage (mein Score: {s}/100)&quot;, &quot;body&quot;: &quot;Hallo Mentio, mein AI Visibility Score ist {s}/100. Bitte prüfen Sie meine Website: &quot;}">
+      <div class="quiz-progress"><span></span></div>
+      <p class="quiz-count"></p>
+      <p class="quiz-q"></p>
+      <div class="quiz-opts">
+        <button type="button" data-v="2">Ja</button>
+        <button type="button" data-v="1">Unsicher</button>
+        <button type="button" data-v="0">Nein</button>
+      </div>
+      <div class="quiz-result" hidden>
+        <div class="score-ring"><span class="score-num">0</span></div>
+        <p class="quiz-verdict"></p>
+        <a class="btn btn-primary quiz-cta" href="mailto:team@mentio.agency">Vollständiges Audit anfordern</a>
+        <button type="button" class="quiz-restart">Test wiederholen</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="calc">
+  <div class="wrap">
+    <p class="kicker">Der Preis der Unsichtbarkeit</p>
+    <h2>Was kostet Sie die KI-Unsichtbarkeit?</h2>
+    <p class="lead">Eine grobe Schätzung: Wenn ein Teil der Käufer mit KI startet und Sie in den Antworten fehlen, erreichen diese Kunden Sie nie.</p>
+    <div class="calc card" data-cfg="{&quot;locale&quot;: &quot;de-DE&quot;, &quot;currency&quot;: &quot;EUR&quot;, &quot;mo&quot;: &quot;/ Monat entgangener Umsatz&quot;, &quot;yr&quot;: &quot;/ Jahr&quot;, &quot;cust&quot;: &quot;{n} Kunden, die Sie nie sehen&quot;}">
+      <div class="calc-row">
+        <label>Neukunden pro Monat <b data-val="clients"></b></label>
+        <input type="range" data-in="clients" min="5" max="500" step="5" value="50">
+      </div>
+      <div class="calc-row">
+        <label>Durchschnittlicher Auftragswert <b data-val="check"></b></label>
+        <input type="range" data-in="check" min="10" max="2000" step="10" value="200">
+      </div>
+      <div class="calc-row">
+        <label>Anteil der Käufer, die mit KI starten <b data-val="share"></b></label>
+        <input type="range" data-in="share" min="5" max="60" step="1" value="25">
+      </div>
+      <div class="calc-out">
+        <div class="calc-big"></div>
+        <p class="calc-sub"></p>
+        <p class="calc-disc">Schätzung auf Basis Ihrer Angaben; der kostenlose Check zeigt das reale Bild.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="faq" class="alt">
   <div class="wrap">
     <p class="kicker">FAQ</p>

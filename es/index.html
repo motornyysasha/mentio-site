@@ -245,6 +245,57 @@
   </div>
 </section>
 
+<section id="score" class="alt">
+  <div class="wrap">
+    <p class="kicker">AI Visibility Score</p>
+    <h2>¿Qué tan visible es tu negocio para la IA? Descúbrelo en 60 segundos</h2>
+    <p class="lead">Siete preguntas sí/no — puntuación instantánea, sin correo.</p>
+    <div class="quiz card" data-cfg="{&quot;qs&quot;: [&quot;¿Sabes qué dice hoy ChatGPT sobre tu negocio?&quot;, &quot;¿Tu web tiene un archivo llms.txt?&quot;, &quot;¿Has comprobado que robots.txt no bloquea a los bots de IA (GPTBot, PerplexityBot)?&quot;, &quot;¿Tu web usa datos estructurados Schema.org (JSON-LD)?&quot;, &quot;¿Tu contenido responde directamente a las preguntas de los clientes — precios, plazos, datos concretos?&quot;, &quot;¿Tu negocio aparece en directorios, mapas y portales de reseñas con datos idénticos en todas partes?&quot;, &quot;¿La información clave de la web se actualizó en los últimos 6 meses?&quot;], &quot;tiers&quot;: {&quot;low&quot;: &quot;Carencias serias. Lo más probable es que los asistentes de IA no vean tu negocio o no confíen en él — y ahora mismo recomiendan a tu competencia.&quot;, &quot;mid&quot;: &quot;Hay una base, pero faltan varias capas críticas. Correcciones puntuales te llevarían a la zona visible.&quot;, &quot;high&quot;: &quot;¡Sólido! Los fundamentos están — siguiente paso: verificar cómo responde realmente la IA y defender la posición.&quot;}, &quot;subj&quot;: &quot;Solicitud de auditoría GEO (mi puntuación: {s}/100)&quot;, &quot;body&quot;: &quot;Hola Mentio: mi AI Visibility Score es {s}/100. Por favor, revisad mi web: &quot;}">
+      <div class="quiz-progress"><span></span></div>
+      <p class="quiz-count"></p>
+      <p class="quiz-q"></p>
+      <div class="quiz-opts">
+        <button type="button" data-v="2">Sí</button>
+        <button type="button" data-v="1">No estoy seguro</button>
+        <button type="button" data-v="0">No</button>
+      </div>
+      <div class="quiz-result" hidden>
+        <div class="score-ring"><span class="score-num">0</span></div>
+        <p class="quiz-verdict"></p>
+        <a class="btn btn-primary quiz-cta" href="mailto:team@mentio.agency">Enviadme la auditoría completa</a>
+        <button type="button" class="quiz-restart">Repetir el test</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="calc">
+  <div class="wrap">
+    <p class="kicker">El coste de la invisibilidad</p>
+    <h2>¿Cuánto te cuesta ser invisible para la IA?</h2>
+    <p class="lead">Estimación aproximada: si una parte de los compradores empieza por la IA y no estás en sus respuestas, esos clientes nunca llegan a ti.</p>
+    <div class="calc card" data-cfg="{&quot;locale&quot;: &quot;es-ES&quot;, &quot;currency&quot;: &quot;EUR&quot;, &quot;mo&quot;: &quot;/ mes en ingresos perdidos&quot;, &quot;yr&quot;: &quot;/ año&quot;, &quot;cust&quot;: &quot;{n} clientes que nunca ves&quot;}">
+      <div class="calc-row">
+        <label>Clientes nuevos al mes <b data-val="clients"></b></label>
+        <input type="range" data-in="clients" min="5" max="500" step="5" value="50">
+      </div>
+      <div class="calc-row">
+        <label>Ticket medio <b data-val="check"></b></label>
+        <input type="range" data-in="check" min="10" max="2000" step="10" value="200">
+      </div>
+      <div class="calc-row">
+        <label>Porcentaje de compradores que empiezan por la IA <b data-val="share"></b></label>
+        <input type="range" data-in="share" min="5" max="60" step="1" value="25">
+      </div>
+      <div class="calc-out">
+        <div class="calc-big"></div>
+        <p class="calc-sub"></p>
+        <p class="calc-disc">Estimación según tus datos; la comprobación gratuita muestra la imagen real.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="faq" class="alt">
   <div class="wrap">
     <p class="kicker">FAQ</p>
