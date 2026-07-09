@@ -13,6 +13,7 @@
   --grad:linear-gradient(135deg,#E5383B 0%,#FF6B35 100%);
 }
 *{margin:0;padding:0;box-sizing:border-box}
+[hidden]{display:none !important}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:'Inter',-apple-system,system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
 h1,h2,h3,.logo{font-family:'Space Grotesk','Inter',sans-serif}

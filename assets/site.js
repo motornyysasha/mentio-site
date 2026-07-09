@@ -190,7 +190,7 @@
         encodeURIComponent(cfg.body.replace("{s}", score));
     }
     opts.addEventListener("click", function (e) {
-      var b = e.target.closest("button"); if (!b) return;
+      var b = e.target.closest("button"); if (!b || i >= n) return;
       sum += Number(b.getAttribute("data-v"));
       i++;
       if (i < n) show(); else finish();
