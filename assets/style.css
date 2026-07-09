@@ -131,7 +131,7 @@ footer a:hover{color:var(--orange)}
 .marquee-track{display:flex;width:max-content;animation:mscroll 30s linear infinite}
 .marquee-set{display:flex;gap:3.2rem;padding-right:3.2rem}
 .marquee-track span{font-size:.82rem;color:var(--dim);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;font-family:'Space Grotesk','Inter',sans-serif}
-@keyframes mscroll{to{transform:translateX(-50%)}}
+@keyframes mscroll{to{transform:translateX(calc(-100% / 6))}}
 
 /* ===== reveal on scroll ===== */
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
