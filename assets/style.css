@@ -75,7 +75,7 @@ h2{font-size:clamp(1.6rem,3.4vw,2.3rem);letter-spacing:-.02em;line-height:1.2;ma
 .svc li{padding:.34rem 0 .34rem 1.4rem;position:relative;color:var(--muted);font-size:.93rem}
 .svc li::before{content:"";position:absolute;left:0;top:.72rem;width:.55rem;height:.55rem;border-radius:2px;background:var(--grad)}
 .svc-featured{border-color:rgba(255,107,53,.45)}
-.svc-badge{position:absolute;top:-12px;right:18px;background:var(--grad);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.28rem .8rem;border-radius:999px}
+.svc-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);white-space:nowrap;background:var(--grad);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.28rem .8rem;border-radius:999px}
 
 .steps{counter-reset:step}
 .step{display:flex;gap:1.3rem;padding:1.4rem 0;border-bottom:1px solid var(--border);align-items:flex-start}
