@@ -164,7 +164,19 @@
     var num = qz.querySelector(".score-num");
     var verdict = qz.querySelector(".quiz-verdict");
     var cta = qz.querySelector(".quiz-cta");
-    var i = 0, sum = 0, n = cfg.qs.length;
+    var i = 0, sum = 0, n = cfg.qs.length, lastScore = 0;
+    var site = document.createElement("input");
+    site.className = "quiz-site"; site.type = "text"; site.autocomplete = "off";
+    var scanIn = document.querySelector(".scan-form input");
+    site.placeholder = scanIn ? scanIn.placeholder : "yoursite.com";
+    result.insertBefore(site, cta);
+    function buildHref() {
+      var d = site.value.trim().toLowerCase().replace(/^https?:\/\//, "").replace(/\/.*$/, "");
+      cta.href = "mailto:team@mentio.agency?subject=" +
+        encodeURIComponent(cfg.subj.replace("{s}", lastScore) + (d ? " \u2014 " + d : "")) + "&body=" +
+        encodeURIComponent(cfg.body.replace("{s}", lastScore) + d);
+    }
+    site.addEventListener("input", buildHref);
 
     function show() {
       countEl.textContent = (i + 1) + " / " + n;
@@ -185,9 +197,8 @@
         if (cur >= score) { cur = score; clearInterval(t); }
         num.innerHTML = cur + "<small>/100</small>";
       }, 30);
-      cta.href = "mailto:team@mentio.agency?subject=" +
-        encodeURIComponent(cfg.subj.replace("{s}", score)) + "&body=" +
-        encodeURIComponent(cfg.body.replace("{s}", score));
+      lastScore = score;
+      buildHref();
     }
     opts.addEventListener("click", function (e) {
       var b = e.target.closest("button"); if (!b || i >= n) return;
