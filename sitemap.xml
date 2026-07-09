@@ -79,4 +79,76 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://mentio.agency/es/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mentio.agency/"/>
   </url>
+  <url>
+    <loc>https://mentio.agency/blog/</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mentio.agency/blog/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mentio.agency/ua/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mentio.agency/blog/"/>
+  </url>
+  <url>
+    <loc>https://mentio.agency/ua/blog/</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mentio.agency/blog/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mentio.agency/ua/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mentio.agency/blog/"/>
+  </url>
+  <url>
+    <loc>https://mentio.agency/blog/what-is-llms-txt/</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mentio.agency/blog/what-is-llms-txt/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mentio.agency/ua/blog/what-is-llms-txt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mentio.agency/blog/what-is-llms-txt/"/>
+  </url>
+  <url>
+    <loc>https://mentio.agency/ua/blog/what-is-llms-txt/</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mentio.agency/blog/what-is-llms-txt/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mentio.agency/ua/blog/what-is-llms-txt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mentio.agency/blog/what-is-llms-txt/"/>
+  </url>
+  <url>
+    <loc>https://mentio.agency/blog/check-ai-visibility/</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mentio.agency/blog/check-ai-visibility/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mentio.agency/ua/blog/check-ai-visibility/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mentio.agency/blog/check-ai-visibility/"/>
+  </url>
+  <url>
+    <loc>https://mentio.agency/ua/blog/check-ai-visibility/</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mentio.agency/blog/check-ai-visibility/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mentio.agency/ua/blog/check-ai-visibility/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mentio.agency/blog/check-ai-visibility/"/>
+  </url>
+  <url>
+    <loc>https://mentio.agency/blog/why-ai-recommends-competitors/</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mentio.agency/blog/why-ai-recommends-competitors/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mentio.agency/ua/blog/why-ai-recommends-competitors/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mentio.agency/blog/why-ai-recommends-competitors/"/>
+  </url>
+  <url>
+    <loc>https://mentio.agency/ua/blog/why-ai-recommends-competitors/</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mentio.agency/blog/why-ai-recommends-competitors/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mentio.agency/ua/blog/why-ai-recommends-competitors/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mentio.agency/blog/why-ai-recommends-competitors/"/>
+  </url>
 </urlset>

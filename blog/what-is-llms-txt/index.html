@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What is llms.txt and does your website need one? — Mentio Blog</title>
+<meta name="description" content="llms.txt is a proposed standard: a markdown file that gives AI systems a curated map of your website. What it is, how it differs from robots.txt and sitemap.xml, and how to write one.">
+<link rel="canonical" href="https://mentio.agency/blog/what-is-llms-txt/">
+<link rel="alternate" hreflang="en" href="https://mentio.agency/blog/what-is-llms-txt/">
+<link rel="alternate" hreflang="uk" href="https://mentio.agency/ua/blog/what-is-llms-txt/">
+<link rel="alternate" hreflang="x-default" href="https://mentio.agency/blog/what-is-llms-txt/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mentio.agency/blog/what-is-llms-txt/">
+<meta property="og:site_name" content="Mentio">
+<meta property="og:title" content="What is llms.txt and does your website need one?">
+<meta property="og:description" content="llms.txt is a proposed standard: a markdown file that gives AI systems a curated map of your website. What it is, how it differs from robots.txt and sitemap.xml, and how to write one.">
+<meta property="og:image" content="https://mentio.agency/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mentio.agency/assets/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23E5383B'/%3E%3Cstop offset='1' stop-color='%23FF6B35'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='%230B0B10'/%3E%3Cpath d='M25 75V25l25 30 25-30v50' fill='none' stroke='url(%23g)' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "What is llms.txt and does your website need one?",
+ "description": "llms.txt is a proposed standard: a markdown file that gives AI systems a curated map of your website. What it is, how it differs from robots.txt and sitemap.xml, and how to write one.",
+ "inLanguage": "en",
+ "datePublished": "2026-07-09",
+ "dateModified": "2026-07-09",
+ "image": "https://mentio.agency/assets/og.png",
+ "mainEntityOfPage": "https://mentio.agency/blog/what-is-llms-txt/",
+ "author": {
+  "@type": "Organization",
+  "name": "Mentio",
+  "url": "https://mentio.agency/"
+ },
+ "publisher": {
+  "@type": "Organization",
+  "name": "Mentio",
+  "url": "https://mentio.agency/",
+  "email": "team@mentio.agency"
+ }
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="/"><span class="logo-dot"></span>Mentio</a>
+    <div class="nav-links">
+      <a href="/#geo">What is GEO</a>
+      <a href="/#services">Services</a>
+      <a href="/blog/">Blog</a>
+      <a class="lang-select" style="text-decoration:none" href="/ua/blog/what-is-llms-txt/" lang="uk">UA</a>
+      <a class="nav-cta" href="mailto:team@mentio.agency?subject=Free%20AI%20visibility%20check">Free check</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap post-head">
+  <p class="post-meta"><a href="/blog/" style="color:inherit;text-decoration:none">← Blog</a> · Mentio · July 9, 2026</p>
+  <h2 style="font-size:clamp(1.7rem,3.6vw,2.5rem)">What is llms.txt and does your website need one?</h2>
+</div>
+<article class="post">
+  <div class="wrap">
+    <div class="post-body">
+<p><strong>llms.txt is a plain-text markdown file placed at the root of your website</strong> (like <code>yoursite.com/llms.txt</code>) that gives AI systems a curated, structured summary of what your site is about and where the important content lives. The standard was proposed in September 2024 by Jeremy Howard of Answer.AI, and adoption has been growing ever since.</p>
+<h2>How it differs from robots.txt and sitemap.xml</h2>
+<p>Your site probably already has two files that talk to machines, but they answer different questions:</p>
+<ul>
+<li><strong>robots.txt</strong> answers "where may you go?" — it controls crawler access.</li>
+<li><strong>sitemap.xml</strong> answers "what URLs exist?" — it lists pages with no context about what matters.</li>
+<li><strong>llms.txt</strong> answers "what should you understand about us?" — it's a human-written map: what the business does, which pages carry the key facts, and how the content is organized.</li>
+</ul>
+<p>Large language models work with limited context. When an AI system tries to understand your website, it can either parse dozens of cluttered HTML pages — navigation, cookie banners, scripts — or read one clean file written specifically for it. That's the entire idea of llms.txt.</p>
+<h2>What it looks like</h2>
+<pre><code># Acme Dental Clinic
+
+&gt; Family dental clinic in Austin, TX. Implants,
+&gt; orthodontics and pediatric dentistry since 2009.
+
+## Services
+- [Implants](https://acme.dental/implants): pricing and process
+- [Invisalign](https://acme.dental/invisalign): teen and adult plans
+
+## About
+- [Team](https://acme.dental/team): doctors and credentials
+- [Reviews](https://acme.dental/reviews): verified patient feedback
+</code></pre>
+<p>The format is simple: an H1 with the name, a blockquote with a one-paragraph summary, then sections with annotated links. Full spec at <a href="https://llmstxt.org" rel="noopener">llmstxt.org</a>.</p>
+<h2>Does your site actually need one?</h2>
+<p>Honest answer: not every AI system reads llms.txt today, and nobody can guarantee when full adoption comes. But the cost-benefit is lopsided: the file takes half an hour to write, doesn't interfere with anything, and every system that does read it gets a perfectly clear picture of your business — written by you, not guessed by a model from your HTML.</p>
+<p>We treat it as cheap insurance with growing upside. Every <a href="/#services">Mentio GEO audit</a> checks whether you have one, whether it's valid, and generates one if you don't.</p>
+    </div>
+<div class="post-cta">
+  <p><strong>Want to know how AI assistants see your website?</strong> Send us your address — we reply with a free summary of what ChatGPT, Perplexity and Gemini currently say about your business.</p>
+  <a class="btn btn-primary" href="mailto:team@mentio.agency?subject=Free%20AI%20visibility%20check">Get a free AI visibility check</a>
+</div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Mentio · Generative Engine Optimization</span>
+    <span><a href="mailto:team@mentio.agency">team@mentio.agency</a> · <a href="/">Home</a> · <a href="/blog/">Blog</a> · <a href="/llms.txt">llms.txt</a></span>
+  </div>
+</footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

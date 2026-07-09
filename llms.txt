@@ -25,6 +25,12 @@ Key facts:
 - GEO Implementation: hands-on fixes — structured data, llms.txt, crawler access, content restructuring — with a verification checklist
 - GEO Monitoring: monthly re-audits, citation tracking and progress reporting
 
+## Blog (practical GEO guides)
+
+- [What is llms.txt and does your website need one?](https://mentio.agency/blog/what-is-llms-txt/): the llms.txt standard explained — format, purpose, honest adoption status
+- [How to check what AI says about your business](https://mentio.agency/blog/check-ai-visibility/): a 5-minute self-test across ChatGPT, Perplexity and Gemini
+- [5 reasons AI assistants recommend your competitors](https://mentio.agency/blog/why-ai-recommends-competitors/): the most common technical and content causes of AI invisibility
+
 ## Contact
 
 - Email: team@mentio.agency

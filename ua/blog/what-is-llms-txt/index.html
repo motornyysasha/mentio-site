@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Що таке llms.txt і чи потрібен він вашому сайту? — Блог Mentio</title>
+<meta name="description" content="llms.txt — запропонований стандарт: markdown-файл, що дає AI-системам структуровану мапу вашого сайту. Що це, чим відрізняється від robots.txt і sitemap.xml та як його написати.">
+<link rel="canonical" href="https://mentio.agency/ua/blog/what-is-llms-txt/">
+<link rel="alternate" hreflang="en" href="https://mentio.agency/blog/what-is-llms-txt/">
+<link rel="alternate" hreflang="uk" href="https://mentio.agency/ua/blog/what-is-llms-txt/">
+<link rel="alternate" hreflang="x-default" href="https://mentio.agency/blog/what-is-llms-txt/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mentio.agency/ua/blog/what-is-llms-txt/">
+<meta property="og:site_name" content="Mentio">
+<meta property="og:title" content="Що таке llms.txt і чи потрібен він вашому сайту?">
+<meta property="og:description" content="llms.txt — запропонований стандарт: markdown-файл, що дає AI-системам структуровану мапу вашого сайту. Що це, чим відрізняється від robots.txt і sitemap.xml та як його написати.">
+<meta property="og:image" content="https://mentio.agency/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mentio.agency/assets/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23E5383B'/%3E%3Cstop offset='1' stop-color='%23FF6B35'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='%230B0B10'/%3E%3Cpath d='M25 75V25l25 30 25-30v50' fill='none' stroke='url(%23g)' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "Що таке llms.txt і чи потрібен він вашому сайту?",
+ "description": "llms.txt — запропонований стандарт: markdown-файл, що дає AI-системам структуровану мапу вашого сайту. Що це, чим відрізняється від robots.txt і sitemap.xml та як його написати.",
+ "inLanguage": "uk",
+ "datePublished": "2026-07-09",
+ "dateModified": "2026-07-09",
+ "image": "https://mentio.agency/assets/og.png",
+ "mainEntityOfPage": "https://mentio.agency/ua/blog/what-is-llms-txt/",
+ "author": {
+  "@type": "Organization",
+  "name": "Mentio",
+  "url": "https://mentio.agency/"
+ },
+ "publisher": {
+  "@type": "Organization",
+  "name": "Mentio",
+  "url": "https://mentio.agency/",
+  "email": "team@mentio.agency"
+ }
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="/ua/"><span class="logo-dot"></span>Mentio</a>
+    <div class="nav-links">
+      <a href="/ua/#geo">Що таке GEO</a>
+      <a href="/ua/#services">Послуги</a>
+      <a href="/ua/blog/">Блог</a>
+      <a class="lang-select" style="text-decoration:none" href="/blog/what-is-llms-txt/" lang="en">EN</a>
+      <a class="nav-cta" href="mailto:team@mentio.agency?subject=%D0%91%D0%B5%D0%B7%D0%BA%D0%BE%D1%88%D1%82%D0%BE%D0%B2%D0%BD%D0%B0%20AI-%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D1%96%D1%80%D0%BA%D0%B0">Безкоштовна перевірка</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap post-head">
+  <p class="post-meta"><a href="/ua/blog/" style="color:inherit;text-decoration:none">← Блог</a> · Mentio · 9 липня 2026</p>
+  <h2 style="font-size:clamp(1.7rem,3.6vw,2.5rem)">Що таке llms.txt і чи потрібен він вашому сайту?</h2>
+</div>
+<article class="post">
+  <div class="wrap">
+    <div class="post-body">
+<p><strong>llms.txt — це текстовий markdown-файл у корені сайту</strong> (наприклад, <code>vashsait.com/llms.txt</code>), який дає AI-системам структурований підсумок: про що сайт і де лежить важливий контент. Стандарт запропонував Джеремі Говард з Answer.AI у вересні 2024 року, і його підтримка відтоді зростає.</p>
+<h2>Чим він відрізняється від robots.txt і sitemap.xml</h2>
+<p>На вашому сайті, ймовірно, вже є два файли для машин, але вони відповідають на різні питання:</p>
+<ul>
+<li><strong>robots.txt</strong> відповідає «куди можна заходити?» — керує доступом краулерів.</li>
+<li><strong>sitemap.xml</strong> відповідає «які URL існують?» — перелік сторінок без контексту.</li>
+<li><strong>llms.txt</strong> відповідає «що про нас треба зрозуміти?» — це написана людиною мапа: чим займається бізнес, на яких сторінках ключові факти, як організований контент.</li>
+</ul>
+<p>Мовні моделі працюють з обмеженим контекстом. Коли AI-система намагається зрозуміти ваш сайт, вона може або розбирати десятки захаращених HTML-сторінок — навігацію, банери, скрипти — або прочитати один чистий файл, написаний спеціально для неї. У цьому вся ідея llms.txt.</p>
+<h2>Як він виглядає</h2>
+<pre><code># Acme Dental Clinic
+
+&gt; Family dental clinic in Austin, TX. Implants,
+&gt; orthodontics and pediatric dentistry since 2009.
+
+## Services
+- [Implants](https://acme.dental/implants): pricing and process
+- [Invisalign](https://acme.dental/invisalign): teen and adult plans
+
+## About
+- [Team](https://acme.dental/team): doctors and credentials
+- [Reviews](https://acme.dental/reviews): verified patient feedback
+</code></pre>
+<p>Формат простий: H1 з назвою, цитата з підсумком на абзац, далі розділи з анотованими посиланнями. Повна специфікація — на <a href="https://llmstxt.org" rel="noopener">llmstxt.org</a>.</p>
+<h2>То чи потрібен він вам?</h2>
+<p>Чесна відповідь: сьогодні llms.txt читають не всі AI-системи, і ніхто не гарантує, коли настане повна підтримка. Але співвідношення витрат і вигоди очевидне: файл пишеться за пів години, нічому не заважає, а кожна система, яка його читає, отримує ідеально чітку картину вашого бізнесу — написану вами, а не вгадану моделлю з вашого HTML.</p>
+<p>Ми вважаємо це дешевою страховкою зі зростаючим потенціалом. Кожен <a href="/ua/#services">GEO-аудит Mentio</a> перевіряє, чи є у вас цей файл, чи він валідний, і генерує його, якщо немає.</p>
+    </div>
+<div class="post-cta">
+  <p><strong>Хочете знати, як AI-асистенти бачать ваш сайт?</strong> Надішліть нам адресу — у відповідь безкоштовний підсумок того, що ChatGPT, Perplexity і Gemini зараз кажуть про ваш бізнес.</p>
+  <a class="btn btn-primary" href="mailto:team@mentio.agency?subject=%D0%91%D0%B5%D0%B7%D0%BA%D0%BE%D1%88%D1%82%D0%BE%D0%B2%D0%BD%D0%B0%20AI-%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D1%96%D1%80%D0%BA%D0%B0">Безкоштовна AI-перевірка</a>
+</div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Mentio · Generative Engine Optimization</span>
+    <span><a href="mailto:team@mentio.agency">team@mentio.agency</a> · <a href="/ua/">Головна</a> · <a href="/ua/blog/">Блог</a> · <a href="/llms.txt">llms.txt</a></span>
+  </div>
+</footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

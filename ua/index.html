@@ -18,11 +18,15 @@
 <meta property="og:site_name" content="Mentio">
 <meta property="og:title" content="Mentio — щоб AI рекомендував саме вас">
 <meta property="og:description" content="Ваші клієнти вже питають ChatGPT, Perplexity та Google AI перед покупкою. Mentio робить так, щоб у відповіді були ви.">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://mentio.agency/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mentio.agency/assets/og.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23E5383B'/%3E%3Cstop offset='1' stop-color='%23FF6B35'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='%230B0B10'/%3E%3Cpath d='M25 75V25l25 30 25-30v50' fill='none' stroke='url(%23g)' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -74,6 +78,7 @@
       <a href="#services">Послуги</a>
       <a href="#process">Процес</a>
       <a href="#faq">Питання</a>
+      <a href="/ua/blog/">Блог</a>
       <select class="lang-select" aria-label="Language" onchange="if(this.value)location.href=this.value"><option value="/">EN</option><option value="/ua/" selected>UA</option><option value="/de/">DE</option><option value="/fr/">FR</option><option value="/pl/">PL</option><option value="/es/">ES</option></select>
       <a class="nav-cta" href="mailto:team@mentio.agency?subject=%D0%91%D0%B5%D0%B7%D0%BA%D0%BE%D1%88%D1%82%D0%BE%D0%B2%D0%BD%D0%B0%20AI-%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D1%96%D1%80%D0%BA%D0%B0">Безкоштовна перевірка</a>
     </div>
@@ -81,8 +86,8 @@
 </nav>
 
 <header class="hero">
-  <div class="hero-glow"></div>
-  <div class="wrap">
+  <div class="wrap hero-grid">
+    <div class="hero-left">
     <span class="eyebrow">Generative Engine Optimization</span>
     <h1>Ваші клієнти вже питають AI.<br>Чи є <span class="grad-text">ви у відповіді?</span></h1>
     <p class="sub">ChatGPT, Perplexity, Gemini та Google AI Overviews тепер відповідають на запити покупців напряму — і цитують лише кілька бізнесів. Mentio робить так, щоб серед них були ви.</p>
@@ -91,8 +96,23 @@
       <a class="btn btn-ghost" href="#geo">Як це працює</a>
     </div>
     <p class="hero-note">Один лист. У відповідь — що AI зараз каже про ваш бізнес. Без жодних зобов'язань.</p>
+    </div>
+    <div class="demo" role="img" aria-label="AI-асистент">
+      <div class="demo-bar"><i></i><i></i><i></i><span>AI-асистент</span></div>
+      <div class="demo-body">
+        <div class="msg msg-user" data-part="q">Хто найкращий у [ваша ніша] у моєму місті?</div>
+        <div class="msg msg-ai" data-part="a">
+          <div class="ai-tag"><span class="ai-dot"></span>AI-асистент</div>
+          <span data-part="atext">На основі перевірених даних, відгуків та експертизи я б порадив:</span>
+          <div class="rec">Конкурент А</div>
+          <div class="rec win"><span class="check">✓</span>&nbsp;Ваш бізнес — рекомендовано AI</div>
+          <div class="rec">Конкурент Б</div>
+        </div>
+      </div>
+    </div>
   </div>
 </header>
+<div class="marquee" aria-hidden="true"><div class="marquee-track"><span>ChatGPT</span><span>Perplexity</span><span>Gemini</span><span>Google AI Overviews</span><span>Bing Copilot</span><span>Claude</span><span>Meta AI</span><span>ChatGPT</span><span>Perplexity</span><span>Gemini</span><span>Google AI Overviews</span><span>Bing Copilot</span><span>Claude</span><span>Meta AI</span></div></div>
 
 <section id="why" class="alt">
   <div class="wrap">
@@ -259,7 +279,12 @@
   <div class="wrap">
     <h2>Дізнайтесь, що AI каже про ваш бізнес — <span class="grad-text">раніше за конкурентів.</span></h2>
     <p>Перевірка безкоштовна і займає один лист. У гіршому разі — переконаєтесь, що все гаразд. У кращому — закриєте витік, про який не знали.</p>
-    <a class="btn btn-primary" href="mailto:team@mentio.agency?subject=%D0%91%D0%B5%D0%B7%D0%BA%D0%BE%D1%88%D1%82%D0%BE%D0%B2%D0%BD%D0%B0%20AI-%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D1%96%D1%80%D0%BA%D0%B0&body=%D0%92%D1%96%D1%82%D0%B0%D1%8E%2C%20Mentio!%0A%0A%D0%9F%D0%B5%D1%80%D0%B5%D0%B2%D1%96%D1%80%D1%82%D0%B5%2C%20%D0%B1%D1%83%D0%B4%D1%8C%20%D0%BB%D0%B0%D1%81%D0%BA%D0%B0%2C%20%D1%8F%D0%BA%20AI-%D0%B0%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BD%D1%82%D0%B8%20%D0%B1%D0%B0%D1%87%D0%B0%D1%82%D1%8C%20%D0%BC%D1%96%D0%B9%20%D1%81%D0%B0%D0%B9%D1%82%3A%20">Отримати безкоштовну AI-перевірку</a>
+<form class="scan-form" data-cfg="{&quot;steps&quot;: [&quot;Перевіряємо robots.txt і доступ AI-краулерів…&quot;, &quot;Шукаємо llms.txt і структуровані дані…&quot;, &quot;Питаємо AI-асистентів про цей сайт…&quot;], &quot;done&quot;: &quot;Готово! Відкриваємо лист із запитом →&quot;, &quot;invalid&quot;: &quot;Введіть коректний домен, напр. vash-sait.com&quot;, &quot;subject&quot;: &quot;Безкоштовна AI-перевірка:&quot;, &quot;body&quot;: &quot;Вітаю, Mentio!\n\nПеревірте, будь ласка, як AI-асистенти бачать мій сайт:&quot;}">
+      <input type="text" inputmode="url" autocomplete="off" placeholder="vash-sait.com" aria-label="vash-sait.com">
+      <button type="submit">Перевірити сайт</button>
+    </form>
+    <p class="scan-status" aria-live="polite"></p>
+        <a class="btn btn-primary" href="mailto:team@mentio.agency?subject=%D0%91%D0%B5%D0%B7%D0%BA%D0%BE%D1%88%D1%82%D0%BE%D0%B2%D0%BD%D0%B0%20AI-%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D1%96%D1%80%D0%BA%D0%B0&body=%D0%92%D1%96%D1%82%D0%B0%D1%8E%2C%20Mentio!%0A%0A%D0%9F%D0%B5%D1%80%D0%B5%D0%B2%D1%96%D1%80%D1%82%D0%B5%2C%20%D0%B1%D1%83%D0%B4%D1%8C%20%D0%BB%D0%B0%D1%81%D0%BA%D0%B0%2C%20%D1%8F%D0%BA%20AI-%D0%B0%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BD%D1%82%D0%B8%20%D0%B1%D0%B0%D1%87%D0%B0%D1%82%D1%8C%20%D0%BC%D1%96%D0%B9%20%D1%81%D0%B0%D0%B9%D1%82%3A%20">Отримати безкоштовну AI-перевірку</a>
   </div>
 </section>
 
@@ -278,5 +303,6 @@
   </div>
 </footer>
 
+<script src="/assets/site.js" defer></script>
 </body>
 </html>

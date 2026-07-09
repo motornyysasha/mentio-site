@@ -18,15 +18,27 @@
 <meta property="og:site_name" content="Mentio">
 <meta property="og:title" content="Mentio — Get recommended by AI">
 <meta property="og:description" content="Your customers now ask ChatGPT, Perplexity and Google AI before they buy. Mentio makes sure the answer includes you.">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://mentio.agency/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mentio.agency/assets/og.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23E5383B'/%3E%3Cstop offset='1' stop-color='%23FF6B35'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='%230B0B10'/%3E%3Cpath d='M25 75V25l25 30 25-30v50' fill='none' stroke='url(%23g)' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://mentio.agency/#website",
+      "url": "https://mentio.agency/",
+      "name": "Mentio",
+      "publisher": {"@id": "https://mentio.agency/#org"},
+      "inLanguage": ["en", "uk", "de", "fr", "pl", "es"]
+    },
     {
       "@type": "Organization",
       "@id": "https://mentio.agency/#org",
@@ -102,6 +114,7 @@
       <a href="#services">Services</a>
       <a href="#process">Process</a>
       <a href="#faq">FAQ</a>
+      <a href="/blog/">Blog</a>
       <select class="lang-select" aria-label="Language" onchange="if(this.value)location.href=this.value"><option value="/" selected>EN</option><option value="/ua/">UA</option><option value="/de/">DE</option><option value="/fr/">FR</option><option value="/pl/">PL</option><option value="/es/">ES</option></select>
       <a class="nav-cta" href="mailto:team@mentio.agency?subject=Free%20AI%20visibility%20check">Free check</a>
     </div>
@@ -109,8 +122,8 @@
 </nav>
 
 <header class="hero">
-  <div class="hero-glow"></div>
-  <div class="wrap">
+  <div class="wrap hero-grid">
+    <div class="hero-left">
     <span class="eyebrow">Generative Engine Optimization</span>
     <h1>Your customers are asking AI.<br>Is it <span class="grad-text">answering with you?</span></h1>
     <p class="sub">ChatGPT, Perplexity, Gemini and Google AI Overviews now answer buying questions directly — citing only a handful of businesses. Mentio makes sure yours is one of them.</p>
@@ -119,8 +132,23 @@
       <a class="btn btn-ghost" href="#geo">How it works</a>
     </div>
     <p class="hero-note">One email. We reply with what AI currently says about your business — no strings attached.</p>
+    </div>
+    <div class="demo" role="img" aria-label="AI assistant">
+      <div class="demo-bar"><i></i><i></i><i></i><span>AI assistant</span></div>
+      <div class="demo-body">
+        <div class="msg msg-user" data-part="q">Who's the best [your industry] company in my city?</div>
+        <div class="msg msg-ai" data-part="a">
+          <div class="ai-tag"><span class="ai-dot"></span>AI assistant</div>
+          <span data-part="atext">Based on verified data, reviews and expertise, here's who I'd recommend:</span>
+          <div class="rec">Competitor A</div>
+          <div class="rec win"><span class="check">✓</span>&nbsp;Your business — recommended by AI</div>
+          <div class="rec">Competitor B</div>
+        </div>
+      </div>
+    </div>
   </div>
 </header>
+<div class="marquee" aria-hidden="true"><div class="marquee-track"><span>ChatGPT</span><span>Perplexity</span><span>Gemini</span><span>Google AI Overviews</span><span>Bing Copilot</span><span>Claude</span><span>Meta AI</span><span>ChatGPT</span><span>Perplexity</span><span>Gemini</span><span>Google AI Overviews</span><span>Bing Copilot</span><span>Claude</span><span>Meta AI</span></div></div>
 
 <section id="why" class="alt">
   <div class="wrap">
@@ -287,7 +315,12 @@
   <div class="wrap">
     <h2>Find out what AI says about your business — <span class="grad-text">before your competitors do.</span></h2>
     <p>The check is free and takes one email. Worst case, you learn you're fine. Best case, you fix a leak you didn't know existed.</p>
-    <a class="btn btn-primary" href="mailto:team@mentio.agency?subject=Free%20AI%20visibility%20check&body=Hi%20Mentio%2C%0A%0APlease%20check%20how%20AI%20assistants%20see%20my%20website%3A%20">Get my free AI visibility check</a>
+<form class="scan-form" data-cfg="{&quot;steps&quot;: [&quot;Checking robots.txt and AI crawler access…&quot;, &quot;Looking for llms.txt and structured data…&quot;, &quot;Asking AI assistants about this site…&quot;], &quot;done&quot;: &quot;Done! Opening your email draft →&quot;, &quot;invalid&quot;: &quot;Please enter a valid domain, e.g. yourwebsite.com&quot;, &quot;subject&quot;: &quot;Free AI visibility check:&quot;, &quot;body&quot;: &quot;Hi Mentio,\n\nPlease check how AI assistants see my website:&quot;}">
+      <input type="text" inputmode="url" autocomplete="off" placeholder="yourwebsite.com" aria-label="yourwebsite.com">
+      <button type="submit">Check my site</button>
+    </form>
+    <p class="scan-status" aria-live="polite"></p>
+        <a class="btn btn-primary" href="mailto:team@mentio.agency?subject=Free%20AI%20visibility%20check&body=Hi%20Mentio%2C%0A%0APlease%20check%20how%20AI%20assistants%20see%20my%20website%3A%20">Get my free AI visibility check</a>
   </div>
 </section>
 
@@ -306,5 +339,6 @@
   </div>
 </footer>
 
+<script src="/assets/site.js" defer></script>
 </body>
 </html>

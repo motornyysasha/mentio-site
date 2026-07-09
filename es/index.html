@@ -18,11 +18,15 @@
 <meta property="og:site_name" content="Mentio">
 <meta property="og:title" content="Mentio — haz que la IA te recomiende">
 <meta property="og:description" content="Tus clientes preguntan a ChatGPT, Perplexity y Google AI antes de comprar. Mentio se asegura de que la respuesta te incluya.">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://mentio.agency/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mentio.agency/assets/og.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23E5383B'/%3E%3Cstop offset='1' stop-color='%23FF6B35'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='%230B0B10'/%3E%3Cpath d='M25 75V25l25 30 25-30v50' fill='none' stroke='url(%23g)' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -81,8 +85,8 @@
 </nav>
 
 <header class="hero">
-  <div class="hero-glow"></div>
-  <div class="wrap">
+  <div class="wrap hero-grid">
+    <div class="hero-left">
     <span class="eyebrow">Generative Engine Optimization</span>
     <h1>Tus clientes ya le preguntan a la IA.<br>¿Estás <span class="grad-text">en la respuesta?</span></h1>
     <p class="sub">ChatGPT, Perplexity, Gemini y Google AI Overviews ahora responden directamente a las preguntas de compra — citando solo a un puñado de negocios. Mentio se asegura de que el tuyo sea uno de ellos.</p>
@@ -91,8 +95,23 @@
       <a class="btn btn-ghost" href="#geo">Cómo funciona</a>
     </div>
     <p class="hero-note">Un solo correo. Te respondemos con lo que la IA dice hoy de tu negocio — sin ningún compromiso.</p>
+    </div>
+    <div class="demo" role="img" aria-label="Asistente de IA">
+      <div class="demo-bar"><i></i><i></i><i></i><span>Asistente de IA</span></div>
+      <div class="demo-body">
+        <div class="msg msg-user" data-part="q">¿Cuál es la mejor empresa de [tu sector] en mi ciudad?</div>
+        <div class="msg msg-ai" data-part="a">
+          <div class="ai-tag"><span class="ai-dot"></span>Asistente de IA</div>
+          <span data-part="atext">Según datos verificados, reseñas y experiencia, te recomiendo:</span>
+          <div class="rec">Competidor A</div>
+          <div class="rec win"><span class="check">✓</span>&nbsp;Tu negocio — recomendado por la IA</div>
+          <div class="rec">Competidor B</div>
+        </div>
+      </div>
+    </div>
   </div>
 </header>
+<div class="marquee" aria-hidden="true"><div class="marquee-track"><span>ChatGPT</span><span>Perplexity</span><span>Gemini</span><span>Google AI Overviews</span><span>Bing Copilot</span><span>Claude</span><span>Meta AI</span><span>ChatGPT</span><span>Perplexity</span><span>Gemini</span><span>Google AI Overviews</span><span>Bing Copilot</span><span>Claude</span><span>Meta AI</span></div></div>
 
 <section id="why" class="alt">
   <div class="wrap">
@@ -259,7 +278,12 @@
   <div class="wrap">
     <h2>Descubre qué dice la IA de tu negocio — <span class="grad-text">antes que tu competencia.</span></h2>
     <p>El análisis es gratuito y cabe en un correo. En el peor de los casos, confirmas que todo está bien. En el mejor, cierras una fuga que no sabías que existía.</p>
-    <a class="btn btn-primary" href="mailto:team@mentio.agency?subject=An%C3%A1lisis%20gratuito%20de%20visibilidad%20en%20IA&body=Hola%20Mentio%3A%0A%0APor%20favor%2C%20revisad%20c%C3%B3mo%20ven%20los%20asistentes%20de%20IA%20mi%20sitio%20web%3A%20">Quiero mi análisis de IA gratuito</a>
+<form class="scan-form" data-cfg="{&quot;steps&quot;: [&quot;Comprobando robots.txt y acceso de bots de IA…&quot;, &quot;Buscando llms.txt y datos estructurados…&quot;, &quot;Preguntando a los asistentes de IA por este sitio…&quot;], &quot;done&quot;: &quot;¡Listo! Abriendo el borrador de correo →&quot;, &quot;invalid&quot;: &quot;Introduce un dominio válido, p. ej. tu-web.com&quot;, &quot;subject&quot;: &quot;Análisis gratuito de visibilidad en IA:&quot;, &quot;body&quot;: &quot;Hola Mentio:\n\nPor favor, revisad cómo ven los asistentes de IA mi sitio web:&quot;}">
+      <input type="text" inputmode="url" autocomplete="off" placeholder="tu-web.com" aria-label="tu-web.com">
+      <button type="submit">Comprobar mi web</button>
+    </form>
+    <p class="scan-status" aria-live="polite"></p>
+        <a class="btn btn-primary" href="mailto:team@mentio.agency?subject=An%C3%A1lisis%20gratuito%20de%20visibilidad%20en%20IA&body=Hola%20Mentio%3A%0A%0APor%20favor%2C%20revisad%20c%C3%B3mo%20ven%20los%20asistentes%20de%20IA%20mi%20sitio%20web%3A%20">Quiero mi análisis de IA gratuito</a>
   </div>
 </section>
 
@@ -277,5 +301,6 @@
   </div>
 </footer>
 
+<script src="/assets/site.js" defer></script>
 </body>
 </html>
