@@ -245,20 +245,19 @@
     try { cfg = JSON.parse(c.getAttribute("data-cfg")); } catch (e) { return; }
     var clients = c.querySelector('[data-in="clients"]');
     var check = c.querySelector('[data-in="check"]');
-    var share = c.querySelector('[data-in="share"]');
+    var AI_SHARE = 0.25;
     var money = new Intl.NumberFormat(cfg.locale, { style: "currency", currency: cfg.currency, maximumFractionDigits: 0 });
     var ints = new Intl.NumberFormat(cfg.locale, { maximumFractionDigits: 0 });
     function upd() {
-      var cl = +clients.value, ch = +check.value, p = +share.value;
+      var cl = +clients.value, ch = +check.value;
       c.querySelector('[data-val="clients"]').textContent = ints.format(cl);
       c.querySelector('[data-val="check"]').textContent = money.format(ch);
-      c.querySelector('[data-val="share"]').textContent = p + "%";
-      var missed = cl * (p / 100) / (1 - p / 100);
+      var missed = cl * AI_SHARE / (1 - AI_SHARE);
       var perMonth = missed * ch;
       c.querySelector(".calc-big").textContent = "≈ " + money.format(perMonth) + " " + cfg.mo;
       c.querySelector(".calc-sub").textContent = money.format(perMonth * 12) + " " + cfg.yr + " · " + cfg.cust.replace("{n}", ints.format(Math.round(missed)));
     }
-    [clients, check, share].forEach(function (inp) { inp.addEventListener("input", upd); });
+    [clients, check].forEach(function (inp) { inp.addEventListener("input", upd); });
     upd();
   });
 })();
