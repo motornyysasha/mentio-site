@@ -134,17 +134,6 @@
       input.focus();
     }
     input.addEventListener("input", function () { f.classList.remove("invalid"); });
-    var bigCta = f.parentElement.querySelector("a.btn-primary");
-    if (bigCta) {
-      bigCta.addEventListener("click", function (e) {
-        e.preventDefault();
-        var d = domainOf();
-        if (!DRE.test(d)) { rejectEmpty(); return; }
-        window.location.href = "mailto:team@mentio.agency?subject=" +
-          encodeURIComponent(cfg.subject + " " + d) + "&body=" +
-          encodeURIComponent(cfg.body + " " + d);
-      });
-    }
     f.addEventListener("submit", function (e) {
       e.preventDefault();
       var d = domainOf();
