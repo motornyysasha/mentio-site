@@ -116,6 +116,20 @@
     dio.observe(demo);
   }
 
+  /* ---------- lead delivery ---------- */
+  var LEAD_ENDPOINT = window.LEAD_ENDPOINT || "";
+  try { LEAD_ENDPOINT = LEAD_ENDPOINT || localStorage.getItem("leadEndpoint") || ""; } catch (e) {}
+  function submitLead(payload) {
+    payload.lang = document.documentElement.lang || "";
+    payload.page = location.pathname;
+    return fetch(LEAD_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    }).then(function (r) { if (!r.ok) throw new Error("relay " + r.status); });
+  }
+  window.__mentioLead = { enabled: function () { return !!LEAD_ENDPOINT; }, submit: submitLead };
+
   /* ---------- site scanner ---------- */
   document.querySelectorAll("form.scan-form").forEach(function (f) {
     var cfg;
@@ -123,24 +137,37 @@
     var input = f.querySelector("input");
     var btn = f.querySelector("button");
     var status = f.parentElement.querySelector(".scan-status");
-    var DRE = /^[a-z0-9Ѐ-ӿ.-]+\.[a-zЀ-ӿ]{2,}$/i;
+    var DRE = /^[a-z0-9\u0400-\u04ff.-]+\.[a-z\u0400-\u04ff]{2,}$/i;
+    var stage = 1, savedDomain = "";
     function domainOf() {
       return input.value.trim().toLowerCase().replace(/^https?:\/\//, "").replace(/\/.*$/, "");
     }
-    function rejectEmpty() {
+    function reject(msg) {
       status.classList.remove("ok");
-      status.textContent = cfg.invalid;
+      status.textContent = msg;
       f.classList.add("invalid");
       input.focus();
     }
     input.addEventListener("input", function () { f.classList.remove("invalid"); });
     f.addEventListener("submit", function (e) {
       e.preventDefault();
-      var d = domainOf();
-      if (!DRE.test(d)) {
-        rejectEmpty();
+      if (stage === 2) {
+        var contact = input.value.trim();
+        if (contact.length < 4) { reject(cfg.contactPh); return; }
+        btn.disabled = true;
+        submitLead({ type: "scan", domain: savedDomain, contact: contact }).then(function () {
+          status.classList.add("ok");
+          status.textContent = cfg.sent;
+          f.hidden = true;
+        }).catch(function () {
+          status.classList.remove("ok");
+          status.textContent = cfg.err;
+          btn.disabled = false;
+        });
         return;
       }
+      var d = domainOf();
+      if (!DRE.test(d)) { reject(cfg.invalid); return; }
       btn.disabled = true;
       status.classList.remove("ok");
       var chain = Promise.resolve();
@@ -149,11 +176,21 @@
       });
       chain.then(function () {
         status.classList.add("ok");
-        status.textContent = cfg.done;
         btn.disabled = false;
-        window.location.href = "mailto:team@mentio.agency?subject=" +
-          encodeURIComponent(cfg.subject + " " + d) + "&body=" +
-          encodeURIComponent(cfg.body + " " + d);
+        if (LEAD_ENDPOINT) {
+          savedDomain = d;
+          stage = 2;
+          status.textContent = cfg.doneForm;
+          input.value = "";
+          input.placeholder = cfg.contactPh;
+          btn.textContent = cfg.send;
+          input.focus();
+        } else {
+          status.textContent = cfg.done;
+          window.location.href = "mailto:team@mentio.agency?subject=" +
+            encodeURIComponent(cfg.subject + " " + d) + "&body=" +
+            encodeURIComponent(cfg.body + " " + d);
+        }
       });
     });
   });
@@ -190,16 +227,29 @@
       return site.value.trim().toLowerCase().replace(/^https?:\/\//, "").replace(/\/.*$/, "");
     }
     function isValid(d) { return /^[a-z0-9\u0400-\u04ff.-]+\.[a-z\u0400-\u04ff]{2,}$/i.test(d); }
+    var scanCfg = {};
+    try { scanCfg = JSON.parse(document.querySelector(".scan-form").getAttribute("data-cfg")); } catch (e) {}
+    var contact = null;
+    if (window.__mentioLead && window.__mentioLead.enabled()) {
+      contact = document.createElement("input");
+      contact.className = "quiz-site"; contact.type = "text"; contact.autocomplete = "off";
+      contact.placeholder = scanCfg.contactPh || "email";
+      result.insertBefore(contact, hint);
+      contact.addEventListener("input", function () { contact.classList.remove("invalid"); buildHref(); });
+    }
+    function isReady() {
+      var ok = isValid(getDomain());
+      if (contact) ok = ok && contact.value.trim().length >= 4;
+      return ok;
+    }
     function buildHref() {
-      var d = getDomain();
-      var ok = isValid(d);
-      cta.classList.toggle("disabled", !ok);
-      if (ok) {
-        site.classList.remove("invalid");
-        hint.hidden = true;
+      var ready = isReady();
+      cta.classList.toggle("disabled", !ready);
+      if (isValid(getDomain())) { site.classList.remove("invalid"); hint.hidden = true; }
+      if (ready && !contact) {
         cta.href = "mailto:team@mentio.agency?subject=" +
-          encodeURIComponent(cfg.subj.replace("{s}", lastScore) + " \u2014 " + d) + "&body=" +
-          encodeURIComponent(cfg.body.replace("{s}", lastScore) + d);
+          encodeURIComponent(cfg.subj.replace("{s}", lastScore) + " \u2014 " + getDomain()) + "&body=" +
+          encodeURIComponent(cfg.body.replace("{s}", lastScore) + getDomain());
       }
     }
     site.addEventListener("input", buildHref);
@@ -209,7 +259,25 @@
         site.classList.add("invalid");
         hint.hidden = false;
         site.focus();
+        return;
       }
+      if (!contact) return;
+      e.preventDefault();
+      if (contact.value.trim().length < 4) { contact.classList.add("invalid"); contact.focus(); return; }
+      if (cta.classList.contains("sending")) return;
+      cta.classList.add("sending");
+      window.__mentioLead.submit({ type: "quiz", score: lastScore, domain: getDomain(), contact: contact.value.trim() })
+        .then(function () {
+          site.hidden = true; contact.hidden = true; cta.hidden = true;
+          hint.hidden = false;
+          hint.classList.add("ok");
+          hint.textContent = scanCfg.sent || "OK";
+        })
+        .catch(function () {
+          cta.classList.remove("sending");
+          hint.hidden = false;
+          hint.textContent = scanCfg.err || "Error";
+        });
     });
 
     function show() {

@@ -212,6 +212,8 @@ article.post{padding:10px 0 70px}
 .quiz-hint{color:#E5686B;font-size:.85rem;margin:-.3rem 0 .9rem}
 .quiz-cta.disabled{opacity:.5;cursor:not-allowed}
 .quiz-cta.disabled:hover{transform:none;box-shadow:none}
+.quiz-cta.sending{opacity:.6;pointer-events:none}
+.quiz-hint.ok{color:var(--orange)}
 
 /* ===== loss calculator ===== */
 .calc{max-width:640px;margin:0 auto;padding:2rem}
