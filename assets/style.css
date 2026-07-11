@@ -28,6 +28,8 @@ nav{position:sticky;top:0;z-index:50;background:rgba(11,11,16,.82);backdrop-filt
 .nav-links{display:flex;gap:1.1rem;align-items:center;font-size:.9rem;flex-wrap:nowrap}
 .nav-links a{text-decoration:none;color:var(--muted);transition:color .2s;white-space:nowrap}
 .nav-links a:hover{color:var(--text)}
+.nav-links a.nav-blog{color:var(--orange);font-weight:600}
+.nav-links a.nav-blog:hover{color:#FF8A5C}
 .lang-select{background:var(--card);border:1px solid var(--border2);border-radius:8px;color:var(--muted);padding:.35rem .5rem;font-size:.85rem;font-family:inherit;cursor:pointer;appearance:auto}
 .lang-select:hover,.lang-select:focus{color:var(--text);border-color:var(--orange);outline:none}
 .nav-cta{background:var(--grad);color:#fff !important;padding:.5rem 1.1rem;border-radius:10px;font-weight:600;text-decoration:none}
