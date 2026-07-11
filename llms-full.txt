@@ -32,6 +32,7 @@ Key facts:
 - [5 reasons AI assistants recommend your competitors](https://mentio.agency/blog/why-ai-recommends-competitors/): the most common technical and content causes of AI invisibility
 - [GEO vs SEO: what actually changes](https://mentio.agency/blog/geo-vs-seo/): practical comparison — what carries over from SEO, what GEO adds, why you need both
 - [How to get into Google AI Overviews](https://mentio.agency/blog/google-ai-overviews/): what determines citations in AI Overviews and five steps that raise your odds
+- [Case study: we audited our own site — 53/100](https://mentio.agency/blog/we-audited-our-own-site/): full transparent breakdown of our own GEO audit two days after launch
 
 ## Блог українською (practical GEO guides in Ukrainian)
 
@@ -40,10 +41,15 @@ Key facts:
 - [5 причин, чому AI рекомендує конкурентів](https://mentio.agency/ua/blog/why-ai-recommends-competitors/): найчастіші технічні та контентні причини AI-невидимості
 - [GEO проти SEO: що змінюється насправді](https://mentio.agency/ua/blog/geo-vs-seo/): практичне порівняння — що переноситься з SEO і що додає GEO
 - [Як потрапити в Google AI Overviews](https://mentio.agency/ua/blog/google-ai-overviews/): що визначає цитування і п'ять кроків для підвищення шансів
+- [Кейс: аудит власного сайту — 53/100](https://mentio.agency/ua/blog/we-audited-our-own-site/): повний прозорий розбір власного GEO-аудиту через два дні після запуску
 
 ## Contact
 
 - Email: team@mentio.agency
+
+## Optional
+
+- [llms-full.txt](https://mentio.agency/llms-full.txt): this file plus the full text of all English guides in one document
 
 
 ---
@@ -206,3 +212,43 @@ Not every search shows one. They appear most often on question-shaped and resear
 
 Re-run your ten queries monthly, from a clean browser session. Track three things per query: does an AI Overview appear, are you cited in it, and is what it says about you correct. That simple table is the honest KPI of AI visibility — the same delta we track in GEO monitoring (/#services).
 One warning: nobody can guarantee a citation — anyone promising "top of AI Overviews in 30 days" is selling air. What the five steps above do is systematically remove every reason Google has to skip you. For most local and niche queries, that's enough — because almost no competitor has done this work yet.
+
+
+## Case study: we audited our own site. Score: 53/100 — and that's the point
+
+URL: https://mentio.agency/blog/we-audited-our-own-site/
+
+**Two days after launching mentio.agency, we ran it through the same GEO audit we sell to clients.** Composite score: **53/100**. We're publishing the full breakdown — including the embarrassing parts — because an agency that grades other people's AI visibility should show its own report card first.
+
+## The setup
+
+Five parallel specialist checks, the exact methodology of our $99 audit: AI crawler access and llms.txt, passage-level citability, technical foundations, structured data, platform-by-platform readiness (Google AI Overviews, ChatGPT, Perplexity, Gemini, Bing Copilot), content quality (E-E-A-T) and off-site brand authority.
+
+## The scores
+
+- **AI citability & visibility: 81/100** — crawler access scored 98: robots.txt explicitly allows 14 AI crawlers, zero blocks. llms.txt valid per spec: 78.
+- **Technical foundations: 88/100** — fully server-rendered HTML, 6.9 KB gzipped homepage, self-hosted fonts, textbook hreflang across 6 languages, valid sitemap.
+- **Platform readiness: 62/100** — best on Google AI Overviews (74), worst on Bing Copilot (46: no IndexNow, no Bing Webmaster registration).
+- **Content & E-E-A-T: 44/100** — structure praised as "genuinely citable formatting", credibility called "starved": no named humans, no case studies, unsourced statistics.
+- **Structured data: 37/100** — all JSON-LD valid, but no sameAs links, no logo, Article authors were an Organization instead of a Person.
+- **Brand authority: 5/100** — the internet has never heard of us. Zero mentions beyond our own domain. The audit even found three unrelated products named "Mentio" occupying the entity space.
+
+## The honest lesson
+
+Look at the split. Everything we controlled on-page was built GEO-first from day one and scored 80-98. Everything that depends on the outside world — mentions, citations, entity recognition — scored near zero, because it cannot exist on day two. **On-page GEO is a sprint you control; off-page authority is a season you schedule.** That's why starting early matters: the on-page layer determines how fast the off-page layer compounds once it starts.
+
+## What we fixed the same day
+
+- Blog post titles were rendered as h2, not h1 — our own audit caught a real bug in our own site.
+- Published llms-full.txt and added the Ukrainian guides to llms.txt.
+- Added the entity layer to structured data: organization logo, foundingDate, @id-linked publisher, breadcrumbs, speakable.
+- Set up IndexNow and pushed all 18 URLs to Bing — the 46/100 platform now has a direct feed.
+- Trimmed page titles to ≤60 characters and descriptions to ≤160 in all six languages.
+
+## What only time (and work) will fix
+
+Brand authority: directory profiles, a LinkedIn page, community answers, original research, real client cases. We'll re-run the audit monthly and publish the delta — the same cadence we run for clients in GEO monitoring (/#services).
+
+## Takeaway for your business
+
+A GEO score isn't a verdict, it's a to-do list sorted by impact. If a two-day-old site can hit 98/100 on crawler access simply because it was configured deliberately, so can yours — most sites we check fail exactly there, by accident. Run the free check (/#check) and see which half of the split you're losing.

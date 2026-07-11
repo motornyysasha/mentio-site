@@ -187,4 +187,13 @@
     <xhtml:link rel="alternate" hreflang="uk" href="https://mentio.agency/ua/blog/google-ai-overviews/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mentio.agency/blog/google-ai-overviews/"/>
   </url>
+  <url>
+    <loc>https://mentio.agency/blog/we-audited-our-own-site/</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mentio.agency/blog/we-audited-our-own-site/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mentio.agency/ua/blog/we-audited-our-own-site/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mentio.agency/blog/we-audited-our-own-site/"/>
+  </url>
 </urlset>
