@@ -117,7 +117,7 @@
   }
 
   /* ---------- lead delivery ---------- */
-  var LEAD_ENDPOINT = window.LEAD_ENDPOINT || "";
+  var LEAD_ENDPOINT = window.LEAD_ENDPOINT || "https://cool-waterfall-a3ce.motornyysasha.workers.dev";
   try { LEAD_ENDPOINT = LEAD_ENDPOINT || localStorage.getItem("leadEndpoint") || ""; } catch (e) {}
   function submitLead(payload) {
     payload.lang = document.documentElement.lang || "";
