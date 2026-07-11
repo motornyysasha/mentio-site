@@ -130,6 +130,14 @@
   }
   window.__mentioLead = { enabled: function () { return !!LEAD_ENDPOINT; }, submit: submitLead };
 
+  /* ---------- CTA links scroll to scanner and focus it ---------- */
+  document.querySelectorAll('a[href="#check"]').forEach(function (a) {
+    a.addEventListener("click", function () {
+      var inp = document.querySelector(".scan-form input");
+      if (inp) setTimeout(function () { inp.focus({ preventScroll: true }); }, 650);
+    });
+  });
+
   /* ---------- site scanner ---------- */
   document.querySelectorAll("form.scan-form").forEach(function (f) {
     var cfg;
