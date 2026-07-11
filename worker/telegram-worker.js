@@ -22,6 +22,16 @@ export default {
     };
 
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: cors });
+
+    // Diagnostics: GET /health shows whether secrets are visible (never their values)
+    if (request.method === "GET") {
+      return new Response(JSON.stringify({
+        ok: true,
+        hasToken: Boolean(env.TG_TOKEN),
+        hasChat: Boolean(env.TG_CHAT),
+      }), { status: 200, headers: { ...cors, "Content-Type": "application/json" } });
+    }
+
     if (request.method !== "POST") return new Response("Method not allowed", { status: 405, headers: cors });
 
     let d;
@@ -51,7 +61,12 @@ export default {
       body: JSON.stringify({ chat_id: env.TG_CHAT, text: lines, parse_mode: "HTML" }),
     });
 
-    if (!tg.ok) return new Response("Relay error", { status: 502, headers: cors });
+    if (!tg.ok) {
+      // Pass Telegram's own error through so the cause is visible (e.g. "chat not found", "Unauthorized")
+      var detail = "";
+      try { detail = (await tg.json()).description || ""; } catch (e) {}
+      return new Response("Relay error: " + tg.status + " " + detail, { status: 502, headers: cors });
+    }
     return new Response("ok", { status: 200, headers: cors });
   },
 };
