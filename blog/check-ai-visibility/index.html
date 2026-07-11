@@ -19,7 +19,7 @@
 <meta name="twitter:image" content="https://mentio.agency/assets/og.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23E5383B'/%3E%3Cstop offset='1' stop-color='%23FF6B35'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='%230B0B10'/%3E%3Cpath d='M25 75V25l25 30 25-30v50' fill='none' stroke='url(%23g)' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<link rel="stylesheet" href="/assets/style.css?v=be46a09a">
+<link rel="stylesheet" href="/assets/style.css?v=05a63447">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -103,31 +103,56 @@
 </nav>
 
 <div class="wrap post-head">
-  <p class="post-meta"><a href="/blog/" style="color:inherit;text-decoration:none">← Blog</a> · Mentio · July 9, 2026 · 2 min read</p>
+  <p class="post-meta"><a href="/blog/" style="color:inherit;text-decoration:none">← Blog</a> · Mentio · July 9, 2026 · 4 min read</p>
   <h1 style="font-size:clamp(1.7rem,3.6vw,2.5rem);letter-spacing:-.02em;line-height:1.2">How to check what AI says about your business (5-minute test)</h1>
 </div>
 <article class="post">
   <div class="wrap">
     <div class="post-body">
-<p>Before investing anything in AI visibility, run this test. It takes five minutes, requires no tools, and shows you exactly where you stand.</p>
-<h2>Step 1 — Ask the assistants what people actually ask</h2>
-<p>Open ChatGPT (with web search enabled), Perplexity and Gemini, and ask each of them two questions:</p>
+<p>Before investing anything in AI visibility, run this test. The core takes five minutes, requires no tools beyond a browser, and shows you exactly where you stand. Below is the full protocol we use as the first step of every audit — including the scoring sheet and the mistakes that make results lie to you.</p>
+<h2>Step 1 — Ask the assistants what your customers ask</h2>
+<p>Open ChatGPT (with web search enabled), Perplexity and Gemini, and give each of them two prompts:</p>
 <ol>
-<li><strong>The buying question:</strong> "best [your service] in [your city]" — phrased the way a customer would.</li>
-<li><strong>The brand question:</strong> "What do you know about [your business name]?"</li>
+<li><strong>The buying question:</strong> "best [your service] in [your city]" — phrased the way a customer would, not the way your industry talks. A dental clinic tests "best dentist for implants in Austin", not "premier dental implantology provider".</li>
+<li><strong>The brand question:</strong> "What do you know about [your business name]?" — and if your name is shared with other companies, add your city or domain to see whether the model can even tell you apart.</li>
 </ol>
-<p>Record three things for each answer: are you <strong>mentioned</strong>, are you <strong>cited</strong> (linked as a source), and is the information <strong>correct</strong>?</p>
-<h2>Step 2 — Check whether AI crawlers can even reach you</h2>
-<p>Open <code>yoursite.com/robots.txt</code> and look for lines blocking <code>GPTBot</code>, <code>ClaudeBot</code>, <code>PerplexityBot</code> or <code>Google-Extended</code>. A surprising number of sites block AI crawlers by accident — often a leftover from a plugin or an overzealous security setting. If a crawler is blocked, that system can't read your site, period.</p>
+<p>Record three things per answer: are you <strong>mentioned</strong>, are you <strong>cited</strong> (linked as a source), and is the information <strong>correct</strong>? Save screenshots — you'll want the before/after later.</p>
+<h2>Step 2 — Check whether AI crawlers can reach you</h2>
+<p>Open <code>yoursite.com/robots.txt</code> and look for lines blocking <code>GPTBot</code>, <code>ClaudeBot</code>, <code>PerplexityBot</code> or <code>Google-Extended</code> (the full agent lists are documented by <a href="https://platform.openai.com/docs/bots" rel="noopener">OpenAI</a> and Google). A surprising number of sites block AI crawlers by accident — a security plugin, a CDN's "block bots" toggle, a robots.txt template copied years ago. If a crawler is blocked, that system cannot read your site. No content strategy compensates for a locked door.</p>
+<p>While you're there, confirm <code>sitemap.xml</code> is referenced and loads, and that your key pages return HTTP 200 rather than redirect chains.</p>
 <h2>Step 3 — Check your structured data</h2>
-<p>Run your homepage through <a href="https://validator.schema.org" rel="noopener">validator.schema.org</a>. If it finds no structured data at all, AI systems have to guess who you are, what you sell and where you operate — and they guess conservatively: they leave you out.</p>
-<h2>How to read your results</h2>
-<ul>
-<li><strong>Mentioned, cited, correct</strong> — you're in good shape; your job is monitoring and defending the position.</li>
-<li><strong>Mentioned but wrong</strong> — dangerous: AI is actively spreading outdated prices, addresses or services. Fix your sources.</li>
-<li><strong>Not mentioned at all</strong> — the assistant is recommending your competitors to your customers. Every query is a lost referral, invisible in your analytics.</li>
-</ul>
-<p>If you landed in the second or third group, that's fixable — see <a href="/blog/why-ai-recommends-competitors/">the five most common reasons AI skips a business</a>, or read the basics in our post on <a href="/blog/what-is-llms-txt/">llms.txt</a>.</p>
+<p>Run your homepage through <a href="https://validator.schema.org" rel="noopener">validator.schema.org</a>. You're looking for three levels, in order: any structured data at all; an <code>Organization</code> or <code>LocalBusiness</code> with your real name, contacts and services; and entity links (<code>sameAs</code>) pointing to your profiles elsewhere. If the validator finds nothing, AI systems must guess who you are — and they guess conservatively: they leave you out rather than risk being wrong.</p>
+<h2>Step 4 — Check what the model believes without the web</h2>
+<p>Ask ChatGPT the brand question again with web browsing off (or ask "what do you know about X from your training data"). This reveals whether your business exists in the model's learned knowledge — the layer that answers when browsing is unavailable, which is still most consumer usage. A business absent from training data but visible via search is winnable this quarter; absent from both means you're starting from zero and every week of delay compounds.</p>
+<h2>Step 5 — Check your facts are consistent across the web</h2>
+<p>Compare your site, Google Business Profile, top directories and review platforms: same name, same services, same address and phone, same pricing signals. Models cross-reference sources before stating facts; contradictions read as low trust, and a low-trust entity gets skipped or — worse — described with the wrong data. This is the step almost everyone fails without knowing it.</p>
+<h2>Scoring your results</h2>
+<table>
+<tr><th>Check</th><th>Pass</th><th>Points</th></tr>
+<tr><td>Mentioned in ≥1 assistant's buying answer</td><td>Yes</td><td>25</td></tr>
+<tr><td>Cited as a source (linked)</td><td>Yes</td><td>20</td></tr>
+<tr><td>Brand info correct in all answers</td><td>Yes</td><td>20</td></tr>
+<tr><td>No AI crawlers blocked</td><td>Yes</td><td>15</td></tr>
+<tr><td>Valid Organization/LocalBusiness schema</td><td>Yes</td><td>10</td></tr>
+<tr><td>Facts consistent across ≥3 external profiles</td><td>Yes</td><td>10</td></tr>
+</table>
+<p>0–40: you're invisible and probably leaking customers to whoever the assistants name instead. 40–75: fixable gaps — the technical ones close in days. 75+: defend the position and start measuring monthly.</p>
+<h2>Four mistakes that make the test lie</h2>
+<ol>
+<li><strong>Testing from a logged-in, history-rich browser.</strong> Assistants personalize. Use a clean session or incognito, or your history will show you a rosier picture than your customers see.</li>
+<li><strong>Testing once.</strong> Answers vary between runs. Ask each question twice; treat a mention that appears in one of two runs as "unstable", not "present".</li>
+<li><strong>Testing only your brand name.</strong> Customers who already know your name were never the problem. The buying-question results are the ones that pay rent.</li>
+<li><strong>Fixing content before access.</strong> If Step 2 fails, nothing else you do is visible. Order matters: access → facts → content → authority.</li>
+</ol>
+<h2>How often to re-test</h2>
+<p>Monthly, same questions, same clean-session protocol, results in the same sheet. AI platforms ship changes constantly; a stable monthly delta is the only honest KPI of AI visibility. That cadence — baseline, fix, re-measure — is exactly what we run for clients in <a href="/#services">GEO monitoring</a>, and it's what we publish about our own site in <a href="/blog/we-audited-our-own-site/">our self-audit case study</a>.</p>
+<h2>FAQ</h2>
+<h3>Which assistant matters most for my business?</h3>
+<p>Where your customers already are: consumer services see the most ChatGPT and Google AI Overviews exposure; research-heavy B2B sees more Perplexity. Test all three — the fixes overlap almost entirely.</p>
+<h3>My site is new and appears nowhere. Is that fixable?</h3>
+<p>Yes — that's the normal starting state. Technical access and structured data are fixable in days; mentions and citations build over months. See <a href="/blog/why-ai-recommends-competitors/">the five reasons AI recommends competitors</a> for the usual culprits in priority order.</p>
+<h3>What if AI says something wrong about us?</h3>
+<p>Find the source it's echoing — usually an outdated directory listing or old page — fix it there, and strengthen correct facts with structured data. Models repeat the most consistent version of you they can find.</p>
     </div>
 <div class="post-cta">
   <p><strong>Want to know how AI assistants see your website?</strong> Run the free check — we reply with a summary of what ChatGPT, Perplexity and Gemini currently say about your business.</p>

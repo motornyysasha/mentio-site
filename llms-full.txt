@@ -103,32 +103,76 @@ We treat it as cheap insurance with growing upside. Every Mentio GEO audit (/#se
 
 URL: https://mentio.agency/blog/check-ai-visibility/
 
-Before investing anything in AI visibility, run this test. It takes five minutes, requires no tools, and shows you exactly where you stand.
+Before investing anything in AI visibility, run this test. The core takes five minutes, requires no tools beyond a browser, and shows you exactly where you stand. Below is the full protocol we use as the first step of every audit — including the scoring sheet and the mistakes that make results lie to you.
 
-## Step 1 — Ask the assistants what people actually ask
+## Step 1 — Ask the assistants what your customers ask
 
-Open ChatGPT (with web search enabled), Perplexity and Gemini, and ask each of them two questions:
+Open ChatGPT (with web search enabled), Perplexity and Gemini, and give each of them two prompts:
 
-- **The buying question:** "best [your service] in [your city]" — phrased the way a customer would.
-- **The brand question:** "What do you know about [your business name]?"
+- **The buying question:** "best [your service] in [your city]" — phrased the way a customer would, not the way your industry talks. A dental clinic tests "best dentist for implants in Austin", not "premier dental implantology provider".
+- **The brand question:** "What do you know about [your business name]?" — and if your name is shared with other companies, add your city or domain to see whether the model can even tell you apart.
 
-Record three things for each answer: are you **mentioned**, are you **cited** (linked as a source), and is the information **correct**?
+Record three things per answer: are you **mentioned**, are you **cited** (linked as a source), and is the information **correct**? Save screenshots — you'll want the before/after later.
 
-## Step 2 — Check whether AI crawlers can even reach you
+## Step 2 — Check whether AI crawlers can reach you
 
-Open yoursite.com/robots.txt and look for lines blocking GPTBot, ClaudeBot, PerplexityBot or Google-Extended. A surprising number of sites block AI crawlers by accident — often a leftover from a plugin or an overzealous security setting. If a crawler is blocked, that system can't read your site, period.
+Open yoursite.com/robots.txt and look for lines blocking GPTBot, ClaudeBot, PerplexityBot or Google-Extended (the full agent lists are documented by OpenAI (https://platform.openai.com/docs/bots) and Google). A surprising number of sites block AI crawlers by accident — a security plugin, a CDN's "block bots" toggle, a robots.txt template copied years ago. If a crawler is blocked, that system cannot read your site. No content strategy compensates for a locked door.
+While you're there, confirm sitemap.xml is referenced and loads, and that your key pages return HTTP 200 rather than redirect chains.
 
 ## Step 3 — Check your structured data
 
-Run your homepage through validator.schema.org (https://validator.schema.org). If it finds no structured data at all, AI systems have to guess who you are, what you sell and where you operate — and they guess conservatively: they leave you out.
+Run your homepage through validator.schema.org (https://validator.schema.org). You're looking for three levels, in order: any structured data at all; an Organization or LocalBusiness with your real name, contacts and services; and entity links (sameAs) pointing to your profiles elsewhere. If the validator finds nothing, AI systems must guess who you are — and they guess conservatively: they leave you out rather than risk being wrong.
 
-## How to read your results
+## Step 4 — Check what the model believes without the web
 
-- **Mentioned, cited, correct** — you're in good shape; your job is monitoring and defending the position.
-- **Mentioned but wrong** — dangerous: AI is actively spreading outdated prices, addresses or services. Fix your sources.
-- **Not mentioned at all** — the assistant is recommending your competitors to your customers. Every query is a lost referral, invisible in your analytics.
+Ask ChatGPT the brand question again with web browsing off (or ask "what do you know about X from your training data"). This reveals whether your business exists in the model's learned knowledge — the layer that answers when browsing is unavailable, which is still most consumer usage. A business absent from training data but visible via search is winnable this quarter; absent from both means you're starting from zero and every week of delay compounds.
 
-If you landed in the second or third group, that's fixable — see the five most common reasons AI skips a business (/blog/why-ai-recommends-competitors/), or read the basics in our post on llms.txt (/blog/what-is-llms-txt/).
+## Step 5 — Check your facts are consistent across the web
+
+Compare your site, Google Business Profile, top directories and review platforms: same name, same services, same address and phone, same pricing signals. Models cross-reference sources before stating facts; contradictions read as low trust, and a low-trust entity gets skipped or — worse — described with the wrong data. This is the step almost everyone fails without knowing it.
+
+## Scoring your results
+
+| Check | Pass | Points |
+
+| Mentioned in ≥1 assistant's buying answer | Yes | 25 |
+
+| Cited as a source (linked) | Yes | 20 |
+
+| Brand info correct in all answers | Yes | 20 |
+
+| No AI crawlers blocked | Yes | 15 |
+
+| Valid Organization/LocalBusiness schema | Yes | 10 |
+
+| Facts consistent across ≥3 external profiles | Yes | 10 |
+
+0–40: you're invisible and probably leaking customers to whoever the assistants name instead. 40–75: fixable gaps — the technical ones close in days. 75+: defend the position and start measuring monthly.
+
+## Four mistakes that make the test lie
+
+- **Testing from a logged-in, history-rich browser.** Assistants personalize. Use a clean session or incognito, or your history will show you a rosier picture than your customers see.
+- **Testing once.** Answers vary between runs. Ask each question twice; treat a mention that appears in one of two runs as "unstable", not "present".
+- **Testing only your brand name.** Customers who already know your name were never the problem. The buying-question results are the ones that pay rent.
+- **Fixing content before access.** If Step 2 fails, nothing else you do is visible. Order matters: access → facts → content → authority.
+
+## How often to re-test
+
+Monthly, same questions, same clean-session protocol, results in the same sheet. AI platforms ship changes constantly; a stable monthly delta is the only honest KPI of AI visibility. That cadence — baseline, fix, re-measure — is exactly what we run for clients in GEO monitoring (/#services), and it's what we publish about our own site in our self-audit case study (/blog/we-audited-our-own-site/).
+
+## FAQ
+
+### Which assistant matters most for my business?
+
+Where your customers already are: consumer services see the most ChatGPT and Google AI Overviews exposure; research-heavy B2B sees more Perplexity. Test all three — the fixes overlap almost entirely.
+
+### My site is new and appears nowhere. Is that fixable?
+
+Yes — that's the normal starting state. Technical access and structured data are fixable in days; mentions and citations build over months. See the five reasons AI recommends competitors (/blog/why-ai-recommends-competitors/) for the usual culprits in priority order.
+
+### What if AI says something wrong about us?
+
+Find the source it's echoing — usually an outdated directory listing or old page — fix it there, and strengthen correct facts with structured data. Models repeat the most consistent version of you they can find.
 
 
 ## 5 reasons AI assistants recommend your competitors instead of you
@@ -168,26 +212,75 @@ URL: https://mentio.agency/blog/geo-vs-seo/
 
 **Generative Engine Optimization (GEO) is the practice of optimizing a website to be cited inside AI-generated answers** — in ChatGPT, Perplexity, Gemini and Google AI Overviews. Classic SEO optimizes for a ranked list of links a human scrolls; GEO optimizes for the single answer an assistant composes. That one-sentence difference changes surprisingly much — and leaves more intact than the hype suggests.
 
+## Why this split exists at all
+
+For twenty years the search result was a menu: ten blue links, and the user did the choosing. Generative engines collapsed the menu into a meal. When Google shows an AI Overview, it answers the question above the links, citing a handful of sources inline — Google documents how these AI features select and link content in its AI features documentation (https://developers.google.com/search/docs/appearance/ai-features). ChatGPT and Perplexity go further: for many queries the user never sees a results page at all, only an answer with two to five citations.
+The economic consequence: being source #6 in a world that cites five is worth almost nothing. SEO's long tail of "page one, position eight still gets some clicks" disappears. GEO is the discipline that grew around this new winner-take-most distribution.
+
 ## What stays the same
 
-- **Technical health still rules.** A site that can't be crawled, loads slowly or renders everything through JavaScript is invisible to both Google's classic index and AI crawlers. Every hour invested here pays twice.
-- **Quality content still wins.** E-E-A-T — experience, expertise, authoritativeness, trust — is exactly what language models are tuned to prefer when picking sources.
-- **Authority is still earned elsewhere.** Backlinks taught Google to trust you; mentions across directories, reviews and press teach AI models the same thing.
+**Technical health still rules.** A site that can't be crawled, loads slowly or renders everything through client-side JavaScript is invisible to both Google's classic index and AI crawlers. OpenAI's crawlers (documented at platform.openai.com/docs/bots (https://platform.openai.com/docs/bots)) fetch your HTML much like a search bot does: if the content isn't in the response, it doesn't exist. Every hour invested in crawlability, speed and server-side rendering pays twice.
+**Quality content still wins.** Google's guidance on helpful, people-first content (https://developers.google.com/search/docs/fundamentals/creating-helpful-content) — the E-E-A-T framework of experience, expertise, authoritativeness and trust — describes exactly what language models are tuned to prefer when choosing sources. There is no separate "AI content standard"; there is one standard, now enforced by two kinds of readers.
+**Authority is still earned elsewhere.** Backlinks taught Google to trust you; mentions across directories, review platforms, press and communities teach AI models the same thing. The currency changed shape — from links to mentions and entity consistency — but it's still minted off your own website.
 
-## What changes
+## What actually changes
 
-- **The unit of victory.** SEO wins a position; GEO wins a citation. An AI answer names 3–5 sources — there is no "page two" to survive on.
-- **The reader.** SEO copy is written for a human skimming a page. GEO content must also parse cleanly for a machine assembling an answer: direct definitions, concrete numbers, question-shaped headings.
-- **The infrastructure.** New layers appear: AI-crawler access in robots.txt (GPTBot, PerplexityBot, Google-Extended), llms.txt (/blog/what-is-llms-txt/), and Schema.org markup that lets a model state facts about you with confidence.
-- **The measurement.** Rankings and clicks become mentions, citations and "was the information about us correct?" — tracked by asking the assistants themselves, month after month.
+| Dimension | Classic SEO | GEO |
+
+| Unit of victory | Position on a results page | Citation inside the answer |
+
+| Winners per query | ~10 on page one | 2–5 cited sources |
+
+| Primary reader | Human skimming a page | Model assembling an answer |
+
+| Content shape | Keyword-targeted pages | Direct definitions, numbers, question-shaped headings |
+
+| Infrastructure | robots.txt, sitemap | + AI-crawler rules, llms.txt (https://llmstxt.org), entity-grade Schema.org (https://schema.org) markup |
+
+| Measurement | Rankings, clicks, CTR | Mentions, citations, answer accuracy |
+
+Three of these deserve a closer look.
+
+### The reader changed
+
+SEO copy is written for a human skimming a page. GEO content must also parse cleanly for a machine assembling an answer: a definition in the first sentence, concrete numbers instead of adjectives, headings phrased the way people actually ask. A passage like "an implant costs $1,900–2,400 and takes two visits" gets lifted into answers; "affordable, high-quality implants" gives a model nothing to quote.
+
+### The infrastructure grew new layers
+
+Three files now matter instead of two. robots.txt gains AI-specific user agents (GPTBot, ClaudeBot, PerplexityBot, Google-Extended) that many sites block by accident. llms.txt (https://llmstxt.org) — a proposed standard we covered in a separate guide (/blog/what-is-llms-txt/) — gives models a curated map of your site. And structured data stops being a rich-results nicety: it becomes the way a model confirms who you are, what you sell and what it costs before daring to state it in an answer.
+
+### The measurement changed
+
+Rankings and clicks become three questions asked monthly, per important query: does an AI answer appear, are we cited in it, and is what it says about us correct? That last one has no SEO equivalent — a search engine could rank you wrong, but it couldn't misquote your prices. A language model can, and does, unless consistent facts across the web give it no room to.
 
 ## Do you need both?
 
-Yes — and they are not in conflict. Everything GEO adds follows search-engine guidelines, so a GEO-optimized site tends to rank better, not worse. The practical order: fix the SEO foundation, then add the AI layers on top. Skipping the foundation to chase citations is building the roof first.
+Yes — and they are not in conflict. Everything GEO adds follows search-engine guidelines, so a GEO-optimized site tends to rank better, not worse. The practical 30-day order of operations we use:
 
-## The myth worth killing
+- **Week 1 — foundation check:** crawlability, indexability, speed, mobile. Fix blockers first; nothing downstream matters without this.
+- **Week 2 — AI access layer:** unblock AI crawlers in robots.txt, publish llms.txt, add entity-grade structured data (Organization with sameAs, Service with prices, FAQ).
+- **Week 3 — content reshaping:** rewrite key pages answer-first; give every important customer question its own heading and a 2–4 sentence direct answer.
+- **Week 4 — entity consistency:** align name, services and facts across your site, Google Business Profile, directories and reviews; then start measuring monthly.
 
-"AI search is too small to matter yet." The share of buying journeys that start with an assistant grows every quarter, and the businesses cited today are accumulating an advantage that gets more expensive to displace later. Positions can be re-taken; a model's learned preference for your competitor is much stickier. Being early is the whole game — run the 5-minute test (/blog/check-ai-visibility/) to see where you stand.
+## Three myths worth killing
+
+**"AI search is too small to matter yet."** The share of buying journeys that start with an assistant grows every quarter, and businesses cited today accumulate an advantage that gets more expensive to displace later. A model's learned preference for your competitor is far stickier than a lost ranking.
+**"GEO is just SEO with a new name."** Half true — the foundation is shared. But no SEO playbook tells you to publish llms.txt, audit GPTBot access, or restructure passages for quotability. The added layer is real, and most sites haven't built it.
+**"You can pay your way into AI answers."** There is no ad slot inside a citation. The only currencies are crawlability, clarity, consistency and authority — which is precisely why early, systematic work compounds.
+
+## FAQ
+
+### Does GEO hurt my existing rankings?
+
+No. Every GEO change — cleaner structure, structured data, direct answers, crawler access — is also orthodox SEO. The overlap is why we recommend one combined audit rather than two separate projects.
+
+### How long until GEO shows results?
+
+Technical layers take effect as soon as AI systems re-crawl you — typically weeks. Authority signals compound over months. That's why we track a monthly delta instead of promising a date.
+
+### Can I do GEO myself?
+
+The basics, absolutely — start with our 5-minute self-test (/blog/check-ai-visibility/). The audit earns its fee by finding what self-checks miss: passage-level citability, schema validation and platform-specific gaps.
 
 
 ## How to get your business into Google AI Overviews

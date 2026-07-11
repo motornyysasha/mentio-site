@@ -19,7 +19,7 @@
 <meta name="twitter:image" content="https://mentio.agency/assets/og.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23E5383B'/%3E%3Cstop offset='1' stop-color='%23FF6B35'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='%230B0B10'/%3E%3Cpath d='M25 75V25l25 30 25-30v50' fill='none' stroke='url(%23g)' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<link rel="stylesheet" href="/assets/style.css?v=be46a09a">
+<link rel="stylesheet" href="/assets/style.css?v=05a63447">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -103,30 +103,56 @@
 </nav>
 
 <div class="wrap post-head">
-  <p class="post-meta"><a href="/blog/" style="color:inherit;text-decoration:none">← Blog</a> · Mentio · July 10, 2026 · 2 min read</p>
+  <p class="post-meta"><a href="/blog/" style="color:inherit;text-decoration:none">← Blog</a> · Mentio · July 10, 2026 · 5 min read</p>
   <h1 style="font-size:clamp(1.7rem,3.6vw,2.5rem);letter-spacing:-.02em;line-height:1.2">GEO vs SEO: what actually changes (and what stays the same)</h1>
 </div>
 <article class="post">
   <div class="wrap">
     <div class="post-body">
 <p><strong>Generative Engine Optimization (GEO) is the practice of optimizing a website to be cited inside AI-generated answers</strong> — in ChatGPT, Perplexity, Gemini and Google AI Overviews. Classic SEO optimizes for a ranked list of links a human scrolls; GEO optimizes for the single answer an assistant composes. That one-sentence difference changes surprisingly much — and leaves more intact than the hype suggests.</p>
+<h2>Why this split exists at all</h2>
+<p>For twenty years the search result was a menu: ten blue links, and the user did the choosing. Generative engines collapsed the menu into a meal. When Google shows an AI Overview, it answers the question above the links, citing a handful of sources inline — Google documents how these AI features select and link content in its <a href="https://developers.google.com/search/docs/appearance/ai-features" rel="noopener">AI features documentation</a>. ChatGPT and Perplexity go further: for many queries the user never sees a results page at all, only an answer with two to five citations.</p>
+<p>The economic consequence: being source #6 in a world that cites five is worth almost nothing. SEO's long tail of "page one, position eight still gets some clicks" disappears. GEO is the discipline that grew around this new winner-take-most distribution.</p>
 <h2>What stays the same</h2>
-<ul>
-<li><strong>Technical health still rules.</strong> A site that can't be crawled, loads slowly or renders everything through JavaScript is invisible to both Google's classic index and AI crawlers. Every hour invested here pays twice.</li>
-<li><strong>Quality content still wins.</strong> E-E-A-T — experience, expertise, authoritativeness, trust — is exactly what language models are tuned to prefer when picking sources.</li>
-<li><strong>Authority is still earned elsewhere.</strong> Backlinks taught Google to trust you; mentions across directories, reviews and press teach AI models the same thing.</li>
-</ul>
-<h2>What changes</h2>
-<ul>
-<li><strong>The unit of victory.</strong> SEO wins a position; GEO wins a citation. An AI answer names 3–5 sources — there is no "page two" to survive on.</li>
-<li><strong>The reader.</strong> SEO copy is written for a human skimming a page. GEO content must also parse cleanly for a machine assembling an answer: direct definitions, concrete numbers, question-shaped headings.</li>
-<li><strong>The infrastructure.</strong> New layers appear: AI-crawler access in robots.txt (GPTBot, PerplexityBot, Google-Extended), <a href="/blog/what-is-llms-txt/">llms.txt</a>, and Schema.org markup that lets a model state facts about you with confidence.</li>
-<li><strong>The measurement.</strong> Rankings and clicks become mentions, citations and "was the information about us correct?" — tracked by asking the assistants themselves, month after month.</li>
-</ul>
+<p><strong>Technical health still rules.</strong> A site that can't be crawled, loads slowly or renders everything through client-side JavaScript is invisible to both Google's classic index and AI crawlers. OpenAI's crawlers (documented at <a href="https://platform.openai.com/docs/bots" rel="noopener">platform.openai.com/docs/bots</a>) fetch your HTML much like a search bot does: if the content isn't in the response, it doesn't exist. Every hour invested in crawlability, speed and server-side rendering pays twice.</p>
+<p><strong>Quality content still wins.</strong> Google's guidance on <a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" rel="noopener">helpful, people-first content</a> — the E-E-A-T framework of experience, expertise, authoritativeness and trust — describes exactly what language models are tuned to prefer when choosing sources. There is no separate "AI content standard"; there is one standard, now enforced by two kinds of readers.</p>
+<p><strong>Authority is still earned elsewhere.</strong> Backlinks taught Google to trust you; mentions across directories, review platforms, press and communities teach AI models the same thing. The currency changed shape — from links to mentions and entity consistency — but it's still minted off your own website.</p>
+<h2>What actually changes</h2>
+<table>
+<tr><th>Dimension</th><th>Classic SEO</th><th>GEO</th></tr>
+<tr><td>Unit of victory</td><td>Position on a results page</td><td>Citation inside the answer</td></tr>
+<tr><td>Winners per query</td><td>~10 on page one</td><td>2–5 cited sources</td></tr>
+<tr><td>Primary reader</td><td>Human skimming a page</td><td>Model assembling an answer</td></tr>
+<tr><td>Content shape</td><td>Keyword-targeted pages</td><td>Direct definitions, numbers, question-shaped headings</td></tr>
+<tr><td>Infrastructure</td><td>robots.txt, sitemap</td><td>+ AI-crawler rules, <a href="https://llmstxt.org" rel="noopener">llms.txt</a>, entity-grade <a href="https://schema.org" rel="noopener">Schema.org</a> markup</td></tr>
+<tr><td>Measurement</td><td>Rankings, clicks, CTR</td><td>Mentions, citations, answer accuracy</td></tr>
+</table>
+<p>Three of these deserve a closer look.</p>
+<h3>The reader changed</h3>
+<p>SEO copy is written for a human skimming a page. GEO content must also parse cleanly for a machine assembling an answer: a definition in the first sentence, concrete numbers instead of adjectives, headings phrased the way people actually ask. A passage like "an implant costs $1,900–2,400 and takes two visits" gets lifted into answers; "affordable, high-quality implants" gives a model nothing to quote.</p>
+<h3>The infrastructure grew new layers</h3>
+<p>Three files now matter instead of two. robots.txt gains AI-specific user agents (GPTBot, ClaudeBot, PerplexityBot, Google-Extended) that many sites block by accident. <a href="https://llmstxt.org" rel="noopener">llms.txt</a> — a proposed standard we covered in <a href="/blog/what-is-llms-txt/">a separate guide</a> — gives models a curated map of your site. And structured data stops being a rich-results nicety: it becomes the way a model confirms who you are, what you sell and what it costs before daring to state it in an answer.</p>
+<h3>The measurement changed</h3>
+<p>Rankings and clicks become three questions asked monthly, per important query: does an AI answer appear, are we cited in it, and is what it says about us correct? That last one has no SEO equivalent — a search engine could rank you wrong, but it couldn't misquote your prices. A language model can, and does, unless consistent facts across the web give it no room to.</p>
 <h2>Do you need both?</h2>
-<p>Yes — and they are not in conflict. Everything GEO adds follows search-engine guidelines, so a GEO-optimized site tends to rank better, not worse. The practical order: fix the SEO foundation, then add the AI layers on top. Skipping the foundation to chase citations is building the roof first.</p>
-<h2>The myth worth killing</h2>
-<p>"AI search is too small to matter yet." The share of buying journeys that start with an assistant grows every quarter, and the businesses cited today are accumulating an advantage that gets more expensive to displace later. Positions can be re-taken; a model's learned preference for your competitor is much stickier. Being early is the whole game — run the <a href="/blog/check-ai-visibility/">5-minute test</a> to see where you stand.</p>
+<p>Yes — and they are not in conflict. Everything GEO adds follows search-engine guidelines, so a GEO-optimized site tends to rank better, not worse. The practical 30-day order of operations we use:</p>
+<ol>
+<li><strong>Week 1 — foundation check:</strong> crawlability, indexability, speed, mobile. Fix blockers first; nothing downstream matters without this.</li>
+<li><strong>Week 2 — AI access layer:</strong> unblock AI crawlers in robots.txt, publish llms.txt, add entity-grade structured data (Organization with sameAs, Service with prices, FAQ).</li>
+<li><strong>Week 3 — content reshaping:</strong> rewrite key pages answer-first; give every important customer question its own heading and a 2–4 sentence direct answer.</li>
+<li><strong>Week 4 — entity consistency:</strong> align name, services and facts across your site, Google Business Profile, directories and reviews; then start measuring monthly.</li>
+</ol>
+<h2>Three myths worth killing</h2>
+<p><strong>"AI search is too small to matter yet."</strong> The share of buying journeys that start with an assistant grows every quarter, and businesses cited today accumulate an advantage that gets more expensive to displace later. A model's learned preference for your competitor is far stickier than a lost ranking.</p>
+<p><strong>"GEO is just SEO with a new name."</strong> Half true — the foundation is shared. But no SEO playbook tells you to publish llms.txt, audit GPTBot access, or restructure passages for quotability. The added layer is real, and most sites haven't built it.</p>
+<p><strong>"You can pay your way into AI answers."</strong> There is no ad slot inside a citation. The only currencies are crawlability, clarity, consistency and authority — which is precisely why early, systematic work compounds.</p>
+<h2>FAQ</h2>
+<h3>Does GEO hurt my existing rankings?</h3>
+<p>No. Every GEO change — cleaner structure, structured data, direct answers, crawler access — is also orthodox SEO. The overlap is why we recommend one combined audit rather than two separate projects.</p>
+<h3>How long until GEO shows results?</h3>
+<p>Technical layers take effect as soon as AI systems re-crawl you — typically weeks. Authority signals compound over months. That's why we track a monthly delta instead of promising a date.</p>
+<h3>Can I do GEO myself?</h3>
+<p>The basics, absolutely — start with our <a href="/blog/check-ai-visibility/">5-minute self-test</a>. The audit earns its fee by finding what self-checks miss: passage-level citability, schema validation and platform-specific gaps.</p>
     </div>
 <div class="post-cta">
   <p><strong>Want to know how AI assistants see your website?</strong> Run the free check — we reply with a summary of what ChatGPT, Perplexity and Gemini currently say about your business.</p>
