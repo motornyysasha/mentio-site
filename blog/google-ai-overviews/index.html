@@ -23,25 +23,67 @@
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
- "@type": "Article",
- "headline": "How to get your business into Google AI Overviews",
- "description": "AI Overviews sit above the classic results and answer the query directly. What determines which sites get cited — and the five practical steps that raise your odds.",
- "inLanguage": "en",
- "datePublished": "2026-07-09",
- "dateModified": "2026-07-09",
- "image": "https://mentio.agency/assets/og.png",
- "mainEntityOfPage": "https://mentio.agency/blog/google-ai-overviews/",
- "author": {
-  "@type": "Organization",
-  "name": "Mentio",
-  "url": "https://mentio.agency/"
- },
- "publisher": {
-  "@type": "Organization",
-  "name": "Mentio",
-  "url": "https://mentio.agency/",
-  "email": "team@mentio.agency"
- }
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://mentio.agency/blog/google-ai-overviews/#article",
+   "headline": "How to get your business into Google AI Overviews",
+   "description": "AI Overviews sit above the classic results and answer the query directly. What determines which sites get cited — and the five practical steps that raise your odds.",
+   "inLanguage": "en",
+   "datePublished": "2026-07-10",
+   "dateModified": "2026-07-10",
+   "image": "https://mentio.agency/assets/og.png",
+   "mainEntityOfPage": "https://mentio.agency/blog/google-ai-overviews/",
+   "author": {
+    "@id": "https://mentio.agency/#org"
+   },
+   "publisher": {
+    "@id": "https://mentio.agency/#org"
+   },
+   "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+     "h1",
+     ".post-body p:first-of-type"
+    ]
+   }
+  },
+  {
+   "@type": "Organization",
+   "@id": "https://mentio.agency/#org",
+   "name": "Mentio",
+   "url": "https://mentio.agency/",
+   "email": "team@mentio.agency",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://mentio.agency/assets/logo.png",
+    "width": 512,
+    "height": 512
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Mentio",
+     "item": "https://mentio.agency/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Blog",
+     "item": "https://mentio.agency/blog/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "How to get your business into Google AI Overviews"
+    }
+   ]
+  }
+ ]
 }
 </script>
 </head>
@@ -62,7 +104,7 @@
 
 <div class="wrap post-head">
   <p class="post-meta"><a href="/blog/" style="color:inherit;text-decoration:none">← Blog</a> · Mentio · July 10, 2026 · 2 min read</p>
-  <h2 style="font-size:clamp(1.7rem,3.6vw,2.5rem)">How to get your business into Google AI Overviews</h2>
+  <h1 style="font-size:clamp(1.7rem,3.6vw,2.5rem);letter-spacing:-.02em;line-height:1.2">How to get your business into Google AI Overviews</h1>
 </div>
 <article class="post">
   <div class="wrap">
@@ -105,7 +147,7 @@
 <footer>
   <div class="wrap foot">
     <span>© 2026 Mentio · Generative Engine Optimization</span>
-    <span><a href="mailto:team@mentio.agency">team@mentio.agency</a> · <a href="/">Home</a> · <a class="nav-blog" href="/blog/">Blog</a> · <a href="/llms.txt">llms.txt</a></span>
+    <span><a href="mailto:team@mentio.agency">team@mentio.agency</a> · <a href="/">Home</a> · <a href="/blog/">Blog</a> · <a href="/llms.txt">llms.txt</a></span>
   </div>
 </footer>
 <script src="/assets/site.js?v=006fac4d" defer></script>

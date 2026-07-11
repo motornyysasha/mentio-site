@@ -23,25 +23,67 @@
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
- "@type": "Article",
- "headline": "Що таке llms.txt і чи потрібен він вашому сайту?",
- "description": "llms.txt — запропонований стандарт: markdown-файл, що дає AI-системам структуровану мапу вашого сайту. Що це, чим відрізняється від robots.txt і sitemap.xml та як його написати.",
- "inLanguage": "uk",
- "datePublished": "2026-07-09",
- "dateModified": "2026-07-09",
- "image": "https://mentio.agency/assets/og.png",
- "mainEntityOfPage": "https://mentio.agency/ua/blog/what-is-llms-txt/",
- "author": {
-  "@type": "Organization",
-  "name": "Mentio",
-  "url": "https://mentio.agency/"
- },
- "publisher": {
-  "@type": "Organization",
-  "name": "Mentio",
-  "url": "https://mentio.agency/",
-  "email": "team@mentio.agency"
- }
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://mentio.agency/ua/blog/what-is-llms-txt/#article",
+   "headline": "Що таке llms.txt і чи потрібен він вашому сайту?",
+   "description": "llms.txt — запропонований стандарт: markdown-файл, що дає AI-системам структуровану мапу вашого сайту. Що це, чим відрізняється від robots.txt і sitemap.xml та як його написати.",
+   "inLanguage": "uk",
+   "datePublished": "2026-07-09",
+   "dateModified": "2026-07-09",
+   "image": "https://mentio.agency/assets/og.png",
+   "mainEntityOfPage": "https://mentio.agency/ua/blog/what-is-llms-txt/",
+   "author": {
+    "@id": "https://mentio.agency/#org"
+   },
+   "publisher": {
+    "@id": "https://mentio.agency/#org"
+   },
+   "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+     "h1",
+     ".post-body p:first-of-type"
+    ]
+   }
+  },
+  {
+   "@type": "Organization",
+   "@id": "https://mentio.agency/#org",
+   "name": "Mentio",
+   "url": "https://mentio.agency/",
+   "email": "team@mentio.agency",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://mentio.agency/assets/logo.png",
+    "width": 512,
+    "height": 512
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Mentio",
+     "item": "https://mentio.agency/ua/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Блог",
+     "item": "https://mentio.agency/ua/blog/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Що таке llms.txt і чи потрібен він вашому сайту?"
+    }
+   ]
+  }
+ ]
 }
 </script>
 </head>
@@ -62,7 +104,7 @@
 
 <div class="wrap post-head">
   <p class="post-meta"><a href="/ua/blog/" style="color:inherit;text-decoration:none">← Блог</a> · Mentio · 9 липня 2026 · 2 хв читання</p>
-  <h2 style="font-size:clamp(1.7rem,3.6vw,2.5rem)">Що таке llms.txt і чи потрібен він вашому сайту?</h2>
+  <h1 style="font-size:clamp(1.7rem,3.6vw,2.5rem);letter-spacing:-.02em;line-height:1.2">Що таке llms.txt і чи потрібен він вашому сайту?</h1>
 </div>
 <article class="post">
   <div class="wrap">
@@ -118,7 +160,7 @@
 <footer>
   <div class="wrap foot">
     <span>© 2026 Mentio · Generative Engine Optimization</span>
-    <span><a href="mailto:team@mentio.agency">team@mentio.agency</a> · <a href="/ua/">Головна</a> · <a class="nav-blog" href="/ua/blog/">Блог</a> · <a href="/llms.txt">llms.txt</a></span>
+    <span><a href="mailto:team@mentio.agency">team@mentio.agency</a> · <a href="/ua/">Головна</a> · <a href="/ua/blog/">Блог</a> · <a href="/llms.txt">llms.txt</a></span>
   </div>
 </footer>
 <script src="/assets/site.js?v=006fac4d" defer></script>

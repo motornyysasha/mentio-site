@@ -1,0 +1,208 @@
+# Mentio
+
+> Mentio is a Generative Engine Optimization (GEO) agency. We audit and optimize websites so AI assistants — ChatGPT, Perplexity, Gemini, Google AI Overviews, Bing Copilot — can find, understand, trust and recommend a business in their answers.
+
+Mentio serves businesses worldwide. Contact: team@mentio.agency
+
+Key facts:
+- GEO (Generative Engine Optimization) extends classic SEO for AI-driven search: it optimizes a site to be cited inside AI answers, not just ranked on a results page.
+- Mentio's audit scores a website across 8 AI platforms and delivers three reports: a problems analysis, a developer-ready action plan with copy-paste code (JSON-LD, llms.txt), and a plain-language owner summary.
+- Mentio implements structured data (Schema.org JSON-LD), llms.txt files, AI-crawler access configuration and citable content restructuring, then verifies every fix.
+- Mentio offers monthly monitoring: re-audits with progress deltas showing how AI platforms see the business over time.
+
+## Pages
+
+- [Home (English)](https://mentio.agency/): What GEO is, why AI search visibility matters now, services and process
+- [Home (Ukrainian)](https://mentio.agency/ua/): Українська версія — що таке GEO, послуги та процес
+- [Home (German)](https://mentio.agency/de/): Deutsche Version — was GEO ist, Leistungen und Ablauf
+- [Home (French)](https://mentio.agency/fr/): Version française — le GEO, services et méthode
+- [Home (Polish)](https://mentio.agency/pl/): Wersja polska — czym jest GEO, usługi i proces
+- [Home (Spanish)](https://mentio.agency/es/): Versión en español — qué es GEO, servicios y proceso
+
+## Services
+
+- GEO Audit: full AI-visibility audit across 8 platforms with prioritized problems, impact and effort ratings
+- GEO Implementation: hands-on fixes — structured data, llms.txt, crawler access, content restructuring — with a verification checklist
+- GEO Monitoring: monthly re-audits, citation tracking and progress reporting
+
+## Blog (practical GEO guides)
+
+- [What is llms.txt and does your website need one?](https://mentio.agency/blog/what-is-llms-txt/): the llms.txt standard explained — format, purpose, honest adoption status
+- [How to check what AI says about your business](https://mentio.agency/blog/check-ai-visibility/): a 5-minute self-test across ChatGPT, Perplexity and Gemini
+- [5 reasons AI assistants recommend your competitors](https://mentio.agency/blog/why-ai-recommends-competitors/): the most common technical and content causes of AI invisibility
+- [GEO vs SEO: what actually changes](https://mentio.agency/blog/geo-vs-seo/): practical comparison — what carries over from SEO, what GEO adds, why you need both
+- [How to get into Google AI Overviews](https://mentio.agency/blog/google-ai-overviews/): what determines citations in AI Overviews and five steps that raise your odds
+
+## Блог українською (practical GEO guides in Ukrainian)
+
+- [Що таке llms.txt і чи потрібен він вашому сайту?](https://mentio.agency/ua/blog/what-is-llms-txt/): стандарт llms.txt — формат, призначення, чесний статус підтримки
+- [Як перевірити, що AI каже про ваш бізнес](https://mentio.agency/ua/blog/check-ai-visibility/): тест на 5 хвилин у ChatGPT, Perplexity і Gemini
+- [5 причин, чому AI рекомендує конкурентів](https://mentio.agency/ua/blog/why-ai-recommends-competitors/): найчастіші технічні та контентні причини AI-невидимості
+- [GEO проти SEO: що змінюється насправді](https://mentio.agency/ua/blog/geo-vs-seo/): практичне порівняння — що переноситься з SEO і що додає GEO
+- [Як потрапити в Google AI Overviews](https://mentio.agency/ua/blog/google-ai-overviews/): що визначає цитування і п'ять кроків для підвищення шансів
+
+## Contact
+
+- Email: team@mentio.agency
+
+
+---
+
+# Full articles (English)
+
+
+## What is llms.txt and does your website need one?
+
+URL: https://mentio.agency/blog/what-is-llms-txt/
+
+**llms.txt is a plain-text markdown file placed at the root of your website** (like yoursite.com/llms.txt) that gives AI systems a curated, structured summary of what your site is about and where the important content lives. The standard was proposed in September 2024 by Jeremy Howard of Answer.AI, and adoption has been growing ever since.
+
+## How it differs from robots.txt and sitemap.xml
+
+Your site probably already has two files that talk to machines, but they answer different questions:
+
+- **robots.txt** answers "where may you go?" — it controls crawler access.
+- **sitemap.xml** answers "what URLs exist?" — it lists pages with no context about what matters.
+- **llms.txt** answers "what should you understand about us?" — it's a human-written map: what the business does, which pages carry the key facts, and how the content is organized.
+
+Large language models work with limited context. When an AI system tries to understand your website, it can either parse dozens of cluttered HTML pages — navigation, cookie banners, scripts — or read one clean file written specifically for it. That's the entire idea of llms.txt.
+
+## What it looks like
+
+```
+# Acme Dental Clinic
+
+> Family dental clinic in Austin, TX. Implants,
+> orthodontics and pediatric dentistry since 2009.
+
+## Services
+- [Implants](https://acme.dental/implants): pricing and process
+- [Invisalign](https://acme.dental/invisalign): teen and adult plans
+
+## About
+- [Team](https://acme.dental/team): doctors and credentials
+- [Reviews](https://acme.dental/reviews): verified patient feedback
+
+```
+
+The format is simple: an H1 with the name, a blockquote with a one-paragraph summary, then sections with annotated links. Full spec at llmstxt.org (https://llmstxt.org).
+
+## Does your site actually need one?
+
+Honest answer: not every AI system reads llms.txt today, and nobody can guarantee when full adoption comes. But the cost-benefit is lopsided: the file takes half an hour to write, doesn't interfere with anything, and every system that does read it gets a perfectly clear picture of your business — written by you, not guessed by a model from your HTML.
+We treat it as cheap insurance with growing upside. Every Mentio GEO audit (/#services) checks whether you have one, whether it's valid, and generates one if you don't.
+
+
+## How to check what AI says about your business (5-minute test)
+
+URL: https://mentio.agency/blog/check-ai-visibility/
+
+Before investing anything in AI visibility, run this test. It takes five minutes, requires no tools, and shows you exactly where you stand.
+
+## Step 1 — Ask the assistants what people actually ask
+
+Open ChatGPT (with web search enabled), Perplexity and Gemini, and ask each of them two questions:
+
+- **The buying question:** "best [your service] in [your city]" — phrased the way a customer would.
+- **The brand question:** "What do you know about [your business name]?"
+
+Record three things for each answer: are you **mentioned**, are you **cited** (linked as a source), and is the information **correct**?
+
+## Step 2 — Check whether AI crawlers can even reach you
+
+Open yoursite.com/robots.txt and look for lines blocking GPTBot, ClaudeBot, PerplexityBot or Google-Extended. A surprising number of sites block AI crawlers by accident — often a leftover from a plugin or an overzealous security setting. If a crawler is blocked, that system can't read your site, period.
+
+## Step 3 — Check your structured data
+
+Run your homepage through validator.schema.org (https://validator.schema.org). If it finds no structured data at all, AI systems have to guess who you are, what you sell and where you operate — and they guess conservatively: they leave you out.
+
+## How to read your results
+
+- **Mentioned, cited, correct** — you're in good shape; your job is monitoring and defending the position.
+- **Mentioned but wrong** — dangerous: AI is actively spreading outdated prices, addresses or services. Fix your sources.
+- **Not mentioned at all** — the assistant is recommending your competitors to your customers. Every query is a lost referral, invisible in your analytics.
+
+If you landed in the second or third group, that's fixable — see the five most common reasons AI skips a business (/blog/why-ai-recommends-competitors/), or read the basics in our post on llms.txt (/blog/what-is-llms-txt/).
+
+
+## 5 reasons AI assistants recommend your competitors instead of you
+
+URL: https://mentio.agency/blog/why-ai-recommends-competitors/
+
+When someone asks an AI assistant for a recommendation and your business doesn't appear, the assistant doesn't admit a gap — it names your competitors with full confidence. In our audits, the causes are remarkably consistent. Here are the five we see most, in order of how often they appear.
+
+## 1. AI crawlers are blocked — often by accident
+
+Security plugins, CDN bot protection and copy-pasted robots.txt templates routinely block GPTBot, PerplexityBot and friends. The result is absolute: a system that can't crawl you can't cite you. This is the first thing to check and usually the fastest to fix.
+
+## 2. No structured data, so AI can't parse who you are
+
+Schema.org markup (JSON-LD) is how you tell machines unambiguously: this is a business, here's its name, services, location, contacts. Without it, models reconstruct your identity from scattered HTML — and when they're unsure, they leave you out rather than risk a wrong answer.
+
+## 3. Your content isn't citable
+
+AI answers are assembled from clear, factual passages: definitions, numbers, direct answers to real questions. Pages that say "innovative solutions for your success" give an assistant nothing to quote. Pages that say "an implant costs $1,900–2,400 and takes two visits" get cited. Marketing fluff is invisible to the answer layer.
+
+## 4. No entity footprint outside your own site
+
+Models trust businesses they've seen in more than one place: industry directories, review platforms, maps, press, forums. If your brand exists only on your own domain, you're a claim with no witnesses. Consistent presence on the sources AI actually reads is what turns a name into an entity.
+
+## 5. Inconsistent or outdated information across the web
+
+Old addresses on a directory, different phone numbers on two platforms, a service list that changed three years ago — models see conflicting data and either pick the wrong version or skip you. An entity that contradicts itself is a low-trust entity.
+
+## The good news
+
+Every one of these five is diagnosable and fixable. Start with the 5-minute self-test (/blog/check-ai-visibility/), add an llms.txt (/blog/what-is-llms-txt/), and if you want the full picture — a GEO audit (/#services) scores all five areas and hands your developer ready-to-paste fixes.
+
+
+## GEO vs SEO: what actually changes (and what stays the same)
+
+URL: https://mentio.agency/blog/geo-vs-seo/
+
+**Generative Engine Optimization (GEO) is the practice of optimizing a website to be cited inside AI-generated answers** — in ChatGPT, Perplexity, Gemini and Google AI Overviews. Classic SEO optimizes for a ranked list of links a human scrolls; GEO optimizes for the single answer an assistant composes. That one-sentence difference changes surprisingly much — and leaves more intact than the hype suggests.
+
+## What stays the same
+
+- **Technical health still rules.** A site that can't be crawled, loads slowly or renders everything through JavaScript is invisible to both Google's classic index and AI crawlers. Every hour invested here pays twice.
+- **Quality content still wins.** E-E-A-T — experience, expertise, authoritativeness, trust — is exactly what language models are tuned to prefer when picking sources.
+- **Authority is still earned elsewhere.** Backlinks taught Google to trust you; mentions across directories, reviews and press teach AI models the same thing.
+
+## What changes
+
+- **The unit of victory.** SEO wins a position; GEO wins a citation. An AI answer names 3–5 sources — there is no "page two" to survive on.
+- **The reader.** SEO copy is written for a human skimming a page. GEO content must also parse cleanly for a machine assembling an answer: direct definitions, concrete numbers, question-shaped headings.
+- **The infrastructure.** New layers appear: AI-crawler access in robots.txt (GPTBot, PerplexityBot, Google-Extended), llms.txt (/blog/what-is-llms-txt/), and Schema.org markup that lets a model state facts about you with confidence.
+- **The measurement.** Rankings and clicks become mentions, citations and "was the information about us correct?" — tracked by asking the assistants themselves, month after month.
+
+## Do you need both?
+
+Yes — and they are not in conflict. Everything GEO adds follows search-engine guidelines, so a GEO-optimized site tends to rank better, not worse. The practical order: fix the SEO foundation, then add the AI layers on top. Skipping the foundation to chase citations is building the roof first.
+
+## The myth worth killing
+
+"AI search is too small to matter yet." The share of buying journeys that start with an assistant grows every quarter, and the businesses cited today are accumulating an advantage that gets more expensive to displace later. Positions can be re-taken; a model's learned preference for your competitor is much stickier. Being early is the whole game — run the 5-minute test (/blog/check-ai-visibility/) to see where you stand.
+
+
+## How to get your business into Google AI Overviews
+
+URL: https://mentio.agency/blog/google-ai-overviews/
+
+**AI Overviews are the AI-generated answers Google shows above the traditional results.** When one appears, it takes the most valuable screen real estate on the internet — and it cites only a handful of sources. Here is what actually determines whether yours is one of them.
+
+## First, check whether your queries trigger AI Overviews
+
+Not every search shows one. They appear most often on question-shaped and research queries — "how much does X cost", "best way to Y", "X vs Y" — and less on pure navigation. Google your ten most important customer questions and note where an AI Overview appears. Those queries are your GEO battleground; the classic top-10 remains the game for the rest.
+
+## What raises your odds of being cited
+
+- **Answer-shaped passages.** AI Overviews are assembled from passages that answer a question directly in 2–4 sentences. Give every important question its own heading and answer it immediately below — no warm-up paragraphs.
+- **Facts a machine can lift.** Prices, timelines, sizes, conditions — concrete and current. Vague marketing ("affordable, fast, high-quality") gives the model nothing to quote.
+- **Schema.org markup.** Structured data confirms what the page says: who you are, what you sell, where you operate, what it costs. Confirmed facts are safer to cite — models prefer safe.
+- **Crawl access.** AI Overviews rely on Google's index, so classic indexability is the entry ticket — and make sure Google-Extended isn't blocked in robots.txt if you also want visibility in Gemini.
+- **Consistency across the web.** If your site, Google Business Profile, directories and reviews state the same facts, the model's confidence rises — and with it, your citation odds.
+
+## How to measure progress
+
+Re-run your ten queries monthly, from a clean browser session. Track three things per query: does an AI Overview appear, are you cited in it, and is what it says about you correct. That simple table is the honest KPI of AI visibility — the same delta we track in GEO monitoring (/#services).
+One warning: nobody can guarantee a citation — anyone promising "top of AI Overviews in 30 days" is selling air. What the five steps above do is systematically remove every reason Google has to skip you. For most local and niche queries, that's enough — because almost no competitor has done this work yet.

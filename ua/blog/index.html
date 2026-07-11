@@ -21,7 +21,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="stylesheet" href="/assets/style.css?v=be46a09a">
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Blog", "name": "Mentio Blog", "url": "https://mentio.agency/ua/blog/", "inLanguage": "uk", "publisher": {"@type": "Organization", "name": "Mentio", "url": "https://mentio.agency/"}}
+{"@context": "https://schema.org", "@graph": [{"@type": "Blog", "name": "Mentio Blog", "url": "https://mentio.agency/ua/blog/", "inLanguage": "uk", "publisher": {"@id": "https://mentio.agency/#org"}}, {"@type": "Organization", "@id": "https://mentio.agency/#org", "name": "Mentio", "url": "https://mentio.agency/", "email": "team@mentio.agency", "logo": {"@type": "ImageObject", "url": "https://mentio.agency/assets/logo.png", "width": 512, "height": 512}}]}
 </script>
 </head>
 <body>
@@ -41,7 +41,7 @@
 
 <div class="wrap post-head">
   <p class="kicker">Mentio</p>
-  <h2 style="font-size:clamp(1.9rem,4vw,2.7rem)">Блог</h2>
+  <h1 style="font-size:clamp(1.9rem,4vw,2.7rem);letter-spacing:-.02em;line-height:1.2">Блог</h1>
   <p class="lead" style="margin-bottom:1rem">Короткі практичні гайди: як зробити, щоб AI вас знаходив, довіряв і рекомендував.</p>
 </div>
 <section style="padding:20px 0 60px">
@@ -79,7 +79,7 @@
 <footer>
   <div class="wrap foot">
     <span>© 2026 Mentio · Generative Engine Optimization</span>
-    <span><a href="mailto:team@mentio.agency">team@mentio.agency</a> · <a href="/ua/">Головна</a> · <a class="nav-blog" href="/ua/blog/">Блог</a> · <a href="/llms.txt">llms.txt</a></span>
+    <span><a href="mailto:team@mentio.agency">team@mentio.agency</a> · <a href="/ua/">Головна</a> · <a href="/ua/blog/">Блог</a> · <a href="/llms.txt">llms.txt</a></span>
   </div>
 </footer>
 <script src="/assets/site.js?v=006fac4d" defer></script>

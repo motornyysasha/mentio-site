@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mentio — Agencia GEO. Consigue que ChatGPT, Perplexity y Google AI recomienden tu negocio</title>
-<meta name="description" content="Mentio es una agencia de Generative Engine Optimization (GEO). Auditamos y optimizamos sitios web para que los asistentes de IA — ChatGPT, Perplexity, Gemini, Google AI Overviews — encuentren tu negocio, confíen en él y lo recomienden.">
+<title>Mentio — Agencia GEO: recomendado por la IA</title>
+<meta name="description" content="Mentio hace visible tu negocio en la búsqueda con IA — ChatGPT, Perplexity, Gemini, AI Overviews. Comprobación gratis, auditoría por 99 $.">
 <link rel="canonical" href="https://mentio.agency/es/">
 <link rel="alternate" hreflang="en" href="https://mentio.agency/">
 <link rel="alternate" hreflang="uk" href="https://mentio.agency/ua/">
@@ -18,6 +18,14 @@
 <meta property="og:site_name" content="Mentio">
 <meta property="og:title" content="Mentio — haz que la IA te recomiende">
 <meta property="og:description" content="Tus clientes preguntan a ChatGPT, Perplexity y Google AI antes de comprar. Mentio se asegura de que la respuesta te incluya.">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="uk_UA">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta name="twitter:title" content="Mentio — haz que la IA te recomiende">
+<meta name="twitter:description" content="Tus clientes preguntan a ChatGPT, Perplexity y Google AI antes de comprar. Mentio se asegura de que la respuesta te incluya.">
 <meta property="og:image" content="https://mentio.agency/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -32,9 +40,19 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://mentio.agency/#website",
+      "url": "https://mentio.agency/",
+      "name": "Mentio",
+      "publisher": {"@id": "https://mentio.agency/#org"},
+      "inLanguage": ["en", "uk", "de", "fr", "pl", "es"]
+    },
+    {
       "@type": "Organization",
       "@id": "https://mentio.agency/#org",
       "name": "Mentio",
+      "logo": {"@type": "ImageObject", "url": "https://mentio.agency/assets/logo.png", "width": 512, "height": 512},
+      "foundingDate": "2026",
       "url": "https://mentio.agency/",
       "email": "team@mentio.agency",
       "description": "Agencia de Generative Engine Optimization (GEO). Mentio hace que los negocios sean visibles y citables en la búsqueda con IA: ChatGPT, Perplexity, Gemini, Google AI Overviews y Bing Copilot.",
