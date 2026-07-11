@@ -30,6 +30,8 @@ Key facts:
 - [What is llms.txt and does your website need one?](https://mentio.agency/blog/what-is-llms-txt/): the llms.txt standard explained — format, purpose, honest adoption status
 - [How to check what AI says about your business](https://mentio.agency/blog/check-ai-visibility/): a 5-minute self-test across ChatGPT, Perplexity and Gemini
 - [5 reasons AI assistants recommend your competitors](https://mentio.agency/blog/why-ai-recommends-competitors/): the most common technical and content causes of AI invisibility
+- [GEO vs SEO: what actually changes](https://mentio.agency/blog/geo-vs-seo/): practical comparison — what carries over from SEO, what GEO adds, why you need both
+- [How to get into Google AI Overviews](https://mentio.agency/blog/google-ai-overviews/): what determines citations in AI Overviews and five steps that raise your odds
 
 ## Contact
 

@@ -151,4 +151,40 @@
     <xhtml:link rel="alternate" hreflang="uk" href="https://mentio.agency/ua/blog/why-ai-recommends-competitors/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mentio.agency/blog/why-ai-recommends-competitors/"/>
   </url>
+  <url>
+    <loc>https://mentio.agency/blog/geo-vs-seo/</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mentio.agency/blog/geo-vs-seo/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mentio.agency/ua/blog/geo-vs-seo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mentio.agency/blog/geo-vs-seo/"/>
+  </url>
+  <url>
+    <loc>https://mentio.agency/ua/blog/geo-vs-seo/</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mentio.agency/blog/geo-vs-seo/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mentio.agency/ua/blog/geo-vs-seo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mentio.agency/blog/geo-vs-seo/"/>
+  </url>
+  <url>
+    <loc>https://mentio.agency/blog/google-ai-overviews/</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mentio.agency/blog/google-ai-overviews/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mentio.agency/ua/blog/google-ai-overviews/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mentio.agency/blog/google-ai-overviews/"/>
+  </url>
+  <url>
+    <loc>https://mentio.agency/ua/blog/google-ai-overviews/</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mentio.agency/blog/google-ai-overviews/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mentio.agency/ua/blog/google-ai-overviews/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mentio.agency/blog/google-ai-overviews/"/>
+  </url>
 </urlset>
