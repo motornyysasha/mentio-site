@@ -4,6 +4,8 @@
 
 Mentio serves businesses worldwide. Contact: team@mentio.agency
 
+Founder: Oleksandr Motornyy, Founder & GEO Consultant at Mentio — author of every article in the blog below. LinkedIn: https://www.linkedin.com/in/oleksandr-motornyy-7b9473169/
+
 Key facts:
 - GEO (Generative Engine Optimization) extends classic SEO for AI-driven search: it optimizes a site to be cited inside AI answers, not just ranked on a results page.
 - Mentio's audit scores a website across 8 AI platforms and delivers three reports: a problems analysis, a developer-ready action plan with copy-paste code (JSON-LD, llms.txt), and a plain-language owner summary.

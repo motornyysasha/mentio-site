@@ -236,3 +236,16 @@ article.post{padding:10px 0 70px}
 .post-body td{color:var(--muted);padding:.55rem .7rem;border-bottom:1px solid var(--border);vertical-align:top}
 .post-body tr:last-child td{border-bottom:none}
 @media(max-width:640px){.post-body table{display:block;overflow-x:auto}}
+
+/* founder / author */
+.founder-card{display:flex;gap:1.6rem;align-items:flex-start;max-width:760px;margin-top:2.2rem}
+.founder-ava{flex:0 0 84px;width:84px;height:84px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk';font-weight:700;font-size:1.55rem;color:#fff;letter-spacing:.03em}
+.founder-ava img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
+.founder-card h3{font-size:1.2rem;margin:.1rem 0 .25rem}
+.founder-card .founder-role{color:var(--orange);font-size:.83rem;font-weight:600;letter-spacing:.05em;margin-bottom:.9rem}
+.founder-card .bio{color:var(--muted);font-size:.97rem;margin-bottom:1.15rem}
+.founder-link{color:var(--text);text-decoration:none;font-size:.9rem;font-weight:600;border-bottom:1px solid var(--orange);padding-bottom:2px;transition:color .2s}
+.founder-link:hover{color:var(--orange)}
+.post-meta a.byline{color:var(--text);text-decoration:none;border-bottom:1px solid rgba(255,107,53,.55)}
+.post-meta a.byline:hover{color:var(--orange)}
+@media(max-width:640px){.founder-card{flex-direction:column;gap:1.15rem}}
