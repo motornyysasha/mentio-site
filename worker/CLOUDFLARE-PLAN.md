@@ -140,3 +140,34 @@ GoDaddy → Nameservers → вернуть `ns27.domaincontrol.com` / `ns28.doma
 кастомные заголовки из файла `_headers` в репозитории, DNS остаётся у GoDaddy,
 почта не затрагивается вообще. Меняются только A/CNAME записи сайта.
 Дороже по трудозатратам, но радиус поражения при ошибке меньше.
+
+---
+
+## Результат проверки после переключения (23 июля 2026)
+
+Проверено напрямую через Cloudflare (`--resolve mentio.agency:443:172.67.203.80`):
+
+```
+server: cloudflare
+strict-transport-security: max-age=15552000
+content-security-policy: default-src 'self'; script-src 'self' https://gc.zgo.at; …
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+permissions-policy: geolocation=(), microphone=(), camera=(), payment=(), usb=()
+```
+
+- 16 URL (6 языков, блог, юридические, llms.txt, robots.txt, sitemap, assets, 404) — все 200
+- www → apex и http → https: 301, оба с заголовками
+- Почта: MX, SPF, DMARC, оба DKIM, SRV `_autodiscover`, `email` — совпадают с бэкапом
+- robots.txt: 0 строк Disallow, Cloudflare его не переписал
+- Консоль браузера: ни одного нарушения CSP; GoatCounter загружается, 6 шрифтов, стили применяются
+- Отправка лида из браузера через CSP `connect-src`: HTTP 200 / ok
+- HSTS: 6 месяцев, includeSubDomains **off**, preload **off**
+- Minimum TLS поднят с 1.0 до **1.2** (не было в плане аудита; TLS 1.1 теперь отвергается)
+
+### Найдено попутно, не связано с миграцией
+
+`telegram-worker.js` использует `Origin` только для выбора значения CORS-заголовка, но не
+как проверку доступа. CORS — механизм браузера, поэтому прямой POST через curl с любого
+Origin проходит и доставляет сообщение в Telegram. Риск — спам в личный Telegram.
+Лечится Rate Limiting на маршруте воркера или Turnstile на формах. Существовало и до переноса.
