@@ -7,8 +7,7 @@ Mentio serves businesses worldwide. Contact: team@mentio.agency
 Key facts:
 - GEO (Generative Engine Optimization) extends classic SEO for AI-driven search: it optimizes a site to be cited inside AI answers, not just ranked on a results page.
 - Mentio's audit scores a website across 8 AI platforms and delivers three reports: a problems analysis, a developer-ready action plan with copy-paste code (JSON-LD, llms.txt), and a plain-language owner summary.
-- Mentio implements structured data (Schema.org JSON-LD), llms.txt files, AI-crawler access configuration and citable content restructuring, then verifies every fix.
-- Mentio offers monthly monitoring: re-audits with progress deltas showing how AI platforms see the business over time.
+- The audit hands your developer ready-to-paste fixes: Schema.org JSON-LD, llms.txt, AI-crawler access configuration and citable content restructuring, each with a verification step.
 
 ## Pages
 
@@ -19,11 +18,9 @@ Key facts:
 - [Home (Polish)](https://mentio.agency/pl/): Wersja polska — czym jest GEO, usługi i proces
 - [Home (Spanish)](https://mentio.agency/es/): Versión en español — qué es GEO, servicios y proceso
 
-## Services
+## Service
 
-- GEO Audit: full AI-visibility audit across 8 platforms with prioritized problems, impact and effort ratings
-- GEO Implementation: hands-on fixes — structured data, llms.txt, crawler access, content restructuring — with a verification checklist
-- GEO Monitoring: monthly re-audits, citation tracking and progress reporting
+- GEO Audit ($99, one-time): full AI-visibility audit across 8 platforms — prioritized problems, a developer-ready action plan with copy-paste code, and a plain-language owner summary. This is the only service; no packages or upsells.
 
 ## Blog (practical GEO guides)
 
