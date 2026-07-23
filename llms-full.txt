@@ -20,7 +20,7 @@ Key facts:
 
 ## Service
 
-- GEO Audit ($99, one-time): full AI-visibility audit across 8 platforms — prioritized problems, a developer-ready action plan with copy-paste code, and a plain-language owner summary. This is the only service; no packages or upsells.
+- GEO Audit ($99, one-time): full AI-visibility audit across 8 platforms. The price includes both the diagnosis (every problem found, ranked by priority, impact and effort) and the complete set of solutions: a step-by-step, developer-ready plan with copy-paste code (JSON-LD, llms.txt, crawler access, content restructuring) and a verification step per item, plus a plain-language owner summary. This is the only service; no packages or upsells.
 
 ## Blog (practical GEO guides)
 
