@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI crawlers: which bots read your site and how to check they can — Mentio Blog</title>
+<meta name="description" content="GPTBot, ClaudeBot, PerplexityBot, Google-Extended — what each AI crawler does, how to check whether you're blocking them by accident, and which ones to allow.">
+<link rel="canonical" href="https://mentio.agency/blog/ai-crawlers-guide/">
+<link rel="alternate" hreflang="en" href="https://mentio.agency/blog/ai-crawlers-guide/">
+<link rel="alternate" hreflang="uk" href="https://mentio.agency/ua/blog/ai-crawlers-guide/">
+<link rel="alternate" hreflang="x-default" href="https://mentio.agency/blog/ai-crawlers-guide/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mentio.agency/blog/ai-crawlers-guide/">
+<meta property="og:site_name" content="Mentio">
+<meta property="og:title" content="AI crawlers: which bots read your site, and how to check they can">
+<meta property="og:description" content="GPTBot, ClaudeBot, PerplexityBot, Google-Extended — what each AI crawler does, how to check whether you're blocking them by accident, and which ones to allow.">
+<meta property="og:image" content="https://mentio.agency/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mentio.agency/assets/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2222%22%20fill%3D%22%230B0B10%22%2F%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22mg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23E5383B%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23FF6B35%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20x%3D%2238%22%20y%3D%2235.5%22%20width%3D%229.6%22%20height%3D%2221.6%22%20rx%3D%224.8%22%20fill%3D%22url%28%23mg%29%22%2F%3E%3Crect%20x%3D%2252.7%22%20y%3D%2240%22%20width%3D%229%22%20height%3D%2217.1%22%20rx%3D%224.5%22%20fill%3D%22url%28%23mg%29%22%2F%3E%3Crect%20x%3D%2238%22%20y%3D%2260.4%22%20width%3D%2224%22%20height%3D%223.4%22%20rx%3D%221.7%22%20fill%3D%22url%28%23mg%29%22%2F%3E%3C%2Fsvg%3E">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/style.css?v=dff65e98">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://mentio.agency/blog/ai-crawlers-guide/#article",
+   "headline": "AI crawlers: which bots read your site, and how to check they can",
+   "description": "GPTBot, ClaudeBot, PerplexityBot, Google-Extended — what each AI crawler does, how to check whether you're blocking them by accident, and which ones to allow.",
+   "inLanguage": "en",
+   "datePublished": "2026-07-18",
+   "dateModified": "2026-07-18",
+   "image": "https://mentio.agency/assets/og.png",
+   "mainEntityOfPage": "https://mentio.agency/blog/ai-crawlers-guide/",
+   "author": {
+    "@id": "https://mentio.agency/#org"
+   },
+   "publisher": {
+    "@id": "https://mentio.agency/#org"
+   },
+   "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+     "h1",
+     ".post-body p:first-of-type"
+    ]
+   }
+  },
+  {
+   "@type": "Organization",
+   "@id": "https://mentio.agency/#org",
+   "name": "Mentio",
+   "url": "https://mentio.agency/",
+   "email": "team@mentio.agency",
+   "sameAs": [
+    "https://www.linkedin.com/company/mentio-agency/",
+    "https://github.com/motornyysasha/mentio-site"
+   ],
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://mentio.agency/assets/logo.png",
+    "width": 512,
+    "height": 512
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Mentio",
+     "item": "https://mentio.agency/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Blog",
+     "item": "https://mentio.agency/blog/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "AI crawlers: which bots read your site, and how to check they can"
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="/"><span class="logo-dot"></span>Mentio</a>
+    <div class="nav-links">
+      <a href="/#geo">What is GEO</a>
+      <a href="/#services">Services</a>
+      <a class="nav-blog" href="/blog/">Blog</a>
+      <a class="lang-select" style="text-decoration:none" href="/ua/blog/ai-crawlers-guide/" lang="uk">UA</a>
+      <a class="nav-cta" href="/#check">Free check</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap post-head">
+  <p class="post-meta"><a href="/blog/" style="color:inherit;text-decoration:none">← Blog</a> · Mentio · July 18, 2026 · 4 min read</p>
+  <h1 style="font-size:clamp(1.7rem,3.6vw,2.5rem);letter-spacing:-.02em;line-height:1.2">AI crawlers: which bots read your site, and how to check they can</h1>
+</div>
+<article class="post">
+  <div class="wrap">
+    <div class="post-body">
+<p><strong>An AI crawler is a bot that fetches your pages so an AI system can read them</strong> — either to answer a user's question right now, or to build the index it answers from later. If your site blocks these bots, no amount of content or structured data matters: the model simply never sees you. This is the single most common, and most fixable, cause of AI invisibility we find in audits.</p>
+<h2>The crawlers that matter</h2>
+<table>
+<tr><th>User agent</th><th>Who runs it</th><th>What it does</th></tr>
+<tr><td><code>GPTBot</code></td><td>OpenAI</td><td>Collects pages for model training</td></tr>
+<tr><td><code>OAI-SearchBot</code></td><td>OpenAI</td><td>Builds the index behind ChatGPT search results</td></tr>
+<tr><td><code>ChatGPT-User</code></td><td>OpenAI</td><td>Fetches a page live when a user's question needs it</td></tr>
+<tr><td><code>ClaudeBot</code></td><td>Anthropic</td><td>Crawls for Claude</td></tr>
+<tr><td><code>PerplexityBot</code></td><td>Perplexity</td><td>Indexes pages for Perplexity answers</td></tr>
+<tr><td><code>Google-Extended</code></td><td>Google</td><td>Controls use of your content in Gemini and AI features</td></tr>
+<tr><td><code>Bingbot</code></td><td>Microsoft</td><td>Powers Bing, Copilot — and parts of ChatGPT search</td></tr>
+<tr><td><code>Amazonbot</code>, <code>meta-externalagent</code>, <code>cohere-ai</code></td><td>Amazon, Meta, Cohere</td><td>Assistant and model crawlers</td></tr>
+</table>
+<p>Two distinctions worth understanding. First, <strong>training crawlers vs answer crawlers</strong>: GPTBot collects data for future models, while <code>ChatGPT-User</code> and <code>OAI-SearchBot</code> affect whether you can be cited <em>today</em>. Blocking the first is a business decision about your content; blocking the second is simply opting out of AI search. Second, <code>Google-Extended</code> is not a crawler at all — it's a permission token. Google's normal Googlebot still crawls you; the token only says whether that content may feed Gemini and AI features. Details are in <a href="https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers" rel="noopener">Google's crawler documentation</a> and <a href="https://platform.openai.com/docs/bots" rel="noopener">OpenAI's bot documentation</a>.</p>
+<h2>How to check in 60 seconds</h2>
+<p>Open <code>yoursite.com/robots.txt</code> in a browser. You are looking for two things:</p>
+<ol>
+<li><strong>Explicit blocks.</strong> Any line pairing one of the agents above with <code>Disallow: /</code> means that system is locked out entirely.</li>
+<li><strong>A blanket block.</strong> A <code>User-agent: *</code> group with <code>Disallow: /</code> blocks everything that isn't explicitly allowed elsewhere — including every AI crawler.</li>
+</ol>
+<p>Also check for a <code>noindex</code> meta tag on key pages (view source, search for "noindex") and, if you can, an <code>X-Robots-Tag</code> header. A page can be perfectly crawlable and still be excluded by either.</p>
+<h2>The three ways sites block AI by accident</h2>
+<p><strong>Security plugins.</strong> WordPress security and anti-scraping plugins often ship "block AI bots" as a default-on feature. It's presented as protection; in practice it's an opt-out of AI search.</p>
+<p><strong>CDN bot protection.</strong> Cloudflare and similar services have one-click toggles for blocking AI crawlers. Someone enables it for good reasons — bandwidth, content scraping — and nobody connects it to the marketing goal of being recommended by ChatGPT.</p>
+<p><strong>Copy-pasted robots.txt.</strong> Templates from a few years ago block whole ranges of user agents. They get inherited from site to site, long after anyone remembers why.</p>
+<h2>What we recommend allowing</h2>
+<p>For almost every business whose goal is customers, the answer is: allow the answer-layer crawlers without hesitation (<code>OAI-SearchBot</code>, <code>ChatGPT-User</code>, <code>PerplexityBot</code>, <code>ClaudeBot</code>, <code>Bingbot</code>, <code>Google-Extended</code>). Being present in answers is exactly what you're trying to buy with all your other marketing.</p>
+<p>Training crawlers (<code>GPTBot</code> and friends) are a genuine judgement call for publishers whose content <em>is</em> the product. For a service business, blocking them buys nothing and costs future recognition — models that learned your name during training can mention you even when browsing is off.</p>
+<p>A minimal, permissive robots.txt looks like this:</p>
+<pre><code>User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://yoursite.com/sitemap.xml</code></pre>
+<h2>After you change it</h2>
+<p>Crawlers re-read robots.txt on their own schedule — typically within days. To speed things up on the Bing side (which also feeds ChatGPT search), submit your URLs via <a href="https://www.indexnow.org" rel="noopener">IndexNow</a>. Then verify in your server or CDN logs that the bots actually return: if <code>GPTBot</code> and <code>PerplexityBot</code> start appearing in your access logs, the door is genuinely open.</p>
+<h2>FAQ</h2>
+<h3>Does allowing AI crawlers hurt my SEO?</h3>
+<p>No. They are separate systems from Googlebot's ranking crawl. Allowing them adds AI visibility without touching your search rankings.</p>
+<h3>Will AI bots overload my server?</h3>
+<p>For a normal business site, their traffic is negligible — a few requests per day. High-volume publishers may want a crawl-delay; a ten-page service site will never notice.</p>
+<h3>How do I know it worked?</h3>
+<p>Run the <a href="/blog/check-ai-visibility/">5-minute visibility test</a> a couple of weeks later and compare. Crawler access is step 2 of that test for a reason: nothing downstream works without it.</p>
+    </div>
+<div class="post-cta">
+  <p><strong>Want to know how AI assistants see your website?</strong> Run the free check — we reply with a summary of what ChatGPT, Perplexity and Gemini currently say about your business.</p>
+  <a class="btn btn-primary" href="/#check">Check my website for free</a>
+</div>
+    <div style="margin-top:2.6rem;max-width:760px">
+      <p class="kicker">Read next</p>
+      <div class="blog-list">
+      <a class="blog-item" href="/blog/we-audited-our-own-site/">
+        <h3>Case study: we audited our own site. Score: 53/100 — and that's the point</h3>
+        <p>We ran the same GEO audit we sell on mentio.agency itself, two days after launch. Full category scores, what earned 88-98, what earned 5, and why the gap is the roadmap.</p>
+      </a>
+      <a class="blog-item" href="/blog/schema-for-ai/">
+        <h3>Schema.org for AI search: the 5 types that actually matter</h3>
+        <p>Structured data is how you state facts machines can trust. Which schema types move the needle for AI visibility, what to put in them, and the mistake that quietly cancels them out.</p>
+      </a>
+      </div>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Mentio · Generative Engine Optimization</span>
+    <span><a href="mailto:team@mentio.agency">team@mentio.agency</a> · <a href="/">Home</a> · <a href="/blog/">Blog</a> · <a href="/llms.txt">llms.txt</a></span>
+  </div>
+</footer>
+<script src="/assets/site.js?v=006fac4d" defer></script>
+<script data-goatcounter="https://mentio.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

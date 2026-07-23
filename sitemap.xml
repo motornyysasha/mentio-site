@@ -117,7 +117,7 @@
   </url>
   <url>
     <loc>https://mentio.agency/blog/check-ai-visibility/</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://mentio.agency/blog/check-ai-visibility/"/>
@@ -126,7 +126,7 @@
   </url>
   <url>
     <loc>https://mentio.agency/ua/blog/check-ai-visibility/</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://mentio.agency/blog/check-ai-visibility/"/>
@@ -135,7 +135,7 @@
   </url>
   <url>
     <loc>https://mentio.agency/blog/why-ai-recommends-competitors/</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://mentio.agency/blog/why-ai-recommends-competitors/"/>
@@ -144,7 +144,7 @@
   </url>
   <url>
     <loc>https://mentio.agency/ua/blog/why-ai-recommends-competitors/</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://mentio.agency/blog/why-ai-recommends-competitors/"/>
@@ -153,7 +153,7 @@
   </url>
   <url>
     <loc>https://mentio.agency/blog/geo-vs-seo/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://mentio.agency/blog/geo-vs-seo/"/>
@@ -162,7 +162,7 @@
   </url>
   <url>
     <loc>https://mentio.agency/ua/blog/geo-vs-seo/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://mentio.agency/blog/geo-vs-seo/"/>
@@ -171,7 +171,7 @@
   </url>
   <url>
     <loc>https://mentio.agency/blog/google-ai-overviews/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://mentio.agency/blog/google-ai-overviews/"/>
@@ -180,7 +180,7 @@
   </url>
   <url>
     <loc>https://mentio.agency/ua/blog/google-ai-overviews/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://mentio.agency/blog/google-ai-overviews/"/>
@@ -189,7 +189,7 @@
   </url>
   <url>
     <loc>https://mentio.agency/blog/we-audited-our-own-site/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://mentio.agency/blog/we-audited-our-own-site/"/>
@@ -213,5 +213,32 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://mentio.agency/terms/"/>
     <xhtml:link rel="alternate" hreflang="uk" href="https://mentio.agency/ua/terms/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mentio.agency/terms/"/>
+  </url>
+  <url>
+    <loc>https://mentio.agency/blog/ai-crawlers-guide/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mentio.agency/blog/ai-crawlers-guide/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mentio.agency/ua/blog/ai-crawlers-guide/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mentio.agency/blog/ai-crawlers-guide/"/>
+  </url>
+  <url>
+    <loc>https://mentio.agency/blog/schema-for-ai/</loc>
+    <lastmod>2026-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mentio.agency/blog/schema-for-ai/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mentio.agency/ua/blog/schema-for-ai/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mentio.agency/blog/schema-for-ai/"/>
+  </url>
+  <url>
+    <loc>https://mentio.agency/blog/write-content-ai-quotes/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mentio.agency/blog/write-content-ai-quotes/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://mentio.agency/ua/blog/write-content-ai-quotes/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mentio.agency/blog/write-content-ai-quotes/"/>
   </url>
 </urlset>
