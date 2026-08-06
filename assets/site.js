@@ -4,6 +4,13 @@
   var finePointer = window.matchMedia("(pointer: fine)").matches;
   function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
 
+  /* ---------- language switcher (CSP-safe, replaces inline onchange) ---------- */
+  document.querySelectorAll("select.lang-select").forEach(function (sel) {
+    sel.addEventListener("change", function () {
+      if (this.value) location.href = this.value;
+    });
+  });
+
   /* ---------- reveal on scroll ---------- */
   if (!reduced && "IntersectionObserver" in window) {
     var targets = document.querySelectorAll(".card, .step, details, .lead, section h2, .kicker");
