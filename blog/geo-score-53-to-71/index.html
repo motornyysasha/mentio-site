@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>From 53 to 71: what actually moved our own GEO score — Mentio Blog</title>
+<meta name="description" content="Two weeks after publishing our own audit at 53/100, we re-ran it: 71/100. Here is the honest breakdown of which fixes moved the number, which did nothing, and what is still broken.">
+<link rel="canonical" href="https://mentio.agency/blog/geo-score-53-to-71/">
+<link rel="alternate" hreflang="en" href="https://mentio.agency/blog/geo-score-53-to-71/">
+<link rel="alternate" hreflang="uk" href="https://mentio.agency/ua/blog/geo-score-53-to-71/">
+<link rel="alternate" hreflang="x-default" href="https://mentio.agency/blog/geo-score-53-to-71/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mentio.agency/blog/geo-score-53-to-71/">
+<meta property="og:site_name" content="Mentio">
+<meta property="og:title" content="From 53 to 71: what actually moved our own GEO score">
+<meta property="og:description" content="Two weeks after publishing our own audit at 53/100, we re-ran it: 71/100. Here is the honest breakdown of which fixes moved the number, which did nothing, and what is still broken.">
+<meta property="og:image" content="https://mentio.agency/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mentio.agency/assets/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2222%22%20fill%3D%22%230B0B10%22%2F%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22mg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23E5383B%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23FF6B35%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20x%3D%2238%22%20y%3D%2235.5%22%20width%3D%229.6%22%20height%3D%2221.6%22%20rx%3D%224.8%22%20fill%3D%22url%28%23mg%29%22%2F%3E%3Crect%20x%3D%2252.7%22%20y%3D%2240%22%20width%3D%229%22%20height%3D%2217.1%22%20rx%3D%224.5%22%20fill%3D%22url%28%23mg%29%22%2F%3E%3Crect%20x%3D%2238%22%20y%3D%2260.4%22%20width%3D%2224%22%20height%3D%223.4%22%20rx%3D%221.7%22%20fill%3D%22url%28%23mg%29%22%2F%3E%3C%2Fsvg%3E">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/style.css?v=1a2474f4">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://mentio.agency/blog/geo-score-53-to-71/#article",
+   "headline": "From 53 to 71: what actually moved our own GEO score",
+   "description": "Two weeks after publishing our own audit at 53/100, we re-ran it: 71/100. Here is the honest breakdown of which fixes moved the number, which did nothing, and what is still broken.",
+   "inLanguage": "en",
+   "datePublished": "2026-07-23",
+   "dateModified": "2026-07-23",
+   "image": "https://mentio.agency/assets/og.png",
+   "mainEntityOfPage": "https://mentio.agency/blog/geo-score-53-to-71/",
+   "author": {
+    "@id": "https://mentio.agency/#founder"
+   },
+   "publisher": {
+    "@id": "https://mentio.agency/#org"
+   },
+   "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+     "h1",
+     ".post-body p:first-of-type"
+    ]
+   }
+  },
+  {
+   "@type": "Person",
+   "@id": "https://mentio.agency/#founder",
+   "name": "Oleksandr Motornyy",
+   "jobTitle": "Founder & GEO Consultant",
+   "url": "https://mentio.agency/#founder",
+   "description": "Founder of Mentio and Senior QA Engineer with a background in fintech, crypto, payments and blockchain. Applies QA methodology — reproducible checks and documented evidence — to Generative Engine Optimization audits.",
+   "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Alfred Nobel University"
+   },
+   "sameAs": [
+    "https://www.linkedin.com/in/oleksandr-motornyy-7b9473169/"
+   ],
+   "worksFor": {
+    "@id": "https://mentio.agency/#org"
+   },
+   "knowsAbout": [
+    "Generative Engine Optimization",
+    "AI search visibility",
+    "Schema.org structured data",
+    "llms.txt",
+    "Quality assurance",
+    "Software testing"
+   ]
+  },
+  {
+   "@type": "Organization",
+   "@id": "https://mentio.agency/#org",
+   "name": "Mentio",
+   "url": "https://mentio.agency/",
+   "email": "team@mentio.agency",
+   "founder": {
+    "@id": "https://mentio.agency/#founder"
+   },
+   "sameAs": [
+    "https://www.linkedin.com/company/mentio-agency/",
+    "https://x.com/MentioAgency",
+    "https://www.crunchbase.com/organization/mentio-152c",
+    "https://github.com/motornyysasha/mentio-site"
+   ],
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://mentio.agency/assets/logo.png",
+    "width": 512,
+    "height": 512
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Mentio",
+     "item": "https://mentio.agency/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Blog",
+     "item": "https://mentio.agency/blog/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "From 53 to 71: what actually moved our own GEO score"
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="/"><span class="logo-dot"></span>Mentio</a>
+    <div class="nav-links">
+      <a href="/#geo">What is GEO</a>
+      <a href="/#services">Services</a>
+      <a class="nav-blog" href="/blog/">Blog</a>
+      <a class="lang-select" style="text-decoration:none" href="/ua/blog/geo-score-53-to-71/" lang="uk">UA</a>
+      <a class="nav-cta" href="/#check">Free check</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap post-head">
+  <p class="post-meta"><a href="/blog/" style="color:inherit;text-decoration:none">← Blog</a> · <a class="byline" href="https://www.linkedin.com/in/oleksandr-motornyy-7b9473169/" rel="author noopener" target="_blank">Oleksandr Motornyy</a> · July 23, 2026 · 3 min read</p>
+  <h1 style="font-size:clamp(1.7rem,3.6vw,2.5rem);letter-spacing:-.02em;line-height:1.2">From 53 to 71: what actually moved our own GEO score</h1>
+</div>
+<article class="post">
+  <div class="wrap">
+    <div class="post-body">
+<p><strong>On 8 July our own site scored 53 out of 100 on the GEO audit we sell. On 23 July the same audit returned 71.</strong> Below is what changed between those two numbers — including the work that produced no measurable movement at all.</p>
+
+<p>We publish this for a simple reason: an agency that sells measurement should show its own measurements. The <a href="/blog/we-audited-our-own-site/">first audit is here</a> if you want the starting point.</p>
+
+<h2>The two scores, side by side</h2>
+
+<table>
+<thead><tr><th>Category</th><th>8 July</th><th>23 July</th><th>Change</th></tr></thead>
+<tbody>
+<tr><td>AI platform readiness</td><td>60</td><td>75</td><td>+15</td></tr>
+<tr><td>Content quality / E-E-A-T</td><td>72</td><td>90</td><td>+18</td></tr>
+<tr><td>Technical foundation</td><td>55</td><td>60</td><td>+5</td></tr>
+<tr><td>Structured data</td><td>70</td><td>85</td><td>+15</td></tr>
+<tr><td>Brand authority</td><td>5</td><td>35</td><td>+30</td></tr>
+<tr><td><strong>Composite</strong></td><td><strong>53</strong></td><td><strong>71</strong></td><td><strong>+18</strong></td></tr>
+</tbody>
+</table>
+
+<h2>What moved the number most</h2>
+
+<h3>1. Putting a human on the site (+18 on content)</h3>
+
+<p>The single biggest content jump came from the least technical change. Every article was signed "Mentio". Now every article is signed by a named person, with a <code>Person</code> node in the structured data, linked by <code>@id</code> to the organisation as its founder.</p>
+
+<p>Nothing else about the articles changed. Same words, same structure. The score moved because E-E-A-T is not a writing-quality metric — it is an accountability metric. An unsigned page has nobody standing behind it.</p>
+
+<h3>2. Existing on more than one website (+30 on authority)</h3>
+
+<p>Brand authority went from 5 to 35 purely by existing in places we did not control. A company page, a Crunchbase entry, a social profile — each one saying the same name, the same description, the same URL.</p>
+
+<p>The number is still low, and it should be. Thirty-five out of a hundred is an honest score for a brand that is a few weeks old. This is the category that cannot be rushed.</p>
+
+<h3>3. llms.txt, FAQ markup and language versions (+15 each)</h3>
+
+<p>These are the standard technical wins and they behaved exactly as expected. A machine-readable summary of the site, question-and-answer markup that mirrors how people actually ask, and six language versions correctly cross-linked with <code>hreflang</code>.</p>
+
+<h2>What produced almost nothing</h2>
+
+<p><strong>Technical foundation moved five points.</strong> Five. We spent real time on it, and the reason it barely moved is worth knowing: our host could not send custom HTTP headers at all. No amount of on-page work fixes a limitation that lives one layer below your site. We solved it later, by putting a proxy in front — and that is a separate story with <a href="/blog/security-headers-and-ai/">its own trap</a>.</p>
+
+<p><strong>Publishing more articles, on its own, moved nothing.</strong> Volume is not a ranking input for AI systems the way it sometimes is for classic search. Two of our articles are cited-shaped — specific, self-contained, answerable. The rest are fine and contribute nothing measurable yet.</p>
+
+<h2>What is still broken</h2>
+
+<p><strong>Zero reviews.</strong> No <code>AggregateRating</code>, no <code>Review</code> markup, because we have no real reviews to point at. We will not invent them: fabricated ratings get the markup stripped from search results, and for an agency selling trust that is the worst possible trade. This stays broken until real clients leave real feedback.</p>
+
+<p><strong>No verified business listing.</strong> Partially a choice, partially a platform limitation for our location.</p>
+
+<h2>The honest lesson</h2>
+
+<p>On-page GEO is a sprint you control. Crawler access, structured data, llms.txt, content shape — a competent developer moves those in a week, and our numbers show it: four categories jumped double digits in fourteen days.</p>
+
+<p>Off-page authority is a season you schedule. It went up thirty points and still sits at thirty-five, because it is built from other people's websites mentioning you, and you cannot deploy that on a Tuesday.</p>
+
+<p>If someone tells you they can fix both in the same sprint, ask which one they are lying about.</p>
+    </div>
+<div class="post-cta">
+  <p><strong>Want to know how AI assistants see your website?</strong> Run the free check — we reply with a summary of what ChatGPT, Perplexity and Gemini currently say about your business.</p>
+  <a class="btn btn-primary" href="/#check">Check my website for free</a>
+</div>
+    <div style="margin-top:2.6rem;max-width:760px">
+      <p class="kicker">Read next</p>
+      <div class="blog-list">
+      <a class="blog-item" href="/blog/we-audited-our-own-site/">
+        <h3>Case study: we audited our own site. Score: 53/100 — and that's the point</h3>
+        <p>We ran the same GEO audit we sell on mentio.agency itself, two days after launch. Full category scores, what earned 88-98, what earned 5, and why the gap is the roadmap.</p>
+      </a>
+      <a class="blog-item" href="/blog/security-headers-and-ai/">
+        <h3>Security headers without breaking AI visibility</h3>
+        <p>Adding a CDN proxy for security headers can silently block AI crawlers and break your own site. The two traps we hit doing it on mentio.agency, and how to avoid both.</p>
+      </a>
+      </div>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Mentio · Generative Engine Optimization</span>
+    <span><a href="mailto:team@mentio.agency">team@mentio.agency</a> · <a href="/">Home</a> · <a href="/blog/">Blog</a> · <a href="/llms.txt">llms.txt</a></span>
+  </div>
+</footer>
+<script src="/assets/site.js?v=35eb73e3" defer></script>
+<script data-goatcounter="https://mentio.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

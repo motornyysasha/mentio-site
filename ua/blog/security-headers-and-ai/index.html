@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security-заголовки без втрати видимості в AI — Блог Mentio</title>
+<meta name="description" content="Додавання CDN-проксі заради security-заголовків може тихо заблокувати AI-краулерів і зламати ваш власний сайт. Дві пастки, в які ми потрапили на mentio.agency, і як обійти обидві.">
+<link rel="canonical" href="https://mentio.agency/ua/blog/security-headers-and-ai/">
+<link rel="alternate" hreflang="en" href="https://mentio.agency/blog/security-headers-and-ai/">
+<link rel="alternate" hreflang="uk" href="https://mentio.agency/ua/blog/security-headers-and-ai/">
+<link rel="alternate" hreflang="x-default" href="https://mentio.agency/blog/security-headers-and-ai/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mentio.agency/ua/blog/security-headers-and-ai/">
+<meta property="og:site_name" content="Mentio">
+<meta property="og:title" content="Security-заголовки без втрати видимості в AI">
+<meta property="og:description" content="Додавання CDN-проксі заради security-заголовків може тихо заблокувати AI-краулерів і зламати ваш власний сайт. Дві пастки, в які ми потрапили на mentio.agency, і як обійти обидві.">
+<meta property="og:image" content="https://mentio.agency/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mentio.agency/assets/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2222%22%20fill%3D%22%230B0B10%22%2F%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22mg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23E5383B%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23FF6B35%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20x%3D%2238%22%20y%3D%2235.5%22%20width%3D%229.6%22%20height%3D%2221.6%22%20rx%3D%224.8%22%20fill%3D%22url%28%23mg%29%22%2F%3E%3Crect%20x%3D%2252.7%22%20y%3D%2240%22%20width%3D%229%22%20height%3D%2217.1%22%20rx%3D%224.5%22%20fill%3D%22url%28%23mg%29%22%2F%3E%3Crect%20x%3D%2238%22%20y%3D%2260.4%22%20width%3D%2224%22%20height%3D%223.4%22%20rx%3D%221.7%22%20fill%3D%22url%28%23mg%29%22%2F%3E%3C%2Fsvg%3E">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/style.css?v=1a2474f4">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://mentio.agency/ua/blog/security-headers-and-ai/#article",
+   "headline": "Security-заголовки без втрати видимості в AI",
+   "description": "Додавання CDN-проксі заради security-заголовків може тихо заблокувати AI-краулерів і зламати ваш власний сайт. Дві пастки, в які ми потрапили на mentio.agency, і як обійти обидві.",
+   "inLanguage": "uk",
+   "datePublished": "2026-08-04",
+   "dateModified": "2026-08-04",
+   "image": "https://mentio.agency/assets/og.png",
+   "mainEntityOfPage": "https://mentio.agency/ua/blog/security-headers-and-ai/",
+   "author": {
+    "@id": "https://mentio.agency/#founder"
+   },
+   "publisher": {
+    "@id": "https://mentio.agency/#org"
+   },
+   "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+     "h1",
+     ".post-body p:first-of-type"
+    ]
+   }
+  },
+  {
+   "@type": "Person",
+   "@id": "https://mentio.agency/#founder",
+   "name": "Oleksandr Motornyy",
+   "jobTitle": "Founder & GEO Consultant",
+   "url": "https://mentio.agency/#founder",
+   "description": "Founder of Mentio and Senior QA Engineer with a background in fintech, crypto, payments and blockchain. Applies QA methodology — reproducible checks and documented evidence — to Generative Engine Optimization audits.",
+   "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Alfred Nobel University"
+   },
+   "sameAs": [
+    "https://www.linkedin.com/in/oleksandr-motornyy-7b9473169/"
+   ],
+   "worksFor": {
+    "@id": "https://mentio.agency/#org"
+   },
+   "knowsAbout": [
+    "Generative Engine Optimization",
+    "AI search visibility",
+    "Schema.org structured data",
+    "llms.txt",
+    "Quality assurance",
+    "Software testing"
+   ]
+  },
+  {
+   "@type": "Organization",
+   "@id": "https://mentio.agency/#org",
+   "name": "Mentio",
+   "url": "https://mentio.agency/",
+   "email": "team@mentio.agency",
+   "founder": {
+    "@id": "https://mentio.agency/#founder"
+   },
+   "sameAs": [
+    "https://www.linkedin.com/company/mentio-agency/",
+    "https://x.com/MentioAgency",
+    "https://www.crunchbase.com/organization/mentio-152c",
+    "https://github.com/motornyysasha/mentio-site"
+   ],
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://mentio.agency/assets/logo.png",
+    "width": 512,
+    "height": 512
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Mentio",
+     "item": "https://mentio.agency/ua/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Блог",
+     "item": "https://mentio.agency/ua/blog/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Security-заголовки без втрати видимості в AI"
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="/ua/"><span class="logo-dot"></span>Mentio</a>
+    <div class="nav-links">
+      <a href="/ua/#geo">Що таке GEO</a>
+      <a href="/ua/#services">Послуги</a>
+      <a class="nav-blog" href="/ua/blog/">Блог</a>
+      <a class="lang-select" style="text-decoration:none" href="/blog/security-headers-and-ai/" lang="en">EN</a>
+      <a class="nav-cta" href="/ua/#check">Безкоштовна перевірка</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap post-head">
+  <p class="post-meta"><a href="/ua/blog/" style="color:inherit;text-decoration:none">← Блог</a> · <a class="byline" href="https://www.linkedin.com/in/oleksandr-motornyy-7b9473169/" rel="author noopener" target="_blank">Oleksandr Motornyy</a> · 4 серпня 2026 · 3 хв читання</p>
+  <h1 style="font-size:clamp(1.7rem,3.6vw,2.5rem);letter-spacing:-.02em;line-height:1.2">Security-заголовки без втрати видимості в AI</h1>
+</div>
+<article class="post">
+  <div class="wrap">
+    <div class="post-body">
+<p><strong>Додавання security-заголовків на власний сайт зламало перемикач мов і мало не заблокувало всіх AI-краулерів, яких ми професійно намагаємося привабити.</strong> Обидві проблеми ми створили собі самі, обидві були беззвучні, обидві легко повторити. Ось повний звіт.</p>
+
+<h2>Чому це взагалі виникає</h2>
+
+<p>Технічні аудити перевіряють кілька HTTP-заголовків відповіді: політику безпеки контенту, <code>X-Content-Type-Options</code>, <code>Strict-Transport-Security</code>, <code>Referrer-Policy</code>. Їхній прямий вплив на видимість в AI помірний, але вони є в кожному чеклисті технічної якості, а деякі статичні хостинги не вміють віддавати кастомні заголовки взагалі.</p>
+
+<p>Стандартне рішення — поставити CDN-проксі перед хостингом і додати заголовки там. Це працює. І це відкриває дві пастки.</p>
+
+<h2>Пастка перша: проксі пропонує заблокувати AI-краулерів, і за замовчуванням — так</h2>
+
+<p>Під час налаштування наш CDN показав панель керування AI-ботами: пошукові краулери, агентські, тренувальні. Рекомендованим значенням для тренувальних було <strong>блокувати</strong>, з додатковим перемикачем — увімкненим за замовчуванням, — який автоматично вписує ці заборони в <code>robots.txt</code>.</p>
+
+<p>Вдумайтеся. Наш <code>robots.txt</code> явно вітає кожного AI-краулера. Наш блог доводить, що бізнесу варто їх впускати. А інфраструктурний шар був за один клік від того, щоб перекреслити все це, тихо переписавши файл.</p>
+
+<p>Для видавця, який захищає оригінальні матеріали, блокування тренувальних краулерів — позиція, яку можна відстоювати. Для будь-якого бізнесу, що хоче бути знайденим і рекомендованим AI-асистентами, це самосаботаж — і стається він на рівні, який після налаштування майже ніхто не переперевіряє.</p>
+
+<p><strong>Що робити:</strong> після будь-якої зміни на CDN чи в безпеці запросіть власний <code>robots.txt</code> через публічний інтернет і прочитайте його. Не файл у репозиторії — той, який реально віддає ваш домен. Вони можуть відрізнятися, і з редактора цю різницю не видно.</p>
+
+<h2>Пастка друга: суворий CSP вбиває inline-обробники подій</h2>
+
+<p>Ми свідомо задали сувору політику безпеки контенту: <code>script-src 'self'</code> плюс один домен аналітики, без <code>'unsafe-inline'</code>. Перевірили сайт на inline-блоки <code>&lt;script&gt;</code>, не знайшли жодного і випустили.</p>
+
+<p>За два тижні перемикач мов перестав працювати.</p>
+
+<p>Перемикач був <code>&lt;select onchange="location.href=this.value"&gt;</code>. Атрибут-обробник події — це теж inline-скрипт, і та сама директива його блокує. Гучної помилки не буде. Обробник просто не реєструється: консоль чиста, елемент в інспекторі виглядає нормально, а на взаємодію нічого не відбувається.</p>
+
+<p>Збій був ще й відкладеним. Код не змінювався тижнями; він зламався тієї миті, коли заголовки пішли в бій. У журналі деплою на причину не вказувало ніщо.</p>
+
+<p><strong>Правильне і неправильне виправлення.</strong> Спокуслива поправка — додати <code>'unsafe-inline'</code> до <code>script-src</code>. Один рядок, усе працює, і ви щойно скасували головну користь від політики, яку встановлювали.</p>
+
+<p>Правильна поправка — перенести обробник у наявний файл скрипта:</p>
+
+<pre><code>document.querySelectorAll("select.lang-select").forEach(function (sel) {
+  sel.addEventListener("change", function () {
+    if (this.value) location.href = this.value;
+  });
+});</code></pre>
+
+<p>Політика лишається суворою, функція працює. Inline-атрибути <code>style</code> не постраждали — <code>style-src</code> це окрема директива, і вона може зберігати <code>'unsafe-inline'</code>, не послаблюючи захист скриптів.</p>
+
+<h2>Як написати CSP, що не ламає ваш сайт</h2>
+
+<p>Політика, скопійована з чеклиста, заблокує щось потрібне. Наша мала пропустити три зовнішні джерела: скрипт аналітики, точку, куди він надсилає дані, і воркер, що приймає заявки з форм. Узагальнений <code>default-src 'self'</code> тихо вбив би і аналітику, і збір лідів.</p>
+
+<p>Практична послідовність:</p>
+
+<ol>
+<li><strong>Складіть перелік того, що сторінки реально завантажують.</strong> Скрипти, шрифти, зображення і кожну точку, до якої звертається ваш JavaScript.</li>
+<li><strong>Прогрепайте шаблони на атрибути <code>on*=</code>.</strong> Кожен із них зараз перестане працювати.</li>
+<li><strong>Задеплойте і проклікайте живий сайт із відкритою консоллю.</strong> Кожне порушення друкує назву директиви — вона й підкаже, що додати.</li>
+<li><strong>Перевіряйте те, що надсилає,</strong> а не лише те, що відображається. Форми ламаються інакше, ніж макети.</li>
+</ol>
+
+<h2>Загальний висновок</h2>
+
+<p>Зміни в інфраструктурі невидимі у вашій кодовій базі. Ніщо в репозиторії не фіксує, що додали заголовки, тож коли за два тижні щось ламається, причина лежить не там, де її шукатимуть.</p>
+
+<p>Після будь-якої зміни на цьому рівні перевірте три речі з публічного інтернету: чи <code>robots.txt</code> читається як задумано, чи заголовки відповіді саме такі, як ви задали, і чи працюють інтерактивні елементи. Десять хвилин — і ви ловите саме той клас збоїв, який інакше залишається непоміченим місяцями.</p>
+    </div>
+<div class="post-cta">
+  <p><strong>Хочете знати, як AI-асистенти бачать ваш сайт?</strong> Пройдіть безкоштовну перевірку — у відповідь підсумок того, що ChatGPT, Perplexity і Gemini зараз кажуть про ваш бізнес.</p>
+  <a class="btn btn-primary" href="/ua/#check">Перевірити мій сайт безкоштовно</a>
+</div>
+    <div style="margin-top:2.6rem;max-width:760px">
+      <p class="kicker">Читайте також</p>
+      <div class="blog-list">
+      <a class="blog-item" href="/ua/blog/ai-crawlers-guide/">
+        <h3>AI-краулери: які боти читають ваш сайт і як перевірити, що вони можуть</h3>
+        <p>GPTBot, ClaudeBot, PerplexityBot, Google-Extended — що робить кожен AI-краулер, як перевірити, чи не блокуєте ви їх випадково, і кого варто пускати.</p>
+      </a>
+      <a class="blog-item" href="/ua/blog/geo-score-53-to-71/">
+        <h3>Від 53 до 71: що насправді зрушило нашу власну GEO-оцінку</h3>
+        <p>Через два тижні після публікації власного аудиту з оцінкою 53/100 ми провели його знову: 71/100. Чесний розбір того, які виправлення зрушили цифру, які не дали нічого, і що досі зламано.</p>
+      </a>
+      </div>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Mentio · Generative Engine Optimization</span>
+    <span><a href="mailto:team@mentio.agency">team@mentio.agency</a> · <a href="/ua/">Головна</a> · <a href="/ua/blog/">Блог</a> · <a href="/llms.txt">llms.txt</a></span>
+  </div>
+</footer>
+<script src="/assets/site.js?v=35eb73e3" defer></script>
+<script data-goatcounter="https://mentio.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

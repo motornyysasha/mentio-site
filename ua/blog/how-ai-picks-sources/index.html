@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Як ChatGPT, Perplexity і Gemini обирають свої джерела — Блог Mentio</title>
+<meta name="description" content="Основні AI-асистенти працюють із джерелами по-різному, і оптимізація під один не виграє автоматично інші. Що цінує кожна система і яка робота окупається всюди.">
+<link rel="canonical" href="https://mentio.agency/ua/blog/how-ai-picks-sources/">
+<link rel="alternate" hreflang="en" href="https://mentio.agency/blog/how-ai-picks-sources/">
+<link rel="alternate" hreflang="uk" href="https://mentio.agency/ua/blog/how-ai-picks-sources/">
+<link rel="alternate" hreflang="x-default" href="https://mentio.agency/blog/how-ai-picks-sources/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mentio.agency/ua/blog/how-ai-picks-sources/">
+<meta property="og:site_name" content="Mentio">
+<meta property="og:title" content="Як ChatGPT, Perplexity і Gemini обирають свої джерела">
+<meta property="og:description" content="Основні AI-асистенти працюють із джерелами по-різному, і оптимізація під один не виграє автоматично інші. Що цінує кожна система і яка робота окупається всюди.">
+<meta property="og:image" content="https://mentio.agency/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mentio.agency/assets/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%2222%22%20fill%3D%22%230B0B10%22%2F%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22mg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23E5383B%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23FF6B35%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20x%3D%2238%22%20y%3D%2235.5%22%20width%3D%229.6%22%20height%3D%2221.6%22%20rx%3D%224.8%22%20fill%3D%22url%28%23mg%29%22%2F%3E%3Crect%20x%3D%2252.7%22%20y%3D%2240%22%20width%3D%229%22%20height%3D%2217.1%22%20rx%3D%224.5%22%20fill%3D%22url%28%23mg%29%22%2F%3E%3Crect%20x%3D%2238%22%20y%3D%2260.4%22%20width%3D%2224%22%20height%3D%223.4%22%20rx%3D%221.7%22%20fill%3D%22url%28%23mg%29%22%2F%3E%3C%2Fsvg%3E">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/style.css?v=1a2474f4">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://mentio.agency/ua/blog/how-ai-picks-sources/#article",
+   "headline": "Як ChatGPT, Perplexity і Gemini обирають свої джерела",
+   "description": "Основні AI-асистенти працюють із джерелами по-різному, і оптимізація під один не виграє автоматично інші. Що цінує кожна система і яка робота окупається всюди.",
+   "inLanguage": "uk",
+   "datePublished": "2026-08-02",
+   "dateModified": "2026-08-02",
+   "image": "https://mentio.agency/assets/og.png",
+   "mainEntityOfPage": "https://mentio.agency/ua/blog/how-ai-picks-sources/",
+   "author": {
+    "@id": "https://mentio.agency/#founder"
+   },
+   "publisher": {
+    "@id": "https://mentio.agency/#org"
+   },
+   "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+     "h1",
+     ".post-body p:first-of-type"
+    ]
+   }
+  },
+  {
+   "@type": "Person",
+   "@id": "https://mentio.agency/#founder",
+   "name": "Oleksandr Motornyy",
+   "jobTitle": "Founder & GEO Consultant",
+   "url": "https://mentio.agency/#founder",
+   "description": "Founder of Mentio and Senior QA Engineer with a background in fintech, crypto, payments and blockchain. Applies QA methodology — reproducible checks and documented evidence — to Generative Engine Optimization audits.",
+   "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Alfred Nobel University"
+   },
+   "sameAs": [
+    "https://www.linkedin.com/in/oleksandr-motornyy-7b9473169/"
+   ],
+   "worksFor": {
+    "@id": "https://mentio.agency/#org"
+   },
+   "knowsAbout": [
+    "Generative Engine Optimization",
+    "AI search visibility",
+    "Schema.org structured data",
+    "llms.txt",
+    "Quality assurance",
+    "Software testing"
+   ]
+  },
+  {
+   "@type": "Organization",
+   "@id": "https://mentio.agency/#org",
+   "name": "Mentio",
+   "url": "https://mentio.agency/",
+   "email": "team@mentio.agency",
+   "founder": {
+    "@id": "https://mentio.agency/#founder"
+   },
+   "sameAs": [
+    "https://www.linkedin.com/company/mentio-agency/",
+    "https://x.com/MentioAgency",
+    "https://www.crunchbase.com/organization/mentio-152c",
+    "https://github.com/motornyysasha/mentio-site"
+   ],
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://mentio.agency/assets/logo.png",
+    "width": 512,
+    "height": 512
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Mentio",
+     "item": "https://mentio.agency/ua/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Блог",
+     "item": "https://mentio.agency/ua/blog/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Як ChatGPT, Perplexity і Gemini обирають свої джерела"
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="/ua/"><span class="logo-dot"></span>Mentio</a>
+    <div class="nav-links">
+      <a href="/ua/#geo">Що таке GEO</a>
+      <a href="/ua/#services">Послуги</a>
+      <a class="nav-blog" href="/ua/blog/">Блог</a>
+      <a class="lang-select" style="text-decoration:none" href="/blog/how-ai-picks-sources/" lang="en">EN</a>
+      <a class="nav-cta" href="/ua/#check">Безкоштовна перевірка</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap post-head">
+  <p class="post-meta"><a href="/ua/blog/" style="color:inherit;text-decoration:none">← Блог</a> · <a class="byline" href="https://www.linkedin.com/in/oleksandr-motornyy-7b9473169/" rel="author noopener" target="_blank">Oleksandr Motornyy</a> · 2 серпня 2026 · 3 хв читання</p>
+  <h1 style="font-size:clamp(1.7rem,3.6vw,2.5rem);letter-spacing:-.02em;line-height:1.2">Як ChatGPT, Perplexity і Gemini обирають свої джерела</h1>
+</div>
+<article class="post">
+  <div class="wrap">
+    <div class="post-body">
+<p><strong>Те саме питання, поставлене трьом AI-асистентам, часто дає три різні набори джерел.</strong> Не тому, що один правий, а інші ні, — а тому, що вони по-різному шукають. Розуміння цієї різниці показує, куди насправді потрапляють ваші зусилля.</p>
+
+<p>Одне застереження перед деталями: жодна з цих компаній не публікує логіку вибірки, і всі її змінюють. Нижче — узагальнення спостережуваної поведінки, а не документація. Сприймайте як робочу модель, не як специфікацію.</p>
+
+<h2>Perplexity — спершу пошук, багато цитат</h2>
+
+<p>Perplexity поводиться найбільше як пошуковик із приставленим редактором. Він шукає в реальному часі майже на кожен запит і цитує помітно, з пронумерованими джерелами поруч із твердженнями.</p>
+
+<p><strong>Що цінує:</strong> сторінки, які прямо відповідають на конкретне питання, свіжість і чисту структуру, з якої легко витягти фрагмент. Оскільки цитати показуються, є видима винагорода за «цитовану» форму, а не просто за релевантність.</p>
+
+<p><strong>Що це означає для вас:</strong> саме тут <a href="/ua/blog/write-content-ai-quotes/">форма контенту важить найбільше</a>. Самодостатній абзац, що закриває питання, виграє в довшої сторінки, яка ходить навколо. Це також найшвидша платформа з погляду відображення змін — зручно, коли треба перевірити, чи спрацювало виправлення.</p>
+
+<h2>ChatGPT — змішана вибірка, вага бренду</h2>
+
+<p>ChatGPT відповідає на одні питання з навчання, на інші — шукаючи наживо, і межу користувачеві не повідомляють. Для чутливого до часу чи конкретного він шукає; для загального знання часто ні.</p>
+
+<p><strong>Що цінує:</strong> коли шукає — усталені джерела й чіткі сигнали сутності. Коли не шукає — те, що закріпилося під час навчання, а це саме там окупаються згадки бренду на багатьох незалежних сайтах, бо саме вони туди й потрапили.</p>
+
+<p><strong>Що це означає для вас:</strong> дві окремі задачі. Доступ краулерів і структура сторінки обслуговують шлях із пошуком. <a href="/ua/blog/brand-entity-for-ai/">Побудова сутності на зовнішніх сайтах</a> обслуговує інший. Одне не замінює друге.</p>
+
+<h2>Google AI Overviews — класичний індекс, стиснутий</h2>
+
+<p>AI Overviews стоять поверх наявного індексу та інфраструктури Google. Якщо вас не видно в індексі Google, вас не видно й тут.</p>
+
+<p><strong>Що цінує:</strong> усе, що вже цінує класичне SEO — обхід, структуровані дані, тематичну глибину, сигнали якості сайту — плюс виражену перевагу контенту, який чітко лягає на питання.</p>
+
+<p><strong>Що це означає для вас:</strong> саме тут GEO і SEO перетинаються найбільше. Структуровані дані виконують реальну роботу. Як і формулювання фактів фактами, а не натяками в маркетинговому тексті.</p>
+
+<h2>Gemini — з опорою на граф знань</h2>
+
+<p>Gemini значною мірою спирається на розуміння сутностей у Google. Він схильний бути обережним із рекомендаціями того, чиє існування як окремої сутності підтвердити не вдається.</p>
+
+<p><strong>Що цінує:</strong> підтверджені сутності з узгодженими атрибутами в різних джерелах. Саме тут <a href="/ua/blog/brand-entity-for-ai/">проблема неузгодженості</a> б'є найболючіше — суперечливі дані про ваш бізнес шкодять тут сильніше, ніж майже будь-де.</p>
+
+<h2>Bing Copilot — свіжість індексу</h2>
+
+<p>Copilot працює на індексі Bing, який більшість сайтів ігнорує повністю. Це ігнорування — можливість: конкурентне поле тут рідше.</p>
+
+<p><strong>Що це означає для вас:</strong> додайте сайт до інструментів для вебмайстрів Bing і використовуйте протокол миттєвої індексації, щоб нові сторінки реєструвалися за години, а не за тижні. Невелика задача, яку більшість конкурентів пропускає.</p>
+
+<h2>Робота, що окупається на всіх п'яти</h2>
+
+<p>Ганятися за кожною платформою окремо — погане використання часу. Чотири речі працюють усюди:</p>
+
+<ol>
+<li><strong>Впустіть краулерів.</strong> Якщо тут помилка, решта не має значення, а помиляються тут частіше, ніж здається.</li>
+<li><strong>Викладіть факти машиночитно.</strong> Структуровані дані читає кожна система зі списку.</li>
+<li><strong>Надайте контенту форму відповіді.</strong> Прямо допомагає системам із пошуком і опосередковано — решті.</li>
+<li><strong>Будьте узгоджено описані в кількох місцях.</strong> Прямо допомагає системам на сутностях і працює як сигнал якості для решти.</li>
+</ol>
+
+<p>Тонке налаштування під конкретну платформу варте зусиль після того, як ці чотири зроблено, — і не раніше.</p>
+    </div>
+<div class="post-cta">
+  <p><strong>Хочете знати, як AI-асистенти бачать ваш сайт?</strong> Пройдіть безкоштовну перевірку — у відповідь підсумок того, що ChatGPT, Perplexity і Gemini зараз кажуть про ваш бізнес.</p>
+  <a class="btn btn-primary" href="/ua/#check">Перевірити мій сайт безкоштовно</a>
+</div>
+    <div style="margin-top:2.6rem;max-width:760px">
+      <p class="kicker">Читайте також</p>
+      <div class="blog-list">
+      <a class="blog-item" href="/ua/blog/google-ai-overviews/">
+        <h3>Як потрапити бізнесу в Google AI Overviews</h3>
+        <p>AI Overviews стоять над класичною видачею і відповідають на запит напряму. Що визначає, які сайти цитуються — і п'ять практичних кроків, що підвищують шанси.</p>
+      </a>
+      <a class="blog-item" href="/ua/blog/brand-entity-for-ai/">
+        <h3>Одного сайту недостатньо: як AI вирішує, що ваш бренд справжній</h3>
+        <p>AI-системи сприймають бренд, який існує на одному сайті, як непідтверджену заяву. Що таке сутність, чому перехресне підтвердження важливіше за обсяг і яка помилка узгодженості тихо роздвоює вас.</p>
+      </a>
+      </div>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Mentio · Generative Engine Optimization</span>
+    <span><a href="mailto:team@mentio.agency">team@mentio.agency</a> · <a href="/ua/">Головна</a> · <a href="/ua/blog/">Блог</a> · <a href="/llms.txt">llms.txt</a></span>
+  </div>
+</footer>
+<script src="/assets/site.js?v=35eb73e3" defer></script>
+<script data-goatcounter="https://mentio.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
