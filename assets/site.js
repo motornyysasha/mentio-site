@@ -123,6 +123,19 @@
     dio.observe(demo);
   }
 
+  /* ---------- paid audit button ----------
+     PAY_URL is the Stripe Payment Link. While it is empty the buy buttons
+     stay hidden, so this can ship before the Stripe account exists. */
+  var PAY_URL = "";
+  if (PAY_URL) {
+    document.querySelectorAll("a.buy-btn").forEach(function (a) {
+      a.href = PAY_URL;
+      a.hidden = false;
+      var note = a.parentElement.querySelector(".buy-note");
+      if (note) note.hidden = false;
+    });
+  }
+
   /* ---------- lead delivery ---------- */
   var LEAD_ENDPOINT = window.LEAD_ENDPOINT || "https://cool-waterfall-a3ce.motornyysasha.workers.dev";
   try { LEAD_ENDPOINT = LEAD_ENDPOINT || localStorage.getItem("leadEndpoint") || ""; } catch (e) {}

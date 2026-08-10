@@ -249,3 +249,7 @@ article.post{padding:10px 0 70px}
 .post-meta a.byline{color:var(--text);text-decoration:none;border-bottom:1px solid rgba(255,107,53,.55)}
 .post-meta a.byline:hover{color:var(--orange)}
 @media(max-width:640px){.founder-card{flex-direction:column;gap:1.15rem}}
+
+/* paid audit button */
+.svc .buy-btn{margin-top:1.1rem;width:100%;text-align:center;display:block}
+.svc .buy-note{margin-top:.55rem;font-size:.82rem;color:var(--dim);text-align:center}
