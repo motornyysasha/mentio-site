@@ -164,6 +164,15 @@ header.hero::after{content:"";position:absolute;inset:0;background:radial-gradie
 .scan-hero .demo-body>p{color:var(--muted);font-size:.92rem;margin:0}
 .scan-hero .scan-form{margin:0;max-width:none}
 .scan-hero .scan-status{margin-bottom:0}
+.scan-result{text-align:left;background:rgba(11,11,16,.55);border:1px solid var(--border);border-radius:12px;padding:.9rem 1rem;margin:.2rem 0 .4rem;max-height:260px;overflow-y:auto}
+.scan-result .sr-title{font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin:.6rem 0 .35rem}
+.scan-result .sr-title:first-child{margin-top:0}
+.scan-result .sr-title.sr-good{color:#4ade80}
+.scan-result .sr-title.sr-bad{color:var(--red)}
+.scan-result ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.3rem}
+.scan-result li{font-size:.86rem;line-height:1.45;color:var(--muted);padding-left:1.25rem;position:relative}
+.scan-result ul.sr-good li::before{content:"✓";position:absolute;left:0;color:#4ade80;font-weight:700}
+.scan-result ul.sr-bad li::before{content:"✗";position:absolute;left:0;color:var(--red);font-weight:700}
 
 @media (prefers-reduced-motion: reduce){
   .marquee-track{animation:none}
