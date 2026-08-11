@@ -126,7 +126,7 @@
   /* ---------- paid audit button ----------
      PAY_URL is the Stripe Payment Link. While it is empty the buy buttons
      stay hidden, so this can ship before the Stripe account exists. */
-  var PAY_URL = "";
+  var PAY_URL = "https://buy.stripe.com/7sY00k9aFakN1ua1w24ow00";
   if (PAY_URL) {
     document.querySelectorAll("a.buy-btn").forEach(function (a) {
       a.href = PAY_URL;
