@@ -61,68 +61,6 @@
     });
   }
 
-  /* ---------- live AI demo ---------- */
-  var demo = document.querySelector(".demo");
-  if (demo && !reduced) {
-    var q = demo.querySelector('[data-part="q"]');
-    var ai = demo.querySelector('[data-part="a"]');
-    var at = demo.querySelector('[data-part="atext"]');
-    var recs = Array.prototype.slice.call(demo.querySelectorAll(".rec"));
-    var qText = q.textContent, aText = at.textContent;
-    var cycles = 0;
-
-    function typeInto(el, text, speed) {
-      el.textContent = "";
-      var caret = document.createElement("span");
-      caret.className = "caret";
-      el.appendChild(caret);
-      var i = 0;
-      return new Promise(function (res) {
-        (function tick() {
-          if (i < text.length) {
-            caret.before(document.createTextNode(text[i++]));
-            setTimeout(tick, speed + Math.random() * 24);
-          } else { caret.remove(); res(); }
-        })();
-      });
-    }
-
-    function resetState() {
-      ai.style.opacity = "0";
-      recs.forEach(function (r) { r.style.opacity = "0"; r.style.transform = "translateY(8px)"; });
-      at.textContent = "";
-      q.textContent = "";
-    }
-
-    function playOnce() {
-      return sleep(700)
-        .then(function () { return typeInto(q, qText, 26); })
-        .then(function () { return sleep(550); })
-        .then(function () { ai.style.opacity = "1"; return typeInto(at, aText, 13); })
-        .then(function () {
-          return recs.reduce(function (p, r) {
-            return p.then(function () {
-              return sleep(380).then(function () { r.style.opacity = "1"; r.style.transform = "none"; });
-            });
-          }, Promise.resolve());
-        });
-    }
-
-    function loop() {
-      resetState();
-      playOnce().then(function () {
-        cycles++;
-        if (cycles < 3) { sleep(7000).then(loop); }
-      });
-    }
-
-    var started = false;
-    var dio = new IntersectionObserver(function (entries) {
-      if (entries[0].isIntersecting && !started) { started = true; loop(); dio.disconnect(); }
-    }, { threshold: 0.35 });
-    dio.observe(demo);
-  }
-
   /* ---------- paid audit button ----------
      PAY_URL is the Stripe Payment Link. While it is empty the buy buttons
      stay hidden, so this can ship before the Stripe account exists. */

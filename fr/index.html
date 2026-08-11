@@ -85,7 +85,7 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="/assets/style.css?v=f68b2b14">
+<link rel="stylesheet" href="/assets/style.css?v=94d1b2e0">
 </head>
 <body>
 
@@ -116,17 +116,16 @@
     </div>
     <p class="hero-note">Un seul e-mail. Nous vous répondons avec ce que l'IA dit actuellement de votre entreprise — sans aucun engagement.</p>
     </div>
-    <div class="demo" role="img" aria-label="Assistant IA">
-      <div class="demo-bar"><i></i><i></i><i></i><span>Assistant IA</span></div>
+    <div class="demo scan-hero" id="check">
+      <div class="demo-bar"><i></i><i></i><i></i><span>Vérification gratuite</span></div>
       <div class="demo-body">
-        <div class="msg msg-user" data-part="q">Quel est le meilleur prestataire [votre secteur] près de chez moi ?</div>
-        <div class="msg msg-ai" data-part="a">
-          <div class="ai-tag"><span class="ai-dot"></span>Assistant IA</div>
-          <span data-part="atext">Sur la base de données vérifiées, d'avis et d'expertise, je recommande :</span>
-          <div class="rec">Concurrent A</div>
-          <div class="rec win"><span class="check">✓</span>&nbsp;Votre entreprise — recommandée par l'IA</div>
-          <div class="rec">Concurrent B</div>
-        </div>
+        <h2>Découvrez ce que l'IA dit de votre entreprise — <span class="grad-text">avant vos concurrents.</span></h2>
+        <p>La vérification est gratuite et tient en un e-mail. Au pire, vous apprenez que tout va bien. Au mieux, vous colmatez une fuite dont vous ignoriez l'existence.</p>
+        <form class="scan-form" data-cfg="{&quot;steps&quot;: [&quot;Vérification du robots.txt et de l'accès des robots IA…&quot;, &quot;Recherche du llms.txt et des données structurées…&quot;, &quot;Interrogation des assistants IA sur ce site…&quot;], &quot;done&quot;: &quot;Terminé ! Ouverture du brouillon d'e-mail →&quot;, &quot;invalid&quot;: &quot;Entrez un domaine valide, ex. votre-site.fr&quot;, &quot;subject&quot;: &quot;Vérification gratuite de visibilité IA :&quot;, &quot;body&quot;: &quot;Bonjour Mentio,\n\nMerci de vérifier comment les assistants IA voient mon site :&quot;, &quot;contactPh&quot;: &quot;Votre e-mail ou Telegram&quot;, &quot;send&quot;: &quot;Envoyer&quot;, &quot;doneForm&quot;: &quot;Terminé ! Laissez votre contact — nous envoyons les résultats.&quot;, &quot;sent&quot;: &quot;Merci ! Nous revenons vers vous sous 24 h.&quot;, &quot;err&quot;: &quot;Échec de l'envoi — réessayez ou écrivez à team@mentio.agency.&quot;}">
+      <input type="text" inputmode="url" autocomplete="off" placeholder="votre-site.fr" aria-label="votre-site.fr">
+      <button type="submit">Vérifier mon site</button>
+    </form>
+        <p class="scan-status" aria-live="polite"></p>
       </div>
     </div>
   </div>
@@ -338,18 +337,6 @@
   </div>
 </section>
 
-<section class="final" id="check">
-  <div class="wrap">
-    <h2>Découvrez ce que l'IA dit de votre entreprise — <span class="grad-text">avant vos concurrents.</span></h2>
-    <p>La vérification est gratuite et tient en un e-mail. Au pire, vous apprenez que tout va bien. Au mieux, vous colmatez une fuite dont vous ignoriez l'existence.</p>
-<form class="scan-form" data-cfg="{&quot;steps&quot;: [&quot;Vérification du robots.txt et de l'accès des robots IA…&quot;, &quot;Recherche du llms.txt et des données structurées…&quot;, &quot;Interrogation des assistants IA sur ce site…&quot;], &quot;done&quot;: &quot;Terminé ! Ouverture du brouillon d'e-mail →&quot;, &quot;invalid&quot;: &quot;Entrez un domaine valide, ex. votre-site.fr&quot;, &quot;subject&quot;: &quot;Vérification gratuite de visibilité IA :&quot;, &quot;body&quot;: &quot;Bonjour Mentio,\n\nMerci de vérifier comment les assistants IA voient mon site :&quot;, &quot;contactPh&quot;: &quot;Votre e-mail ou Telegram&quot;, &quot;send&quot;: &quot;Envoyer&quot;, &quot;doneForm&quot;: &quot;Terminé ! Laissez votre contact — nous envoyons les résultats.&quot;, &quot;sent&quot;: &quot;Merci ! Nous revenons vers vous sous 24 h.&quot;, &quot;err&quot;: &quot;Échec de l'envoi — réessayez ou écrivez à team@mentio.agency.&quot;}">
-      <input type="text" inputmode="url" autocomplete="off" placeholder="votre-site.fr" aria-label="votre-site.fr">
-      <button type="submit">Vérifier mon site</button>
-    </form>
-    <p class="scan-status" aria-live="polite"></p>
-  </div>
-</section>
-
 <footer>
   <div class="wrap foot">
     <span>© 2026 Mentio · Generative Engine Optimization</span>
@@ -364,7 +351,7 @@
   </div>
 </footer>
 
-<script src="/assets/site.js?v=7edad4a7" defer></script>
+<script src="/assets/site.js?v=247b8e05" defer></script>
 <script data-goatcounter="https://mentio.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

@@ -85,7 +85,7 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="/assets/style.css?v=f68b2b14">
+<link rel="stylesheet" href="/assets/style.css?v=94d1b2e0">
 </head>
 <body>
 
@@ -116,17 +116,16 @@
     </div>
     <p class="hero-note">Jeden e-mail. W odpowiedzi — co AI mówi teraz o Twojej firmie. Bez żadnych zobowiązań.</p>
     </div>
-    <div class="demo" role="img" aria-label="Asystent AI">
-      <div class="demo-bar"><i></i><i></i><i></i><span>Asystent AI</span></div>
+    <div class="demo scan-hero" id="check">
+      <div class="demo-bar"><i></i><i></i><i></i><span>Bezpłatna analiza</span></div>
       <div class="demo-body">
-        <div class="msg msg-user" data-part="q">Kto jest najlepszy w [Twoja branża] w moim mieście?</div>
-        <div class="msg msg-ai" data-part="a">
-          <div class="ai-tag"><span class="ai-dot"></span>Asystent AI</div>
-          <span data-part="atext">Na podstawie zweryfikowanych danych, opinii i doświadczenia polecam:</span>
-          <div class="rec">Konkurent A</div>
-          <div class="rec win"><span class="check">✓</span>&nbsp;Twoja firma — polecana przez AI</div>
-          <div class="rec">Konkurent B</div>
-        </div>
+        <h2>Dowiedz się, co AI mówi o Twojej firmie — <span class="grad-text">zanim zrobi to konkurencja.</span></h2>
+        <p>Analiza jest bezpłatna i wymaga jednego e-maila. W najgorszym razie dowiesz się, że wszystko gra. W najlepszym — zamkniesz wyciek, o którym nie wiedziałeś.</p>
+        <form class="scan-form" data-cfg="{&quot;steps&quot;: [&quot;Sprawdzam robots.txt i dostęp botów AI…&quot;, &quot;Szukam llms.txt i danych strukturalnych…&quot;, &quot;Pytam asystentów AI o tę stronę…&quot;], &quot;done&quot;: &quot;Gotowe! Otwieram szkic e-maila →&quot;, &quot;invalid&quot;: &quot;Podaj poprawną domenę, np. twoja-strona.pl&quot;, &quot;subject&quot;: &quot;Bezpłatna analiza widoczności AI:&quot;, &quot;body&quot;: &quot;Dzień dobry, Mentio!\n\nProszę sprawdzić, jak asystenci AI widzą moją stronę:&quot;, &quot;contactPh&quot;: &quot;Twój e-mail lub Telegram&quot;, &quot;send&quot;: &quot;Wyślij&quot;, &quot;doneForm&quot;: &quot;Gotowe! Zostaw kontakt — wyślemy wyniki.&quot;, &quot;sent&quot;: &quot;Dziękujemy! Odezwiemy się w ciągu 24 godzin.&quot;, &quot;err&quot;: &quot;Nie udało się wysłać — spróbuj ponownie lub napisz na team@mentio.agency.&quot;}">
+      <input type="text" inputmode="url" autocomplete="off" placeholder="twoja-strona.pl" aria-label="twoja-strona.pl">
+      <button type="submit">Sprawdź stronę</button>
+    </form>
+        <p class="scan-status" aria-live="polite"></p>
       </div>
     </div>
   </div>
@@ -338,18 +337,6 @@
   </div>
 </section>
 
-<section class="final" id="check">
-  <div class="wrap">
-    <h2>Dowiedz się, co AI mówi o Twojej firmie — <span class="grad-text">zanim zrobi to konkurencja.</span></h2>
-    <p>Analiza jest bezpłatna i wymaga jednego e-maila. W najgorszym razie dowiesz się, że wszystko gra. W najlepszym — zamkniesz wyciek, o którym nie wiedziałeś.</p>
-<form class="scan-form" data-cfg="{&quot;steps&quot;: [&quot;Sprawdzam robots.txt i dostęp botów AI…&quot;, &quot;Szukam llms.txt i danych strukturalnych…&quot;, &quot;Pytam asystentów AI o tę stronę…&quot;], &quot;done&quot;: &quot;Gotowe! Otwieram szkic e-maila →&quot;, &quot;invalid&quot;: &quot;Podaj poprawną domenę, np. twoja-strona.pl&quot;, &quot;subject&quot;: &quot;Bezpłatna analiza widoczności AI:&quot;, &quot;body&quot;: &quot;Dzień dobry, Mentio!\n\nProszę sprawdzić, jak asystenci AI widzą moją stronę:&quot;, &quot;contactPh&quot;: &quot;Twój e-mail lub Telegram&quot;, &quot;send&quot;: &quot;Wyślij&quot;, &quot;doneForm&quot;: &quot;Gotowe! Zostaw kontakt — wyślemy wyniki.&quot;, &quot;sent&quot;: &quot;Dziękujemy! Odezwiemy się w ciągu 24 godzin.&quot;, &quot;err&quot;: &quot;Nie udało się wysłać — spróbuj ponownie lub napisz na team@mentio.agency.&quot;}">
-      <input type="text" inputmode="url" autocomplete="off" placeholder="twoja-strona.pl" aria-label="twoja-strona.pl">
-      <button type="submit">Sprawdź stronę</button>
-    </form>
-    <p class="scan-status" aria-live="polite"></p>
-  </div>
-</section>
-
 <footer>
   <div class="wrap foot">
     <span>© 2026 Mentio · Generative Engine Optimization</span>
@@ -364,7 +351,7 @@
   </div>
 </footer>
 
-<script src="/assets/site.js?v=7edad4a7" defer></script>
+<script src="/assets/site.js?v=247b8e05" defer></script>
 <script data-goatcounter="https://mentio.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

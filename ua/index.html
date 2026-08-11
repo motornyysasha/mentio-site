@@ -85,7 +85,7 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="/assets/style.css?v=f68b2b14">
+<link rel="stylesheet" href="/assets/style.css?v=94d1b2e0">
 </head>
 <body>
 
@@ -117,17 +117,16 @@
     </div>
     <p class="hero-note">Один лист. У відповідь — що AI зараз каже про ваш бізнес. Без жодних зобов'язань.</p>
     </div>
-    <div class="demo" role="img" aria-label="AI-асистент">
-      <div class="demo-bar"><i></i><i></i><i></i><span>AI-асистент</span></div>
+    <div class="demo scan-hero" id="check">
+      <div class="demo-bar"><i></i><i></i><i></i><span>Безкоштовна перевірка</span></div>
       <div class="demo-body">
-        <div class="msg msg-user" data-part="q">Хто найкращий у [ваша ніша] у моєму місті?</div>
-        <div class="msg msg-ai" data-part="a">
-          <div class="ai-tag"><span class="ai-dot"></span>AI-асистент</div>
-          <span data-part="atext">На основі перевірених даних, відгуків та експертизи я б порадив:</span>
-          <div class="rec">Конкурент А</div>
-          <div class="rec win"><span class="check">✓</span>&nbsp;Ваш бізнес — рекомендовано AI</div>
-          <div class="rec">Конкурент Б</div>
-        </div>
+        <h2>Дізнайтесь, що AI каже про ваш бізнес — <span class="grad-text">раніше за конкурентів.</span></h2>
+        <p>Перевірка безкоштовна і займає один лист. У гіршому разі — переконаєтесь, що все гаразд. У кращому — закриєте витік, про який не знали.</p>
+        <form class="scan-form" data-cfg="{&quot;steps&quot;: [&quot;Перевіряємо robots.txt і доступ AI-краулерів…&quot;, &quot;Шукаємо llms.txt і структуровані дані…&quot;, &quot;Питаємо AI-асистентів про цей сайт…&quot;], &quot;done&quot;: &quot;Готово! Відкриваємо лист із запитом →&quot;, &quot;invalid&quot;: &quot;Введіть коректний домен, напр. vash-sait.com&quot;, &quot;subject&quot;: &quot;Безкоштовна AI-перевірка:&quot;, &quot;body&quot;: &quot;Вітаю, Mentio!\n\nПеревірте, будь ласка, як AI-асистенти бачать мій сайт:&quot;, &quot;contactPh&quot;: &quot;Ваш email або Telegram&quot;, &quot;send&quot;: &quot;Надіслати&quot;, &quot;doneForm&quot;: &quot;Готово! Залиште контакт — надішлемо результати.&quot;, &quot;sent&quot;: &quot;Дякуємо! Відповімо протягом 24 годин.&quot;, &quot;err&quot;: &quot;Не вдалося надіслати — спробуйте ще раз або напишіть на team@mentio.agency.&quot;}">
+      <input type="text" inputmode="url" autocomplete="off" placeholder="vash-sait.com" aria-label="vash-sait.com">
+      <button type="submit">Перевірити сайт</button>
+    </form>
+        <p class="scan-status" aria-live="polite"></p>
       </div>
     </div>
   </div>
@@ -339,18 +338,6 @@
   </div>
 </section>
 
-<section class="final" id="check">
-  <div class="wrap">
-    <h2>Дізнайтесь, що AI каже про ваш бізнес — <span class="grad-text">раніше за конкурентів.</span></h2>
-    <p>Перевірка безкоштовна і займає один лист. У гіршому разі — переконаєтесь, що все гаразд. У кращому — закриєте витік, про який не знали.</p>
-<form class="scan-form" data-cfg="{&quot;steps&quot;: [&quot;Перевіряємо robots.txt і доступ AI-краулерів…&quot;, &quot;Шукаємо llms.txt і структуровані дані…&quot;, &quot;Питаємо AI-асистентів про цей сайт…&quot;], &quot;done&quot;: &quot;Готово! Відкриваємо лист із запитом →&quot;, &quot;invalid&quot;: &quot;Введіть коректний домен, напр. vash-sait.com&quot;, &quot;subject&quot;: &quot;Безкоштовна AI-перевірка:&quot;, &quot;body&quot;: &quot;Вітаю, Mentio!\n\nПеревірте, будь ласка, як AI-асистенти бачать мій сайт:&quot;, &quot;contactPh&quot;: &quot;Ваш email або Telegram&quot;, &quot;send&quot;: &quot;Надіслати&quot;, &quot;doneForm&quot;: &quot;Готово! Залиште контакт — надішлемо результати.&quot;, &quot;sent&quot;: &quot;Дякуємо! Відповімо протягом 24 годин.&quot;, &quot;err&quot;: &quot;Не вдалося надіслати — спробуйте ще раз або напишіть на team@mentio.agency.&quot;}">
-      <input type="text" inputmode="url" autocomplete="off" placeholder="vash-sait.com" aria-label="vash-sait.com">
-      <button type="submit">Перевірити сайт</button>
-    </form>
-    <p class="scan-status" aria-live="polite"></p>
-  </div>
-</section>
-
 <footer>
   <div class="wrap foot">
     <span>© 2026 Mentio · Generative Engine Optimization</span>
@@ -366,7 +353,7 @@
   </div>
 </footer>
 
-<script src="/assets/site.js?v=7edad4a7" defer></script>
+<script src="/assets/site.js?v=247b8e05" defer></script>
 <script data-goatcounter="https://mentio.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
