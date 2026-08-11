@@ -111,7 +111,7 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="/assets/style.css?v=31277380">
+<link rel="stylesheet" href="/assets/style.css?v=7f95c891">
 </head>
 <body>
 
@@ -149,7 +149,7 @@
         <h2>Find out what AI says about your business — <span class="grad-text">before your competitors do.</span></h2>
         <p>The check is free and takes one email. Worst case, you learn you're fine. Best case, you fix a leak you didn't know existed.</p>
         <form class="scan-form" data-cfg="{&quot;steps&quot;: [&quot;Checking robots.txt and AI crawler access…&quot;, &quot;Looking for llms.txt and structured data…&quot;, &quot;Asking AI assistants about this site…&quot;], &quot;done&quot;: &quot;Done! Opening your email draft →&quot;, &quot;invalid&quot;: &quot;Please enter a valid domain, e.g. yourwebsite.com&quot;, &quot;subject&quot;: &quot;Free AI visibility check:&quot;, &quot;body&quot;: &quot;Hi Mentio,\n\nPlease check how AI assistants see my website:&quot;, &quot;contactPh&quot;: &quot;Your email or Telegram&quot;, &quot;send&quot;: &quot;Send&quot;, &quot;doneForm&quot;: &quot;Done! Leave your contact and we'll send the results.&quot;, &quot;sent&quot;: &quot;Thanks! We'll get back to you within 24 hours.&quot;, &quot;err&quot;: &quot;Couldn't send — try again or email team@mentio.agency.&quot;}">
-      <input type="text" inputmode="url" autocomplete="off" placeholder="yourwebsite.com" aria-label="yourwebsite.com">
+      <input type="text" inputmode="url" autocomplete="off" placeholder="yourwebsite.com" aria-label="Your website address">
       <button type="submit">Check my site</button>
     </form>
         <p class="scan-status" aria-live="polite"></p>
@@ -229,7 +229,7 @@
         </ul>
         <p class="price-note">One-time · €99</p>
         <a class="btn btn-primary buy-btn" hidden target="_blank" rel="noopener">Buy the audit — €99</a>
-        <p class="buy-note" hidden>Secure checkout · report within 2 business days</p>
+        <p class="buy-note" hidden>Secure checkout · you'll enter your website at checkout · report within 2 business days</p>
       </div>
     </div>
   </div>
@@ -296,12 +296,40 @@
   </div>
 </section>
 
+<section id="inside">
+  <div class="wrap">
+    <p class="kicker">Inside the audit</p>
+    <h2>What the €99 actually buys</h2>
+    <p class="lead">The free check names the leaks. The audit hands your developer the patches. Here is a real fragment of the report you receive:</p>
+    <div class="report-peek">
+      <div class="card">
+        <p class="rp-title">AI visibility score — per platform</p>
+        <div class="rp-row"><span>Google AI Overviews</span><span class="rp-bar"><i style="width:82%"></i></span><b>82</b></div>
+        <div class="rp-row"><span>ChatGPT</span><span class="rp-bar"><i style="width:80%"></i></span><b>80</b></div>
+        <div class="rp-row"><span>Bing Copilot</span><span class="rp-bar"><i style="width:78%"></i></span><b>78</b></div>
+        <div class="rp-row"><span>Perplexity</span><span class="rp-bar"><i style="width:74%"></i></span><b>74</b></div>
+        <div class="rp-row"><span>Gemini</span><span class="rp-bar"><i style="width:72%"></i></span><b>72</b></div>
+        <p class="rp-src">From our own August self-audit — <a href="/blog/geo-score-53-to-71/">method and full delta in the blog</a></p>
+      </div>
+      <div class="card rp-fix">
+        <p class="rp-title">Fix 4 of 12 — structured data</p>
+        <p>The Offer in your Schema.org markup has no price — AI assistants can't tell customers what you charge. The patch:</p>
+        <pre><code><span style="color:#8A8A9C">"@type":</span> "Offer",
+<span style="color:#8A8A9C">"price":</span> <span style="color:#4ade80">"99"</span>,
+<span style="color:#8A8A9C">"priceCurrency":</span> <span style="color:#4ade80">"EUR"</span>,
+<span style="color:#8A8A9C">"availability":</span> "https://schema.org/InStock"</code></pre>
+        <p class="rp-note">Every fix ships as copy-paste code with its own verification step.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="calc">
   <div class="wrap">
     <p class="kicker">The cost of invisibility</p>
     <h2>How much is AI invisibility costing you?</h2>
     <p class="lead">A rough estimate: if a share of buyers now starts with AI and you're not in its answers, those customers never reach you.</p>
-    <div class="calc card" data-cfg="{&quot;locale&quot;: &quot;en-US&quot;, &quot;currency&quot;: &quot;USD&quot;, &quot;mo&quot;: &quot;/ month in missed revenue&quot;, &quot;yr&quot;: &quot;/ year&quot;, &quot;cust&quot;: &quot;{n} customers you never see&quot;}">
+    <div class="calc card" data-cfg="{&quot;locale&quot;: &quot;en-US&quot;, &quot;currency&quot;: &quot;EUR&quot;, &quot;mo&quot;: &quot;/ month in missed revenue&quot;, &quot;yr&quot;: &quot;/ year&quot;, &quot;cust&quot;: &quot;{n} customers you never see&quot;}">
       <div class="calc-row">
         <label>New customers per month <b data-val="clients"></b></label>
         <input type="range" data-in="clients" min="5" max="500" step="5" value="50">
@@ -357,9 +385,20 @@
       <div>
         <h3>Oleksandr Motornyy</h3>
         <p class="founder-role">Founder &amp; GEO Consultant</p>
-        <p class="bio">I run Mentio. My background is QA engineering in fintech and crypto — my job was to find what's broken before the customer does, and prove it with steps anyone can reproduce. A GEO audit is that same discipline pointed at AI visibility: no vague advice, every problem documented, every fix verifiable — and tested on this site first, our own starting score of 53/100 published in the blog.</p>
+        <p class="bio">I run Mentio. My background is QA engineering in fintech and crypto — my job was to find what's broken before the customer does, and prove it with steps anyone can reproduce. A GEO audit is that same discipline pointed at AI visibility: no vague advice, every problem documented, every fix verifiable — and tested on this site first, our own starting score of <a href="/blog/we-audited-our-own-site/">53/100 published in the blog</a>.</p>
         <a class="founder-link" href="https://www.linkedin.com/in/oleksandr-motornyy-7b9473169/" rel="author noopener" target="_blank">Oleksandr Motornyy on LinkedIn →</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>See where you stand — <span class="grad-text">then fix it for €99.</span></h2>
+    <p>Run the free check first, or go straight to the full audit — every problem found, every fix included.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary buy-btn" hidden target="_blank" rel="noopener">Buy the audit — €99</a>
+      <a class="btn btn-ghost" href="#check">Run the free check</a>
     </div>
   </div>
 </section>
@@ -379,7 +418,7 @@
   </div>
 </footer>
 
-<script src="/assets/site.js?v=55ce6b15" defer></script>
+<script src="/assets/site.js?v=cabbe2f6" defer></script>
 <script data-goatcounter="https://mentio.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

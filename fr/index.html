@@ -85,7 +85,7 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="/assets/style.css?v=31277380">
+<link rel="stylesheet" href="/assets/style.css?v=7f95c891">
 </head>
 <body>
 
@@ -122,7 +122,7 @@
         <h2>Découvrez ce que l'IA dit de votre entreprise — <span class="grad-text">avant vos concurrents.</span></h2>
         <p>La vérification est gratuite et tient en un e-mail. Au pire, vous apprenez que tout va bien. Au mieux, vous colmatez une fuite dont vous ignoriez l'existence.</p>
         <form class="scan-form" data-cfg="{&quot;steps&quot;: [&quot;Vérification du robots.txt et de l'accès des robots IA…&quot;, &quot;Recherche du llms.txt et des données structurées…&quot;, &quot;Interrogation des assistants IA sur ce site…&quot;], &quot;done&quot;: &quot;Terminé ! Ouverture du brouillon d'e-mail →&quot;, &quot;invalid&quot;: &quot;Entrez un domaine valide, ex. votre-site.fr&quot;, &quot;subject&quot;: &quot;Vérification gratuite de visibilité IA :&quot;, &quot;body&quot;: &quot;Bonjour Mentio,\n\nMerci de vérifier comment les assistants IA voient mon site :&quot;, &quot;contactPh&quot;: &quot;Votre e-mail ou Telegram&quot;, &quot;send&quot;: &quot;Envoyer&quot;, &quot;doneForm&quot;: &quot;Terminé ! Laissez votre contact — nous envoyons les résultats.&quot;, &quot;sent&quot;: &quot;Merci ! Nous revenons vers vous sous 24 h.&quot;, &quot;err&quot;: &quot;Échec de l'envoi — réessayez ou écrivez à team@mentio.agency.&quot;}">
-      <input type="text" inputmode="url" autocomplete="off" placeholder="votre-site.fr" aria-label="votre-site.fr">
+      <input type="text" inputmode="url" autocomplete="off" placeholder="votre-site.fr" aria-label="Adresse de votre site">
       <button type="submit">Vérifier mon site</button>
     </form>
         <p class="scan-status" aria-live="polite"></p>
@@ -202,7 +202,7 @@
         </ul>
         <p class="price-note">Ponctuel · 99 €</p>
         <a class="btn btn-primary buy-btn" hidden target="_blank" rel="noopener">Acheter l'audit — 99 €</a>
-        <p class="buy-note" hidden>Paiement sécurisé · rapport sous 2 jours ouvrés</p>
+        <p class="buy-note" hidden>Paiement sécurisé · votre site est demandé au paiement · rapport sous 2 jours ouvrés</p>
       </div>
     </div>
   </div>
@@ -269,6 +269,34 @@
   </div>
 </section>
 
+<section id="inside">
+  <div class="wrap">
+    <p class="kicker">Dans l'audit</p>
+    <h2>Ce que les 99 € achètent concrètement</h2>
+    <p class="lead">La vérification gratuite nomme les fuites. L'audit donne à votre développeur les correctifs prêts à l'emploi. Voici un extrait réel du rapport :</p>
+    <div class="report-peek">
+      <div class="card">
+        <p class="rp-title">Score de visibilité IA — par plateforme</p>
+        <div class="rp-row"><span>Google AI Overviews</span><span class="rp-bar"><i style="width:82%"></i></span><b>82</b></div>
+        <div class="rp-row"><span>ChatGPT</span><span class="rp-bar"><i style="width:80%"></i></span><b>80</b></div>
+        <div class="rp-row"><span>Bing Copilot</span><span class="rp-bar"><i style="width:78%"></i></span><b>78</b></div>
+        <div class="rp-row"><span>Perplexity</span><span class="rp-bar"><i style="width:74%"></i></span><b>74</b></div>
+        <div class="rp-row"><span>Gemini</span><span class="rp-bar"><i style="width:72%"></i></span><b>72</b></div>
+        <p class="rp-src">Issu de notre propre auto-audit d'août — <a href="/blog/geo-score-53-to-71/">méthode et delta complet sur le blog</a></p>
+      </div>
+      <div class="card rp-fix">
+        <p class="rp-title">Correctif 4 sur 12 — données structurées</p>
+        <p>L'Offer de votre balisage Schema.org n'a pas de prix — les assistants IA ne peuvent pas dire vos tarifs aux clients. Le patch :</p>
+        <pre><code><span style="color:#8A8A9C">"@type":</span> "Offer",
+<span style="color:#8A8A9C">"price":</span> <span style="color:#4ade80">"99"</span>,
+<span style="color:#8A8A9C">"priceCurrency":</span> <span style="color:#4ade80">"EUR"</span>,
+<span style="color:#8A8A9C">"availability":</span> "https://schema.org/InStock"</code></pre>
+        <p class="rp-note">Chaque correctif est livré en code à copier-coller, avec sa propre étape de vérification.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="calc">
   <div class="wrap">
     <p class="kicker">Le coût de l'invisibilité</p>
@@ -330,9 +358,20 @@
       <div>
         <h3>Oleksandr Motornyy</h3>
         <p class="founder-role">Fondateur &amp; consultant GEO</p>
-        <p class="bio">Je dirige Mentio. Mon parcours, c'est l'ingénierie QA dans la fintech et la crypto : mon métier consistait à trouver ce qui casse avant le client et à le prouver par des étapes reproductibles. Un audit GEO, c'est la même discipline appliquée à la visibilité dans l'IA : aucun conseil vague, chaque problème documenté, chaque correction vérifiable — et testée d'abord sur ce site ; notre propre note de départ, 53/100, est publiée sur le blog.</p>
+        <p class="bio">Je dirige Mentio. Mon parcours, c'est l'ingénierie QA dans la fintech et la crypto : mon métier consistait à trouver ce qui casse avant le client et à le prouver par des étapes reproductibles. Un audit GEO, c'est la même discipline appliquée à la visibilité dans l'IA : aucun conseil vague, chaque problème documenté, chaque correction vérifiable — et testée d'abord sur ce site ; notre propre note de départ, <a href="/blog/we-audited-our-own-site/">53/100, est publiée sur le blog</a>.</p>
         <a class="founder-link" href="https://www.linkedin.com/in/oleksandr-motornyy-7b9473169/" rel="author noopener" target="_blank">Oleksandr Motornyy sur LinkedIn →</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Voyez où vous en êtes — <span class="grad-text">puis corrigez pour 99 €.</span></h2>
+    <p>Commencez par la vérification gratuite ou passez directement à l'audit complet — chaque problème identifié, chaque correctif inclus.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary buy-btn" hidden target="_blank" rel="noopener">Acheter l'audit — 99 €</a>
+      <a class="btn btn-ghost" href="#check">Vérification gratuite</a>
     </div>
   </div>
 </section>
@@ -351,7 +390,7 @@
   </div>
 </footer>
 
-<script src="/assets/site.js?v=55ce6b15" defer></script>
+<script src="/assets/site.js?v=cabbe2f6" defer></script>
 <script data-goatcounter="https://mentio.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

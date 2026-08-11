@@ -85,7 +85,7 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="/assets/style.css?v=31277380">
+<link rel="stylesheet" href="/assets/style.css?v=7f95c891">
 </head>
 <body>
 
@@ -122,7 +122,7 @@
         <h2>Dowiedz się, co AI mówi o Twojej firmie — <span class="grad-text">zanim zrobi to konkurencja.</span></h2>
         <p>Analiza jest bezpłatna i wymaga jednego e-maila. W najgorszym razie dowiesz się, że wszystko gra. W najlepszym — zamkniesz wyciek, o którym nie wiedziałeś.</p>
         <form class="scan-form" data-cfg="{&quot;steps&quot;: [&quot;Sprawdzam robots.txt i dostęp botów AI…&quot;, &quot;Szukam llms.txt i danych strukturalnych…&quot;, &quot;Pytam asystentów AI o tę stronę…&quot;], &quot;done&quot;: &quot;Gotowe! Otwieram szkic e-maila →&quot;, &quot;invalid&quot;: &quot;Podaj poprawną domenę, np. twoja-strona.pl&quot;, &quot;subject&quot;: &quot;Bezpłatna analiza widoczności AI:&quot;, &quot;body&quot;: &quot;Dzień dobry, Mentio!\n\nProszę sprawdzić, jak asystenci AI widzą moją stronę:&quot;, &quot;contactPh&quot;: &quot;Twój e-mail lub Telegram&quot;, &quot;send&quot;: &quot;Wyślij&quot;, &quot;doneForm&quot;: &quot;Gotowe! Zostaw kontakt — wyślemy wyniki.&quot;, &quot;sent&quot;: &quot;Dziękujemy! Odezwiemy się w ciągu 24 godzin.&quot;, &quot;err&quot;: &quot;Nie udało się wysłać — spróbuj ponownie lub napisz na team@mentio.agency.&quot;}">
-      <input type="text" inputmode="url" autocomplete="off" placeholder="twoja-strona.pl" aria-label="twoja-strona.pl">
+      <input type="text" inputmode="url" autocomplete="off" placeholder="twoja-strona.pl" aria-label="Adres twojej strony">
       <button type="submit">Sprawdź stronę</button>
     </form>
         <p class="scan-status" aria-live="polite"></p>
@@ -202,7 +202,7 @@
         </ul>
         <p class="price-note">Jednorazowo · 99 €</p>
         <a class="btn btn-primary buy-btn" hidden target="_blank" rel="noopener">Kup audyt — 99 €</a>
-        <p class="buy-note" hidden>Bezpieczna płatność · raport w 2 dni robocze</p>
+        <p class="buy-note" hidden>Bezpieczna płatność · swoją stronę podasz przy płatności · raport w 2 dni robocze</p>
       </div>
     </div>
   </div>
@@ -269,6 +269,34 @@
   </div>
 </section>
 
+<section id="inside">
+  <div class="wrap">
+    <p class="kicker">W środku audytu</p>
+    <h2>Co dokładnie kupujesz za 99 €</h2>
+    <p class="lead">Darmowe sprawdzenie nazywa problemy. Audyt daje twojemu programiście gotowe poprawki. Oto prawdziwy fragment raportu:</p>
+    <div class="report-peek">
+      <div class="card">
+        <p class="rp-title">Wynik widoczności AI — według platform</p>
+        <div class="rp-row"><span>Google AI Overviews</span><span class="rp-bar"><i style="width:82%"></i></span><b>82</b></div>
+        <div class="rp-row"><span>ChatGPT</span><span class="rp-bar"><i style="width:80%"></i></span><b>80</b></div>
+        <div class="rp-row"><span>Bing Copilot</span><span class="rp-bar"><i style="width:78%"></i></span><b>78</b></div>
+        <div class="rp-row"><span>Perplexity</span><span class="rp-bar"><i style="width:74%"></i></span><b>74</b></div>
+        <div class="rp-row"><span>Gemini</span><span class="rp-bar"><i style="width:72%"></i></span><b>72</b></div>
+        <p class="rp-src">Z naszego własnego sierpniowego samoaudytu — <a href="/blog/geo-score-53-to-71/">metoda i pełna delta na blogu</a></p>
+      </div>
+      <div class="card rp-fix">
+        <p class="rp-title">Poprawka 4 z 12 — dane strukturalne</p>
+        <p>Offer w twoim znaczniku Schema.org nie ma ceny — asystenci AI nie mogą powiedzieć klientom, ile kosztujesz. Łatka:</p>
+        <pre><code><span style="color:#8A8A9C">"@type":</span> "Offer",
+<span style="color:#8A8A9C">"price":</span> <span style="color:#4ade80">"99"</span>,
+<span style="color:#8A8A9C">"priceCurrency":</span> <span style="color:#4ade80">"EUR"</span>,
+<span style="color:#8A8A9C">"availability":</span> "https://schema.org/InStock"</code></pre>
+        <p class="rp-note">Każda poprawka to gotowy kod do wklejenia z własnym krokiem weryfikacji.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="calc">
   <div class="wrap">
     <p class="kicker">Cena niewidzialności</p>
@@ -330,9 +358,20 @@
       <div>
         <h3>Oleksandr Motornyy</h3>
         <p class="founder-role">Założyciel i konsultant GEO</p>
-        <p class="bio">Prowadzę Mentio. Moje zaplecze to inżynieria QA w fintechu i krypto — moim zadaniem było znaleźć to, co zepsute, zanim zrobi to klient, i udowodnić to krokami, które każdy może odtworzyć. Audyt GEO to ta sama dyscyplina wycelowana w widoczność w AI: żadnych ogólników, każdy problem udokumentowany, każda poprawka weryfikowalna — i najpierw testowana na tej stronie; nasz własny wynik wyjściowy 53/100 jest opublikowany na blogu.</p>
+        <p class="bio">Prowadzę Mentio. Moje zaplecze to inżynieria QA w fintechu i krypto — moim zadaniem było znaleźć to, co zepsute, zanim zrobi to klient, i udowodnić to krokami, które każdy może odtworzyć. Audyt GEO to ta sama dyscyplina wycelowana w widoczność w AI: żadnych ogólników, każdy problem udokumentowany, każda poprawka weryfikowalna — i najpierw testowana na tej stronie; nasz własny wynik wyjściowy <a href="/blog/we-audited-our-own-site/">53/100 jest opublikowany na blogu</a>.</p>
         <a class="founder-link" href="https://www.linkedin.com/in/oleksandr-motornyy-7b9473169/" rel="author noopener" target="_blank">Oleksandr Motornyy na LinkedIn →</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Zobacz, gdzie jesteś — <span class="grad-text">i napraw to za 99 €.</span></h2>
+    <p>Zacznij od darmowego sprawdzenia albo przejdź od razu do pełnego audytu — każdy problem znaleziony, każda poprawka w zestawie.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary buy-btn" hidden target="_blank" rel="noopener">Kup audyt — 99 €</a>
+      <a class="btn btn-ghost" href="#check">Darmowe sprawdzenie</a>
     </div>
   </div>
 </section>
@@ -351,7 +390,7 @@
   </div>
 </footer>
 
-<script src="/assets/site.js?v=55ce6b15" defer></script>
+<script src="/assets/site.js?v=cabbe2f6" defer></script>
 <script data-goatcounter="https://mentio.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

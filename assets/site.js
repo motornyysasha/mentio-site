@@ -11,6 +11,36 @@
     });
   });
 
+  /* ---------- mobile nav burger (panel built here: no-JS keeps today's compact bar) ---------- */
+  (function () {
+    var nav = document.querySelector("nav");
+    if (!nav) return;
+    var linksBox = nav.querySelector(".nav-links");
+    var links = nav.querySelectorAll(".nav-links a:not(.nav-cta)");
+    if (!linksBox || !links.length) return;
+    var MENU_LABEL = { en: "Menu", uk: "Меню", de: "Menü", fr: "Menu", pl: "Menu", es: "Menú" };
+    var burger = document.createElement("button");
+    burger.className = "nav-burger";
+    burger.setAttribute("aria-expanded", "false");
+    burger.setAttribute("aria-label", MENU_LABEL[document.documentElement.lang] || "Menu");
+    burger.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
+    var panel = document.createElement("div");
+    panel.className = "nav-panel";
+    links.forEach(function (a) { panel.appendChild(a.cloneNode(true)); });
+    linksBox.appendChild(burger);
+    nav.appendChild(panel);
+    function close() {
+      nav.classList.remove("nav-open");
+      burger.setAttribute("aria-expanded", "false");
+    }
+    burger.addEventListener("click", function () {
+      var open = nav.classList.toggle("nav-open");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    panel.addEventListener("click", function (e) { if (e.target.closest("a")) close(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+  })();
+
   /* ---------- reveal on scroll ---------- */
   if (!reduced && "IntersectionObserver" in window) {
     var targets = document.querySelectorAll(".card, .step, details, .lead, section h2, .kicker");
@@ -99,6 +129,8 @@
   /* ---------- site scanner (real basic check via Worker /scan) ---------- */
   var SCAN_L10N = {
     en: {
+      reset: "Check another site",
+      invalidContact: "Enter an email or @handle so we can reply",
       goodTitle: "Already good",
       badTitle: "Critical \u2014 fix these",
       lead: "Want the full report with every fix, step by step? Leave a contact:",
@@ -124,6 +156,8 @@
       }
     },
     uk: {
+      reset: "Перевірити інший сайт",
+      invalidContact: "Вкажіть email або @нік, щоб ми могли відповісти",
       goodTitle: "\u0412\u0436\u0435 \u0434\u043e\u0431\u0440\u0435",
       badTitle: "\u041a\u0440\u0438\u0442\u0438\u0447\u043d\u043e \u2014 \u0442\u0440\u0435\u0431\u0430 \u0432\u0438\u043f\u0440\u0430\u0432\u0438\u0442\u0438",
       lead: "\u0425\u043e\u0447\u0435\u0442\u0435 \u043f\u043e\u0432\u043d\u0438\u0439 \u0437\u0432\u0456\u0442 \u0437 \u0443\u0441\u0456\u043c\u0430 \u0432\u0438\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u043d\u044f\u043c\u0438, \u043a\u0440\u043e\u043a \u0437\u0430 \u043a\u0440\u043e\u043a\u043e\u043c? \u0417\u0430\u043b\u0438\u0448\u0442\u0435 \u043a\u043e\u043d\u0442\u0430\u043a\u0442:",
@@ -149,6 +183,8 @@
       }
     },
     de: {
+      reset: "Weitere Website prüfen",
+      invalidContact: "E-Mail oder @Handle angeben, damit wir antworten können",
       goodTitle: "Schon gut",
       badTitle: "Kritisch \u2014 bitte beheben",
       lead: "M\u00f6chten Sie den vollst\u00e4ndigen Bericht mit allen Korrekturen? Kontakt hinterlassen:",
@@ -174,6 +210,8 @@
       }
     },
     fr: {
+      reset: "Vérifier un autre site",
+      invalidContact: "Indiquez un e-mail ou un @pseudo pour qu'on puisse répondre",
       goodTitle: "D\u00e9j\u00e0 en place",
       badTitle: "Critique \u2014 \u00e0 corriger",
       lead: "Envie du rapport complet avec toutes les corrections ? Laissez un contact :",
@@ -199,6 +237,8 @@
       }
     },
     pl: {
+      reset: "Sprawdź inną stronę",
+      invalidContact: "Podaj e-mail lub @nick, żebyśmy mogli odpowiedzieć",
       goodTitle: "Ju\u017c dobrze",
       badTitle: "Krytyczne \u2014 do poprawy",
       lead: "Chcesz pe\u0142ny raport ze wszystkimi poprawkami? Zostaw kontakt:",
@@ -224,6 +264,8 @@
       }
     },
     es: {
+      reset: "Comprobar otro sitio",
+      invalidContact: "Indica un email o @usuario para que podamos responder",
       goodTitle: "Ya est\u00e1 bien",
       badTitle: "Cr\u00edtico \u2014 hay que corregir",
       lead: "\u00bfQuieres el informe completo con todas las correcciones? Deja un contacto:",
@@ -322,20 +364,63 @@
       addList(L.badTitle, res.bads, "sr-bad");
       f.parentElement.insertBefore(box, status);
     }
+    var origPh = input.placeholder, origAria = input.getAttribute("aria-label"), origBtn = btn.textContent;
+    function contactValid(c) {
+      return /@/.test(c) || /t\.me\//i.test(c) || /^\+?[\d\s()-]{7,}$/.test(c);
+    }
+    function resetScanner() {
+      stage = 1;
+      var box = f.parentElement.querySelector(".scan-result");
+      if (box) box.remove();
+      var chip = f.querySelector(".scan-chip");
+      if (chip) chip.remove();
+      var rl = f.parentElement.querySelector(".scan-reset");
+      if (rl) rl.remove();
+      status.before(f);
+      f.hidden = false;
+      f.classList.remove("invalid");
+      status.classList.remove("ok");
+      status.textContent = "";
+      input.value = "";
+      input.placeholder = origPh;
+      if (origAria) input.setAttribute("aria-label", origAria);
+      input.removeAttribute("inputmode");
+      btn.textContent = origBtn;
+      btn.disabled = false;
+      savedDomain = "";
+      input.focus();
+    }
     function toContactStage(msg) {
       savedDomain = savedDomain || domainOf();
       stage = 2;
+      /* reading order for stage 2: results -> instruction -> contact form -> reset */
+      var box = f.parentElement.querySelector(".scan-result");
+      if (box) { box.after(status); status.after(f); }
       status.textContent = msg;
+      var chip = document.createElement("span");
+      chip.className = "scan-chip";
+      chip.textContent = "✓ " + savedDomain;
+      chip.title = savedDomain;
+      f.insertBefore(chip, input);
       input.value = "";
       input.placeholder = cfg.contactPh;
+      input.setAttribute("aria-label", cfg.contactPh);
+      input.setAttribute("inputmode", "email");
       btn.textContent = cfg.send;
+      var rl = document.createElement("button");
+      rl.type = "button";
+      rl.className = "scan-reset";
+      rl.textContent = L.reset;
+      f.after(rl);
+      rl.addEventListener("click", resetScanner);
+      if (box && !reduced) box.scrollIntoView({ block: "nearest", behavior: "smooth" });
     }
     input.addEventListener("input", function () { f.classList.remove("invalid"); });
     f.addEventListener("submit", function (e) {
       e.preventDefault();
       if (stage === 2) {
         var contact = input.value.trim();
-        if (contact.length < 4) { reject(cfg.contactPh); return; }
+        if (!contactValid(contact)) { reject(L.invalidContact); return; }
         btn.disabled = true;
         submitLead({ type: "scan", domain: savedDomain, contact: contact }).then(function () {
           status.classList.add("ok");
