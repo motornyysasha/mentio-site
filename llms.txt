@@ -37,7 +37,7 @@ Key facts:
 - [AI crawlers: which bots read your site](https://mentio.agency/blog/ai-crawlers-guide/): what each AI crawler does and how to check you are not blocking them
 - [Schema.org for AI search: the 5 types that matter](https://mentio.agency/blog/schema-for-ai/): which structured data actually moves AI visibility, with JSON-LD examples
 - [How to write content AI actually quotes](https://mentio.agency/blog/write-content-ai-quotes/): six rules for quotable passages, with before-and-after examples
-- [From 53 to 71: what actually moved our own GEO score](https://mentio.agency/blog/geo-score-53-to-71/): our own score two weeks later: 53 → 71, what moved it and what did not
+- [From 53 to 77: what actually moved our own GEO score](https://mentio.agency/blog/geo-score-53-to-71/): our own score five weeks later: 53 → 77, what moved it and what did not
 - [Why nobody can guarantee you a place in AI answers](https://mentio.agency/blog/no-guaranteed-citations/): where your control over AI answers ends, and what an honest guarantee looks like
 - [One website is not enough: how AI decides your brand is real](https://mentio.agency/blog/brand-entity-for-ai/): why one website is an unverified claim, and how cross-referencing builds an entity
 - [The cost of being anonymous: E-E-A-T in AI search](https://mentio.agency/blog/eeat-for-ai-search/): what each letter of E-E-A-T means in practice and the minimum authorship setup
@@ -56,7 +56,7 @@ Key facts:
 - [AI-краулери: які боти читають ваш сайт](https://mentio.agency/ua/blog/ai-crawlers-guide/): що робить кожен AI-краулер і як перевірити, що ви їх не блокуєте
 - [Schema.org для AI-пошуку: 5 типів, які важать](https://mentio.agency/ua/blog/schema-for-ai/): яка розмітка реально впливає на AI-видимість, з прикладами JSON-LD
 - [Як писати контент, який AI цитує](https://mentio.agency/ua/blog/write-content-ai-quotes/): шість правил цитованих фрагментів із прикладами «до і після»
-- [Від 53 до 71: що насправді зрушило нашу GEO-оцінку](https://mentio.agency/ua/blog/geo-score-53-to-71/): власна оцінка через два тижні: 53 → 71, що спрацювало і що ні
+- [Від 53 до 77: що насправді зрушило нашу GEO-оцінку](https://mentio.agency/ua/blog/geo-score-53-to-71/): власна оцінка через п'ять тижнів: 53 → 77, що спрацювало і що ні
 - [Чому ніхто не може гарантувати місце у відповідях AI](https://mentio.agency/ua/blog/no-guaranteed-citations/): де закінчується ваш контроль над відповідями AI і як виглядає чесна гарантія
 - [Одного сайту недостатньо: як AI вирішує, що бренд справжній](https://mentio.agency/ua/blog/brand-entity-for-ai/): чому один сайт — це непідтверджена заява і як перехресні джерела будують сутність
 - [Ціна анонімності: E-E-A-T у пошуку з AI](https://mentio.agency/ua/blog/eeat-for-ai-search/): що означає кожна літера E-E-A-T на практиці та мінімальний набір авторства

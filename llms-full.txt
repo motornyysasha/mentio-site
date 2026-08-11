@@ -34,7 +34,7 @@ Key facts:
 - [GEO vs SEO: what actually changes](https://mentio.agency/blog/geo-vs-seo/): practical comparison — what carries over from SEO, what GEO adds, why you need both
 - [How to get into Google AI Overviews](https://mentio.agency/blog/google-ai-overviews/): what determines citations in AI Overviews and five steps that raise your odds
 - [Case study: we audited our own site — 53/100](https://mentio.agency/blog/we-audited-our-own-site/): full transparent breakdown of our own GEO audit two days after launch
-- [From 53 to 71: what actually moved our own GEO score](https://mentio.agency/blog/geo-score-53-to-71/): our own score two weeks later: 53 → 71, what moved it and what did not
+- [From 53 to 77: what actually moved our own GEO score](https://mentio.agency/blog/geo-score-53-to-71/): our own score five weeks later: 53 → 77, what moved it and what did not
 - [Why nobody can guarantee you a place in AI answers](https://mentio.agency/blog/no-guaranteed-citations/): where your control over AI answers ends, and what an honest guarantee looks like
 - [One website is not enough: how AI decides your brand is real](https://mentio.agency/blog/brand-entity-for-ai/): why one website is an unverified claim, and how cross-referencing builds an entity
 - [The cost of being anonymous: E-E-A-T in AI search](https://mentio.agency/blog/eeat-for-ai-search/): what each letter of E-E-A-T means in practice and the minimum authorship setup
@@ -50,7 +50,7 @@ Key facts:
 - [GEO проти SEO: що змінюється насправді](https://mentio.agency/ua/blog/geo-vs-seo/): практичне порівняння — що переноситься з SEO і що додає GEO
 - [Як потрапити в Google AI Overviews](https://mentio.agency/ua/blog/google-ai-overviews/): що визначає цитування і п'ять кроків для підвищення шансів
 - [Кейс: аудит власного сайту — 53/100](https://mentio.agency/ua/blog/we-audited-our-own-site/): повний прозорий розбір власного GEO-аудиту через два дні після запуску
-- [Від 53 до 71: що насправді зрушило нашу GEO-оцінку](https://mentio.agency/ua/blog/geo-score-53-to-71/): власна оцінка через два тижні: 53 → 71, що спрацювало і що ні
+- [Від 53 до 77: що насправді зрушило нашу GEO-оцінку](https://mentio.agency/ua/blog/geo-score-53-to-71/): власна оцінка через п'ять тижнів: 53 → 77, що спрацювало і що ні
 - [Чому ніхто не може гарантувати місце у відповідях AI](https://mentio.agency/ua/blog/no-guaranteed-citations/): де закінчується ваш контроль над відповідями AI і як виглядає чесна гарантія
 - [Одного сайту недостатньо: як AI вирішує, що бренд справжній](https://mentio.agency/ua/blog/brand-entity-for-ai/): чому один сайт — це непідтверджена заява і як перехресні джерела будують сутність
 - [Ціна анонімності: E-E-A-T у пошуку з AI](https://mentio.agency/ua/blog/eeat-for-ai-search/): що означає кожна літера E-E-A-T на практиці та мінімальний набір авторства
