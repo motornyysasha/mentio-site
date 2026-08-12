@@ -297,16 +297,6 @@
 
   window.__mentioLead.invalidContact = (SCAN_L10N[document.documentElement.lang] || SCAN_L10N.en).invalidContact;
 
-  /* ---------- boot transcript ships in HTML; JS only prints it in ---------- */
-  (function () {
-    var boot = document.querySelector(".scan-hero .boot");
-    if (!boot || reduced) return;
-    boot.querySelectorAll("p").forEach(function (p, i) {
-      p.classList.add("pline", "in");
-      p.style.animationDelay = (200 + i * 380) + "ms";
-    });
-  })();
-
   document.querySelectorAll("form.scan-form").forEach(function (f) {
     var cfg;
     try { cfg = JSON.parse(f.getAttribute("data-cfg")); } catch (e) { return; }

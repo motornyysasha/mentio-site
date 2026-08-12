@@ -190,15 +190,15 @@
 }
 </script>
 <link rel="preload" href="/assets/fonts/jetbrains-mono-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/style.css?v=9d10df04">
+<link rel="stylesheet" href="/assets/style.css?v=f31dc6e6">
 </head>
 <body>
 <!--
-THESIS: The audit that proves itself: mentio.agency IS a live diagnostic terminal, not a website about one. Refuses the category default (dark SaaS hero + gradient glow + card grid).
-OWN-WORLD: P1 phosphor green (#4AFF7F) on near-black curved glass (#050807); one monospace face (JetBrains Mono) for everything; hierarchy = double-height caps, indentation, dashed full-width rules, $ command lines, > prompt prefixes; line-number gutter (TTY panel + scan results); inverse-video blocks for actions; scanlines + vignette; the ONLY non-green ink on the page is the binding brand gradient (logo mark + the single BUY action, rendered as alert phosphor); cited deviation: FAIL/error/invalid states share the alert ink — diagnostic semantics require it.
-STORY: A worried owner lands inside a running diagnostic session, types their domain into the live prompt, watches real findings print line-by-line, and understands: these people measure for a living - the €99 audit is the full printout.
-FIRST VIEWPORT: Status line (logo mark + numbered nav [01]-[06] + lang + FREE CHECK). Boot header prints. Left column: double-height H1, sub, two bracket-buttons. Right column: the scanner as a framed TTY panel - prompt input with breathing block cursor, results print as transcript rows with bloom. Primary action = the prompt itself.
-FORM: phosphor-terminal-midnight (dealt challenger, verdict: won by user choice); grounded list candidate 3 (QA test console) was its nearest kin; seed key 5377c25f.
+THESIS: The audit as a fold sequence: a business goes from a flat, invisible sheet to a standing crane AI can see — mentio.agency IS the numbered instruction sheet. Refuses both the dark-SaaS default and the terminal we built before it.
+OWN-WORLD: warm washi paper ground (#F0EAE0) with kozo grain; vermilion (#C73E2A) rationed to what acts — the folded sheet, primary buttons, fold numbers, rules; sumi ink (#1C1713) for text; ONE gold dot (#C9A227) marks the current fold (the scanner). Display: Source Serif 4; labels/body: Source Sans 3, tracked caps for machine text. Fold-language rules: solid=edge, dashed=valley, dash-dot=mountain. Zero glow, zero dark. Brand gradient lives ONLY in the logo mark on its paper chip.
+STORY: An owner lands on an instruction sheet mid-journey: "your business is a flat sheet — AI can't see it. Fold 01: type your domain." Real creases (PASS) and tears (FAIL) print; the €99 audit is the full 32-fold instruction to the finished crane.
+FIRST VIEWPORT: Paper ground. Left: vermilion tracked-caps kicker, large serif H1, one-line sub, vermilion CTA with gold dot + outline secondary. Right: the vermilion crease-pattern sheet (authored SVG) above the scan input strip titled CURRENT FOLD · 01 with the gold dot; results print as fold-language rows.
+FORM: orizuru-crane-sequence (bolder re-roll round 1, dealt leader, user-chosen); seed key 5377c25f.
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
 -->
 
@@ -233,7 +233,23 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <div class="demo scan-hero" id="check">
       <div class="demo-bar" aria-hidden="true"><i></i><i></i><i></i><span>Free check</span></div>
       <div class="demo-body">
-      <div class="boot" aria-hidden="true"><p>MENTIO GEO TERMINAL v3.2 — tty1</p><p class="ok">link established · ssr ok · 6 locales</p><p class="prompt">&gt; type your domain to begin<span class="cursor"></span></p></div>
+      <div class="sheet" aria-hidden="true"><svg viewBox="0 0 288 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+<g stroke="rgba(255,245,235,.6)" fill="none" stroke-width="1">
+<rect x="12" y="12" width="96" height="96"/>
+<path d="M12 12 L108 108 M108 12 L12 108" stroke-dasharray="5 4"/>
+<path d="M60 12 V108 M12 60 H108" stroke-dasharray="1 3 6 3"/>
+<path d="M12 12 L60 36 L108 12 M12 108 L60 84 L108 108" stroke-dasharray="5 4"/>
+</g>
+<g stroke="rgba(255,245,235,.35)" fill="none" stroke-width="1">
+<path d="M126 60 H150" stroke-dasharray="4 4"/>
+</g>
+<g stroke="#FFF5EB" fill="none" stroke-width="1.6" stroke-linejoin="round">
+<path d="M168 78 L198 44 L216 62 L252 30 L262 78 L228 88 Z"/>
+<path d="M198 44 L206 20 L216 62" stroke-dasharray="5 4"/>
+<path d="M252 30 L272 22 L262 46"/>
+<path d="M228 88 L224 104 L240 96"/>
+</g>
+</svg></div>
       <h2>Find out what AI says about your business — <span class="grad-text">before your competitors do.</span></h2>
         <form class="scan-form" data-cfg="{&quot;steps&quot;: [&quot;Checking robots.txt and AI crawler access…&quot;, &quot;Looking for llms.txt and structured data…&quot;, &quot;Asking AI assistants about this site…&quot;], &quot;done&quot;: &quot;Done! Opening your email draft →&quot;, &quot;invalid&quot;: &quot;Please enter a valid domain, e.g. yourwebsite.com&quot;, &quot;subject&quot;: &quot;Free AI visibility check:&quot;, &quot;body&quot;: &quot;Hi Mentio,\n\nPlease check how AI assistants see my website:&quot;, &quot;contactPh&quot;: &quot;Your email or Telegram&quot;, &quot;send&quot;: &quot;Send&quot;, &quot;doneForm&quot;: &quot;Done! Leave your contact and we'll send the results.&quot;, &quot;sent&quot;: &quot;Thanks! We'll get back to you within 24 hours.&quot;, &quot;err&quot;: &quot;Couldn't send. Try again or email team@mentio.agency.&quot;}">
       <input type="text" inputmode="url" autocomplete="off" placeholder="yourwebsite.com" aria-label="Your website address">
@@ -248,7 +264,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 <div class="marquee" aria-hidden="true"><div class="marquee-track"><div class="marquee-set"><span>ChatGPT</span><span>Perplexity</span><span>Gemini</span><span>Google AI Overviews</span><span>Bing Copilot</span><span>Claude</span><span>Meta AI</span></div><div class="marquee-set"><span>ChatGPT</span><span>Perplexity</span><span>Gemini</span><span>Google AI Overviews</span><span>Bing Copilot</span><span>Claude</span><span>Meta AI</span></div><div class="marquee-set"><span>ChatGPT</span><span>Perplexity</span><span>Gemini</span><span>Google AI Overviews</span><span>Bing Copilot</span><span>Claude</span><span>Meta AI</span></div><div class="marquee-set"><span>ChatGPT</span><span>Perplexity</span><span>Gemini</span><span>Google AI Overviews</span><span>Bing Copilot</span><span>Claude</span><span>Meta AI</span></div><div class="marquee-set"><span>ChatGPT</span><span>Perplexity</span><span>Gemini</span><span>Google AI Overviews</span><span>Bing Copilot</span><span>Claude</span><span>Meta AI</span></div><div class="marquee-set"><span>ChatGPT</span><span>Perplexity</span><span>Gemini</span><span>Google AI Overviews</span><span>Bing Copilot</span><span>Claude</span><span>Meta AI</span></div></div></div>
 
 <section id="why" class="alt">
-  <div class="wrap" data-cmd="mentio why-now">
+  <div class="wrap" data-cmd="Fold 02">
     <h2>Search changed. The results page is being replaced by <span class="grad-text">the answer.</span></h2>
     <p class="lead">People no longer scroll ten blue links. They ask an assistant and act on the one answer it gives. If your business isn't in that answer, you don't lose a ranking. You lose the customer.</p>
     <div class="grid3">
@@ -272,7 +288,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 </section>
 
 <section id="geo">
-  <div class="wrap" data-cmd="mentio explain geo">
+  <div class="wrap" data-cmd="Fold 03">
     <h2>GEO makes your website something AI can find, trust and cite</h2>
     <p class="lead">Generative Engine Optimization builds on solid SEO and adds the layers AI systems actually read: crawler access, structured data, llms.txt, and content written the way assistants quote it.</p>
     <div class="compare">
@@ -299,7 +315,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 </section>
 
 <section id="services" class="alt">
-  <div class="wrap" data-cmd="mentio pricing">
+  <div class="wrap" data-cmd="Fold 04">
     <h2>One service. One price. The GEO audit.</h2>
     <p class="lead">A complete X-ray of your AI visibility across 8 platforms and, for the same price, exactly how to fix everything we find: a step-by-step plan with copy-paste code. No packages, no upsells.</p>
     <div class="svc-single">
@@ -321,7 +337,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 </section>
 
 <section id="process">
-  <div class="wrap" data-cmd="mentio process">
+  <div class="wrap" data-cmd="Fold 05">
     <h2>From invisible to cited, in four steps</h2>
     <div class="steps">
       <div class="step">
@@ -357,7 +373,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 </section>
 
 <section id="score" class="alt">
-  <div class="wrap" data-cmd="mentio quiz --interactive">
+  <div class="wrap" data-cmd="Fold 06">
     <h2>How visible is your business to AI? Find out in 60 seconds</h2>
     <p class="lead">Seven yes/no questions. Instant score, no email required.</p>
     <div class="quiz card" data-cfg="{&quot;qs&quot;: [&quot;Do you know what ChatGPT says about your business today?&quot;, &quot;Does your website have an llms.txt file?&quot;, &quot;Have you checked that robots.txt doesn't block AI crawlers (GPTBot, PerplexityBot)?&quot;, &quot;Does your site use Schema.org structured data (JSON-LD)?&quot;, &quot;Does your content directly answer customer questions (prices, timelines, specifics)?&quot;, &quot;Is your business listed in directories, maps and review platforms with identical data everywhere?&quot;, &quot;Has the key business info on your site been updated in the last 6 months?&quot;], &quot;tiers&quot;: {&quot;low&quot;: &quot;Serious gaps. AI assistants most likely can't see or can't trust your business, and are recommending competitors right now.&quot;, &quot;mid&quot;: &quot;A foundation exists, but several critical layers are missing. A focused fix would move you into the visible zone.&quot;, &quot;high&quot;: &quot;Solid! The basics are in place — the next step is verifying how AI actually answers and defending the position.&quot;}, &quot;subj&quot;: &quot;GEO audit request (my score: {s}/100)&quot;, &quot;body&quot;: &quot;Hi Mentio, my AI Visibility Score is {s}/100. Please check my website: &quot;}">
@@ -380,7 +396,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 </section>
 
 <section id="inside">
-  <div class="wrap" data-cmd="mentio report --sample">
+  <div class="wrap" data-cmd="Fold 07">
     <h2>What the €99 actually buys</h2>
     <p class="lead">The free check names the leaks. The audit hands your developer the patches. Here is a real fragment of the report you receive:</p>
     <div class="report-peek">
@@ -407,7 +423,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 </section>
 
 <section id="calc">
-  <div class="wrap" data-cmd="mentio losses --estimate">
+  <div class="wrap" data-cmd="Fold 08">
     <h2>How much is AI invisibility costing you?</h2>
     <p class="lead">A rough estimate: if a share of buyers now starts with AI and you're not in its answers, those customers never reach you.</p>
     <div class="calc card" data-cfg="{&quot;locale&quot;: &quot;en-US&quot;, &quot;currency&quot;: &quot;EUR&quot;, &quot;mo&quot;: &quot;/ month in missed revenue&quot;, &quot;yr&quot;: &quot;/ year&quot;, &quot;cust&quot;: &quot;{n} customers you never see&quot;}">
@@ -429,7 +445,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 </section>
 
 <section id="faq" class="alt">
-  <div class="wrap" data-cmd="man mentio">
+  <div class="wrap" data-cmd="Fold 09">
     <h2>Questions owners actually ask</h2>
     <div class="read-next">
       <details>
@@ -457,7 +473,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 </section>
 
 <section id="founder">
-  <div class="wrap" data-cmd="whoami">
+  <div class="wrap" data-cmd="Fold 10">
     <h2>You'll be working with me directly</h2>
     <div class="founder-card card">
       <div class="founder-ava" aria-hidden="true">OM</div>
@@ -472,7 +488,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 </section>
 
 <section class="final">
-  <div class="wrap" data-cmd="mentio order">
+  <div class="wrap" data-cmd="Fold 11 — the last">
     <h2>See where you stand — <span class="grad-text">then fix it for €99.</span></h2>
     <p>Run the free check first, or go straight to the full audit: every problem found, every fix included.</p>
     <div class="cta-row">
@@ -498,7 +514,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   </div>
 </footer>
 
-<script src="/assets/site.js?v=9926917b" defer></script>
+<script src="/assets/site.js?v=4baee531" defer></script>
 <script data-goatcounter="https://mentio.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
