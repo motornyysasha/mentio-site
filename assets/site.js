@@ -19,6 +19,19 @@
     sel.addEventListener("change", function () { if (!kb) go(this.value); });
   });
 
+  /* ---------- nav merges with the hero at top, solidifies on scroll ---------- */
+  (function () {
+    var nav = document.querySelector("nav");
+    if (!nav || !("IntersectionObserver" in window)) return;
+    var sentinel = document.createElement("div");
+    sentinel.setAttribute("aria-hidden", "true");
+    sentinel.style.cssText = "position:absolute;top:0;left:0;width:1px;height:1px;pointer-events:none";
+    document.body.prepend(sentinel);
+    new IntersectionObserver(function (entries) {
+      nav.classList.toggle("at-top", entries[0].isIntersecting);
+    }, { rootMargin: "8px 0px 0px 0px" }).observe(sentinel);
+  })();
+
   /* ---------- mobile nav burger (button ships in HTML; JS builds panel + wiring) ---------- */
   (function () {
     var nav = document.querySelector("nav");
