@@ -415,3 +415,12 @@ details summary:hover{color:var(--verm)}
 @media(prefers-reduced-motion:no-preference){
   @view-transition{navigation:auto}
 }
+
+/* the whispered caption: appears once the crane is folded */
+.sheet-hint{font-family:var(--serif);font-style:italic;font-size:.78rem;color:var(--ink-faint);margin:-.35rem 0 0;max-width:none;opacity:.55;transition:opacity .4s}
+.scan-hero .demo-body:hover .sheet-hint{opacity:1}
+@media(prefers-reduced-motion:no-preference){
+  .sheet-hint{opacity:0;animation:hintfade .9s ease-out 4.2s forwards}
+  .scan-hero .demo-body:hover .sheet-hint{animation:none;opacity:1;transition:opacity .3s}
+  @keyframes hintfade{to{opacity:.55}}
+}
