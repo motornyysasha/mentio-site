@@ -12,7 +12,7 @@
  *   TG_CHAT  — your chat id (get it from @userinfobot)
  */
 
-const ALLOWED_ORIGINS = ["https://mentio.agency", "https://www.mentio.agency"];
+const ALLOWED_ORIGINS = ["https://mentio.agency", "https://www.mentio.agency", "http://localhost:8899"];
 
 const AI_BOTS = ["GPTBot", "ClaudeBot", "PerplexityBot", "Google-Extended", "CCBot", "meta-externalagent"];
 const SCAN_UA = "Mozilla/5.0 (compatible; MentioScan/1.0; +https://mentio.agency)";
