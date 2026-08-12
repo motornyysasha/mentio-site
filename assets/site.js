@@ -10,6 +10,7 @@
   document.querySelectorAll("select.lang-select").forEach(function (sel) {
     var initial = sel.value, kb = false;
     function go(v) { if (v && v !== initial) location.href = v; }
+    sel.addEventListener("pointerdown", function () { kb = false; });
     sel.addEventListener("keydown", function (e) {
       if (e.key === "ArrowUp" || e.key === "ArrowDown") kb = true;
       if (e.key === "Enter") go(this.value);
@@ -645,6 +646,8 @@
       var perMonth = missed * ch;
       c.querySelector(".calc-big").textContent = "≈ " + money.format(perMonth) + " " + cfg.mo;
       c.querySelector(".calc-sub").textContent = money.format(perMonth * 12) + " " + cfg.yr + " · " + cfg.cust.replace("{n}", ints.format(Math.round(missed)));
+      clients.setAttribute("aria-valuetext", String(cl));
+      check.setAttribute("aria-valuetext", money.format(ch));
     }
     [clients, check].forEach(function (inp) { inp.addEventListener("input", upd); });
     upd();

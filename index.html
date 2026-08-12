@@ -37,82 +37,160 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": "https://mentio.agency/#website",
-      "url": "https://mentio.agency/",
-      "name": "Mentio",
-      "publisher": {"@id": "https://mentio.agency/#org"},
-      "inLanguage": ["en", "uk", "de", "fr", "pl", "es"]
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebSite",
+   "@id": "https://mentio.agency/#website",
+   "url": "https://mentio.agency/",
+   "name": "Mentio",
+   "publisher": {
+    "@id": "https://mentio.agency/#org"
+   },
+   "inLanguage": [
+    "en",
+    "uk",
+    "de",
+    "fr",
+    "pl",
+    "es"
+   ]
+  },
+  {
+   "@type": "Organization",
+   "@id": "https://mentio.agency/#org",
+   "name": "Mentio",
+   "logo": {
+    "@type": "ImageObject",
+    "url": "https://mentio.agency/assets/logo.png",
+    "width": 512,
+    "height": 512
+   },
+   "foundingDate": "2026",
+   "founder": {
+    "@type": "Person",
+    "@id": "https://mentio.agency/#founder",
+    "name": "Oleksandr Motornyy",
+    "jobTitle": "Founder & GEO Consultant",
+    "url": "https://mentio.agency/#founder",
+    "description": "Founder of Mentio and Senior QA Engineer with a background in fintech, crypto, payments and blockchain. Applies QA methodology (reproducible checks and documented evidence) to Generative Engine Optimization audits.",
+    "alumniOf": {
+     "@type": "CollegeOrUniversity",
+     "name": "Alfred Nobel University"
     },
-    {
-      "@type": "Organization",
-      "@id": "https://mentio.agency/#org",
-      "name": "Mentio",
-      "logo": {"@type": "ImageObject", "url": "https://mentio.agency/assets/logo.png", "width": 512, "height": 512},
-      "foundingDate": "2026",
-      "founder": {"@type": "Person", "@id": "https://mentio.agency/#founder", "name": "Oleksandr Motornyy", "jobTitle": "Founder & GEO Consultant", "url": "https://mentio.agency/#founder", "description": "Founder of Mentio and Senior QA Engineer with a background in fintech, crypto, payments and blockchain. Applies QA methodology (reproducible checks and documented evidence) to Generative Engine Optimization audits.", "alumniOf": {"@type": "CollegeOrUniversity", "name": "Alfred Nobel University"}, "sameAs": ["https://www.linkedin.com/in/oleksandr-motornyy-7b9473169/"], "knowsAbout": ["Generative Engine Optimization", "AI search visibility", "Schema.org structured data", "llms.txt", "Quality assurance", "Software testing"]},
-      "sameAs": ["https://www.linkedin.com/company/mentio-agency/", "https://x.com/MentioAgency", "https://www.crunchbase.com/organization/mentio-152c", "https://clutch.co/profile/mentio-1", "https://www.trustpilot.com/review/mentio.agency", "https://github.com/motornyysasha/mentio-site"],
-      "url": "https://mentio.agency/",
-      "email": "team@mentio.agency",
-      "description": "Generative Engine Optimization (GEO) agency. Mentio makes businesses visible and citable in AI search: ChatGPT, Perplexity, Gemini, Google AI Overviews and Bing Copilot.",
-      "knowsAbout": ["Generative Engine Optimization", "AI search visibility", "SEO", "llms.txt", "Schema.org structured data", "AI crawlers"]
-    },
-    {
-      "@type": "ProfessionalService",
-      "@id": "https://mentio.agency/#service",
-      "name": "Mentio — GEO Agency",
-      "url": "https://mentio.agency/",
-      "email": "team@mentio.agency",
-      "parentOrganization": {"@id": "https://mentio.agency/#org"},
-      "serviceType": "Generative Engine Optimization (GEO)",
-      "areaServed": "Worldwide",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "GEO audit",
-        "itemListElement": [
-          {"@type": "Offer", "price": "99", "priceCurrency": "EUR", "url": "https://buy.stripe.com/7sY00k9aFakN1ua1w24ow00", "availability": "https://schema.org/InStock", "itemOffered": {"@type": "Service", "name": "GEO Audit", "description": "Full AI-visibility audit across 8 AI platforms. Includes a prioritized report of every problem found AND the complete set of fixes for them: a step-by-step, developer-ready action plan with copy-paste code (JSON-LD, llms.txt, crawler access, content structure), plus a plain-language owner summary. One-time price, no packages or upsells."}}
-        ]
+    "sameAs": [
+     "https://www.linkedin.com/in/oleksandr-motornyy-7b9473169/"
+    ],
+    "knowsAbout": [
+     "Generative Engine Optimization",
+     "AI search visibility",
+     "Schema.org structured data",
+     "llms.txt",
+     "Quality assurance",
+     "Software testing"
+    ]
+   },
+   "sameAs": [
+    "https://www.linkedin.com/company/mentio-agency/",
+    "https://x.com/MentioAgency",
+    "https://www.crunchbase.com/organization/mentio-152c",
+    "https://clutch.co/profile/mentio-1",
+    "https://www.trustpilot.com/review/mentio.agency",
+    "https://github.com/motornyysasha/mentio-site"
+   ],
+   "url": "https://mentio.agency/",
+   "email": "team@mentio.agency",
+   "description": "Generative Engine Optimization (GEO) agency. Mentio makes businesses visible and citable in AI search: ChatGPT, Perplexity, Gemini, Google AI Overviews and Bing Copilot.",
+   "knowsAbout": [
+    "Generative Engine Optimization",
+    "AI search visibility",
+    "SEO",
+    "llms.txt",
+    "Schema.org structured data",
+    "AI crawlers"
+   ]
+  },
+  {
+   "@type": "ProfessionalService",
+   "@id": "https://mentio.agency/#service",
+   "name": "Mentio — GEO Agency",
+   "url": "https://mentio.agency/",
+   "email": "team@mentio.agency",
+   "parentOrganization": {
+    "@id": "https://mentio.agency/#org"
+   },
+   "serviceType": "Generative Engine Optimization (GEO)",
+   "areaServed": "Worldwide",
+   "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "GEO audit",
+    "itemListElement": [
+     {
+      "@type": "Offer",
+      "price": "99",
+      "priceCurrency": "EUR",
+      "url": "https://buy.stripe.com/7sY00k9aFakN1ua1w24ow00",
+      "availability": "https://schema.org/InStock",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "GEO Audit",
+       "description": "Full AI-visibility audit across 8 AI platforms. Includes a prioritized report of every problem found AND the complete set of fixes for them: a step-by-step, developer-ready action plan with copy-paste code (JSON-LD, llms.txt, crawler access, content structure), plus a plain-language owner summary. One-time price, no packages or upsells."
       }
+     }
+    ]
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://mentio.agency/#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What is GEO (Generative Engine Optimization)?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "GEO is the practice of optimizing a website so AI systems (ChatGPT, Perplexity, Gemini, Google AI Overviews) can find it, understand it, trust it and cite it in their answers. Classic SEO optimizes for a list of blue links; GEO optimizes for being the answer itself."
+     }
     },
     {
-      "@type": "FAQPage",
-      "@id": "https://mentio.agency/#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is GEO (Generative Engine Optimization)?",
-          "acceptedAnswer": {"@type": "Answer", "text": "GEO is the practice of optimizing a website so AI systems (ChatGPT, Perplexity, Gemini, Google AI Overviews) can find it, understand it, trust it and cite it in their answers. Classic SEO optimizes for a list of blue links; GEO optimizes for being the answer itself."}
-        },
-        {
-          "@type": "Question",
-          "name": "How is GEO different from SEO?",
-          "acceptedAnswer": {"@type": "Answer", "text": "SEO targets rankings on a results page a human scrolls through. GEO targets AI-generated answers, where the assistant picks only a handful of sources. GEO builds on solid SEO but adds AI-specific layers: crawler access for AI bots, llms.txt, citable content structure, structured data, and entity-level brand signals."}
-        },
-        {
-          "@type": "Question",
-          "name": "What do I get in a Mentio GEO audit?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Three deliverables: a problems analysis scoring your site across 8 AI platforms, a developer-ready step-by-step action plan with copy-paste code, and a plain-language summary for the business owner explaining what is broken and what it costs you."}
-        },
-        {
-          "@type": "Question",
-          "name": "How long does it take to see results?",
-          "acceptedAnswer": {"@type": "Answer", "text": "Technical fixes (crawler access, structured data, llms.txt) take effect as soon as AI systems re-crawl your site, typically within weeks. Authority and citation growth is gradual; we track it with monthly re-audits so you see the delta, not promises."}
-        },
-        {
-          "@type": "Question",
-          "name": "Does GEO replace my current SEO?",
-          "acceptedAnswer": {"@type": "Answer", "text": "No: it extends it. Everything we implement follows search-engine guidelines and strengthens classic SEO too. You keep your rankings and add visibility in the AI layer where a growing share of buying decisions now starts."}
-        }
-      ]
+     "@type": "Question",
+     "name": "How is GEO different from SEO?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "SEO targets rankings on a results page a human scrolls through. GEO targets AI-generated answers, where the assistant picks only a handful of sources. GEO builds on solid SEO but adds AI-specific layers: crawler access for AI bots, llms.txt, citable content structure, structured data, and entity-level brand signals."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What exactly do I get in the audit?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Three deliverables: a problems analysis scoring your site across 8 AI platforms, a developer-ready action plan with copy-paste code (JSON-LD, llms.txt), and a plain-language summary that explains what's broken, which customers you're losing and why it matters now."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How long until I see results?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Technical fixes take effect as soon as AI systems re-crawl your site, typically within weeks. Authority and citation growth is gradual; we track it with monthly re-audits so you see the real delta, not promises."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does GEO replace my current SEO?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No: it extends it. Everything we implement follows search-engine guidelines and strengthens classic SEO too. You keep your rankings and add visibility in the AI layer where a growing share of buying decisions now starts."
+     }
     }
-  ]
+   ]
+  }
+ ]
 }
 </script>
 <link rel="preload" href="/assets/fonts/jetbrains-mono-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/style.css?v=ddcf0257">
+<link rel="stylesheet" href="/assets/style.css?v=9d10df04">
 </head>
 <body>
 <!--
@@ -238,7 +316,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
           <li>Plain-language summary for the owner</li>
         </ul>
         <p class="price-note">One-time · €99</p>
-        <a class="btn btn-primary buy-btn" href="https://buy.stripe.com/7sY00k9aFakN1ua1w24ow00" target="_blank" rel="noopener">Buy the audit — €99</a>
+        <a class="btn btn-primary buy-btn" href="https://buy.stripe.com/7sY00k9aFakN1ua1w24ow00" target="_blank" rel="noopener">Buy the audit — €99<span class="sr-only"> (opens in new tab)</span></a>
         <p class="buy-note">Secure checkout · you'll enter your website at checkout · report within 2 business days</p>
       </div>
     </div>
@@ -286,7 +364,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <h2>How visible is your business to AI? Find out in 60 seconds</h2>
     <p class="lead">Seven yes/no questions. Instant score, no email required.</p>
     <div class="quiz card" data-cfg="{&quot;qs&quot;: [&quot;Do you know what ChatGPT says about your business today?&quot;, &quot;Does your website have an llms.txt file?&quot;, &quot;Have you checked that robots.txt doesn't block AI crawlers (GPTBot, PerplexityBot)?&quot;, &quot;Does your site use Schema.org structured data (JSON-LD)?&quot;, &quot;Does your content directly answer customer questions (prices, timelines, specifics)?&quot;, &quot;Is your business listed in directories, maps and review platforms with identical data everywhere?&quot;, &quot;Has the key business info on your site been updated in the last 6 months?&quot;], &quot;tiers&quot;: {&quot;low&quot;: &quot;Serious gaps. AI assistants most likely can't see or can't trust your business, and are recommending competitors right now.&quot;, &quot;mid&quot;: &quot;A foundation exists, but several critical layers are missing. A focused fix would move you into the visible zone.&quot;, &quot;high&quot;: &quot;Solid! The basics are in place — the next step is verifying how AI actually answers and defending the position.&quot;}, &quot;subj&quot;: &quot;GEO audit request (my score: {s}/100)&quot;, &quot;body&quot;: &quot;Hi Mentio, my AI Visibility Score is {s}/100. Please check my website: &quot;}">
-      <div class="quiz-progress"><span></span></div>
+      <div class="quiz-progress" aria-hidden="true"><span></span></div>
       <p class="quiz-count"></p>
       <p class="quiz-q"></p>
       <div class="quiz-opts">
@@ -390,7 +468,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         <h3>Oleksandr Motornyy</h3>
         <p class="founder-role">Founder &amp; GEO Consultant</p>
         <p class="bio">I run Mentio. My background is QA engineering in fintech and crypto: my job was to find what's broken before the customer does, and prove it with steps anyone can reproduce. A GEO audit is that same discipline pointed at AI visibility: no vague advice, every problem documented, every fix verifiable, and tested on this site first, our own starting score of <a href="/blog/we-audited-our-own-site/">53/100 published in the blog</a>.</p>
-        <a class="founder-link" href="https://www.linkedin.com/in/oleksandr-motornyy-7b9473169/" rel="author noopener" target="_blank">Oleksandr Motornyy on LinkedIn →</a>
+        <a class="founder-link" href="https://www.linkedin.com/in/oleksandr-motornyy-7b9473169/" rel="author noopener" target="_blank">Oleksandr Motornyy on LinkedIn →<span class="sr-only"> (opens in new tab)</span></a>
       </div>
     </div>
   </div>
@@ -401,7 +479,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <h2>See where you stand — <span class="grad-text">then fix it for €99.</span></h2>
     <p>Run the free check first, or go straight to the full audit: every problem found, every fix included.</p>
     <div class="cta-row">
-      <a class="btn btn-primary buy-btn" href="https://buy.stripe.com/7sY00k9aFakN1ua1w24ow00" target="_blank" rel="noopener">Buy the audit — €99</a>
+      <a class="btn btn-primary buy-btn" href="https://buy.stripe.com/7sY00k9aFakN1ua1w24ow00" target="_blank" rel="noopener">Buy the audit — €99<span class="sr-only"> (opens in new tab)</span></a>
       <a class="btn btn-ghost" href="#check">Run the free check</a>
     </div>
   </div>
@@ -423,7 +501,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   </div>
 </footer>
 
-<script src="/assets/site.js?v=3bf44394" defer></script>
+<script src="/assets/site.js?v=9926917b" defer></script>
 <script data-goatcounter="https://mentio.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

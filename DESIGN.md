@@ -273,3 +273,12 @@ Re-audit caught a scoping regression from the previous batch: `reduced` was read
 - .tag-old at full opacity (6.17:1). Dead residue removed: --alert2, .founder-name, pre-span flattener, unreachable localStorage branch.
 - Scan rows insert via setTimeout(0) after the empty role=status container (order-correct for AT, background-tab safe).
 - Accepted as documented: lang-select navigates on pointer change (keyboard guarded); GoatCounter unpinned (prod CSP allowlists its origin).
+
+
+## Amendment 2026-08-12e — fourth-audit fixes + accepted decisions
+
+- Print block repaired (an earlier regex sweep had eaten the heading color reset — root cause of the green-on-white print bug); quiz/calc/panel hidden in print.
+- AT-mute now 100%: mobile panel counters, form $, [step], [ ] numerals, ── rules all carry the / "" second declaration.
+- FAQ JSON-LD is generated verbatim from visible details markup on all 6 locales (5/5 questions; wording drift impossible by construction).
+- lang-select kb flag resets on pointerdown; calc sliders announce formatted aria-valuetext; new-tab links carry localized .sr-only notices; quiz progress bar aria-hidden; footer/reset/restart text controls padded to the 44px bar under 860px.
+- ACCEPTED DECISION: the hero (H1 + scanner) lives in <header>, outside <main> — conventional landmark structure; the skip link targets #main and the scanner stays reachable via the [check] CTA and one Tab stop. Not a defect.
