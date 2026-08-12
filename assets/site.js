@@ -42,54 +42,31 @@
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
   })();
 
-  /* ---------- reveal on scroll ---------- */
+  /* ---------- print-in: sections type themselves onto the tube ---------- */
   if (!reduced && "IntersectionObserver" in window) {
     var targets = document.querySelectorAll(".card, .step, details, .lead, section h2, .kicker");
     var groups = {};
     targets.forEach(function (el) {
-      el.classList.add("reveal");
+      el.classList.add("pline");
       var key = el.parentElement ? Array.prototype.indexOf.call(document.querySelectorAll("section, header"), el.closest("section, header")) : 0;
       groups[key] = groups[key] || [];
       groups[key].push(el);
-      el.style.transitionDelay = Math.min(groups[key].length - 1, 5) * 70 + "ms";
+      el.style.animationDelay = Math.min(groups[key].length - 1, 5) * 90 + "ms";
     });
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (e.isIntersecting) {
           e.target.classList.add("in");
-          e.target.addEventListener("transitionend", function h() {
-            e.target.classList.remove("reveal", "in");
-            e.target.style.transitionDelay = "";
-            e.target.removeEventListener("transitionend", h);
+          e.target.addEventListener("animationend", function h() {
+            e.target.classList.remove("pline", "in");
+            e.target.style.animationDelay = "";
+            e.target.removeEventListener("animationend", h);
           });
           io.unobserve(e.target);
         }
       });
     }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
     targets.forEach(function (el) { io.observe(el); });
-  }
-
-  /* ---------- card tilt ---------- */
-  if (!reduced && finePointer) {
-    document.querySelectorAll(".card").forEach(function (c) {
-      c.addEventListener("mousemove", function (e) {
-        var r = c.getBoundingClientRect();
-        var rx = ((e.clientY - r.top) / r.height - 0.5) * -4;
-        var ry = ((e.clientX - r.left) / r.width - 0.5) * 4;
-        c.style.transform = "perspective(700px) rotateX(" + rx.toFixed(2) + "deg) rotateY(" + ry.toFixed(2) + "deg) translateY(-2px)";
-      });
-      c.addEventListener("mouseleave", function () { c.style.transform = ""; });
-    });
-  }
-
-  /* ---------- hero mouse glow ---------- */
-  var hero = document.querySelector("header.hero");
-  if (hero && !reduced && finePointer) {
-    hero.addEventListener("mousemove", function (e) {
-      var r = hero.getBoundingClientRect();
-      hero.style.setProperty("--mx", ((e.clientX - r.left) / r.width * 100).toFixed(1) + "%");
-      hero.style.setProperty("--my", ((e.clientY - r.top) / r.height * 100).toFixed(1) + "%");
-    });
   }
 
   /* ---------- lead delivery ---------- */

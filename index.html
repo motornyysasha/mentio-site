@@ -111,9 +111,18 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="/assets/style.css?v=7f95c891">
+<link rel="stylesheet" href="/assets/style.css?v=fc2ab4a7">
 </head>
 <body>
+<!--
+THESIS: The audit that proves itself: mentio.agency IS a live diagnostic terminal, not a website about one. Refuses the category default (dark SaaS hero + gradient glow + card grid).
+OWN-WORLD: P1 phosphor green (#4AFF7F) on near-black curved glass (#050807); one monospace face (JetBrains Mono) for everything; hierarchy = double-height caps, indentation, dashed full-width rules, // comment kickers, > prompt prefixes; line-number gutter; inverse-video blocks for actions; scanlines + vignette; the ONLY non-green ink on the page is the binding brand gradient (logo mark + the single BUY action, rendered as alert phosphor).
+STORY: A worried owner lands inside a running diagnostic session, types their domain into the live prompt, watches real findings print line-by-line, and understands: these people measure for a living - the €99 audit is the full printout.
+FIRST VIEWPORT: Status line (logo mark + numbered nav [01]-[06] + lang + FREE CHECK). Boot header prints. Left column: > kicker, double-height H1, sub, two bracket-buttons. Right column: the scanner as a framed TTY panel - prompt input with breathing block cursor, results print as transcript rows with bloom. Primary action = the prompt itself.
+FORM: phosphor-terminal-midnight (dealt challenger, verdict: won by user choice); grounded list candidate 3 (QA test console) was its nearest kin; seed key 5377c25f.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+-->
+
 
 <nav>
   <div class="wrap nav-inner">
@@ -160,7 +169,7 @@
 <div class="marquee" aria-hidden="true"><div class="marquee-track"><div class="marquee-set"><span>ChatGPT</span><span>Perplexity</span><span>Gemini</span><span>Google AI Overviews</span><span>Bing Copilot</span><span>Claude</span><span>Meta AI</span></div><div class="marquee-set"><span>ChatGPT</span><span>Perplexity</span><span>Gemini</span><span>Google AI Overviews</span><span>Bing Copilot</span><span>Claude</span><span>Meta AI</span></div><div class="marquee-set"><span>ChatGPT</span><span>Perplexity</span><span>Gemini</span><span>Google AI Overviews</span><span>Bing Copilot</span><span>Claude</span><span>Meta AI</span></div><div class="marquee-set"><span>ChatGPT</span><span>Perplexity</span><span>Gemini</span><span>Google AI Overviews</span><span>Bing Copilot</span><span>Claude</span><span>Meta AI</span></div><div class="marquee-set"><span>ChatGPT</span><span>Perplexity</span><span>Gemini</span><span>Google AI Overviews</span><span>Bing Copilot</span><span>Claude</span><span>Meta AI</span></div><div class="marquee-set"><span>ChatGPT</span><span>Perplexity</span><span>Gemini</span><span>Google AI Overviews</span><span>Bing Copilot</span><span>Claude</span><span>Meta AI</span></div></div></div>
 
 <section id="why" class="alt">
-  <div class="wrap">
+  <div class="wrap" data-cmd="mentio why-now">
     <p class="kicker">Why now</p>
     <h2>Search changed. The results page is being replaced by <span class="grad-text">the answer.</span></h2>
     <p class="lead">People no longer scroll ten blue links. They ask an assistant and act on the one answer it gives. If your business isn't in that answer, you don't lose a ranking. You lose the customer.</p>
@@ -185,7 +194,7 @@
 </section>
 
 <section id="geo">
-  <div class="wrap">
+  <div class="wrap" data-cmd="mentio explain geo">
     <p class="kicker">What is GEO</p>
     <h2>GEO makes your website something AI can find, trust and cite</h2>
     <p class="lead">Generative Engine Optimization builds on solid SEO and adds the layers AI systems actually read: crawler access, structured data, llms.txt, and content written the way assistants quote it.</p>
@@ -213,7 +222,7 @@
 </section>
 
 <section id="services" class="alt">
-  <div class="wrap">
+  <div class="wrap" data-cmd="mentio pricing">
     <p class="kicker">Services</p>
     <h2>One service. One price. The GEO audit.</h2>
     <p class="lead">A complete X-ray of your AI visibility across 8 platforms and, for the same price, exactly how to fix everything we find: a step-by-step plan with copy-paste code. No packages, no upsells.</p>
@@ -236,7 +245,7 @@
 </section>
 
 <section id="process">
-  <div class="wrap">
+  <div class="wrap" data-cmd="mentio process">
     <p class="kicker">Process</p>
     <h2>From invisible to cited, in four steps</h2>
     <div class="steps" style="margin-top:2.4rem">
@@ -273,7 +282,7 @@
 </section>
 
 <section id="score" class="alt">
-  <div class="wrap">
+  <div class="wrap" data-cmd="mentio quiz --interactive">
     <p class="kicker">AI Visibility Score</p>
     <h2>How visible is your business to AI? Find out in 60 seconds</h2>
     <p class="lead">Seven yes/no questions. Instant score, no email required.</p>
@@ -297,7 +306,7 @@
 </section>
 
 <section id="inside">
-  <div class="wrap">
+  <div class="wrap" data-cmd="mentio report --sample">
     <p class="kicker">Inside the audit</p>
     <h2>What the €99 actually buys</h2>
     <p class="lead">The free check names the leaks. The audit hands your developer the patches. Here is a real fragment of the report you receive:</p>
@@ -325,7 +334,7 @@
 </section>
 
 <section id="calc">
-  <div class="wrap">
+  <div class="wrap" data-cmd="mentio losses --estimate">
     <p class="kicker">The cost of invisibility</p>
     <h2>How much is AI invisibility costing you?</h2>
     <p class="lead">A rough estimate: if a share of buyers now starts with AI and you're not in its answers, those customers never reach you.</p>
@@ -348,7 +357,7 @@
 </section>
 
 <section id="faq" class="alt">
-  <div class="wrap">
+  <div class="wrap" data-cmd="man mentio">
     <p class="kicker">FAQ</p>
     <h2>Questions owners actually ask</h2>
     <div style="margin-top:2.2rem;max-width:800px">
@@ -377,7 +386,7 @@
 </section>
 
 <section id="founder">
-  <div class="wrap">
+  <div class="wrap" data-cmd="whoami">
     <p class="kicker">Who's behind this</p>
     <h2>You'll be working with me directly</h2>
     <div class="founder-card card">
@@ -393,7 +402,7 @@
 </section>
 
 <section class="final">
-  <div class="wrap">
+  <div class="wrap" data-cmd="mentio order">
     <h2>See where you stand — <span class="grad-text">then fix it for €99.</span></h2>
     <p>Run the free check first, or go straight to the full audit: every problem found, every fix included.</p>
     <div class="cta-row">
@@ -418,7 +427,7 @@
   </div>
 </footer>
 
-<script src="/assets/site.js?v=a82428df" defer></script>
+<script src="/assets/site.js?v=d2165a19" defer></script>
 <script data-goatcounter="https://mentio.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
