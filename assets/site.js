@@ -28,7 +28,8 @@
     var panel = document.createElement("div");
     panel.className = "nav-panel";
     links.forEach(function (a) { panel.appendChild(a.cloneNode(true)); });
-    linksBox.appendChild(burger);
+    var cta = linksBox.querySelector('.nav-cta');
+    if (cta) { linksBox.insertBefore(burger, cta); } else { linksBox.appendChild(burger); }
     nav.appendChild(panel);
     function close() {
       nav.classList.remove("nav-open");
@@ -293,6 +294,34 @@
 
   window.__mentioLead.invalidContact = (SCAN_L10N[document.documentElement.lang] || SCAN_L10N.en).invalidContact;
 
+  /* ---------- boot transcript: the TTY prints itself awake ---------- */
+  (function () {
+    var body = document.querySelector(".scan-hero .demo-body");
+    if (!body) return;
+    var boot = document.createElement("div");
+    boot.className = "boot";
+    boot.setAttribute("aria-hidden", "true");
+    ["MENTIO GEO TERMINAL v3.2 — tty1", "link established · ssr ok · 6 locales", ""].forEach(function (txt, i) {
+      var p = document.createElement("p");
+      if (i === 1) p.className = "ok";
+      if (i === 2) {
+        p.className = "prompt";
+        p.textContent = "> type your domain to begin";
+        var cur = document.createElement("span");
+        cur.className = "cursor";
+        p.appendChild(cur);
+      } else {
+        p.textContent = txt;
+      }
+      if (!reduced) {
+        p.classList.add("pline", "in");
+        p.style.animationDelay = (200 + i * 380) + "ms";
+      }
+      boot.appendChild(p);
+    });
+    body.insertBefore(boot, body.firstChild);
+  })();
+
   document.querySelectorAll("form.scan-form").forEach(function (f) {
     var cfg;
     try { cfg = JSON.parse(f.getAttribute("data-cfg")); } catch (e) { return; }
@@ -333,6 +362,13 @@
       }
       addList(L.goodTitle, res.goods, "sr-good");
       addList(L.badTitle, res.bads, "sr-bad");
+      if (!reduced) {
+        var row = 0;
+        box.querySelectorAll(".sr-title, li").forEach(function (el) {
+          el.classList.add("pline", "in");
+          el.style.animationDelay = (row++ * 140) + "ms";
+        });
+      }
       f.parentElement.insertBefore(box, status);
     }
     var origPh = input.placeholder, origAria = input.getAttribute("aria-label"), origBtn = btn.textContent;
@@ -552,7 +588,6 @@
       result.hidden = false;
       var tier = score < 40 ? "low" : score < 75 ? "mid" : "high";
       verdict.textContent = cfg.tiers[tier];
-      ring.style.background = "conic-gradient(#F0512F " + score + "%, #2A2A36 0)";
       var cur = 0;
       var t = setInterval(function () {
         cur += Math.max(1, Math.round(score / 30));
