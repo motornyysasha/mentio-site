@@ -1,284 +1,260 @@
 ---
-name: Mentio GEO Terminal
-description: A live phosphor-CRT diagnostic terminal — the site is the running audit, not a website about one.
+name: Mentio Orizuru
+description: The GEO audit as an origami fold sequence — washi paper ground, vermilion rationed to what acts, one gold dot on the current fold.
 colors:
-  crt-ground: "#050807"
-  crt-panel: "#070B09"
-  phosphor-bright: "#4AFF7F"
-  phosphor-running: "#2FBE5F"
-  phosphor-dim: "#2FA85C"
-  phosphor-ghost: "rgba(74,255,127,.10)"
-  machine-rule: "rgba(74,255,127,.28)"
-  alert-phosphor: "#FF5C42"
-  brand-gradient: "linear-gradient(135deg,#E5383B 0%,#FF6B35 100%)"
-  overdrive-white: "#fff"
+  washi-ground: "#F0EAE0"
+  raised-sheet: "#F7F2E9"
+  pressed-panel: "#E7DFD2"
+  card-on-alt: "#FBF7F0"
+  sumi-ink: "#1C1713"
+  running-ink: "#4A423A"
+  faint-ink: "#847A6E"
+  vermilion: "#C73E2A"
+  vermilion-deep: "#A93321"
+  vermilion-wash: "rgba(199,62,42,.08)"
+  fold-gold: "#C9A227"
+  crease: "rgba(28,23,19,.35)"
+  paper-white: "#fff"
 typography:
   display:
-    fontFamily: "'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace"
-    fontSize: "clamp(1.9rem, 4.6vw, 3.1rem)"
-    fontWeight: 800
-    lineHeight: 1.18
-    letterSpacing: "0"
+    fontFamily: "'Source Serif 4', Georgia, serif"
+    fontSize: "clamp(2.3rem, 5vw, 3.9rem)"
+    fontWeight: 600
+    lineHeight: 1.08
+    letterSpacing: "-.01em"
   headline:
-    fontFamily: "'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace"
-    fontSize: "clamp(1.35rem, 3vw, 1.9rem)"
-    fontWeight: 700
-    lineHeight: 1.35
-    letterSpacing: "0.01em"
+    fontFamily: "'Source Serif 4', Georgia, serif"
+    fontSize: "clamp(1.7rem, 3.6vw, 2.6rem)"
+    fontWeight: 600
+    lineHeight: 1.18
+    letterSpacing: "-.01em"
   title:
-    fontFamily: "'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace"
-    fontSize: "0.95rem"
-    fontWeight: 700
-    letterSpacing: "0.04em"
+    fontFamily: "'Source Serif 4', Georgia, serif"
+    fontSize: "1.15rem"
+    fontWeight: 600
+    lineHeight: 1.4
   body:
-    fontFamily: "'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace"
-    fontSize: "15px"
+    fontFamily: "'Source Sans 3', 'Helvetica Neue', Arial, sans-serif"
+    fontSize: "17px"
     fontWeight: 400
-    lineHeight: 1.75
+    lineHeight: 1.65
   label:
-    fontFamily: "'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace"
-    fontSize: "0.72rem"
+    fontFamily: "'Source Sans 3', 'Helvetica Neue', Arial, sans-serif"
+    fontSize: ".72rem"
     fontWeight: 700
-    letterSpacing: "0.1em"
+    letterSpacing: ".14em"
+    lineHeight: 1.4
 rounded:
-  none: "0"
+  chip: "2px"
+  control: "3px"
+  card: "4px"
 spacing:
-  section: "72px"
-  section-final: "88px"
-  card-pad: "1.35rem 1.3rem"
-  grid-gap: "1rem"
-  hero-gap: "3rem"
-  gutter: "24px"
+  chip-pad: "0.25rem 0.55rem"
+  control-pad: "0.85rem 1.35rem"
+  card-pad: "1.6rem 1.5rem"
+  card-gap: "1.15rem"
+  section: "96px 0"
+  container-gutter: "28px"
 components:
   button-primary:
-    backgroundColor: "{colors.phosphor-bright}"
-    textColor: "{colors.crt-ground}"
-    rounded: "{rounded.none}"
-    padding: "0.75rem 1.15rem"
+    backgroundColor: "{colors.vermilion}"
+    textColor: "{colors.paper-white}"
+    rounded: "{rounded.control}"
+    padding: "{spacing.control-pad}"
   button-primary-hover:
-    backgroundColor: "{colors.overdrive-white}"
-    textColor: "{colors.crt-ground}"
+    backgroundColor: "{colors.vermilion-deep}"
   button-ghost:
-    backgroundColor: "transparent"
-    textColor: "{colors.phosphor-bright}"
-    rounded: "{rounded.none}"
-    padding: "0.75rem 1.15rem"
-  button-buy:
-    backgroundColor: "{colors.brand-gradient}"
-    textColor: "{colors.overdrive-white}"
-    rounded: "{rounded.none}"
-    padding: "0.75rem 1.15rem"
+    textColor: "{colors.vermilion}"
+    rounded: "{rounded.control}"
+    padding: "{spacing.control-pad}"
+  button-ghost-hover:
+    backgroundColor: "{colors.vermilion-wash}"
   nav-cta:
-    backgroundColor: "{colors.phosphor-bright}"
-    textColor: "{colors.crt-ground}"
-    rounded: "{rounded.none}"
-    padding: "0.42rem 0.8rem"
-  card-readout:
-    backgroundColor: "{colors.crt-panel}"
-    textColor: "{colors.phosphor-running}"
-    rounded: "{rounded.none}"
+    backgroundColor: "{colors.vermilion}"
+    textColor: "{colors.paper-white}"
+    rounded: "{rounded.control}"
+    padding: "0.55rem 1rem"
+  card:
+    backgroundColor: "{colors.raised-sheet}"
+    rounded: "{rounded.card}"
     padding: "{spacing.card-pad}"
-  input-prompt:
-    backgroundColor: "transparent"
-    textColor: "{colors.phosphor-bright}"
-    rounded: "{rounded.none}"
-    padding: "0.55rem 0.7rem"
+  tag:
+    textColor: "{colors.faint-ink}"
+    rounded: "{rounded.chip}"
+    padding: "{spacing.chip-pad}"
   tag-new:
-    backgroundColor: "{colors.phosphor-bright}"
-    textColor: "{colors.crt-ground}"
-    rounded: "{rounded.none}"
-    padding: "0.2rem 0.5rem"
+    backgroundColor: "{colors.vermilion}"
+    textColor: "{colors.paper-white}"
+    rounded: "{rounded.chip}"
+    padding: "{spacing.chip-pad}"
+  input-scan:
+    backgroundColor: "{colors.paper-white}"
+    textColor: "{colors.sumi-ink}"
+    rounded: "{rounded.control}"
+    padding: "0.7rem 0.6rem"
 ---
 
-# Design System: Mentio GEO Terminal
+# Design System: Mentio Orizuru
 
 ## Overview
 
-**Creative North Star: "The Audit That Proves Itself"**
+**Creative North Star: "The Audit as a Fold Sequence"**
 
-The page is not a website describing a diagnostic terminal; it IS one. A P1
-phosphor-green session runs on near-black glass, and the visitor lands inside
-it mid-boot. Every structural device is a terminal device: sections open with
-`$` command lines, leads are `>` prompt output, nav links are numbered jump
-targets `[01]–[06]`, cards are framed readouts, the FAQ is `man` pages, the
-footer is `── SESSION LOG END ──`. Fixed scanline and vignette overlays sit in
-front of everything as the tube's glass. The world explicitly refuses the
-category default (dark SaaS hero, gradient glow, rounded card grid).
+The site is a numbered origami instruction sheet: a business starts as a flat, invisible sheet and the audit folds it, step by step, into a standing crane AI can see. Everything is paper — a warm washi ground with a real kozo fiber grain (an inline SVG fractal-noise tile repeated at 240px on the body and every raised surface), sumi ink for words, and vermilion strictly rationed to what acts or instructs. One gold dot marks the current fold: the scanner. This world explicitly refuses both the dark-SaaS default and the phosphor terminal that preceded it on the `redesign` branch: zero dark surfaces, zero glow, light-only (`color-scheme: light`).
 
-Hierarchy never changes typeface — one variable mono carries the entire site
-(latin, latin-ext, cyrillic, cyrillic-ext for six locales). Importance is
-expressed by size steps, weight, uppercase, indentation, and above all by
-phosphor intensity: three greens plus glow, from dim chrome to bloom-lit
-display. Two ceiling items were consciously declined at finish review:
-dot-matrix bitmap display lettering (6-locale readability, incl. cyrillic;
-JetBrains Mono is the recorded font concession), curved-glass edge roll-off,
-and page-wide 80-column framing. The scanlines/vignette pair and `p{max-width:72ch}`
-are the shipped extent of those ideas.
+Density is calm and editorial. Sections are folds, numbered in the margin ("Fold 02" … "Fold 11 — the last"), separated by fold-language rules rather than whitespace tricks. The brand's red→orange gradient is quarantined to the logo mark on its paper chip and the favicon; it never colors text or surfaces (`.grad-text` is a legacy class name — it renders flat vermilion).
 
 **Key Characteristics:**
-- One monochrome phosphor voice; the only non-green ink is the brand alert gradient (logo mark, BUY) and diagnostic FAIL states
-- One monospace face at every level; hierarchy = size, caps, indentation, glow
-- Zero border-radius anywhere; dashed 1px machine rules divide everything
-- Text is the interface: brackets, prompts, counters, and gutters are CSS-generated content
-- Motion = phosphor physics: stepped print-in with bloom, blinking block cursors
+- Warm paper ground with visible fiber grain on every surface tier
+- Vermilion appears only on actions, fold numbers, rules, and the crease sheet
+- Exactly one gold dot per composition zone marks "the current fold"
+- Fold-language line vocabulary: solid = edge, dashed = valley, dash-dot = mountain
+- Serif human voice vs. tracked-caps sans machine voice
+- Flat, near-square geometry (2–4px radii); light-only, glow-free
 
 ## Colors
 
-An almost-monochrome phosphor ramp on dark glass, with one alert ink held in reserve for the brand and for failure.
+An ink-on-washi palette: three warm paper tiers, three ink strengths, one rationed vermilion action color, one gold accent dot.
 
 ### Primary
-- **Bright Phosphor** (#4AFF7F): the lit trace. Headings, links on hover, focused input text, `$` command prefixes, inverse-video fills, cursors, selection background. Almost always paired with a glow (`0 0 6px rgba(74,255,127,.45)`; strong: `0 0 2px …,.9 + 0 0 14px …,.5`).
-- **Running Phosphor** (#2FBE5F): body/running text — the default `color` on `body`.
-- **Dim Phosphor** (#2FA85C): dimmed history and chrome — nav links at rest, notes, meta, line-number gutters, panel borders (`1px solid`).
-- **Phosphor Ghost** (rgba(74,255,127,.10)): faint surface fill — demo title bar, progress-track, chips, blog-item hover, inline code background.
-- **Machine Rule** (rgba(74,255,127,.28)): every dashed 1px divider — nav border, section rules, step frames, table cells, `details` separators.
+- **Vermilion** (#C73E2A): the single action hue. Solid fills on primary buttons, the nav CTA, the scan submit, the demo-bar, and the crease-pattern sheet; text color on fold numbers, ghost buttons, card dash markers, hover states, and the mid-page "answer" emphasis (`.grad-text`); the 1px solid rule under the nav and above the footer. Selection background.
+- **Deep Vermilion** (#A93321): pressed/hover state of every vermilion fill; error borders and the torn FAIL mark.
+- **Vermilion Wash** (rgba(199,62,42,.08)): ghost-button hover, focus halos (`0 0 0 3px`), inline-code background, blog-item hover tint, the scan chip.
 
 ### Secondary
-- **Alert Phosphor** (#FF5C42) and the **Brand Gradient** (135deg, #E5383B → #FF6B35): the binding brand ink. The gradient lives only in the logo mark and the BUY action (`.buy-btn`, with an orange glow `0 0 18px rgba(255,107,53,.45)`). The flat alert red carries FAIL titles, `[!!]` markers, and invalid-input borders. This is the contract's one cited deviation: FAIL/error/invalid states share the alert ink because diagnostic semantics require it.
+- **Fold Gold** (#C9A227): the current-fold dot only. A 8–9px filled circle rendered as a `::before` pseudo-element. Lives in exactly three places: the hero primary CTA, the BUY buttons, and the scanner panel bar label. Never a fill, never text.
 
 ### Neutral
-- **CRT Ground** (#050807): the tube's dark page background and input wells.
-- **CRT Panel** (#070B09): raised panel ground — `section.alt`, cards, the TTY demo frame. Cards invert grounds inside alt sections (card on alt = #050807).
-- **Overdrive White** (#fff): overdriven phosphor. Only as hover state of inverse-video buttons and as text on the gradient BUY button.
+- **Washi Ground** (#F0EAE0): page background, always with the fiber grain image.
+- **Raised Sheet** (#F7F2E9): cards, steps, the demo panel, alt sections, nav (at 95% opacity), footer — the "sheet lifted off the ground" tier, also grained.
+- **Pressed Panel** (#E7DFD2): empty track of progress and report bars.
+- **Card on Alt** (#FBF7F0): card background inside `.alt` sections and code blocks, so sheets stay one tier above their ground.
+- **Sumi Ink** (#1C1713): headings, strong text, input text.
+- **Running Ink** (#4A423A): body and running text.
+- **Faint Ink** (#847A6E): captions, meta, placeholders, disclaimers (4.6:1 on paper).
+- **Crease** (rgba(28,23,19,.35)): the universal hairline border and dashed-rule color.
+- **Paper White** (#fff): form fields, quiz option buttons, scan-result sheet, the logo chip.
 
 ### Named Rules
-**The One Ink Rule.** Everything on the tube is green. The red→orange alert ink appears in exactly three places: the logo mark, the BUY action, and diagnostic failure states (FAIL, `[!!]`, invalid input). No other element may borrow it.
-**The Glow-Is-Hierarchy Rule.** Depth of importance is phosphor intensity: dim → running → bright → bright+glow → bright+strong-glow (display). Never introduce a fourth green or express emphasis with a new hue.
+**The Rationed Vermilion Rule.** Vermilion marks only what acts or instructs — buttons, fold numbers, rules, markers, the sheet. Body copy, headings, and surfaces never turn red; its scarcity is what makes an action legible.
+
+**The One Gold Dot Rule.** Gold exists solely as the current-fold dot. It appears on primary CTAs and the scanner panel bar and nowhere else — never on the nav CTA, never as a text color, never doubled within a component.
+
+**The Gradient Quarantine Rule.** The brand gradient (#E5383B → #FF6B35) lives only inside the logo mark on its white paper chip and the favicon. It never touches text, buttons, or backgrounds.
 
 ## Typography
 
-**Display/Body/Label Font:** JetBrains Mono (variable, 100–800), with `ui-monospace, 'SF Mono', Menlo, monospace` fallback. Four subset files cover latin, latin-ext, cyrillic and cyrillic-ext — the six locales share one face.
+**Display Font:** Source Serif 4 (variable 200–900, with Georgia fallback; self-hosted woff2, latin + latin-ext + cyrillic subsets)
+**Body Font:** Source Sans 3 (variable 200–900, with Helvetica Neue/Arial fallback; same subsets)
+**Mono Font:** ui-monospace / 'SF Mono' / Menlo — code blocks and inline code only
 
-**Character:** One voice at every volume. There is no display face and no UI face; the terminal speaks one mono and modulates size, weight, case and glow. (Dot-matrix bitmap lettering was considered and declined for 6-locale readability; JetBrains Mono is the recorded concession.)
+**Character:** Two voices on one sheet. The serif is the human voice — headlines, questions, names, the big number. The sans is both the running text and, in bold tracked uppercase, the machine/instruction voice that numbers and labels the folds.
 
 ### Hierarchy
-- **Display** (800, clamp(1.9rem–3.1rem), 1.18): hero H1 only. Uppercase, strong glow. Emphasis spans use `.grad-text` — which, despite the legacy name, renders bright phosphor + strong glow, not the gradient.
-- **Headline** (700, clamp(1.35rem–1.9rem), 1.35): section H2. Uppercase, glow, preceded by its section's `$` command line (`.wrap[data-cmd]::before`, 0.85rem bright).
-- **Title** (700, 0.95rem, uppercase, +0.04em): card H3s, founder name. Inside the TTY panel, H2 drops uppercase and glow to read as panel text.
-- **Body** (400, 15px base, 1.75): running copy at 0.82–0.9rem inside components; `p{max-width:72ch}`, leads 68ch, answers 70ch.
-- **Label** (700, 0.68–0.72rem, +0.1em–0.18em, uppercase): `[nn]` card numbers, `[step n]`, tags, `── framed ──` readout titles, marquee entries, demo-bar caption.
+- **Display** (600, clamp(2.3rem, 5vw, 3.9rem), 1.08): hero H1 only.
+- **Headline** (600, clamp(1.7rem, 3.6vw, 2.6rem), 1.18, −.01em): section H2s.
+- **Title** (600, ~1rem–1.15rem): card and step H3s; FAQ questions (serif summary at 1.02rem); founder name.
+- **Body** (400, 17px base, 1.65): running text in Source Sans 3; paragraphs capped at 68ch, leads at 62ch, answers at 66ch.
+- **Label / machine caps** (600–700, .64–.78rem, .09–.2em tracking, UPPERCASE, Source Sans 3): nav links, fold numbers (`data-cmd`), step numbers, tags, panel-bar text, marquee entries, report titles, founder role. Tighter sizes track wider (marquee .68rem at .2em).
+- **Serif numerals** (700 serif): the quiz score (3rem) and calculator output (2.2rem) — data spoken in the human voice.
 
 ### Named Rules
-**The One Face Rule.** JetBrains Mono for everything — headings, prose, labels, buttons, code. A second typeface is a broken tube.
-**The Prefix Rule.** Text roles are declared by machine prefixes, generated in CSS, never typed into content: `$ ` command (section openers), `> ` output (leads, card bullets, blog titles), `>> ` status, `? ` question, `man ` FAQ entries, `[01]` nav counters, `[ok]`/`[!!]` verdicts, `▸` ticker items, decimal-leading-zero line gutters.
+**The Two-Voice Rule.** Serif speaks to humans (headlines, questions, verdicts, big numbers); bold tracked-caps sans speaks as the instruction sheet (numbers, labels, system text). Never mix the voices inside one element: a serif string is never uppercased and tracked, a machine-caps label is never italic or lowercase.
+
+**The Numbered-Margin Rule.** Every fold announces itself with a vermilion machine-caps number before its content: `data-cmd` fold labels on sections, decimal-leading-zero counters on nav links (`01 · `), `01/02/03` on cards, `fold N` on steps, `01` inside the scan form. Numbering is generated via CSS counters/`attr()` with `/ ""` alt text so screen readers skip the ornament.
 
 ## Layout
 
-A single 1080px transcript column (`.wrap`, 24px side gutters) scrolling as one continuous session. Sections are 72px vertical blocks (final CTA 88px) separated by full-width 1px dashed machine rules inset to the gutters; every section opens with its `$ command` line, then H2, then a `> ` lead capped at 68ch.
+Single centered column, `max-width: 1120px` with 28px gutters (`.wrap`). Sections are folds: 96px vertical padding, separated top-of-section by a dashed valley rule inset to the gutters; alternating sections use the raised-sheet tier with solid crease borders instead (and suppress their dashed rule — a fold shows either a valley crease or a lifted sheet edge, not both). The hero is a two-column grid (1.05fr / 1fr, 3.4rem gap): serif argument left, scanner panel right; it collapses to one column at 980px.
 
-Grids inside the column: hero is 1.05fr/1fr (copy left, TTY panel right, 3rem gap); features `repeat(3,1fr)`; compare 1fr/1fr; process `repeat(4,1fr)`; report-peek 1fr/1fr — all with 1rem gaps. Interactive panels (quiz, calc) cap at 660px, service card at 660px, founder card and post bodies at 760px, FAQ at 800px.
+Grids: 3-up cards (`grid3`), 2-up compare and report-peek, 4-up process steps with dashed connectors between them (desktop only) — all collapsing to a single column at 880px. Interactive blocks (quiz, calc) and prose modules cap at 680px. Rhythm inside modules runs on ~1.15rem gaps.
 
-Responsive: 960px stacks the hero; 860px collapses all grids to one column and swaps nav links for a burger-built dropdown panel (44px tap targets, numbered `[01]…` counters preserved); 640px stacks the founder card; 480px compacts nav/buttons (bracket decorations dropped from the nav CTA) and removes the scan-result line-number gutter. Alternating section grounds (`#050807` / `#070B09`) provide the only large-scale rhythm change.
+Breakpoints, as built: **980px** (hero stacks), **880px** (grids stack, burger nav appears, touch targets padded to ≥44px), **640px** (founder card stacks), **480px** (nav and button compaction). Sticky nav: 60px tall, raised-sheet at 95% opacity, 1px solid vermilion bottom edge.
 
 ## Elevation & Depth
 
-No drop shadows for elevation — depth is light, not lift. Surfaces are distinguished by the two grounds plus 1px borders (solid dim-phosphor for panels, dashed machine-rule for sub-frames), and importance glows instead of floating. Two fixed overlays render in front of all content: scanlines (`repeating-linear-gradient`, 1px dark line per 3px, multiply, z-90) and a vignette (radial, to rgba(0,0,0,.42), z-91).
+Depth is paper, not light. Surfaces stack as tiers of the same warm material — ground → raised sheet → white field — each carrying the fiber grain and a 1px crease border. Exactly two soft shadows exist in the whole build: the scanner panel (`0 2px 0 rgba(28,23,19,.06), 0 18px 44px rgba(28,23,19,.08)` — a sheet lifted off the desk) and the mobile nav drop-panel (`0 16px 34px rgba(28,23,19,.12)`). Cards, steps, and every other surface are flat with borders only. Zero glow anywhere.
 
 ### Shadow Vocabulary
-- **Glow** (`0 0 6px rgba(74,255,127,.45)`): standard phosphor bloom on primary buttons, focused prompt, lit tags, progress bars.
-- **Strong glow** (`0 0 2px rgba(74,255,127,.9), 0 0 14px rgba(74,255,127,.5)`): display text and score numerals only.
-- **Panel aura** (`0 0 0 1px rgba(74,255,127,.06), 0 0 34px rgba(74,255,127,.07), inset 0 0 60px rgba(74,255,127,.03)`): the TTY demo frame — screen-glow, not elevation.
-- **Alert glow** (`0 0 18px rgba(255,107,53,.45)`, hover `0 0 30px …,.7`): the BUY button; invalid inputs glow `0 0 10px rgba(229,56,59,.4)`.
+- **Lifted sheet** (`box-shadow: 0 2px 0 rgba(28,23,19,.06), 0 18px 44px rgba(28,23,19,.08)`): the scanner panel only — the one object physically above the page.
+- **Drop panel** (`box-shadow: 0 16px 34px rgba(28,23,19,.12)`): the mobile nav sheet unfolding below the bar.
 
 ### Named Rules
-**The Light-Not-Lift Rule.** Nothing casts a shadow downward; elements emit light outward. (The one exception, the mobile nav dropdown's `0 18px 40px` black shadow, exists to separate the panel from page content and is not a pattern to extend.)
+**The Two-Shadows Rule.** Only the scanner panel and the open mobile nav cast shadows. New surfaces express depth with the paper tiers and crease borders, never with a new shadow.
 
 ## Shapes
 
-Zero border-radius, everywhere, explicitly: `border-radius:0` is re-declared on every control that browsers would otherwise round (inputs, buttons, selects, chips, bars). Frames are rectangles: 1px solid dim-phosphor for primary panels (cards, demo, founder), 1px dashed machine-rule for secondary frames (steps, pre blocks, scan results, tags). Enclosure is typographic where possible — buttons wear generated `[ ]` brackets, numbers wear `[ ]`, readout titles wear `── ──` rules. Blocks that would be icons are glyphs (`▊` cursor, `▸` ticker, `↺` reset) or plain 8px squares (demo-bar "lights").
+Near-square paper geometry: 4px radius on cards, panels, and the demo; 3px on controls, inputs, buttons, and the logo chip; 2px on tags and inline code; 0 elsewhere. No pills except the gold dot and founder avatar, which are true circles. Borders are 1px hairlines in the crease color; emphasis is a 2px solid vermilion border (the GEO card) — never a thicker fill or shadow.
 
-**The Zero-Radius Rule.** No rounded corners exist in this world. The only curves on screen are inside letterforms and the brand mark.
+The line itself is the form language. **Fold-language rules: solid = edge** (nav bottom, footer top, PASS underline), **dashed = valley** (section separators, step connectors, FAQ row rules, pre-block borders, scan-chip divider, FAIL underline), **dash-dot = mountain** (`stroke-dasharray: 1 3 6 3` in the crease-sheet SVG; an SVG-tiled dash-dot top border on the calculator output). Result marks reuse it: a PASS row gets a solid 15×3px vermilion crease dash; a FAIL row gets a 15×5px torn mark built from a repeating 105° deep-vermilion gradient.
 
 ## Components
 
-### Buttons (bracket commands)
-- **Shape:** square (0 radius); label wrapped in generated `[ ` / ` ]` brackets; 700 weight, 0.88rem, no wrap.
-- **Primary (inverse-video):** bright phosphor fill, CRT-ground text, glow (`.75rem 1.15rem`). Hover: overdrives to #fff with `0 0 18px rgba(74,255,127,.7)`.
-- **Ghost:** transparent, `1px solid` dim-phosphor border, bright text. Hover: border brightens, text glows.
-- **BUY (alert action):** the brand gradient fill, white text, orange glow; hover deepens the glow only. Exactly one purchase action per surface wears this.
-- **Text-reset:** bare underlined dim text (`.scan-reset`, `.quiz-restart`), `↺` prefix where it re-runs a scan.
+### Buttons
+- **Shape:** near-square (3px radius), machine-caps label (700, .78rem, .1em, uppercase), .85rem × 1.35rem padding.
+- **Primary:** vermilion fill, white text, gold current-fold dot (9px circle) leading the label. Hover: deep vermilion, background-only transition (.15s).
+- **Ghost:** 1px vermilion border, vermilion text, transparent. Hover: vermilion wash fill.
+- **Nav CTA:** compact primary (.55rem × 1rem) **without** the gold dot.
+- **Text/reset buttons** (scan-reset, quiz-restart): borderless faint-ink underlined text, hover to vermilion.
+- **Disabled:** opacity .6 + `cursor: wait` (scan submit) or opacity .5 + pointer-events none (quiz CTA).
 
-### Status-line Nav
-- Sticky 52px bar on rgba(5,8,7,.94), dashed bottom rule. Logo = gradient mark + wordmark + blinking `▊` cursor. Links are dim, auto-numbered `[01]–[06]` via CSS counters; hover lifts to bright + glow. Language `<select>` is a square bordered field. CTA is a small inverse-video block with brackets. ≤860px: links hide behind a bordered burger; JS builds a dropdown panel repeating the numbered counters with 44px rows.
+### Chips / Tags
+- **Style:** machine caps (.64rem, .14em), 2px radius, .25rem × .55rem padding; default is faint ink with crease border; `tag-new` inverts to vermilion fill + white.
+- **Scan chip** (locked-domain state): vermilion text on vermilion wash with a dashed valley right border.
 
-### TTY Panel (the scanner) — signature
-- `.demo` frame: panel ground, solid dim border, panel-aura glow. Title bar: ghost fill, three 8px squares (first lit), `tty1 — ` caption at 0.7rem/+0.12em caps.
-- **Boot transcript** (JS-built): 0.78rem dim lines with decimal-leading-zero gutters, printing in at 380ms intervals; final line is a bright `> type your domain to begin` prompt with a glowing block cursor blinking at 1.1s `steps(1)`. The cursor freezes to 20% opacity while the real input is focused — attention passes to the live caret.
-- **Prompt input:** a `$`-prefixed row (CRT-ground well, dim border → bright border + glow on focus-within); transparent input with bright text and phosphor caret; inverse-video submit button. Invalid: alert border + red glow. Stage 2 swaps in a `✓ domain` ghost chip and a contact placeholder.
-- **Scan transcript rows:** dashed-framed well, `── PASS ──` (bright, glow) and `── FAIL ──` (alert) group titles; rows carry `[ok]`/`[!!]` markers left and decimal-leading-zero gutters, printing in staggered 140ms.
-
-### Framed Readouts (cards)
-- Panel ground (inverted inside alt sections), solid dim border, 0 radius, `1.35rem 1.3rem` padding. `[nn]` label, uppercase title, `> `-prefixed list rows. The featured card (`.geo-card`) brightens its border and gains a wide soft glow. Score bars are 9px ghost tracks with glowing phosphor fills and tabular-numeral values.
+### Cards / Containers
+- **Corner style:** 4px; 1px crease border.
+- **Background:** raised sheet with fiber grain; #FBF7F0 when sitting on an alt section.
+- **Shadow strategy:** none (see The Two-Shadows Rule).
+- **Emphasis variant:** `geo-card` — 2px solid vermilion border.
+- **List items:** vermilion em-dash marker (`—`) via ::before; card numbers `01/02/03` in vermilion machine caps.
+- **Internal padding:** 1.6rem × 1.5rem (cards), 1.35rem (steps), 1.8rem (founder card).
 
 ### Inputs / Fields
-- Square, CRT-ground fill, dim solid border, mono bright text. Focus: bright border + glow, no default outline (elsewhere, focus-visible = `2px solid` phosphor outline, offset 2px — the keyboard block cursor). Invalid: alert border. Range inputs use `accent-color` phosphor.
+- **Style:** white field, 1px crease border, 3px radius, sumi text, faint-ink placeholder; the scan form is a joined strip (vermilion `01` prefix → borderless input → square vermilion submit).
+- **Focus:** vermilion border + `0 0 0 3px` vermilion-wash halo (`:focus-within` on the strip; `:focus` on the quiz-site field).
+- **Invalid:** deep-vermilion border; the scan strip adds a deep-vermilion halo at .18 alpha.
+- **Range sliders:** `accent-color` vermilion; live values echoed in vermilion 700 next to the label.
 
-### Man-page FAQ
-- Borderless `details` separated by dashed rules; summary prefixed `man ` in dim, toggled by `[+]`/`[-]` at the right edge; answers are 0.85rem running text at 70ch.
+### Navigation
+- **Bar:** sticky 60px, raised sheet @ .95, solid vermilion bottom edge. Links are machine caps (.72rem) with vermilion decimal-leading-zero counters (`01 · `); hover to vermilion; Blog link permanently vermilion. Lang select is a bordered paper control.
+- **Mobile (≤880px):** links hide behind a 44px bordered burger; the panel unfolds full-width below the bar (raised sheet, drop-panel shadow, dashed valley rules between rows, its own counter sequence). Escape closes and returns focus.
 
-### Marquee (signal ticker)
-- Dashed-ruled strip; 0.72rem dim caps at +0.18em with `▸` prefixes; 42s linear loop.
+### Scanner Panel (signature)
+The current fold, and the only lifted sheet. 4px panel with the lifted-sheet shadow; a solid vermilion bar labeled in white machine caps with the gold dot. Body stacks: the **crease sheet** — a vermilion 2.4:1 panel (grained) carrying an authored SVG crease pattern in warm paper-white strokes (rgba(255,245,235,.55–.75) → #FFF5EB) that reads flat-sheet → fold arrow → finished crane, using the full fold language (solid edges, `5 4` valley dashes, `1 3 6 3` mountain dash-dot) — then a bold sans lead-in, the scan strip, and a polite live-status line (vermilion 600 when ok). Results print onto a white sheet as **crease/tear rows**: "Already good" titled with a solid vermilion underline, rows marked with the solid crease dash; "Critical — fix these" titled with a dashed deep-vermilion underline, rows marked with the torn 105° dash. (Three hidden `<i>` elements in the bar are residue of the terminal world's traffic lights — not part of this system.)
 
-### Motion (print-in grammar)
-- Content prints onto the tube: `.pline.in` runs `printin` — 0.5s, `steps(6)`, from bright-bloom blur (`brightness(2.2) blur(1px)`) to rest. JS staggers siblings 90ms apart (capped at 6 steps); scan rows 140ms; boot lines 380ms. Cursors blink at 1.1s `steps(1)`. All entrance motion is gated behind `prefers-reduced-motion: no-preference`; scan step delays collapse from 950ms to 50ms when reduced.
-- **The Stepped-Motion Rule.** Nothing eases smoothly into view; phosphor prints in discrete steps and blooms. Continuous easing is reserved for utility movement (progress bar width, marquee scroll, color/glow transitions at 0.15s).
+### Process Steps
+4-up raised-sheet cards; `fold N` machine-caps numbers (the word "fold" is CSS-generated with `/ ""` alt); dashed vermilion valley connectors bridging the 1.15rem gaps on desktop.
+
+### Quiz
+Card-bound, 680px. Pressed-panel progress track with a vermilion fill animating width (.3s); machine-caps count; serif question (1.25rem, min-height 3em against reflow); white bordered option buttons that hover to vermilion border + wash. Result: serif score (3rem vermilion, faint sans unit), verdict, primary CTA + text restart.
+
+### Calculator
+Card-bound, 680px; labeled range rows with vermilion live values; output separated by the **mountain-rule divider** (SVG dash-dot repeat-x top border); serif sumi total (2.2rem), faint sub-line and disclaimer.
+
+### FAQ (guide style)
+Borderless `details` rows separated by dashed valley rules; serif summary questions with a vermilion `+`/`–` toggle glyph at the right margin (CSS-generated, `/ ""` alt); answers in running ink at 66ch.
+
+### Founder Card
+Raised-sheet card (max 780px): 64px vermilion circle with serif initials, serif name, vermilion machine-caps role, running-ink bio, vermilion text link. Stacks below 640px.
+
+### Footer
+Raised sheet above a solid vermilion top edge; faint-ink small text; links in running ink hovering to vermilion; language row in faint ink.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** open every new section with a `$ command` line via `data-cmd` on `.wrap`; it is the section's kicker, natively in-world.
-- **Do** express every new state in the phosphor ramp first; reach for alert ink only for failure semantics or the single purchase action.
-- **Do** generate all prefixes, brackets, counters and gutters in CSS (`::before`/`::after`, counters) so content stays plain text.
-- **Do** keep interactive tap targets ≥44px under 860px, and re-declare `border-radius:0` on any new form control.
-- **Do** gate every entrance animation behind `prefers-reduced-motion` and give JS-driven sequences a reduced fast path.
+- **Do** put the fiber grain (`--fiber`) on every paper surface — body, alt sections, cards, steps, the vermilion sheet, founder card, post-CTA. Ungrained paper reads as a different material.
+- **Do** number every new fold: a vermilion machine-caps `data-cmd` label on the section, and counters/ordinals on repeated children, generated with the `content: "…" / ""` alt-text pattern.
+- **Do** choose the line style by meaning: solid for edges and PASS, dashed for valleys/separators and FAIL tears, dash-dot (`1 3 6 3`) for mountain folds and the calc divider.
+- **Do** keep interactions gated: reveal (`foldin`: .55s `cubic-bezier(.2,.7,.3,1)`, translateY 10px + scaleY .96 from the top edge, 90ms stagger capped at 6, classes removed after animationend) and the 46s marquee run only under `prefers-reduced-motion: no-preference`; state transitions stay at .15–.3s on background/border/color/width only.
+- **Do** use the vermilion focus treatment everywhere: `outline: 2px solid` vermilion, offset 2px, 3px radius; wash halos on form fields.
+- **Do** keep touch targets ≥44px at ≤880px, and keep print styles flat white with ink text (interactive modules hidden).
 
 ### Don't:
-- **Don't** introduce a second typeface, a fourth green, or any rounded corner.
-- **Don't** use drop shadows for elevation; light glows outward, panels separate by ground + border.
-- **Don't** put the brand gradient on anything but the logo mark and the BUY action; `.grad-text` is phosphor+glow despite its name — never restyle it as an actual gradient.
-- **Don't** reintroduce the declined ceiling items as if they were pending work: dot-matrix display lettering, curved-glass edge roll-off, and page-wide 80-column framing were consciously declined at finish review.
-- **Don't** use pictorial or glyph-font icons; the world's iconography is characters (`▊`, `▸`, `↺`, `[ok]`, `[!!]`) and bare squares.
-
-
-## Amendment 2026-08-12 — readability pass (owner feedback: "one canvas, hard to read")
-
-- New token `--ink: #D8EFE0` (white-hot phosphor) carries ALL running text (body, cards, leads, FAQ answers, bios, blog paragraphs, labels). Physically in-world: phosphor driven hard blooms to white at the core. Green stays for headings, accents, chrome, and machine labels. Contrast: ~16:1 on #050807.
-- One Ink rule unchanged in spirit: the ink ramp is now dim-green -> mid-green -> bright-green -> white-hot; the alert gradient remains the only non-green ink.
-- Section separation: 88px padding; `.alt` sections use #0A100C with solid 1px frame lines rgba(74,255,127,.16); cards use #0B130E with rgba(74,255,127,.34) border + drop shadow; scanlines quieted to rgba(0,0,0,.09)/4px pitch.
-- Type: base 16px/1.7; h2 up to clamp(1.5rem,3.4vw,2.2rem); leads 1.02rem.
-
-
-## Amendment 2026-08-12b — technical-audit pass (14/20 baseline, 20 findings fixed)
-
-- BUY buttons: text ink is `--crt` on the alert gradient (white failed AA at the orange stop).
-- Motion: `mscroll`, both `blink` cursors and `scroll-behavior:smooth` now sit behind `prefers-reduced-motion: no-preference`; marquee pauses on hover; quiz count-up skips under reduce. Scanline overlay lost `mix-blend-mode:multiply` (compositor cost) — visual delta negligible.
-- Landmarks: skip-link (`.skip`, inverse block on focus) + `<main id="main">` on all 6 homepages; `color-scheme:dark` + `theme-color` metas on all 46 pages.
-- Live regions: scan results `role="status"`; quiz question `aria-live=polite`; verdict `role=status`; focus managed on quiz finish/restart and burger Escape.
-- Tokens: `--panel/--card-bg/--card-alt` promoted from amendment literals; report-peek code sample recolored to tokens (fourth green removed).
-- Touch targets: nav CTA/burger/lang-select ≥44px mobile; footer links padded.
-- Print block added (palette near-black on paper). Known detector false positive: `rgb(0,0,0)` reported on the off-screen skip link — its computed color is `--crt`; the detector cannot resolve colors of off-viewport elements.
-- Dead weight removed: Inter/Space Grotesk woff2 files, unused JS vars, legacy hooks.
-
-
-## Amendment 2026-08-12c — re-audit pass (17/20 -> fixes)
-
-Re-audit caught a scoping regression from the previous batch: `reduced` was read in the quiz module but declared in the first IIFE — quiz finish crashed (score never rendered, CTA unbuilt). Fixed: each module derives its own live-updating reduced-motion flag (matchMedia change listener). Also: calc sliders got label/for associations (x6 locales), scan results now insert an EMPTY role=status container before rows (announce-order correctness), quiz verdict role set at bind, quiz inputs aria-label + aria-invalid, scan errors aria-describedby, marquee-rule suppressor re-anchored inside main, .demo-bar aria-hidden, logo >=24px target, lang-select keeps the global focus outline, pre inherits --mono. Lesson recorded: shared state between the two IIFEs must travel through window.__mentioLead, never ambient scope.
-
-
-## Amendment 2026-08-12d — third-audit polish (18/20 baseline)
-
-- Boot transcript and burger button now ship in static HTML (JS animates/wires only) — hero and nav CLS eliminated.
-- Decorative pseudo-prefixes (counters, brackets, $-prompts, man/PASS/FAIL/[ok] markers, footer session line) carry the alt-text mute (content: X / "") as a second declaration — legacy engines keep the visible form, AT skips the noise.
-- Quiz hint: id + role=status + aria-describedby wiring (parity with the scanner); quiz CTA toggles aria-disabled.
-- .tag-old at full opacity (6.17:1). Dead residue removed: --alert2, .founder-name, pre-span flattener, unreachable localStorage branch.
-- Scan rows insert via setTimeout(0) after the empty role=status container (order-correct for AT, background-tab safe).
-- Accepted as documented: lang-select navigates on pointer change (keyboard guarded); GoatCounter unpinned (prod CSP allowlists its origin).
-
-
-## Amendment 2026-08-12e — fourth-audit fixes + accepted decisions
-
-- Print block repaired (an earlier regex sweep had eaten the heading color reset — root cause of the green-on-white print bug); quiz/calc/panel hidden in print.
-- AT-mute now 100%: mobile panel counters, form $, [step], [ ] numerals, ── rules all carry the / "" second declaration.
-- FAQ JSON-LD is generated verbatim from visible details markup on all 6 locales (5/5 questions; wording drift impossible by construction).
-- lang-select kb flag resets on pointerdown; calc sliders announce formatted aria-valuetext; new-tab links carry localized .sr-only notices; quiz progress bar aria-hidden; footer/reset/restart text controls padded to the 44px bar under 860px.
-- ACCEPTED DECISION: the hero (H1 + scanner) lives in <header>, outside <main> — conventional landmark structure; the skip link targets #main and the scanner stays reachable via the [check] CTA and one Tab stop. Not a defect.
+- **Don't** introduce dark surfaces, glows, or new shadows — depth is paper tiers plus the two existing shadows only.
+- **Don't** spend vermilion on passive elements or spend gold anywhere but the current-fold dot (hero primary, BUY buttons, panel bar).
+- **Don't** let the brand gradient escape the logo chip and favicon; `.grad-text` renders flat vermilion despite its legacy name.
+- **Don't** track, uppercase, or shrink the serif — the human voice stays sentence-case; the machine voice stays sans.
+- **Don't** exceed the radius scale (2/3/4px) or swap hairline creases for heavy borders; emphasis is the 2px vermilion border, once per view.
+- **Don't** translate CSS-generated ornament into accessible text — every decorative `content` carries the `/ ""` alternative.
