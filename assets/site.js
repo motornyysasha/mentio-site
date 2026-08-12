@@ -18,24 +18,20 @@
     sel.addEventListener("change", function () { if (!kb) go(this.value); });
   });
 
-  /* ---------- mobile nav burger (panel built here: no-JS keeps today's compact bar) ---------- */
+  /* ---------- mobile nav burger (button ships in HTML; JS builds panel + wiring) ---------- */
   (function () {
     var nav = document.querySelector("nav");
     if (!nav) return;
     var linksBox = nav.querySelector(".nav-links");
     var links = nav.querySelectorAll(".nav-links a:not(.nav-cta)");
-    if (!linksBox || !links.length) return;
+    var burger = nav.querySelector(".nav-burger");
+    if (!linksBox || !links.length || !burger) return;
     var MENU_LABEL = { en: "Menu", uk: "Меню", de: "Menü", fr: "Menu", pl: "Menu", es: "Menú" };
-    var burger = document.createElement("button");
-    burger.className = "nav-burger";
-    burger.setAttribute("aria-expanded", "false");
     burger.setAttribute("aria-label", MENU_LABEL[document.documentElement.lang] || "Menu");
-    burger.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
     var panel = document.createElement("div");
     panel.className = "nav-panel";
+    panel.id = "nav-panel";
     links.forEach(function (a) { panel.appendChild(a.cloneNode(true)); });
-    var cta = linksBox.querySelector('.nav-cta');
-    if (cta) { linksBox.insertBefore(burger, cta); } else { linksBox.appendChild(burger); }
     nav.appendChild(panel);
     function close(returnFocus) {
       var wasOpen = nav.classList.contains("nav-open");
@@ -80,7 +76,6 @@
 
   /* ---------- lead delivery ---------- */
   var LEAD_ENDPOINT = window.LEAD_ENDPOINT || "https://cool-waterfall-a3ce.motornyysasha.workers.dev";
-  try { LEAD_ENDPOINT = LEAD_ENDPOINT || localStorage.getItem("leadEndpoint") || ""; } catch (e) {}
   function submitLead(payload) {
     payload.lang = document.documentElement.lang || "";
     payload.page = location.pathname;
@@ -301,32 +296,14 @@
 
   window.__mentioLead.invalidContact = (SCAN_L10N[document.documentElement.lang] || SCAN_L10N.en).invalidContact;
 
-  /* ---------- boot transcript: the TTY prints itself awake ---------- */
+  /* ---------- boot transcript ships in HTML; JS only prints it in ---------- */
   (function () {
-    var body = document.querySelector(".scan-hero .demo-body");
-    if (!body) return;
-    var boot = document.createElement("div");
-    boot.className = "boot";
-    boot.setAttribute("aria-hidden", "true");
-    ["MENTIO GEO TERMINAL v3.2 — tty1", "link established · ssr ok · 6 locales", ""].forEach(function (txt, i) {
-      var p = document.createElement("p");
-      if (i === 1) p.className = "ok";
-      if (i === 2) {
-        p.className = "prompt";
-        p.textContent = "> type your domain to begin";
-        var cur = document.createElement("span");
-        cur.className = "cursor";
-        p.appendChild(cur);
-      } else {
-        p.textContent = txt;
-      }
-      if (!reduced) {
-        p.classList.add("pline", "in");
-        p.style.animationDelay = (200 + i * 380) + "ms";
-      }
-      boot.appendChild(p);
+    var boot = document.querySelector(".scan-hero .boot");
+    if (!boot || reduced) return;
+    boot.querySelectorAll("p").forEach(function (p, i) {
+      p.classList.add("pline", "in");
+      p.style.animationDelay = (200 + i * 380) + "ms";
     });
-    body.insertBefore(boot, body.firstChild);
   })();
 
   document.querySelectorAll("form.scan-form").forEach(function (f) {
@@ -371,7 +348,7 @@
         box.appendChild(ul);
       }
       f.parentElement.insertBefore(box, status);
-      requestAnimationFrame(function () {
+      setTimeout(function () {
         addList(L.goodTitle, res.goods, "sr-good");
         addList(L.badTitle, res.bads, "sr-bad");
         if (!reduced) {
@@ -381,7 +358,7 @@
             el.style.animationDelay = (row++ * 140) + "ms";
           });
         }
-      });
+      }, 0);
     }
     var origPh = input.placeholder, origAria = input.getAttribute("aria-label"), origBtn = btn.textContent, origIm = input.getAttribute("inputmode");
     var contactValid = window.__mentioLead.contactValid;
@@ -530,6 +507,8 @@
     result.insertBefore(site, cta);
     var hint = document.createElement("p");
     hint.className = "quiz-hint";
+    hint.id = "quiz-hint";
+    hint.setAttribute("role", "status");
     try { hint.textContent = JSON.parse(document.querySelector(".scan-form").getAttribute("data-cfg")).invalid; }
     catch (e) { hint.textContent = "example.com"; }
     hint.hidden = true;
@@ -547,7 +526,7 @@
       contact.placeholder = scanCfg.contactPh || "email";
       contact.setAttribute("aria-label", contact.placeholder);
       result.insertBefore(contact, hint);
-      contact.addEventListener("input", function () { contact.classList.remove("invalid"); contact.removeAttribute("aria-invalid"); buildHref(); });
+      contact.addEventListener("input", function () { contact.classList.remove("invalid"); contact.removeAttribute("aria-invalid"); contact.removeAttribute("aria-describedby"); buildHref(); });
     }
     function isReady() {
       var ok = isValid(getDomain());
@@ -557,6 +536,7 @@
     function buildHref() {
       var ready = isReady();
       cta.classList.toggle("disabled", !ready);
+      if (ready) { cta.removeAttribute("aria-disabled"); } else { cta.setAttribute("aria-disabled", "true"); }
       if (isValid(getDomain())) { site.classList.remove("invalid"); hint.hidden = true; }
       if (ready && !contact) {
         cta.href = "mailto:team@mentio.agency?subject=" +
@@ -564,12 +544,13 @@
           encodeURIComponent(cfg.body.replace("{s}", lastScore) + getDomain());
       }
     }
-    site.addEventListener("input", function () { site.classList.remove("invalid"); site.removeAttribute("aria-invalid"); buildHref(); });
+    site.addEventListener("input", function () { site.classList.remove("invalid"); site.removeAttribute("aria-invalid"); site.removeAttribute("aria-describedby"); buildHref(); });
     cta.addEventListener("click", function (e) {
       if (!isValid(getDomain())) {
         e.preventDefault();
         site.classList.add("invalid");
         site.setAttribute("aria-invalid", "true");
+        site.setAttribute("aria-describedby", "quiz-hint");
         hint.hidden = false;
         site.focus();
         return;
@@ -579,6 +560,7 @@
       if (!window.__mentioLead.contactValid(contact.value.trim())) {
         contact.classList.add("invalid");
         contact.setAttribute("aria-invalid", "true");
+        contact.setAttribute("aria-describedby", "quiz-hint");
         hint.hidden = false;
         hint.textContent = window.__mentioLead.invalidContact || scanCfg.contactPh || "email";
         contact.focus();

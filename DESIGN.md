@@ -263,3 +263,13 @@ Zero border-radius, everywhere, explicitly: `border-radius:0` is re-declared on 
 ## Amendment 2026-08-12c — re-audit pass (17/20 -> fixes)
 
 Re-audit caught a scoping regression from the previous batch: `reduced` was read in the quiz module but declared in the first IIFE — quiz finish crashed (score never rendered, CTA unbuilt). Fixed: each module derives its own live-updating reduced-motion flag (matchMedia change listener). Also: calc sliders got label/for associations (x6 locales), scan results now insert an EMPTY role=status container before rows (announce-order correctness), quiz verdict role set at bind, quiz inputs aria-label + aria-invalid, scan errors aria-describedby, marquee-rule suppressor re-anchored inside main, .demo-bar aria-hidden, logo >=24px target, lang-select keeps the global focus outline, pre inherits --mono. Lesson recorded: shared state between the two IIFEs must travel through window.__mentioLead, never ambient scope.
+
+
+## Amendment 2026-08-12d — third-audit polish (18/20 baseline)
+
+- Boot transcript and burger button now ship in static HTML (JS animates/wires only) — hero and nav CLS eliminated.
+- Decorative pseudo-prefixes (counters, brackets, $-prompts, man/PASS/FAIL/[ok] markers, footer session line) carry the alt-text mute (content: X / "") as a second declaration — legacy engines keep the visible form, AT skips the noise.
+- Quiz hint: id + role=status + aria-describedby wiring (parity with the scanner); quiz CTA toggles aria-disabled.
+- .tag-old at full opacity (6.17:1). Dead residue removed: --alert2, .founder-name, pre-span flattener, unreachable localStorage branch.
+- Scan rows insert via setTimeout(0) after the empty role=status container (order-correct for AT, background-tab safe).
+- Accepted as documented: lang-select navigates on pointer change (keyboard guarded); GoatCounter unpinned (prod CSP allowlists its origin).
