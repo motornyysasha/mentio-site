@@ -45,7 +45,7 @@
 
   /* ---------- print-in: sections type themselves onto the tube ---------- */
   if (!reduced && "IntersectionObserver" in window) {
-    var targets = document.querySelectorAll(".card, .step, details, .lead, section h2, .kicker");
+    var targets = document.querySelectorAll(".card, .step, details, .lead, section h2");
     var groups = {};
     targets.forEach(function (el) {
       el.classList.add("pline");

@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-12T00:00:00Z",
+  "title": "Design System: Mentio GEO Terminal",
+  "extensions": {
+    "colorMeta": {
+      "crt-ground": { "role": "neutral", "displayName": "CRT Ground", "canonical": "#050807", "tonalRamp": ["oklch(15% 0.01 160)", "oklch(25% 0.01 160)", "oklch(38% 0.01 160)", "oklch(50% 0.01 160)", "oklch(62% 0.01 160)", "oklch(74% 0.01 160)", "oklch(86% 0.01 160)", "oklch(95% 0.01 160)"] },
+      "crt-panel": { "role": "neutral", "displayName": "CRT Panel", "canonical": "#070B09", "tonalRamp": ["oklch(15% 0.012 165)", "oklch(25% 0.012 165)", "oklch(38% 0.012 165)", "oklch(50% 0.012 165)", "oklch(62% 0.012 165)", "oklch(74% 0.012 165)", "oklch(86% 0.012 165)", "oklch(95% 0.012 165)"] },
+      "phosphor-bright": { "role": "primary", "displayName": "Bright Phosphor", "canonical": "#4AFF7F", "tonalRamp": ["oklch(15% 0.15 150)", "oklch(28% 0.18 150)", "oklch(42% 0.2 150)", "oklch(55% 0.22 150)", "oklch(68% 0.24 150)", "oklch(80% 0.24 150)", "oklch(88% 0.18 150)", "oklch(95% 0.09 150)"] },
+      "phosphor-running": { "role": "primary", "displayName": "Running Phosphor", "canonical": "#2FBE5F", "tonalRamp": ["oklch(15% 0.1 150)", "oklch(26% 0.12 150)", "oklch(38% 0.14 150)", "oklch(50% 0.15 150)", "oklch(62% 0.16 150)", "oklch(74% 0.15 150)", "oklch(86% 0.11 150)", "oklch(95% 0.05 150)"] },
+      "phosphor-dim": { "role": "primary", "displayName": "Dim Phosphor", "canonical": "#2FA85C", "tonalRamp": ["oklch(15% 0.09 150)", "oklch(26% 0.11 150)", "oklch(38% 0.13 150)", "oklch(50% 0.14 150)", "oklch(62% 0.14 150)", "oklch(74% 0.13 150)", "oklch(86% 0.1 150)", "oklch(95% 0.05 150)"] },
+      "phosphor-ghost": { "role": "neutral", "displayName": "Phosphor Ghost", "canonical": "rgba(74,255,127,.10)", "tonalRamp": ["rgba(74,255,127,.03)", "rgba(74,255,127,.06)", "rgba(74,255,127,.10)", "rgba(74,255,127,.15)", "rgba(74,255,127,.22)", "rgba(74,255,127,.28)", "rgba(74,255,127,.4)", "rgba(74,255,127,.6)"] },
+      "machine-rule": { "role": "neutral", "displayName": "Machine Rule", "canonical": "rgba(74,255,127,.28)", "tonalRamp": ["rgba(74,255,127,.06)", "rgba(74,255,127,.1)", "rgba(74,255,127,.15)", "rgba(74,255,127,.22)", "rgba(74,255,127,.28)", "rgba(74,255,127,.4)", "rgba(74,255,127,.55)", "rgba(74,255,127,.75)"] },
+      "alert-phosphor": { "role": "secondary", "displayName": "Alert Phosphor", "canonical": "#FF5C42", "tonalRamp": ["oklch(18% 0.09 32)", "oklch(30% 0.13 32)", "oklch(42% 0.17 32)", "oklch(54% 0.2 32)", "oklch(66% 0.21 32)", "oklch(76% 0.17 32)", "oklch(86% 0.11 32)", "oklch(95% 0.05 32)"] },
+      "brand-gradient": { "role": "secondary", "displayName": "Brand Alert Gradient", "canonical": "linear-gradient(135deg,#E5383B 0%,#FF6B35 100%)", "tonalRamp": ["#8f1c1e", "#b32a2c", "#E5383B", "#f04f38", "#FF6B35", "#ff8a5c", "#ffab86", "#ffd0ba"] },
+      "overdrive-white": { "role": "neutral", "displayName": "Overdrive White", "canonical": "#fff", "tonalRamp": ["#1a1a1a", "#333", "#555", "#777", "#999", "#bbb", "#ddd", "#fff"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero H1 only; uppercase, strong phosphor glow." },
+      "headline": { "displayName": "Headline", "purpose": "Section H2, uppercase with glow, always preceded by its $ command line." },
+      "title": { "displayName": "Title", "purpose": "Card/readout H3s; uppercase, +0.04em tracking." },
+      "body": { "displayName": "Body", "purpose": "Running transcript text; 15px base, 1.75 line-height, 68-72ch measure; component copy 0.82-0.9rem." },
+      "label": { "displayName": "Label", "purpose": "Machine labels: [nn] numbers, [step n], tags, framed readout titles, ticker; 0.68-0.72rem uppercase, +0.1 to +0.18em." }
+    },
+    "shadows": [
+      { "name": "glow", "value": "0 0 6px rgba(74,255,127,.45)", "purpose": "Standard phosphor bloom: primary buttons, focused prompt, lit tags, bars." },
+      { "name": "glow-strong", "value": "0 0 2px rgba(74,255,127,.9), 0 0 14px rgba(74,255,127,.5)", "purpose": "Display text and score numerals only." },
+      { "name": "panel-aura", "value": "0 0 0 1px rgba(74,255,127,.06), 0 0 34px rgba(74,255,127,.07), inset 0 0 60px rgba(74,255,127,.03)", "purpose": "TTY demo frame screen-glow; not elevation." },
+      { "name": "alert-glow", "value": "0 0 18px rgba(255,107,53,.45)", "purpose": "BUY button; hover deepens to 0 0 30px rgba(255,107,53,.7)." },
+      { "name": "invalid-glow", "value": "0 0 10px rgba(229,56,59,.4)", "purpose": "Invalid input border glow (cited deviation: failure shares alert ink)." }
+    ],
+    "motion": [
+      { "name": "printin", "value": "printin .5s steps(6) forwards; @keyframes printin { from { opacity:0; filter:brightness(2.2) blur(1px) } to { opacity:1; filter:none } }", "purpose": "Entrance grammar: content prints onto the tube in discrete steps with bloom. Gated by prefers-reduced-motion." },
+      { "name": "stagger-content", "value": "90ms per sibling, capped at 6 steps", "purpose": "JS-applied animation-delay for cards/steps/details/leads/h2 within a section." },
+      { "name": "stagger-scan", "value": "140ms per row", "purpose": "Scan transcript rows print sequentially." },
+      { "name": "stagger-boot", "value": "200ms + 380ms per line", "purpose": "Boot transcript lines." },
+      { "name": "blink", "value": "blink 1.1s steps(1) infinite", "purpose": "Block cursors (logo ▊, boot prompt). Freezes to 20% opacity while the live input is focused." },
+      { "name": "state-transition", "value": "0.15s (color, text-shadow, box-shadow, background)", "purpose": "Hover/focus utility transitions; continuous easing is allowed only here, plus progress width .3s and 42s linear marquee." }
+    ],
+    "breakpoints": [
+      { "name": "hero-stack", "value": "960px" },
+      { "name": "grid-stack-burger", "value": "860px" },
+      { "name": "founder-stack", "value": "640px" },
+      { "name": "compact", "value": "480px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Bracket Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Inverse-video command: phosphor block, dark text, generated [ ] brackets; hover overdrives to white.",
+      "html": "<a href=\"#\" class=\"ds-btn-primary\">Get a free AI visibility check</a>",
+      "css": ".ds-btn-primary { display:inline-block; background:#4AFF7F; color:#050807; padding:.75rem 1.15rem; border-radius:0; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace; font-weight:700; font-size:.88rem; letter-spacing:.02em; text-decoration:none; white-space:nowrap; box-shadow:0 0 6px rgba(74,255,127,.45); transition:box-shadow .15s, background .15s; } .ds-btn-primary::before { content:'[ '; } .ds-btn-primary::after { content:' ]'; } .ds-btn-primary:hover { background:#fff; box-shadow:0 0 18px rgba(74,255,127,.7); } .ds-btn-primary:focus-visible { outline:2px solid #4AFF7F; outline-offset:2px; }"
+    },
+    {
+      "name": "Ghost Bracket Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary command: transparent with dim border, bright text; hover glows.",
+      "html": "<a href=\"#\" class=\"ds-btn-ghost\">How it works</a>",
+      "css": ".ds-btn-ghost { display:inline-block; background:transparent; border:1px solid #2FA85C; color:#4AFF7F; padding:.75rem 1.15rem; border-radius:0; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace; font-weight:700; font-size:.88rem; letter-spacing:.02em; text-decoration:none; white-space:nowrap; transition:border-color .15s, text-shadow .15s; } .ds-btn-ghost::before { content:'[ '; } .ds-btn-ghost::after { content:' ]'; } .ds-btn-ghost:hover { border-color:#4AFF7F; text-shadow:0 0 6px rgba(74,255,127,.45); } .ds-btn-ghost:focus-visible { outline:2px solid #4AFF7F; outline-offset:2px; }"
+    },
+    {
+      "name": "BUY Alert Button",
+      "kind": "button",
+      "refersTo": "button-buy",
+      "description": "The single purchase action: brand alert gradient, white text, orange glow. One per surface.",
+      "html": "<a href=\"#\" class=\"ds-btn-buy\">Buy the audit — €99</a>",
+      "css": ".ds-btn-buy { display:inline-block; background:linear-gradient(135deg,#E5383B 0%,#FF6B35 100%); color:#fff; padding:.75rem 1.15rem; border:none; border-radius:0; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace; font-weight:700; font-size:.88rem; letter-spacing:.02em; text-decoration:none; white-space:nowrap; box-shadow:0 0 18px rgba(255,107,53,.45); transition:box-shadow .15s; } .ds-btn-buy::before { content:'[ '; } .ds-btn-buy::after { content:' ]'; } .ds-btn-buy:hover { box-shadow:0 0 30px rgba(255,107,53,.7); } .ds-btn-buy:focus-visible { outline:2px solid #4AFF7F; outline-offset:2px; }"
+    },
+    {
+      "name": "Prompt Input",
+      "kind": "input",
+      "refersTo": "input-prompt",
+      "description": "The scanner's $-prefixed command row: dark well, dim border brightening on focus, inverse-video submit.",
+      "html": "<form class=\"ds-scan-form\"><input type=\"text\" placeholder=\"yourwebsite.com\" aria-label=\"Your website address\"><button type=\"submit\">Check my site</button></form>",
+      "css": ".ds-scan-form { display:flex; align-items:stretch; background:#050807; border:1px solid #2FA85C; border-radius:0; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace; } .ds-scan-form::before { content:'$'; color:#4AFF7F; padding:.55rem 0 .55rem .8rem; font-weight:700; } .ds-scan-form:focus-within { border-color:#4AFF7F; box-shadow:0 0 6px rgba(74,255,127,.45); } .ds-scan-form input { flex:1; background:transparent; border:none; outline:none; color:#4AFF7F; caret-color:#4AFF7F; font-size:.95rem; padding:.55rem .7rem; font-family:inherit; min-width:0; } .ds-scan-form input::placeholder { color:#2FA85C; } .ds-scan-form button { background:#4AFF7F; color:#050807; border:none; border-radius:0; padding:.55rem 1rem; font-weight:700; font-size:.85rem; cursor:pointer; font-family:inherit; white-space:nowrap; } .ds-scan-form button:hover { background:#fff; }"
+    },
+    {
+      "name": "Framed Readout Card",
+      "kind": "card",
+      "refersTo": "card-readout",
+      "description": "Square panel with [nn] label, uppercase title, and >-prefixed rows.",
+      "html": "<div class=\"ds-card\"><span class=\"ds-card-num\">01</span><h3>AI answers come first</h3><ul><li>Optimizes for the single answer AI gives</li><li>Measured in AI mentions and recommendations</li></ul></div>",
+      "css": ".ds-card { background:#070B09; border:1px solid #2FA85C; border-radius:0; padding:1.35rem 1.3rem; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace; color:#2FBE5F; } .ds-card-num { display:block; font-size:.72rem; color:#2FA85C; letter-spacing:.1em; margin-bottom:.5rem; } .ds-card-num::before { content:'['; } .ds-card-num::after { content:']'; } .ds-card h3 { font-size:.95rem; margin:.15rem 0 .6rem; font-weight:700; color:#4AFF7F; text-transform:uppercase; letter-spacing:.04em; } .ds-card ul { margin:.5rem 0 0; padding:0; list-style:none; } .ds-card li { font-size:.85rem; padding:.28rem 0 .28rem 1.3rem; position:relative; } .ds-card li::before { content:'>'; position:absolute; left:.2rem; color:#2FA85C; }"
+    },
+    {
+      "name": "Status-Line Nav Links",
+      "kind": "nav",
+      "description": "Auto-numbered [01]... links in dim phosphor, brightening with glow on hover; inverse-video CTA.",
+      "html": "<div class=\"ds-nav\"><a href=\"#\">Why now</a><a href=\"#\">What is GEO</a><a href=\"#\">Services</a><a class=\"ds-nav-cta\" href=\"#\">Free check</a></div>",
+      "css": ".ds-nav { display:flex; gap:1.05rem; align-items:center; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace; font-size:.78rem; counter-reset:navitem; background:#050807; padding:.8rem 1rem; border-bottom:1px dashed rgba(74,255,127,.28); } .ds-nav a { text-decoration:none; color:#2FA85C; white-space:nowrap; letter-spacing:.02em; counter-increment:navitem; transition:color .15s, text-shadow .15s; } .ds-nav a:not(.ds-nav-cta)::before { content:'[0' counter(navitem) '] '; } .ds-nav a:hover { color:#4AFF7F; text-shadow:0 0 6px rgba(74,255,127,.45); } .ds-nav-cta { background:#4AFF7F; color:#050807 !important; padding:.42rem .8rem; font-weight:700; letter-spacing:.03em; box-shadow:0 0 6px rgba(74,255,127,.45); } .ds-nav-cta::before { content:'[ '; } .ds-nav-cta::after { content:' ]'; } .ds-nav-cta:hover { background:#fff; box-shadow:0 0 16px rgba(74,255,127,.7); }"
+    },
+    {
+      "name": "Scan Transcript (PASS/FAIL)",
+      "kind": "custom",
+      "description": "Diagnostic result rows: ── PASS ── / ── FAIL ── group titles, [ok]/[!!] markers, decimal-leading-zero gutters.",
+      "html": "<div class=\"ds-scan-result\"><p class=\"ds-sr-title ds-sr-good\">Already good</p><ul class=\"ds-sr-good\"><li>llms.txt found — AI gets a machine-readable summary</li><li>Structured data (Schema.org) is present</li></ul><p class=\"ds-sr-title ds-sr-bad\">Critical — fix these</p><ul class=\"ds-sr-bad\"><li>No meta description — AI and Google write their own snippet for you</li></ul></div>",
+      "css": ".ds-scan-result { background:#050807; border:1px dashed rgba(74,255,127,.28); border-radius:0; padding:.85rem .95rem; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace; } .ds-scan-result .ds-sr-title { font-size:.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; margin:.7rem 0 .4rem; } .ds-scan-result .ds-sr-title:first-child { margin-top:0; } .ds-sr-title.ds-sr-good { color:#4AFF7F; text-shadow:0 0 6px rgba(74,255,127,.45); } .ds-sr-title.ds-sr-good::before { content:'── PASS ── '; } .ds-sr-title.ds-sr-bad { color:#FF5C42; text-shadow:0 0 8px rgba(229,56,59,.5); } .ds-sr-title.ds-sr-bad::before { content:'── FAIL ── '; } .ds-scan-result ul { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.35rem; counter-reset:rline; } .ds-scan-result li { font-size:.82rem; line-height:1.55; color:#2FBE5F; padding-left:3.6rem; position:relative; counter-increment:rline; } .ds-scan-result ul.ds-sr-good li::before { content:'[ok]'; position:absolute; left:0; color:#4AFF7F; font-size:.7rem; top:.15em; } .ds-scan-result ul.ds-sr-bad li::before { content:'[!!]'; position:absolute; left:0; color:#FF5C42; font-size:.7rem; top:.15em; } .ds-scan-result li::after { content:counter(rline,decimal-leading-zero); position:absolute; left:1.55rem; top:.1em; color:#2FA85C; opacity:.5; font-size:.7rem; }"
+    },
+    {
+      "name": "Man-Page FAQ Item",
+      "kind": "custom",
+      "description": "Borderless details row with 'man ' prefix and [+]/[-] toggle, separated by dashed rules.",
+      "html": "<details class=\"ds-man\"><summary>What is GEO (Generative Engine Optimization)?</summary><div class=\"ds-man-a\">GEO is the practice of optimizing a website so AI systems can find it, understand it, trust it and cite it in their answers.</div></details>",
+      "css": ".ds-man { border:none; border-bottom:1px dashed rgba(74,255,127,.28); background:transparent; font-family:'JetBrains Mono',ui-monospace,Menlo,monospace; } .ds-man summary { cursor:pointer; padding:1rem 1.6rem 1rem 0; font-weight:700; font-size:.9rem; color:#4AFF7F; list-style:none; position:relative; } .ds-man summary::-webkit-details-marker { display:none; } .ds-man summary::before { content:'man '; color:#2FA85C; font-weight:400; } .ds-man summary::after { content:'[+]'; position:absolute; right:0; top:1rem; color:#2FA85C; font-size:.8rem; } .ds-man[open] summary::after { content:'[-]'; } .ds-man .ds-man-a { padding:0 0 1.2rem; color:#2FBE5F; font-size:.85rem; max-width:70ch; } .ds-man summary:focus-visible { outline:2px solid #4AFF7F; outline-offset:2px; }"
+    },
+    {
+      "name": "Section Command Header",
+      "kind": "custom",
+      "description": "Every section opens with a $ command line, uppercase glowing H2, and a >-prefixed lead.",
+      "html": "<div class=\"ds-section\" data-cmd=\"mentio explain geo\"><h2>GEO makes your website something AI can find, trust and cite</h2><p class=\"ds-lead\">Generative Engine Optimization builds on solid SEO and adds the layers AI systems actually read.</p></div>",
+      "css": ".ds-section { font-family:'JetBrains Mono',ui-monospace,Menlo,monospace; background:#050807; padding:1.5rem; } .ds-section::before { display:block; content:'$ ' attr(data-cmd); color:#4AFF7F; font-size:.85rem; margin-bottom:1.4rem; text-shadow:0 0 6px rgba(74,255,127,.45); } .ds-section h2 { font-size:clamp(1.35rem,3vw,1.9rem); letter-spacing:.01em; line-height:1.35; margin:0 0 1rem; text-transform:uppercase; color:#4AFF7F; font-weight:700; text-shadow:0 0 6px rgba(74,255,127,.45); } .ds-lead { color:#2FBE5F; max-width:68ch; margin:0; } .ds-lead::before { content:'> '; color:#2FA85C; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Audit That Proves Itself",
+    "overview": "The page is not a website describing a diagnostic terminal; it IS one. A P1 phosphor-green session runs on near-black glass, and the visitor lands inside it mid-boot. Every structural device is a terminal device: sections open with $ command lines, leads are > prompt output, nav links are numbered jump targets [01]–[06], cards are framed readouts, the FAQ is man pages, the footer is ── SESSION LOG END ──. Fixed scanline and vignette overlays sit in front of everything as the tube's glass. The world explicitly refuses the category default (dark SaaS hero, gradient glow, rounded card grid).\n\nHierarchy never changes typeface — one variable mono carries the entire site (latin, latin-ext, cyrillic, cyrillic-ext for six locales). Importance is expressed by size steps, weight, uppercase, indentation, and above all by phosphor intensity: three greens plus glow, from dim chrome to bloom-lit display. Ceiling items consciously declined at finish review: dot-matrix bitmap display lettering (6-locale readability, incl. cyrillic; JetBrains Mono is the recorded font concession), curved-glass edge roll-off, and page-wide 80-column framing.",
+    "keyCharacteristics": [
+      "One monochrome phosphor voice; the only non-green ink is the brand alert gradient (logo mark, BUY) and diagnostic FAIL states",
+      "One monospace face at every level; hierarchy = size, caps, indentation, glow",
+      "Zero border-radius anywhere; dashed 1px machine rules divide everything",
+      "Text is the interface: brackets, prompts, counters, and gutters are CSS-generated content",
+      "Motion = phosphor physics: stepped print-in with bloom, blinking block cursors"
+    ],
+    "rules": [
+      { "name": "The One Ink Rule", "body": "Everything on the tube is green. The red→orange alert ink appears in exactly three places: the logo mark, the BUY action, and diagnostic failure states (FAIL, [!!], invalid input). No other element may borrow it.", "section": "colors" },
+      { "name": "The Glow-Is-Hierarchy Rule", "body": "Depth of importance is phosphor intensity: dim → running → bright → bright+glow → bright+strong-glow (display). Never introduce a fourth green or express emphasis with a new hue.", "section": "colors" },
+      { "name": "The One Face Rule", "body": "JetBrains Mono for everything — headings, prose, labels, buttons, code. A second typeface is a broken tube.", "section": "typography" },
+      { "name": "The Prefix Rule", "body": "Text roles are declared by machine prefixes, generated in CSS, never typed into content: $ command, > output, >> status, ? question, man entries, [01] nav counters, [ok]/[!!] verdicts, ▸ ticker items, decimal-leading-zero line gutters.", "section": "typography" },
+      { "name": "The Light-Not-Lift Rule", "body": "Nothing casts a shadow downward; elements emit light outward. (The one exception, the mobile nav dropdown's black shadow, exists to separate the panel from page content and is not a pattern to extend.)", "section": "elevation" },
+      { "name": "The Zero-Radius Rule", "body": "No rounded corners exist in this world. The only curves on screen are inside letterforms and the brand mark.", "section": "shapes" },
+      { "name": "The Stepped-Motion Rule", "body": "Nothing eases smoothly into view; phosphor prints in discrete steps and blooms. Continuous easing is reserved for utility movement (progress bar width, marquee scroll, color/glow transitions at 0.15s).", "section": "components" }
+    ],
+    "dos": [
+      "Do open every new section with a $ command line via data-cmd on .wrap; it is the section's kicker, natively in-world.",
+      "Do express every new state in the phosphor ramp first; reach for alert ink only for failure semantics or the single purchase action.",
+      "Do generate all prefixes, brackets, counters and gutters in CSS (::before/::after, counters) so content stays plain text.",
+      "Do keep interactive tap targets ≥44px under 860px, and re-declare border-radius:0 on any new form control.",
+      "Do gate every entrance animation behind prefers-reduced-motion and give JS-driven sequences a reduced fast path."
+    ],
+    "donts": [
+      "Don't introduce a second typeface, a fourth green, or any rounded corner.",
+      "Don't use drop shadows for elevation; light glows outward, panels separate by ground + border.",
+      "Don't put the brand gradient on anything but the logo mark and the BUY action; .grad-text is phosphor+glow despite its name — never restyle it as an actual gradient.",
+      "Don't reintroduce the declined ceiling items as if they were pending work: dot-matrix display lettering, curved-glass edge roll-off, and page-wide 80-column framing were consciously declined at finish review.",
+      "Don't use pictorial or glyph-font icons; the world's iconography is characters (▊, ▸, ↺, [ok], [!!]) and bare squares."
+    ]
+  }
+}
