@@ -238,3 +238,11 @@ Zero border-radius, everywhere, explicitly: `border-radius:0` is re-declared on 
 - **Don't** put the brand gradient on anything but the logo mark and the BUY action; `.grad-text` is phosphor+glow despite its name — never restyle it as an actual gradient.
 - **Don't** reintroduce the declined ceiling items as if they were pending work: dot-matrix display lettering, curved-glass edge roll-off, and page-wide 80-column framing were consciously declined at finish review.
 - **Don't** use pictorial or glyph-font icons; the world's iconography is characters (`▊`, `▸`, `↺`, `[ok]`, `[!!]`) and bare squares.
+
+
+## Amendment 2026-08-12 — readability pass (owner feedback: "one canvas, hard to read")
+
+- New token `--ink: #D8EFE0` (white-hot phosphor) carries ALL running text (body, cards, leads, FAQ answers, bios, blog paragraphs, labels). Physically in-world: phosphor driven hard blooms to white at the core. Green stays for headings, accents, chrome, and machine labels. Contrast: ~16:1 on #050807.
+- One Ink rule unchanged in spirit: the ink ramp is now dim-green -> mid-green -> bright-green -> white-hot; the alert gradient remains the only non-green ink.
+- Section separation: 88px padding; `.alt` sections use #0A100C with solid 1px frame lines rgba(74,255,127,.16); cards use #0B130E with rgba(74,255,127,.34) border + drop shadow; scanlines quieted to rgba(0,0,0,.09)/4px pitch.
+- Type: base 16px/1.7; h2 up to clamp(1.5rem,3.4vw,2.2rem); leads 1.02rem.
