@@ -33,6 +33,8 @@
     panel.className = "nav-panel";
     panel.id = "nav-panel";
     links.forEach(function (a) { panel.appendChild(a.cloneNode(true)); });
+    var ctaLink = nav.querySelector(".nav-cta");
+    if (ctaLink) { var cc = ctaLink.cloneNode(true); cc.classList.add("panel-cta"); panel.appendChild(cc); }
     nav.appendChild(panel);
     function close(returnFocus) {
       var wasOpen = nav.classList.contains("nav-open");

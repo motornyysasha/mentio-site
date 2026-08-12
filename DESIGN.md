@@ -270,3 +270,15 @@ Raised sheet above a solid vermilion top edge; faint-ink small text; links in ru
 - Residue removed: phantom `.demo-bar i` rule (the <i> elements no longer exist — earlier claim corrected), `.founder-name`, JetBrains Mono files. Demo-bar caption un-hidden for SRs.
 - ACCEPTED DECISIONS: the "Fold NN" margin voice stays English on all locales (instruction-sheet ornament, alt-muted for AT; headings carry locale meaning); font fallback `size-adjust` tuning skipped as diminishing-returns (both families preloaded instead); focus outlines switch to ink on vermilion fills.
 - Quiz: score now announced inside the verdict status ("{n}/100 — …"); stale-hint branch fixed.
+
+
+## Amendment 2026-08-13b — motion package (owner request: reference-grade animation)
+
+Reference vocabulary (superdesign Red Noir / Deep Red) translated to the paper world, all inside prefers-reduced-motion:no-preference, transform/opacity only:
+- Hero entrance choreography: h1 → sub → CTAs → panel rise in sequence (.7-.8s, 100-440ms delays).
+- Brush underline draws under the h1 accent phrase 1s after load (SVG brush as background-size animation, box-decoration-break:clone for wrapped lines).
+- The sheet breathes (7s alternate float) and drifts against scroll (view() timeline, progressive enhancement).
+- Scroll-driven: cards/steps float in with per-child stagger via animation-range offsets; score bars fill (scaleX); alt-section top rules draw across on entry. All @supports(animation-timeline:view()) — static fallback elsewhere.
+- Living hovers: card lift + vermilion border, button lift + arrow slide-in (::after with / "" alt), gold dot pulse on primary hover, blog rows slide, quiz buttons press (scale .97).
+- MPA view-transitions (@view-transition) for cross-page fades in supporting browsers.
+- Mobile nav: on ≤560px the bar CTA moves into the burger panel (.panel-cta clone) — long localized labels (UA/FR/DE) overflowed the 375px bar; probe locale mirrors, not just EN, for overflow.
