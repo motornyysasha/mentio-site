@@ -2,14 +2,18 @@
 (function () {
   "use strict";
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var finePointer = window.matchMedia("(pointer: fine)").matches;
   function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
 
   /* ---------- language switcher (CSP-safe, replaces inline onchange) ---------- */
   document.querySelectorAll("select.lang-select").forEach(function (sel) {
-    sel.addEventListener("change", function () {
-      if (this.value) location.href = this.value;
+    var initial = sel.value, kb = false;
+    function go(v) { if (v && v !== initial) location.href = v; }
+    sel.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowUp" || e.key === "ArrowDown") kb = true;
+      if (e.key === "Enter") go(this.value);
     });
+    sel.addEventListener("blur", function () { if (kb) go(this.value); });
+    sel.addEventListener("change", function () { if (!kb) go(this.value); });
   });
 
   /* ---------- mobile nav burger (panel built here: no-JS keeps today's compact bar) ---------- */
@@ -31,16 +35,18 @@
     var cta = linksBox.querySelector('.nav-cta');
     if (cta) { linksBox.insertBefore(burger, cta); } else { linksBox.appendChild(burger); }
     nav.appendChild(panel);
-    function close() {
+    function close(returnFocus) {
+      var wasOpen = nav.classList.contains("nav-open");
       nav.classList.remove("nav-open");
       burger.setAttribute("aria-expanded", "false");
+      if (returnFocus && wasOpen) burger.focus();
     }
     burger.addEventListener("click", function () {
       var open = nav.classList.toggle("nav-open");
       burger.setAttribute("aria-expanded", open ? "true" : "false");
     });
     panel.addEventListener("click", function (e) { if (e.target.closest("a")) close(); });
-    document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(true); });
   })();
 
   /* ---------- print-in: sections type themselves onto the tube ---------- */
@@ -85,7 +91,6 @@
   function contactValid(c) {
     return /@/.test(c) || /t\.me\//i.test(c) || /^\+?[\d\s()-]{7,}$/.test(c);
   }
-  var SCAN_LL_LANG = document.documentElement.lang;
   window.__mentioLead = { enabled: function () { return !!LEAD_ENDPOINT; }, submit: submitLead, contactValid: contactValid };
 
   /* ---------- CTA links scroll to scanner and focus it ---------- */
@@ -338,6 +343,7 @@
       status.classList.remove("ok");
       status.textContent = msg;
       f.classList.add("invalid");
+      input.setAttribute("aria-invalid", "true");
       input.focus();
     }
     function renderResults(res) {
@@ -345,6 +351,7 @@
       if (old) old.remove();
       var box = document.createElement("div");
       box.className = "scan-result";
+      box.setAttribute("role", "status");
       function addList(title, items, cls) {
         if (!items.length) return;
         var h = document.createElement("p");
@@ -371,7 +378,7 @@
       }
       f.parentElement.insertBefore(box, status);
     }
-    var origPh = input.placeholder, origAria = input.getAttribute("aria-label"), origBtn = btn.textContent;
+    var origPh = input.placeholder, origAria = input.getAttribute("aria-label"), origBtn = btn.textContent, origIm = input.getAttribute("inputmode");
     var contactValid = window.__mentioLead.contactValid;
     function resetScanner() {
       stage = 1;
@@ -389,7 +396,7 @@
       input.value = "";
       input.placeholder = origPh;
       if (origAria) input.setAttribute("aria-label", origAria);
-      input.removeAttribute("inputmode");
+      if (origIm) input.setAttribute("inputmode", origIm); else input.removeAttribute("inputmode");
       btn.textContent = origBtn;
       btn.disabled = false;
       savedDomain = "";
@@ -420,7 +427,11 @@
       rl.addEventListener("click", resetScanner);
       if (box && !reduced) box.scrollIntoView({ block: "nearest", behavior: "smooth" });
     }
-    input.addEventListener("input", function () { f.classList.remove("invalid"); });
+    input.addEventListener("input", function () {
+      f.classList.remove("invalid");
+      input.removeAttribute("aria-invalid");
+      if (stage === 1 && !btn.disabled) { status.classList.remove("ok"); status.textContent = ""; }
+    });
     f.addEventListener("submit", function (e) {
       e.preventDefault();
       if (stage === 2) {
@@ -576,6 +587,7 @@
         });
     });
 
+    qEl.setAttribute("aria-live", "polite");
     function show() {
       countEl.textContent = (i + 1) + " / " + n;
       qEl.textContent = cfg.qs[i];
@@ -588,14 +600,21 @@
       result.hidden = false;
       var tier = score < 40 ? "low" : score < 75 ? "mid" : "high";
       verdict.textContent = cfg.tiers[tier];
-      var cur = 0;
-      var t = setInterval(function () {
-        cur += Math.max(1, Math.round(score / 30));
-        if (cur >= score) { cur = score; clearInterval(t); }
-        num.innerHTML = cur + "<small>/100</small>";
-      }, 30);
+      verdict.setAttribute("role", "status");
+      if (reduced) {
+        num.innerHTML = score + "<small>/100</small>";
+      } else {
+        var cur = 0;
+        var t = setInterval(function () {
+          cur += Math.max(1, Math.round(score / 30));
+          if (cur >= score) { cur = score; clearInterval(t); }
+          num.innerHTML = cur + "<small>/100</small>";
+        }, 30);
+      }
       lastScore = score;
       buildHref();
+      var firstField = result.querySelector(".quiz-site") || result.querySelector(".quiz-restart");
+      if (firstField) firstField.focus();
     }
     opts.addEventListener("click", function (e) {
       var b = e.target.closest("button"); if (!b || i >= n) return;
@@ -608,6 +627,8 @@
       qEl.hidden = false; opts.hidden = false; countEl.hidden = false;
       result.hidden = true;
       show();
+      var fb = opts.querySelector("button");
+      if (fb) fb.focus();
     });
     show();
   });

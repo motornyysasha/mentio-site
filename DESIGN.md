@@ -246,3 +246,15 @@ Zero border-radius, everywhere, explicitly: `border-radius:0` is re-declared on 
 - One Ink rule unchanged in spirit: the ink ramp is now dim-green -> mid-green -> bright-green -> white-hot; the alert gradient remains the only non-green ink.
 - Section separation: 88px padding; `.alt` sections use #0A100C with solid 1px frame lines rgba(74,255,127,.16); cards use #0B130E with rgba(74,255,127,.34) border + drop shadow; scanlines quieted to rgba(0,0,0,.09)/4px pitch.
 - Type: base 16px/1.7; h2 up to clamp(1.5rem,3.4vw,2.2rem); leads 1.02rem.
+
+
+## Amendment 2026-08-12b — technical-audit pass (14/20 baseline, 20 findings fixed)
+
+- BUY buttons: text ink is `--crt` on the alert gradient (white failed AA at the orange stop).
+- Motion: `mscroll`, both `blink` cursors and `scroll-behavior:smooth` now sit behind `prefers-reduced-motion: no-preference`; marquee pauses on hover; quiz count-up skips under reduce. Scanline overlay lost `mix-blend-mode:multiply` (compositor cost) — visual delta negligible.
+- Landmarks: skip-link (`.skip`, inverse block on focus) + `<main id="main">` on all 6 homepages; `color-scheme:dark` + `theme-color` metas on all 46 pages.
+- Live regions: scan results `role="status"`; quiz question `aria-live=polite`; verdict `role=status`; focus managed on quiz finish/restart and burger Escape.
+- Tokens: `--panel/--card-bg/--card-alt` promoted from amendment literals; report-peek code sample recolored to tokens (fourth green removed).
+- Touch targets: nav CTA/burger/lang-select ≥44px mobile; footer links padded.
+- Print block added (palette near-black on paper). Known detector false positive: `rgb(0,0,0)` reported on the off-screen skip link — its computed color is `--crt`; the detector cannot resolve colors of off-viewport elements.
+- Dead weight removed: Inter/Space Grotesk woff2 files, unused JS vars, legacy hooks.
