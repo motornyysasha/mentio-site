@@ -542,6 +542,7 @@
         site.classList.add("invalid");
         site.setAttribute("aria-invalid", "true");
         site.setAttribute("aria-describedby", "quiz-hint");
+        hint.textContent = scanCfg.invalid || "example.com";
         hint.hidden = false;
         site.focus();
         return;
@@ -586,7 +587,7 @@
       qEl.hidden = true; opts.hidden = true; countEl.hidden = true;
       result.hidden = false;
       var tier = score < 40 ? "low" : score < 75 ? "mid" : "high";
-      verdict.textContent = cfg.tiers[tier];
+      verdict.textContent = score + "/100 — " + cfg.tiers[tier];
       if (reduced) {
         num.innerHTML = score + "<small>/100</small>";
       } else {

@@ -131,7 +131,7 @@ An ink-on-washi palette: three warm paper tiers, three ink strengths, one ration
 - **Card on Alt** (#FBF7F0): card background inside `.alt` sections and code blocks, so sheets stay one tier above their ground.
 - **Sumi Ink** (#1C1713): headings, strong text, input text.
 - **Running Ink** (#4A423A): body and running text.
-- **Faint Ink** (#847A6E): captions, meta, placeholders, disclaimers (4.6:1 on paper).
+- **Faint Ink** (#847A6E): captions, meta, placeholders, disclaimers (4.7:1 on ground #F0EAE0, 5.3:1 on paper2 — corrected 2026-08-13 after audit measurement).
 - **Crease** (rgba(28,23,19,.35)): the universal hairline border and dashed-rule color.
 - **Paper White** (#fff): form fields, quiz option buttons, scan-result sheet, the logo chip.
 
@@ -258,3 +258,15 @@ Raised sheet above a solid vermilion top edge; faint-ink small text; links in ru
 - **Don't** track, uppercase, or shrink the serif — the human voice stays sentence-case; the machine voice stays sans.
 - **Don't** exceed the radius scale (2/3/4px) or swap hairline creases for heavy borders; emphasis is the 2px vermilion border, once per view.
 - **Don't** translate CSS-generated ornament into accessible text — every decorative `content` carries the `/ ""` alternative.
+
+
+## Amendment 2026-08-13 — post-audit corrections (17/20 baseline)
+
+- `--ink-faint` darkened #847A6E → #6E655A (the old value failed AA on every washi tier; colors must be validated against #F0EAE0, not white).
+- Small vermilion machine text on the ground tier (fold numbers, ghost labels, step numbers) uses `--verm-deep`.
+- Caption rules promoted to `p.class` specificity so `.card p` no longer swallows them; captions are the faint-ink tier by design.
+- One Gold Dot Rule enforced: the quiz CTA's inherited dot is suppressed (`.quiz-cta::before{display:none}`); dots live on hero primary, BUY, panel bar.
+- Touch minimums extended to ≤880 (lang select, buttons, footer links).
+- Residue removed: phantom `.demo-bar i` rule (the <i> elements no longer exist — earlier claim corrected), `.founder-name`, JetBrains Mono files. Demo-bar caption un-hidden for SRs.
+- ACCEPTED DECISIONS: the "Fold NN" margin voice stays English on all locales (instruction-sheet ornament, alt-muted for AT; headings carry locale meaning); font fallback `size-adjust` tuning skipped as diminishing-returns (both families preloaded instead); focus outlines switch to ink on vermilion fills.
+- Quiz: score now announced inside the verdict status ("{n}/100 — …"); stale-hint branch fixed.
