@@ -258,3 +258,8 @@ Zero border-radius, everywhere, explicitly: `border-radius:0` is re-declared on 
 - Touch targets: nav CTA/burger/lang-select ≥44px mobile; footer links padded.
 - Print block added (palette near-black on paper). Known detector false positive: `rgb(0,0,0)` reported on the off-screen skip link — its computed color is `--crt`; the detector cannot resolve colors of off-viewport elements.
 - Dead weight removed: Inter/Space Grotesk woff2 files, unused JS vars, legacy hooks.
+
+
+## Amendment 2026-08-12c — re-audit pass (17/20 -> fixes)
+
+Re-audit caught a scoping regression from the previous batch: `reduced` was read in the quiz module but declared in the first IIFE — quiz finish crashed (score never rendered, CTA unbuilt). Fixed: each module derives its own live-updating reduced-motion flag (matchMedia change listener). Also: calc sliders got label/for associations (x6 locales), scan results now insert an EMPTY role=status container before rows (announce-order correctness), quiz verdict role set at bind, quiz inputs aria-label + aria-invalid, scan errors aria-describedby, marquee-rule suppressor re-anchored inside main, .demo-bar aria-hidden, logo >=24px target, lang-select keeps the global focus outline, pre inherits --mono. Lesson recorded: shared state between the two IIFEs must travel through window.__mentioLead, never ambient scope.

@@ -175,7 +175,7 @@
 }
 </script>
 <link rel="preload" href="/assets/fonts/jetbrains-mono-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/style.css?v=3926f90b">
+<link rel="stylesheet" href="/assets/style.css?v=24927ea2">
 </head>
 <body>
 
@@ -207,7 +207,7 @@
     <p class="hero-note">Jeden e-mail. W odpowiedzi — co AI mówi teraz o Twojej firmie. Bez żadnych zobowiązań.</p>
     </div>
     <div class="demo scan-hero" id="check">
-      <div class="demo-bar"><i></i><i></i><i></i><span>Bezpłatna analiza</span></div>
+      <div class="demo-bar" aria-hidden="true"><i></i><i></i><i></i><span>Bezpłatna analiza</span></div>
       <div class="demo-body">
         <h2>Dowiedz się, co AI mówi o Twojej firmie — <span class="grad-text">zanim zrobi to konkurencja.</span></h2>
         <p>Analiza jest bezpłatna i wymaga jednego e-maila. W najgorszym razie dowiesz się, że wszystko gra. W najlepszym — zamkniesz wyciek, o którym nie wiedziałeś.</p>
@@ -215,7 +215,7 @@
       <input type="text" inputmode="url" autocomplete="off" placeholder="twoja-strona.pl" aria-label="Adres twojej strony">
       <button type="submit">Sprawdź stronę</button>
     </form>
-        <p class="scan-status" aria-live="polite"></p>
+        <p class="scan-status" id="scan-status" aria-live="polite"></p>
       </div>
     </div>
   </div>
@@ -388,12 +388,12 @@
     <p class="lead">Przybliżony szacunek: jeśli część kupujących zaczyna od AI, a Ciebie nie ma w odpowiedziach — ci klienci nigdy do Ciebie nie trafiają.</p>
     <div class="calc card" data-cfg="{&quot;locale&quot;: &quot;pl-PL&quot;, &quot;currency&quot;: &quot;PLN&quot;, &quot;mo&quot;: &quot;/ mies. utraconych przychodów&quot;, &quot;yr&quot;: &quot;/ rok&quot;, &quot;cust&quot;: &quot;{n} klientów, których nie widzisz&quot;}">
       <div class="calc-row">
-        <label>Nowych klientów miesięcznie <b data-val="clients"></b></label>
-        <input type="range" data-in="clients" min="1" max="500" step="1" value="50">
+        <label for="calc-clients">Nowych klientów miesięcznie <b data-val="clients"></b></label>
+        <input id="calc-clients" type="range" data-in="clients" min="1" max="500" step="1" value="50">
       </div>
       <div class="calc-row">
-        <label>Średnia wartość zamówienia <b data-val="check"></b></label>
-        <input type="range" data-in="check" min="50" max="8000" step="50" value="800">
+        <label for="calc-check">Średnia wartość zamówienia <b data-val="check"></b></label>
+        <input id="calc-check" type="range" data-in="check" min="50" max="8000" step="50" value="800">
       </div>
       <div class="calc-out">
         <div class="calc-big"></div>
@@ -473,7 +473,7 @@
   </div>
 </footer>
 
-<script src="/assets/site.js?v=05690258" defer></script>
+<script src="/assets/site.js?v=37ea249e" defer></script>
 <script data-goatcounter="https://mentio.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

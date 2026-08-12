@@ -175,7 +175,7 @@
 }
 </script>
 <link rel="preload" href="/assets/fonts/jetbrains-mono-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/style.css?v=3926f90b">
+<link rel="stylesheet" href="/assets/style.css?v=24927ea2">
 </head>
 <body>
 
@@ -208,7 +208,7 @@
     <p class="hero-note">Один лист. У відповідь — що AI зараз каже про ваш бізнес. Без жодних зобов'язань.</p>
     </div>
     <div class="demo scan-hero" id="check">
-      <div class="demo-bar"><i></i><i></i><i></i><span>Безкоштовна перевірка</span></div>
+      <div class="demo-bar" aria-hidden="true"><i></i><i></i><i></i><span>Безкоштовна перевірка</span></div>
       <div class="demo-body">
         <h2>Дізнайтесь, що AI каже про ваш бізнес — <span class="grad-text">раніше за конкурентів.</span></h2>
         <p>Перевірка безкоштовна і займає один лист. У гіршому разі — переконаєтесь, що все гаразд. У кращому — закриєте витік, про який не знали.</p>
@@ -216,7 +216,7 @@
       <input type="text" inputmode="url" autocomplete="off" placeholder="vash-sait.com" aria-label="Адреса вашого сайту">
       <button type="submit">Перевірити сайт</button>
     </form>
-        <p class="scan-status" aria-live="polite"></p>
+        <p class="scan-status" id="scan-status" aria-live="polite"></p>
       </div>
     </div>
   </div>
@@ -389,12 +389,12 @@
     <p class="lead">Груба оцінка: якщо частина покупців починає з AI, а вас немає у відповідях — ці клієнти до вас не доходять.</p>
     <div class="calc card" data-cfg="{&quot;locale&quot;: &quot;uk-UA&quot;, &quot;currency&quot;: &quot;UAH&quot;, &quot;mo&quot;: &quot;/ місяць упущеної виручки&quot;, &quot;yr&quot;: &quot;/ рік&quot;, &quot;cust&quot;: &quot;{n} клієнтів, яких ви не бачите&quot;}">
       <div class="calc-row">
-        <label>Нових клієнтів на місяць <b data-val="clients"></b></label>
-        <input type="range" data-in="clients" min="1" max="500" step="1" value="50">
+        <label for="calc-clients">Нових клієнтів на місяць <b data-val="clients"></b></label>
+        <input id="calc-clients" type="range" data-in="clients" min="1" max="500" step="1" value="50">
       </div>
       <div class="calc-row">
-        <label>Середній чек <b data-val="check"></b></label>
-        <input type="range" data-in="check" min="100" max="30000" step="100" value="3000">
+        <label for="calc-check">Середній чек <b data-val="check"></b></label>
+        <input id="calc-check" type="range" data-in="check" min="100" max="30000" step="100" value="3000">
       </div>
       <div class="calc-out">
         <div class="calc-big"></div>
@@ -475,7 +475,7 @@
   </div>
 </footer>
 
-<script src="/assets/site.js?v=05690258" defer></script>
+<script src="/assets/site.js?v=37ea249e" defer></script>
 <script data-goatcounter="https://mentio.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

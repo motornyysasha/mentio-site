@@ -112,7 +112,7 @@
 }
 </script>
 <link rel="preload" href="/assets/fonts/jetbrains-mono-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/style.css?v=3926f90b">
+<link rel="stylesheet" href="/assets/style.css?v=24927ea2">
 </head>
 <body>
 <!--
@@ -154,7 +154,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <p class="hero-note">One email. We reply with what AI currently says about your business. No strings attached.</p>
     </div>
     <div class="demo scan-hero" id="check">
-      <div class="demo-bar"><i></i><i></i><i></i><span>Free check</span></div>
+      <div class="demo-bar" aria-hidden="true"><i></i><i></i><i></i><span>Free check</span></div>
       <div class="demo-body">
         <h2>Find out what AI says about your business — <span class="grad-text">before your competitors do.</span></h2>
         <p>The check is free and takes one email. Worst case, you learn you're fine. Best case, you fix a leak you didn't know existed.</p>
@@ -162,7 +162,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       <input type="text" inputmode="url" autocomplete="off" placeholder="yourwebsite.com" aria-label="Your website address">
       <button type="submit">Check my site</button>
     </form>
-        <p class="scan-status" aria-live="polite"></p>
+        <p class="scan-status" id="scan-status" aria-live="polite"></p>
       </div>
     </div>
   </div>
@@ -335,12 +335,12 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <p class="lead">A rough estimate: if a share of buyers now starts with AI and you're not in its answers, those customers never reach you.</p>
     <div class="calc card" data-cfg="{&quot;locale&quot;: &quot;en-US&quot;, &quot;currency&quot;: &quot;EUR&quot;, &quot;mo&quot;: &quot;/ month in missed revenue&quot;, &quot;yr&quot;: &quot;/ year&quot;, &quot;cust&quot;: &quot;{n} customers you never see&quot;}">
       <div class="calc-row">
-        <label>New customers per month <b data-val="clients"></b></label>
-        <input type="range" data-in="clients" min="1" max="500" step="1" value="50">
+        <label for="calc-clients">New customers per month <b data-val="clients"></b></label>
+        <input id="calc-clients" type="range" data-in="clients" min="1" max="500" step="1" value="50">
       </div>
       <div class="calc-row">
-        <label>Average order value <b data-val="check"></b></label>
-        <input type="range" data-in="check" min="10" max="2000" step="10" value="200">
+        <label for="calc-check">Average order value <b data-val="check"></b></label>
+        <input id="calc-check" type="range" data-in="check" min="10" max="2000" step="10" value="200">
       </div>
       <div class="calc-out">
         <div class="calc-big"></div>
@@ -421,7 +421,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   </div>
 </footer>
 
-<script src="/assets/site.js?v=05690258" defer></script>
+<script src="/assets/site.js?v=37ea249e" defer></script>
 <script data-goatcounter="https://mentio.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

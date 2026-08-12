@@ -1,7 +1,9 @@
 /* mentio site.js */
 (function () {
   "use strict";
-  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var motionMQ = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var reduced = motionMQ.matches;
+  if (motionMQ.addEventListener) motionMQ.addEventListener("change", function (e) { reduced = e.matches; });
   function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
 
   /* ---------- language switcher (CSP-safe, replaces inline onchange) ---------- */
@@ -344,6 +346,7 @@
       status.textContent = msg;
       f.classList.add("invalid");
       input.setAttribute("aria-invalid", "true");
+      if (status.id) input.setAttribute("aria-describedby", status.id);
       input.focus();
     }
     function renderResults(res) {
@@ -367,16 +370,18 @@
         });
         box.appendChild(ul);
       }
-      addList(L.goodTitle, res.goods, "sr-good");
-      addList(L.badTitle, res.bads, "sr-bad");
-      if (!reduced) {
-        var row = 0;
-        box.querySelectorAll(".sr-title, li").forEach(function (el) {
-          el.classList.add("pline", "in");
-          el.style.animationDelay = (row++ * 140) + "ms";
-        });
-      }
       f.parentElement.insertBefore(box, status);
+      requestAnimationFrame(function () {
+        addList(L.goodTitle, res.goods, "sr-good");
+        addList(L.badTitle, res.bads, "sr-bad");
+        if (!reduced) {
+          var row = 0;
+          box.querySelectorAll(".sr-title, li").forEach(function (el) {
+            el.classList.add("pline", "in");
+            el.style.animationDelay = (row++ * 140) + "ms";
+          });
+        }
+      });
     }
     var origPh = input.placeholder, origAria = input.getAttribute("aria-label"), origBtn = btn.textContent, origIm = input.getAttribute("inputmode");
     var contactValid = window.__mentioLead.contactValid;
@@ -430,6 +435,7 @@
     input.addEventListener("input", function () {
       f.classList.remove("invalid");
       input.removeAttribute("aria-invalid");
+      input.removeAttribute("aria-describedby");
       if (stage === 1 && !btn.disabled) { status.classList.remove("ok"); status.textContent = ""; }
     });
     f.addEventListener("submit", function (e) {
@@ -500,6 +506,9 @@
 /* ---------- AI visibility quiz ---------- */
 (function () {
   "use strict";
+  var motionMQ = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var reduced = motionMQ.matches;
+  if (motionMQ.addEventListener) motionMQ.addEventListener("change", function (e) { reduced = e.matches; });
   document.querySelectorAll(".quiz").forEach(function (qz) {
     var cfg;
     try { cfg = JSON.parse(qz.getAttribute("data-cfg")); } catch (e) { return; }
@@ -517,6 +526,7 @@
     site.className = "quiz-site"; site.type = "text"; site.autocomplete = "off";
     var scanIn = document.querySelector(".scan-form input");
     site.placeholder = scanIn ? scanIn.placeholder : "yoursite.com";
+    site.setAttribute("aria-label", site.placeholder);
     result.insertBefore(site, cta);
     var hint = document.createElement("p");
     hint.className = "quiz-hint";
@@ -535,8 +545,9 @@
       contact = document.createElement("input");
       contact.className = "quiz-site"; contact.type = "text"; contact.autocomplete = "off";
       contact.placeholder = scanCfg.contactPh || "email";
+      contact.setAttribute("aria-label", contact.placeholder);
       result.insertBefore(contact, hint);
-      contact.addEventListener("input", function () { contact.classList.remove("invalid"); buildHref(); });
+      contact.addEventListener("input", function () { contact.classList.remove("invalid"); contact.removeAttribute("aria-invalid"); buildHref(); });
     }
     function isReady() {
       var ok = isValid(getDomain());
@@ -553,11 +564,12 @@
           encodeURIComponent(cfg.body.replace("{s}", lastScore) + getDomain());
       }
     }
-    site.addEventListener("input", buildHref);
+    site.addEventListener("input", function () { site.classList.remove("invalid"); site.removeAttribute("aria-invalid"); buildHref(); });
     cta.addEventListener("click", function (e) {
       if (!isValid(getDomain())) {
         e.preventDefault();
         site.classList.add("invalid");
+        site.setAttribute("aria-invalid", "true");
         hint.hidden = false;
         site.focus();
         return;
@@ -566,6 +578,7 @@
       e.preventDefault();
       if (!window.__mentioLead.contactValid(contact.value.trim())) {
         contact.classList.add("invalid");
+        contact.setAttribute("aria-invalid", "true");
         hint.hidden = false;
         hint.textContent = window.__mentioLead.invalidContact || scanCfg.contactPh || "email";
         contact.focus();
@@ -588,6 +601,7 @@
     });
 
     qEl.setAttribute("aria-live", "polite");
+    verdict.setAttribute("role", "status");
     function show() {
       countEl.textContent = (i + 1) + " / " + n;
       qEl.textContent = cfg.qs[i];
@@ -600,7 +614,6 @@
       result.hidden = false;
       var tier = score < 40 ? "low" : score < 75 ? "mid" : "high";
       verdict.textContent = cfg.tiers[tier];
-      verdict.setAttribute("role", "status");
       if (reduced) {
         num.innerHTML = score + "<small>/100</small>";
       } else {
