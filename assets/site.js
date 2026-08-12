@@ -91,19 +91,6 @@
     });
   }
 
-  /* ---------- paid audit button ----------
-     PAY_URL is the Stripe Payment Link. While it is empty the buy buttons
-     stay hidden, so this can ship before the Stripe account exists. */
-  var PAY_URL = "https://buy.stripe.com/7sY00k9aFakN1ua1w24ow00";
-  if (PAY_URL) {
-    document.querySelectorAll("a.buy-btn").forEach(function (a) {
-      a.href = PAY_URL;
-      a.hidden = false;
-      var note = a.parentElement.querySelector(".buy-note");
-      if (note) note.hidden = false;
-    });
-  }
-
   /* ---------- lead delivery ---------- */
   var LEAD_ENDPOINT = window.LEAD_ENDPOINT || "https://cool-waterfall-a3ce.motornyysasha.workers.dev";
   try { LEAD_ENDPOINT = LEAD_ENDPOINT || localStorage.getItem("leadEndpoint") || ""; } catch (e) {}
@@ -116,7 +103,11 @@
       body: JSON.stringify(payload)
     }).then(function (r) { if (!r.ok) throw new Error("relay " + r.status); });
   }
-  window.__mentioLead = { enabled: function () { return !!LEAD_ENDPOINT; }, submit: submitLead };
+  function contactValid(c) {
+    return /@/.test(c) || /t\.me\//i.test(c) || /^\+?[\d\s()-]{7,}$/.test(c);
+  }
+  var SCAN_LL_LANG = document.documentElement.lang;
+  window.__mentioLead = { enabled: function () { return !!LEAD_ENDPOINT; }, submit: submitLead, contactValid: contactValid };
 
   /* ---------- CTA links scroll to scanner and focus it ---------- */
   document.querySelectorAll('a[href="#check"]').forEach(function (a) {
@@ -322,6 +313,8 @@
     return { goods: goods.slice(0, 4), bads: bads.slice(0, 3), unreachable: false };
   }
 
+  window.__mentioLead.invalidContact = (SCAN_L10N[document.documentElement.lang] || SCAN_L10N.en).invalidContact;
+
   document.querySelectorAll("form.scan-form").forEach(function (f) {
     var cfg;
     try { cfg = JSON.parse(f.getAttribute("data-cfg")); } catch (e) { return; }
@@ -365,9 +358,7 @@
       f.parentElement.insertBefore(box, status);
     }
     var origPh = input.placeholder, origAria = input.getAttribute("aria-label"), origBtn = btn.textContent;
-    function contactValid(c) {
-      return /@/.test(c) || /t\.me\//i.test(c) || /^\+?[\d\s()-]{7,}$/.test(c);
-    }
+    var contactValid = window.__mentioLead.contactValid;
     function resetScanner() {
       stage = 1;
       var box = f.parentElement.querySelector(".scan-result");
@@ -524,7 +515,7 @@
     }
     function isReady() {
       var ok = isValid(getDomain());
-      if (contact) ok = ok && contact.value.trim().length >= 4;
+      if (contact) ok = ok && window.__mentioLead.contactValid(contact.value.trim());
       return ok;
     }
     function buildHref() {
@@ -548,7 +539,13 @@
       }
       if (!contact) return;
       e.preventDefault();
-      if (contact.value.trim().length < 4) { contact.classList.add("invalid"); contact.focus(); return; }
+      if (!window.__mentioLead.contactValid(contact.value.trim())) {
+        contact.classList.add("invalid");
+        hint.hidden = false;
+        hint.textContent = window.__mentioLead.invalidContact || scanCfg.contactPh || "email";
+        contact.focus();
+        return;
+      }
       if (cta.classList.contains("sending")) return;
       cta.classList.add("sending");
       window.__mentioLead.submit({ type: "quiz", score: lastScore, domain: getDomain(), contact: contact.value.trim() })
