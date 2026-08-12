@@ -71,7 +71,7 @@ nav{position:sticky;top:0;z-index:50;background:rgba(247,242,233,.95);border-bot
 .lang-select{background:var(--paper2);border:1px solid var(--crease);border-radius:3px;color:var(--ink);padding:.35rem .5rem;font-size:.78rem;font-family:var(--sans);cursor:pointer;appearance:auto}
 .lang-select:hover,.lang-select:focus{border-color:var(--verm)}
 .nav-cta{background:var(--verm);color:#fff !important;padding:.55rem 1rem;font-weight:700;text-decoration:none;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;border-radius:3px;display:inline-flex;align-items:center;gap:.5rem}
-.nav-cta::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0}
+
 .nav-cta:hover{background:var(--verm-deep)}
 .nav-burger{display:none;background:var(--paper2);border:1px solid var(--crease);border-radius:3px;width:44px;height:44px;color:var(--ink);cursor:pointer;align-items:center;justify-content:center;padding:0}
 .nav-burger svg{display:block}
