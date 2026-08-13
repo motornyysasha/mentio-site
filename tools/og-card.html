@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Build source for assets/og.png, not a site page: keep it out of the index. -->
+<meta name="robots" content="noindex, nofollow">
+<title>Mentio OG card</title>
+<style>
+@font-face{font-family:'Source Serif 4';font-style:normal;font-weight:200 900;src:url(../assets/fonts/source-serif-4-latin-wght-normal.woff2) format('woff2-variations')}
+@font-face{font-family:'Source Sans 3';font-style:normal;font-weight:200 900;src:url(../assets/fonts/source-sans-3-latin-wght-normal.woff2) format('woff2-variations')}
+
+:root{
+  --paper:#F0EAE0; --paper2:#F7F2E9;
+  --ink:#1C1713; --ink-soft:#4A423A; --ink-faint:#6E655A;
+  --verm:#C73E2A; --gold:#C9A227;
+  --crease:rgba(28,23,19,.35);
+  --serif:'Source Serif 4',Georgia,serif;
+  --sans:'Source Sans 3',Helvetica,Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1200px;height:630px}
+body{
+  background:var(--paper);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .035 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+  font-family:var(--sans);
+  color:var(--ink-soft);
+  -webkit-font-smoothing:antialiased;
+  position:relative;
+  overflow:hidden;
+}
+
+/* the sheet edge: a hairline rule top and bottom, vermilion like the site nav */
+.edge-top{position:absolute;left:0;right:0;top:0;height:6px;background:var(--verm)}
+
+.card{position:absolute;inset:0;display:grid;grid-template-columns:1fr 452px;gap:56px;padding:56px 72px 74px}
+
+/* ---- left column ---- */
+.left{display:flex;flex-direction:column;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:16px}
+.mark{
+  width:52px;height:52px;border-radius:5px;border:1px solid var(--crease);background:#fff;
+  background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%2237%2034%2026%2031%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22mg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23E5383B%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23FF6B35%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20x%3D%2238%22%20y%3D%2235.5%22%20width%3D%229.6%22%20height%3D%2221.6%22%20rx%3D%224.8%22%20fill%3D%22url%28%23mg%29%22%2F%3E%3Crect%20x%3D%2252.7%22%20y%3D%2240%22%20width%3D%229%22%20height%3D%2217.1%22%20rx%3D%224.5%22%20fill%3D%22url%28%23mg%29%22%2F%3E%3Crect%20x%3D%2238%22%20y%3D%2260.4%22%20width%3D%2224%22%20height%3D%223.4%22%20rx%3D%221.7%22%20fill%3D%22url%28%23mg%29%22%2F%3E%3C%2Fsvg%3E');
+  background-repeat:no-repeat;background-position:center;background-size:66%;
+}
+.wordmark{font-weight:700;font-size:30px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+
+h1{
+  font-family:var(--serif);font-weight:600;color:var(--ink);
+  font-size:63px;line-height:1.14;letter-spacing:-.015em;
+  margin-top:14px;
+}
+h1 .hot{
+  color:var(--verm);
+  /* the brush underline — byte-identical to .hero h1 .grad-text, in em so it
+     clears the descenders at this leading instead of biting the next line */
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'%3E%3Cpath d='M3 8 Q 40 4 80 7 T 197 5' stroke='%23C73E2A' stroke-width='4.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat left 100%;
+  background-size:100% .13em;padding-bottom:.08em;
+}
+.sub{
+  font-size:23px;line-height:1.5;color:var(--ink-soft);max-width:44ch;margin-top:22px;
+}
+.sub b{color:var(--ink);font-weight:600}
+
+.foot{display:flex;align-items:center;gap:18px;font-size:15px;margin-top:8px}
+.price{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--verm);color:#fff;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;font-size:15px;
+  padding:12px 18px;border-radius:3px;
+}
+.price .dot{width:9px;height:9px;border-radius:50%;background:var(--gold)}
+.domain{font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--ink);font-size:15px}
+.sep{width:1px;height:22px;background:var(--crease)}
+.days{color:var(--ink-faint);letter-spacing:.03em}
+
+/* ---- right panel: the fold, exactly as in the hero ---- */
+.panel{
+  background:var(--verm);border-radius:4px;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.panel svg{width:74%;height:auto;display:block}
+.panel .cap{
+  position:absolute;left:0;right:0;bottom:20px;text-align:center;
+  color:rgba(255,245,235,.72);font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;
+}
+
+/* ---- bottom hairline strip of the engines we optimise for ---- */
+.rail{
+  position:absolute;left:0;right:0;bottom:0;height:40px;
+  border-top:1px dashed var(--crease);
+  display:flex;align-items:center;justify-content:center;gap:30px;
+  color:var(--ink-faint);font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;
+  background:rgba(247,242,233,.55);
+}
+.rail i{width:5px;height:5px;border-radius:50%;background:var(--gold);display:inline-block;font-style:normal}
+</style>
+</head>
+<body>
+<div class="edge-top"></div>
+
+<div class="card">
+  <div class="left">
+    <div class="brand">
+      <span class="mark"></span>
+      <span class="wordmark">Mentio</span>
+    </div>
+
+    <div>
+      <h1>Your customers<br>are asking AI.<br><span class="hot">Is it answering with you?</span></h1>
+      <p class="sub">A <b>GEO audit</b> that measures how ChatGPT, Perplexity and Google AI Overviews see your business — and the exact fixes to get cited.</p>
+    </div>
+
+    <div class="foot">
+      <span class="price"><span class="dot"></span>Audit €99</span>
+      <span class="sep"></span>
+      <span class="days">Report in 2 business days</span>
+      <span class="sep"></span>
+      <span class="domain">mentio.agency</span>
+    </div>
+  </div>
+
+  <div class="panel">
+    <svg viewBox="0 0 200 268" xmlns="http://www.w3.org/2000/svg">
+      <!-- flat sheet: edge solid, valley dashed, mountain dash-dot -->
+      <g transform="translate(40,4)">
+        <g stroke="rgba(255,245,235,.55)" fill="none" stroke-width="1.4">
+          <rect x="14" y="14" width="92" height="92"/>
+        </g>
+        <g stroke="rgba(255,245,235,.55)" fill="none" stroke-width="1.4">
+          <path d="M14 14 L106 106 M106 14 L14 106" stroke-dasharray="5 4"/>
+          <path d="M60 14 V106 M14 60 H106" stroke-dasharray="1 3 6 3"/>
+        </g>
+      </g>
+      <!-- the fold happens here -->
+      <g stroke="rgba(255,245,235,.75)" fill="none" stroke-width="1.6">
+        <path d="M100 124 V150 M100 150 l-3.5 -6 M100 150 l3.5 -6"/>
+      </g>
+      <!-- the crane, same paths as the hero mark -->
+      <g transform="translate(-97,164)" stroke="#FFF5EB" fill="none" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M196 88 L172 64 L196 30 L220 64 Z"/>
+        <path d="M172 64 L150 46 L158 40 L172 52"/>
+        <path d="M156 44 L150 36 L160 39"/>
+        <path d="M220 64 L244 84 L236 60"/>
+        <path d="M196 30 L188 8 L212 22 Z" stroke-dasharray="5 4"/>
+        <path d="M196 88 L196 64" stroke-dasharray="1 3 6 3"/>
+      </g>
+    </svg>
+    <div class="cap">Flat sheet → cited source</div>
+  </div>
+</div>
+
+<div class="rail">
+  <span>ChatGPT</span><i></i><span>Perplexity</span><i></i><span>Gemini</span><i></i><span>Google AI Overviews</span><i></i><span>Bing Copilot</span>
+</div>
+</body>
+</html>
