@@ -3,8 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light">
-<meta name="theme-color" content="#F0EAE0">
+<meta name="color-scheme" content="light dark">
+<script src="/assets/theme.js"></script>
+<meta name="theme-color" content="#F0EAE0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#17140F" media="(prefers-color-scheme: dark)">
 <title>Mentio — GEO-агенція: щоб AI рекомендував вас</title>
 <meta name="description" content="Mentio робить бізнес видимим в AI-пошуку — ChatGPT, Perplexity, Gemini, Google AI Overviews. Безкоштовна перевірка, аудит за €99.">
 <link rel="canonical" href="https://mentio.agency/ua/">
@@ -192,7 +194,7 @@
 </script>
 <link rel="preload" href="/assets/fonts/source-serif-4-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/source-sans-3-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/style.css?v=e23c81e1">
+<link rel="stylesheet" href="/assets/style.css?v=2328fa24">
 </head>
 <body>
 
@@ -207,6 +209,7 @@
       <a href="#process">Процес</a>
       <a href="#faq">Питання</a>
       <a class="nav-blog" href="/ua/blog/">Блог</a>
+      <button class="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Перемкнути темну тему"></button>
       <select class="lang-select" aria-label="Language"><option value="/">EN</option><option value="/ua/" selected>UA</option><option value="/de/">DE</option><option value="/fr/">FR</option><option value="/pl/">PL</option><option value="/es/">ES</option></select>
       <button class="nav-burger" type="button" aria-expanded="false" aria-controls="nav-panel" aria-label="Menu"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
       <a class="nav-cta" href="#check">Безкоштовна перевірка</a>
@@ -515,7 +518,7 @@
   </div>
 </footer>
 
-<script src="/assets/site.js?v=cebce7f7" defer></script>
+<script src="/assets/site.js?v=626f1056" defer></script>
 <script data-goatcounter="https://mentio.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

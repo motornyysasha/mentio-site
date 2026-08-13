@@ -40,6 +40,35 @@
     });
   })();
 
+  /* ---------- lamplight switch: light <-> dark ---------- */
+  (function () {
+    var toggles = document.querySelectorAll(".theme-toggle");
+    if (!toggles.length) return;
+    var root = document.documentElement;
+    var mq = window.matchMedia("(prefers-color-scheme: dark)");
+    function current() {
+      var set = root.getAttribute("data-theme");
+      return set === "dark" || (!set && mq.matches) ? "dark" : "light";
+    }
+    function paint() {
+      var dark = current() === "dark";
+      toggles.forEach(function (b) { b.setAttribute("aria-checked", dark ? "true" : "false"); });
+    }
+    paint();
+    if (mq.addEventListener) mq.addEventListener("change", paint);
+    toggles.forEach(function (b) {
+      b.addEventListener("click", function () {
+        var next = current() === "dark" ? "light" : "dark";
+        root.classList.add("theme-swap");
+        root.setAttribute("data-theme", next);
+        void root.offsetWidth;
+        setTimeout(function () { root.classList.remove("theme-swap"); }, 60);
+        try { localStorage.setItem("mentio-theme", next); } catch (e) {}
+        paint();
+      });
+    });
+  })();
+
   /* ---------- nav merges with the hero at top, solidifies on scroll ---------- */
   (function () {
     var nav = document.querySelector("nav");
