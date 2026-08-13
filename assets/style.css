@@ -462,12 +462,13 @@ details summary:hover{color:var(--verm)}
 }
 /* theme swap without view transitions: instant, because transitions that read
    theme vars can stick mid-flight (Chrome leaves nav/buttons on the old colour) */
-:root.theme-swap *,:root.theme-swap *::before,:root.theme-swap *::after{transition:none !important}
-:root.theme-swap .theme-toggle::after{transition:transform .5s cubic-bezier(.4,.15,.2,1) !important}
+:root.theme-swap *:not(.theme-toggle),
+:root.theme-swap *:not(.theme-toggle)::before,
+:root.theme-swap *:not(.theme-toggle)::after{transition:none !important}
 /* the veil: the old paper colour laid over the page, fading out */
 :root.theme-fade::before{
   content:"";position:fixed;inset:0;z-index:9998;pointer-events:none;
-  background:var(--fade-from,transparent);animation:themeveil .55s cubic-bezier(.4,0,.2,1) forwards;
+  background:var(--fade-from,transparent);animation:themeveil 1s cubic-bezier(.4,0,.2,1) forwards;
 }
 @keyframes themeveil{from{opacity:1}to{opacity:0}}
 
@@ -485,7 +486,7 @@ details summary:hover{color:var(--verm)}
   content:"";position:absolute;top:2px;left:2px;width:22px;height:22px;border-radius:50%;
   background-color:var(--gold);background-repeat:no-repeat;background-position:center;background-size:12px 12px;
   box-shadow:0 1px 3px var(--shadow);
-  transition:transform .5s cubic-bezier(.4,.15,.2,1),background-color .3s;
+  translate:0 0;rotate:0deg;transition:translate .5s cubic-bezier(.4,.15,.2,1),rotate .5s cubic-bezier(.4,.15,.2,1),background-color .3s;
   /* light mode: the sun rides the disc */
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2317140F' stroke-width='2.4' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='4'/%3E%3Cpath d='M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4L6 18M18 6l1.4-1.4'/%3E%3C/svg%3E");
 }
@@ -495,7 +496,7 @@ details summary:hover{color:var(--verm)}
   background-position:left 6px center;
 }
 .theme-toggle[aria-checked="true"]::after{
-  transform:translateX(32px) rotate(360deg);background-color:var(--chip);
+  translate:32px 0;rotate:360deg;background-color:var(--chip);
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2317140F' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z'/%3E%3C/svg%3E");
 }
-@media(max-width:880px){.theme-toggle{width:56px;height:44px;background-position:right 6px center}.theme-toggle::after{top:11px}.theme-toggle[aria-checked="true"]{background-position:left 6px center}.theme-toggle[aria-checked="true"]::after{transform:translateX(28px) rotate(360deg)}}
+@media(max-width:880px){.theme-toggle{width:56px;height:44px;background-position:right 6px center}.theme-toggle::after{top:11px}.theme-toggle[aria-checked="true"]{background-position:left 6px center}.theme-toggle[aria-checked="true"]::after{translate:28px 0;rotate:360deg}}

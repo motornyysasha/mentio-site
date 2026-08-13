@@ -73,7 +73,7 @@
         paint();
         void root.offsetWidth;
         setTimeout(function () { root.classList.remove("theme-swap"); }, 50);
-        setTimeout(function () { root.classList.remove("theme-fade"); }, 700);
+        setTimeout(function () { root.classList.remove("theme-fade"); }, 1100);
       });
     });
   })();

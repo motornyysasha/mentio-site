@@ -299,5 +299,8 @@ The world is no longer light-only. Same paper, seen under lamplight:
 
 - The colour change itself is INSTANT under a veil: `:root.theme-fade::before` is a fixed layer painted with the OLD paper colour (JS writes `--fade-from` from the current body background) that fades out over .55s. The page is already in the new theme underneath.
 - Why not transition the colours, and why not View Transitions: both were tried and both failed the same way in Chrome — a transition (or a VT capture) whose value comes from a theme `var()` leaves elements painted in the old theme (nav, buttons and cards stayed light inside a dark page). `:root.theme-swap *{transition:none!important}` for 50ms around the swap is the guard; the veil supplies the smoothness.
-- The switch disc keeps its own `transform` transition (.5s, translate + full rotate, so it *rolls* to the other end) — transform reads no theme var, so it is explicitly exempted from the mute.
+- The switch disc rolls on the INDIVIDUAL transform properties (`translate` + `rotate`, .5s each): the `transform:translateX() rotate(360deg)` shorthand lost its translate in Chrome after a mid-flight interruption. The toggle is excluded from the mute by selector (`*:not(.theme-toggle)`), never by an !important override — overriding the transition cancels the in-flight roll and leaves the disc stuck.
 - Reduced motion: no veil, no roll, instant swap.
+
+- Veil duration is 1s (owner preference, 2026-08-13); the class is cleared at 1.1s.
+- Testing note: getComputedStyle on the knob ::after is unreliable right after a transition in the automation pane — verify the switch by screenshot on a clean load, not by computed style.
