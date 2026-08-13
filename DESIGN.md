@@ -315,3 +315,13 @@ The OG image was the last surface still wearing the old dark-SaaS world; it live
 - Render pipeline: headless Chrome at `--force-device-scale-factor=2`, then `sips` down to 1200x630. 1x rasterisation is visibly coarser, and every social platform rescales the card again.
 - Chrome 151 never exits on the legacy `--headless`; the generator uses `--headless=new` and polls for the screenshot file. Local `@font-face` files need `--allow-file-access-from-files` or the card silently renders in Georgia/Helvetica.
 - `bump-assets.py` stamps `og.png?v=<hash>` alongside css/js. Social scrapers cache previews by image URL for days and offer no purge, so a redesigned card under the old URL would keep showing the old one.
+
+## Amendment 2026-08-13f — one card per language
+
+`tools/og-card.html` is a template; `make-og.py` holds the copy and renders `assets/og.png` (EN) plus `og-{ua,de,fr,pl,es}.png`.
+
+- Every string is lifted verbatim from that locale's own `index.html` — the hero headline and the exact point where `.grad-text` starts (so the brush underlines the same phrase the page does), the hero sub, the buy button's price format (EN/UA `€99`, DE/FR/PL/ES `99 €`), the checkout delivery line, the crane caption. Nothing on a card is written for the card; a preview cannot drift from the page it links to.
+- Cyrillic and latin-ext `@font-face` blocks are required in the template. Without them UA renders in fallback Georgia and PL silently loses its diacritics — the card still builds, so this fails quietly.
+- `mentio.agency` sits in the panel's top-right corner, not the footer row: with it in the footer the Spanish and French rows overflowed, and every platform prints the domain under the card anyway. It now reads diagonally against the wordmark.
+- `h1` size is per locale (50–60px) so each card lands on the same number of lines. French still wraps its accent phrase across two lines — that is the site's own behaviour (one brush stroke per wrapped line), not a defect.
+- `bump-assets.py` points each page at the card for its language, by path prefix, and stamps the content hash.
