@@ -16,6 +16,7 @@ def digest(name):
 
 
 vcss, vjs = digest("style.css"), digest("site.js")
+vlogo, vicon = digest("logo.png"), digest("apple-touch-icon.png")
 og = {loc: (f"og-{loc}.png", digest(f"og-{loc}.png")) for loc in LOCALES}
 og["en"] = ("og.png", digest("og.png"))
 
@@ -29,6 +30,12 @@ for f in root.rglob("*.html"):
     h = f.read_text()
     h2 = re.sub(r'/assets/style\.css(\?v=[0-9a-f]+)?"', f'/assets/style.css?v={vcss}"', h)
     h2 = re.sub(r'/assets/site\.js(\?v=[0-9a-f]+)?"', f'/assets/site.js?v={vjs}"', h2)
+    h2 = re.sub(r'/assets/logo\.png(\?v=[0-9a-f]+)?"', f'/assets/logo.png?v={vlogo}"', h2)
+    h2 = re.sub(
+        r'/assets/apple-touch-icon\.png(\?v=[0-9a-f]+)?"',
+        f'/assets/apple-touch-icon.png?v={vicon}"',
+        h2,
+    )
     # matches any card, so a page moving between locales is re-pointed too
     h2 = re.sub(r'/assets/og(-[a-z]{2})?\.png(\?v=[0-9a-f]+)?"', f'/assets/{name}?v={vog}"', h2)
     if h2 != h:
