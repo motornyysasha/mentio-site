@@ -325,3 +325,10 @@ The OG image was the last surface still wearing the old dark-SaaS world; it live
 - `mentio.agency` sits in the panel's top-right corner, not the footer row: with it in the footer the Spanish and French rows overflowed, and every platform prints the domain under the card anyway. It now reads diagonally against the wordmark.
 - `h1` size is per locale (50–60px) so each card lands on the same number of lines. French still wraps its accent phrase across two lines — that is the site's own behaviour (one brush stroke per wrapped line), not a defect.
 - `bump-assets.py` points each page at the card for its language, by path prefix, and stamps the content hash.
+
+## Amendment 2026-08-13g — favicon and the raster marks
+
+- The raster logos were still the old dark world: `logo.png` and `apple-touch-icon.png` put the mark on a near-black square while the site is paper, so search results showed a dark company logo against a light site. Both are now rendered on the paper ground by `make-logo.py`, alongside `logo-transparent.png` (1024) for external profiles.
+- All three crop to the mark's own bounds (`37 34 26 31`). The old files inherited `logo-mark.svg`'s padded 100x100 box, which left the mark at a quarter of the frame. Sizing the SVG by width alone clips it — the mark is taller than it is wide, so the box must be square and the default `xMidYMid meet` does the fitting.
+- The inline favicon had drifted into TWO variants: the six locale home pages carried the paper ground, the other 40 pages still carried `#0B0B10` from the previous world. All 46 now share one URI, with the mark scaled 2.4x about its own centre so it fills ~68 of the 100-unit box. At a 16px tab the old one was an orange speck.
+- `tools/favicon.svg` is the readable source of that inline data URI; if one changes, change the other.
