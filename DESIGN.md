@@ -282,3 +282,14 @@ Reference vocabulary (superdesign Red Noir / Deep Red) translated to the paper w
 - Living hovers: card lift + vermilion border, button lift + arrow slide-in (::after with / "" alt), gold dot pulse on primary hover, blog rows slide, quiz buttons press (scale .97).
 - MPA view-transitions (@view-transition) for cross-page fades in supporting browsers.
 - Mobile nav: on ≤560px the bar CTA moves into the burger panel (.panel-cta clone) — long localized labels (UA/FR/DE) overflowed the 375px bar; probe locale mirrors, not just EN, for overflow.
+
+
+## Amendment 2026-08-13c — dark theme ("night workshop") + toggle
+
+The world is no longer light-only. Same paper, seen under lamplight:
+- Dark tokens on `:root[data-theme="dark"]` and, for visitors with no stored choice, `@media(prefers-color-scheme:dark) :root:not([data-theme="light"])`. Ground #17140F, panel #201C16, ink #F2EBDF/#DCD3C4/#A79C8C, vermilion brightens to #E4573D (deep role flips to the LIGHTER #F0785E, since on dark the higher-contrast vermilion is lighter), gold #D9B341, fiber noise switches to warm-white alpha.
+- New tokens so nothing is hardcoded per theme: `--nav-bg`, `--field`, `--chip`, `--card-alt`, `--on-verm` (white on light vermilion, near-black on the brighter dark vermilion), `--shadow`.
+- Toggle: `.theme-toggle` (role=switch, localized aria-label, gold disc sliding on a sumi track) in the nav of all 46 pages. Default follows the system; an explicit choice persists in localStorage under `mentio-theme`.
+- No flash: `/assets/theme.js` is a tiny SYNCHRONOUS script in <head> (external file, so the no-inline-script CSP still holds) that applies the stored choice before first paint.
+- `:root.theme-swap *{transition:none!important}` for 60ms around a switch — transitions whose value comes from a var() can stick mid-flight (Chrome left the nav and buttons painted in the old theme; this was a real bug, caught in testing).
+- Measured AA in both themes: nav links 8.23 / 12.38, body 8.23 / 12.38, captions 4.78 / 6.80, button ink on vermilion 5.06 / 5.01.
