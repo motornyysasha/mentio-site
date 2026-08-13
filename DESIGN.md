@@ -293,3 +293,11 @@ The world is no longer light-only. Same paper, seen under lamplight:
 - No flash: `/assets/theme.js` is a tiny SYNCHRONOUS script in <head> (external file, so the no-inline-script CSP still holds) that applies the stored choice before first paint.
 - `:root.theme-swap *{transition:none!important}` for 60ms around a switch — transitions whose value comes from a var() can stick mid-flight (Chrome left the nav and buttons painted in the old theme; this was a real bug, caught in testing).
 - Measured AA in both themes: nav links 8.23 / 12.38, body 8.23 / 12.38, captions 4.78 / 6.80, button ink on vermilion 5.06 / 5.01.
+
+
+## Amendment 2026-08-13d — how the theme swap animates
+
+- The colour change itself is INSTANT under a veil: `:root.theme-fade::before` is a fixed layer painted with the OLD paper colour (JS writes `--fade-from` from the current body background) that fades out over .55s. The page is already in the new theme underneath.
+- Why not transition the colours, and why not View Transitions: both were tried and both failed the same way in Chrome — a transition (or a VT capture) whose value comes from a theme `var()` leaves elements painted in the old theme (nav, buttons and cards stayed light inside a dark page). `:root.theme-swap *{transition:none!important}` for 50ms around the swap is the guard; the veil supplies the smoothness.
+- The switch disc keeps its own `transform` transition (.5s, translate + full rotate, so it *rolls* to the other end) — transform reads no theme var, so it is explicitly exempted from the mute.
+- Reduced motion: no veil, no roll, instant swap.

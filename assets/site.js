@@ -59,12 +59,21 @@
     toggles.forEach(function (b) {
       b.addEventListener("click", function () {
         var next = current() === "dark" ? "light" : "dark";
+        try { localStorage.setItem("mentio-theme", next); } catch (e) {}
+
+        /* The swap itself is instant — a transition that reads a theme var can
+           stick on the old value. Smoothness comes from a veil of the OLD paper
+           laid over the page, which then fades away. */
+        if (!reduced) {
+          root.style.setProperty("--fade-from", getComputedStyle(document.body).backgroundColor);
+          root.classList.add("theme-fade");
+        }
         root.classList.add("theme-swap");
         root.setAttribute("data-theme", next);
-        void root.offsetWidth;
-        setTimeout(function () { root.classList.remove("theme-swap"); }, 60);
-        try { localStorage.setItem("mentio-theme", next); } catch (e) {}
         paint();
+        void root.offsetWidth;
+        setTimeout(function () { root.classList.remove("theme-swap"); }, 50);
+        setTimeout(function () { root.classList.remove("theme-fade"); }, 700);
       });
     });
   })();
