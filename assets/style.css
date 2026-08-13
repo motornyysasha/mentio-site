@@ -60,8 +60,8 @@ nav.at-top:not(.nav-open){background:transparent;border-bottom-color:transparent
 .logo-dot{width:26px;height:26px;background-color:#fff;border:1px solid var(--crease);background-image:url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%2237%2034%2026%2031%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22mg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23E5383B%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23FF6B35%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20x%3D%2238%22%20y%3D%2235.5%22%20width%3D%229.6%22%20height%3D%2221.6%22%20rx%3D%224.8%22%20fill%3D%22url%28%23mg%29%22%2F%3E%3Crect%20x%3D%2252.7%22%20y%3D%2240%22%20width%3D%229%22%20height%3D%2217.1%22%20rx%3D%224.5%22%20fill%3D%22url%28%23mg%29%22%2F%3E%3Crect%20x%3D%2238%22%20y%3D%2260.4%22%20width%3D%2224%22%20height%3D%223.4%22%20rx%3D%221.7%22%20fill%3D%22url%28%23mg%29%22%2F%3E%3C%2Fsvg%3E');background-repeat:no-repeat;background-position:center;background-size:66%;display:inline-block;border-radius:3px}
 .nav-links{display:flex;gap:1.15rem;align-items:center;font-size:.8rem}
 .nav-links a{text-decoration:none;color:var(--ink-soft);white-space:nowrap;font-weight:600;letter-spacing:.09em;text-transform:uppercase;font-size:.72rem;transition:color .15s}
-.nav-links a:hover{color:var(--verm)}
-.nav-links a.nav-blog{color:var(--verm)}
+.nav-links a:hover{color:var(--verm-deep)}
+.nav-links a.nav-blog{color:var(--verm-deep)}
 .lang-select{background:var(--paper2);border:1px solid var(--crease);border-radius:3px;color:var(--ink);padding:.35rem .5rem;font-size:.78rem;font-family:var(--sans);cursor:pointer;appearance:auto}
 .lang-select:hover,.lang-select:focus{border-color:var(--verm)}
 .nav-cta{background:var(--verm);color:#fff !important;padding:.55rem 1rem;font-weight:700;text-decoration:none;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;border-radius:3px;display:inline-flex;align-items:center;gap:.5rem}
@@ -149,13 +149,13 @@ header.hero{position:relative;overflow:hidden;padding:72px 0 84px}
 .scan-chip{display:inline-block;align-self:center;background:var(--verm-wash);border-right:1px dashed var(--crease);color:var(--verm);padding:.7rem .7rem;font-size:.82rem;font-weight:700;white-space:nowrap;max-width:42%;overflow:hidden;text-overflow:ellipsis}
 .scan-reset{display:inline-block;background:none;border:none;color:var(--ink-faint);font-size:.8rem;cursor:pointer;text-decoration:underline;text-underline-offset:3px;padding:.5rem .2rem;font-family:var(--sans)}
 .scan-reset:hover{color:var(--verm)}
-.scan-result{text-align:left;background:#fff;border:1px solid var(--crease);border-radius:3px;padding:.95rem 1rem;margin:0;max-height:260px;overflow-y:auto;counter-reset:rline}
+.scan-result{text-align:left;background:#fff;border:1px solid var(--crease);border-radius:3px;padding:.95rem 1rem;margin:0;max-height:260px;overflow-y:auto}
 .scan-result .sr-title{font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:.75rem 0 .45rem;padding-bottom:.3rem}
 .scan-result .sr-title:first-child{margin-top:0}
 .scan-result .sr-title.sr-good{color:var(--ink);border-bottom:2px solid var(--verm)}
 .scan-result .sr-title.sr-bad{color:var(--verm-deep);border-bottom:2px dashed var(--verm-deep)}
 .scan-result ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.4rem}
-.scan-result li{font-size:.86rem;line-height:1.55;color:var(--ink-soft);padding-left:1.5rem;position:relative;counter-increment:rline}
+.scan-result li{font-size:.86rem;line-height:1.55;color:var(--ink-soft);padding-left:1.5rem;position:relative}
 .scan-result ul.sr-good li::before{content:"";position:absolute;left:0;top:.62em;width:15px;height:3px;background:var(--verm)}
 .scan-result ul.sr-bad li::before{content:"";position:absolute;left:0;top:.55em;width:15px;height:5px;background:repeating-linear-gradient(105deg,var(--verm-deep) 0 3px,transparent 3px 6px)}
 
@@ -188,12 +188,12 @@ section.alt .card{background:#FBF7F0}
 /* ---------- service / pricing ---------- */
 .svc-single{max-width:680px}
 .svc .price-note{margin-top:auto;padding-top:1.1rem;font-size:.85rem;color:var(--ink-faint)}
-.svc .buy-btn{margin-top:1.1rem;display:inline-flex;background:var(--verm);color:#fff;padding-left:2rem;padding-right:2rem}
+.svc .buy-btn{margin-top:1.1rem;display:inline-flex;background:var(--verm);color:#fff;padding-left:2rem;padding-right:2rem;max-width:100%;white-space:normal;text-align:center}
 .svc .buy-btn:hover{background:var(--verm-deep)}
 p.buy-note{font-size:.8rem;color:var(--ink-faint);margin-top:.7rem}
 
 /* ---------- process: the fold sequence ---------- */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.15rem;counter-reset:step;margin-top:2.6rem;position:relative}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.15rem;margin-top:2.6rem;position:relative}
 @media(max-width:880px){.steps{grid-template-columns:1fr}}
 .step{background:var(--paper2);background-image:var(--fiber);border:1px solid var(--crease);border-radius:4px;padding:1.35rem;position:relative;min-width:0}
 .step h3{font-size:1rem;margin:.45rem 0 .5rem;font-weight:600}
@@ -285,6 +285,7 @@ footer a{color:var(--ink-soft)}
 footer a:hover{color:var(--verm)}
 .foot-langs{display:flex;gap:1rem;flex-wrap:wrap;width:100%;margin-top:.5rem}
 .foot-langs a{font-size:.78rem;color:var(--ink-faint);text-decoration:none}
+.foot-langs a[lang="uk"]{font-family:system-ui,-apple-system,sans-serif}
 .foot-langs a:hover{color:var(--verm);text-decoration:underline}
 @media(max-width:880px){.foot a,.foot-langs a{padding:.7rem .15rem;display:inline-block}.scan-reset{padding:.75rem .2rem}}
 
@@ -418,5 +419,6 @@ details summary:hover{color:var(--verm)}
 
 /* the whispered caption: an easter egg — fold the sheet again to hear it */
 .sheet-hint{font-family:var(--serif);font-style:italic;font-size:.78rem;color:var(--ink-faint);margin:-.35rem 0 0;max-width:none;opacity:0;transition:opacity 1.2s ease}
-.sheet-hint.revealed{opacity:.85}
+.sheet-hint.revealed{opacity:1}
 .sheet{cursor:pointer}
+.sheet:focus-visible{outline:2px solid var(--verm);outline-offset:3px}

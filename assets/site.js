@@ -24,7 +24,7 @@
     var sheet = document.querySelector(".scan-hero .sheet");
     var hint = document.querySelector(".scan-hero .sheet-hint");
     if (!sheet || !hint) return;
-    sheet.addEventListener("click", function () {
+    function fold() {
       hint.classList.add("revealed");
       if (!reduced) {
         var svg = sheet.querySelector("svg");
@@ -33,6 +33,10 @@
           sheet.replaceChild(fresh, svg);
         }
       }
+    }
+    sheet.addEventListener("click", fold);
+    sheet.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); fold(); }
     });
   })();
 
