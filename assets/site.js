@@ -19,6 +19,23 @@
     sel.addEventListener("change", function () { if (!kb) go(this.value); });
   });
 
+  /* ---------- easter egg: fold the sheet again ---------- */
+  (function () {
+    var sheet = document.querySelector(".scan-hero .sheet");
+    var hint = document.querySelector(".scan-hero .sheet-hint");
+    if (!sheet || !hint) return;
+    sheet.addEventListener("click", function () {
+      hint.classList.add("revealed");
+      if (!reduced) {
+        var svg = sheet.querySelector("svg");
+        if (svg) {
+          var fresh = svg.cloneNode(true);
+          sheet.replaceChild(fresh, svg);
+        }
+      }
+    });
+  })();
+
   /* ---------- nav merges with the hero at top, solidifies on scroll ---------- */
   (function () {
     var nav = document.querySelector("nav");
