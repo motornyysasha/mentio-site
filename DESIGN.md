@@ -304,3 +304,14 @@ The world is no longer light-only. Same paper, seen under lamplight:
 
 - Veil duration is 1s (owner preference, 2026-08-13); the class is cleared at 1.1s.
 - Testing note: getComputedStyle on the knob ::after is unreliable right after a transition in the automation pane — verify the switch by screenshot on a clean load, not by computed style.
+
+## Amendment 2026-08-13e — the link preview card
+
+The OG image was the last surface still wearing the old dark-SaaS world; it lives outside the CSS, so no redesign sweep could reach it.
+
+- Source of truth is `tools/og-card.html` (noindex — it is a build input, not a page), rendered to `assets/og.png` at 1200x630 by `make-og.py`.
+- The card is the site, not a poster of it: same washi ground and fiber noise, same vermilion panel, the hero's own crease-square -> crane paths, and the brush underline copied byte-for-byte from `.hero h1 .grad-text`.
+- The brush must stay in `em` (`background-size:100% .13em; padding-bottom:.08em`). A first pass used fixed px and the stroke bit into the line below — at display sizes the underline has to scale with the type.
+- Render pipeline: headless Chrome at `--force-device-scale-factor=2`, then `sips` down to 1200x630. 1x rasterisation is visibly coarser, and every social platform rescales the card again.
+- Chrome 151 never exits on the legacy `--headless`; the generator uses `--headless=new` and polls for the screenshot file. Local `@font-face` files need `--allow-file-access-from-files` or the card silently renders in Georgia/Helvetica.
+- `bump-assets.py` stamps `og.png?v=<hash>` alongside css/js. Social scrapers cache previews by image URL for days and offer no purge, so a redesigned card under the old URL would keep showing the old one.
